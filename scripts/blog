@@ -1,0 +1,18 @@
+#!/bin/bash
+
+rm -rf dist/blog/
+
+files=$(ls blog/content/*.typ)
+output_files=()
+for f in $files; do
+    f_out="dist/blog/$(echo $f | cut -d . -f 1 | cut -c 14-).html"
+    mkdir -p $(dirname $f_out)
+    typst compile "$f" "$f_out" --root blog --features html &
+done
+
+typst compile blog/pages/index.typ dist/blog/index.html --root blog --features html &
+
+feed=$(typst compile blog/pages/feed.typ - --root blog --features html --format html)
+echo $feed | sed -e "s/^.*<p>//" -e "s:</p>.*::" -e "s/&lt;/</g" > dist/blog/feed.atom
+
+wait

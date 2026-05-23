@@ -1,0 +1,11 @@
+section {
+    columns: 23.75rem auto;
+    gap: 0.5rem;
+}
+
+img {
+    width: 100%;
+    border-radius: 0.5rem;
+    height: auto;
+    margin: 0.25rem 0;
+}

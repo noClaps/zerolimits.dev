@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+html=$(typst compile gallery/index.typ - --format html --features html)
+images=$(echo $html | tr '<' '\n' | grep -o 'img src="[^"]*"' | sed -E 's/img src="([^"]*)"/\1/')
+
+for img in ${images[@]}; do
+    outpath=$(echo $img | sed -e 's:gallery/assets:/gallery:' | sed -E 's/.heic/.avif/')
+    if [[ -f "dist$outpath" ]]; then
+        echo "Skipped $img" >&2
+        continue
+    fi
+    (
+        mkdir -p $(dirname "dist$outpath")
+        vipsthumbnail "$img" --size 800x --path "dist$outpath[keep=none]"
+        echo "Optimised $img" >&2
+    ) &
+done
+
+wait
+
+for img in ${images[@]}; do
+    outpath=$(echo $img | sed -e 's:gallery/assets:/gallery:' | sed -E 's/.heic/.avif/')
+    height=$(vipsheader -f height "dist$outpath")
+    html=$(echo "$html" | sed -e "s:<img src=\"$img\":<img src=\"${outpath}\" height=\"${height}\":")
+done
+
+echo $html > dist/gallery/index.html
