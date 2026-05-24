@@ -6,7 +6,7 @@
 
 ## Build instructions
 
-You'll need [Typst](https://typst.app) and [vips](https://libvips.org).
+You'll need [Typst](https://typst.app) and `sips` with support for writing AVIF files (macOS only, builtin).
 
 Clone the repository:
 
