@@ -13,8 +13,7 @@ for img in ${images[@]}; do
     fi
     (
         mkdir -p $(dirname "dist$outpath")
-        imgoptim optimise --width 800 "$img" "dist$outpath"
-        echo "Optimised $img" >&2
+        sips -s format avif --resampleWidth 800 "$img" --out "dist$outpath"
     ) &
 done
 
@@ -22,7 +21,7 @@ wait
 
 for img in ${images[@]}; do
     outpath=$(echo $img | sed -e 's:gallery/assets:/gallery:' | sed -E 's/.heic/.avif/')
-    height=$(imgoptim height "dist$outpath")
+    height=$(sips -g pixelHeight "dist$outpath" | grep -o 'pixelHeight: \d*' | cut -c 14-)
     html=$(echo "$html" | sed -e "s:<img src=\"$img\":<img src=\"${outpath}\" height=\"${height}\":")
 done
 

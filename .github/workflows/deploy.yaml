@@ -8,13 +8,11 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: macos-latest
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v6.0.2
       - run: brew install typst
-      - run: |
-          curl -LO https://github.com/noClaps/imgoptim/releases/latest/download/imgoptim
-          install imgoptim /usr/local/bin
+      - run: sips --formats
       - run: make -j
       - uses: actions/upload-pages-artifact@v5.0.0
         with:
