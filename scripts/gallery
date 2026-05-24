@@ -13,7 +13,7 @@ for img in ${images[@]}; do
     fi
     (
         mkdir -p $(dirname "dist$outpath")
-        vipsthumbnail "$img" --size 800x --path "dist$outpath[keep=none]"
+        imgoptim optimise --width 800 "$img" "dist$outpath"
         echo "Optimised $img" >&2
     ) &
 done
@@ -22,7 +22,7 @@ wait
 
 for img in ${images[@]}; do
     outpath=$(echo $img | sed -e 's:gallery/assets:/gallery:' | sed -E 's/.heic/.avif/')
-    height=$(vipsheader -f height "dist$outpath")
+    height=$(imgoptim height "dist$outpath")
     html=$(echo "$html" | sed -e "s:<img src=\"$img\":<img src=\"${outpath}\" height=\"${height}\":")
 done
 

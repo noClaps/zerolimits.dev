@@ -13,3 +13,6 @@ homepage:
 	@mkdir -p dist/
 	@cp homepage/global.css dist
 	@typst compile homepage/index.typ dist/index.html --features html
+
+clean:
+	@rm -rf dist
