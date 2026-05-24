@@ -121,7 +121,8 @@ ul {
 }
 
 /* Text */
-article p {
+article p,
+article li {
     text-align: justify;
 }
 
