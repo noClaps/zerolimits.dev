@@ -31,7 +31,6 @@
           The most interesting boring person you've ever met.
 
           - *Email:* #link("mailto:contact@zerolimits.dev")
-          - *CodeFloe:* #link("https://codefloe.com/noClaps")[noClaps]
           - *GitHub:* #link("https://github.com/noClaps")[noClaps]
         ])
 
@@ -46,7 +45,7 @@
           project-link(
             link("https://nclang.org")[NC],
             description: [A new programming language that I'm working on.],
-            source: "https://codefloe.com/nclang",
+            source: "https://arbor.klado.dev/nclang",
           )
           project-link(
             [QCSim],
