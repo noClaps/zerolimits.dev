@@ -43,7 +43,7 @@
             source: "https://github.com/noClaps/cite",
           )
           project-link(
-            link("https://nclang.org")[NC],
+            link("https://nc.klado.dev")[NC],
             description: [A new programming language that I'm working on.],
             source: "https://arbor.klado.dev/nclang",
           )
