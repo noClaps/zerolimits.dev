@@ -14,6 +14,7 @@
   "my-takes-on-ai",
   "operating-systems",
   "po-shen-loh",
+  "promises",
   "quantum-and-particle",
   "random-numbers",
   "recap-2025",

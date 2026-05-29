@@ -116,7 +116,7 @@ ul {
 
     li:not(:has(p)) {
         line-height: 1.5;
-        margin-block: 1lh;
+        margin-block: 1em;
     }
 }
 
