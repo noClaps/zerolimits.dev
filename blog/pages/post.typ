@@ -30,6 +30,7 @@
       html.title(title)
       html.meta(name: "description", content: "A blog about the most random things you can think of.")
       html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
+      html.link(rel: "icon", href: "/favicon.png")
       html.link(rel: "stylesheet", href: "/global.css")
       html.style(read("../styles/post.css"))
     })

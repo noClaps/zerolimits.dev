@@ -12,6 +12,7 @@
       html.meta(name: "viewport", content: "width=device-width, initial-scale=1.0")
       html.meta(name: "description", content: "The most interesting boring person you've ever met.")
       html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
+      html.link(rel: "icon", href: "/favicon.png")
       html.link(rel: "stylesheet", href: "/global.css")
       html.style(read("./style.css"))
       html.title[ZeroLimits.dev]

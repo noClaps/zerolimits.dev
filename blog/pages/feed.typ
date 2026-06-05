@@ -36,7 +36,7 @@
   (
     "<?xml version=\"1.0\" encoding=\"utf-8\"?><feed xmlns=\"http://www.w3.org/2005/Atom\"><id>https://zerolimits.dev/blog/</id><title>The Blog of Random</title><updated>"
       + lastmod.display("[year]-[month]-[day]T00:00:00Z")
-      + "</updated><link rel=\"self\" href=\"https://zerolimits.dev/blog/feed.atom\" /><subtitle>A blog about the most random things you can think of.</subtitle><author><name>noClaps</name><uri>https://zerolimits.dev</uri></author>"
+      + "</updated><link rel=\"self\" href=\"https://zerolimits.dev/blog/feed.atom\" /><subtitle>A blog about the most random things you can think of.</subtitle><author><name>noClaps</name><uri>https://zerolimits.dev</uri></author><icon>https://zerolimits.dev/favicon.png</icon>"
       + entries
       + "</feed>"
   )
