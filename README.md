@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./.github/ZeroLimits.png" height="256">
+    <img src="./.github/ZeroLimits.png" height="192">
 </p>
 <h1 align="center">ZeroLimits.dev</h1>
 
