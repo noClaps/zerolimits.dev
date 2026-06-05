@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/noClaps/zerolimits.dev/refs/heads/main/.github/ZeroLimits.png" height="256">
+    <img src="./.github/ZeroLimits.png" height="256">
 </p>
 <h1 align="center">ZeroLimits.dev</h1>
 
