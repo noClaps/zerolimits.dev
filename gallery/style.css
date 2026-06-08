@@ -1,11 +1,24 @@
 section {
-    columns: 23.75rem auto;
+    columns: 16rem auto;
     gap: 0.5rem;
+}
+
+@supports (display: grid-lanes) {
+    section {
+        display: grid-lanes;
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        columns: unset;
+    }
 }
 
 img {
     width: 100%;
     border-radius: 0.5rem;
     height: auto;
-    margin: 0.25rem 0;
+}
+
+@supports not (display: grid-lanes) {
+    img {
+        margin: 0.25rem 0;
+    }
 }

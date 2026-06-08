@@ -2,7 +2,6 @@
   show image: it => {
     html.img(
       src: str(it.source).replace("./", "gallery/"),
-      width: 800,
       alt: it.alt,
       title: it.alt,
     )
