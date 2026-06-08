@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "email": {
+      "name": "Email",
+      "link": "mailto:contact@zerolimits.dev",
+      "link-name": "contact@zerolimits.dev"
+    },
+    "github": {
+      "name": "GitHub",
+      "link": "https://github.com/noClaps",
+      "link-name": "noClaps"
+    }
+  },
+  "projects": {
+    "cite": {
+      "name": "Cite",
+      "description": "A tool to generate Hayagriva citations from DOI URLs.",
+      "source": "https://github.com/noClaps/cite"
+    },
+    "nc": {
+      "name": "NC",
+      "description": "A new programming language that I'm working on.",
+      "link": "https://arbor.klado.dev/nclang",
+      "source": "https://arbor.klado.dev/nclang"
+    },
+    "qcsim": {
+      "name": "QCSim",
+      "description": "A quantum computer simulation research project.",
+      "source": "https://github.com/noClaps/qcsim"
+    },
+    "zerolimits": {
+      "name": "ZeroLimits.dev",
+      "description": "A site about the most interesting boring person you've ever met.",
+      "link": "https://zerolimits.dev",
+      "source": "https://github.com/noClaps/zerolimits.dev"
+    }
+  }
+}

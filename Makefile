@@ -13,6 +13,7 @@ homepage:
 	@mkdir -p dist/
 	@cp homepage/global.css dist
 	@cp homepage/favicon.png dist
+	@cp homepage/data.json dist
 	@typst compile homepage/index.typ dist/index.html --features html
 
 clean:

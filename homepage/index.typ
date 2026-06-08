@@ -6,6 +6,8 @@
 }
 
 #{
+  let data = json("data.json")
+
   html.html(lang: "en", {
     html.head({
       html.meta(charset: "utf-8")
@@ -31,33 +33,21 @@
 
           The most interesting boring person you've ever met.
 
-          - *Email:* #link("mailto:contact@zerolimits.dev")
-          - *GitHub:* #link("https://github.com/noClaps")[noClaps]
+          #for value in data.contact.values() [
+            - *#value.name:* #link(value.link, value.link-name)
+          ]
         ])
 
         = Projects
 
         #html.section({
-          project-link(
-            [Cite],
-            description: [A tool to generate Hayagriva citations from DOI URLs.],
-            source: "https://github.com/noClaps/cite",
-          )
-          project-link(
-            link("https://nc.klado.dev")[NC],
-            description: [A new programming language that I'm working on.],
-            source: "https://arbor.klado.dev/nclang",
-          )
-          project-link(
-            [QCSim],
-            description: [A quantum computer simulation research project.],
-            source: "https://github.com/noClaps/qcsim",
-          )
-          project-link(
-            link("https://zerolimits.dev")[ZeroLimits.dev],
-            description: [A site about the most interesting boring person you've ever met.],
-            source: "https://github.com/noClaps/zerolimits.dev",
-          )
+          for project in data.projects.values() {
+            project-link(
+              if project.keys().contains("link") { link(project.link, project.name) } else { project.name },
+              description: project.description,
+              source: project.source,
+            )
+          }
         })
       ]
     })
