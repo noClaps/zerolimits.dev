@@ -28,6 +28,7 @@
     {
       "layers" : [
         {
+          "glass" : true,
           "hidden" : false,
           "image-name" : "Z 3.svg",
           "name" : "Z",
