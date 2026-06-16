@@ -1,11 +1,10 @@
-#import "../pages/post.typ": *
+#import "../main.typ": note
 
 #metadata((
   title: [Messengers],
   date: datetime(year: 2022, month: 5, day: 6),
   lastmod: datetime(year: 2023, month: 1, day: 18),
 ))
-#show: post
 
 = Intro
 

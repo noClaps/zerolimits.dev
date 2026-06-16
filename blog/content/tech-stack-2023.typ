@@ -1,10 +1,7 @@
-#import "../pages/post.typ": *
-
 #metadata((
   title: [Textack - 2023],
   date: datetime(year: 2023, month: 12, day: 6),
 ))
-#show: post
 
 I've learned a lot about different things over this last year, and I thought I'd share some of the tools and things I've been using, and maybe talk a little bit about what I plan to use next year, in 2024.
 

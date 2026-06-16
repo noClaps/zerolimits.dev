@@ -1,10 +1,9 @@
-#import "../pages/post.typ": *
+#import "../main.typ": note
 
 #metadata((
   title: [Threat Modelling],
   date: datetime(year: 2023, month: 1, day: 18),
 ))
-#show: post
 
 Before you start on your privacy and security journey, one of the main things you should figure out is your threat model.
 

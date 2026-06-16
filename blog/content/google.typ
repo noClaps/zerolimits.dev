@@ -1,11 +1,10 @@
-#import "../pages/post.typ": *
+#import "../main.typ": note
 
 #metadata((
   title: [Google: A Misrepresented Evil],
   date: datetime(year: 2022, month: 8, day: 12),
   lastmod: datetime(year: 2022, month: 11, day: 26),
 ))
-#show: post
 
 = Humble beginnings
 

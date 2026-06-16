@@ -1,10 +1,7 @@
-#import "../pages/post.typ": *
-
 #metadata((
   title: [Recap - 2025],
   date: datetime(year: 2025, month: 12, day: 26),
 ))
-#show: post
 
 #link("./tech-stack-2024")[Last year's Textack]
 

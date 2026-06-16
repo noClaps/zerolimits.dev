@@ -43,17 +43,7 @@ pre:has(code) {
 }
 
 /* Math */
-svg {
-    use {
-        fill: currentColor !important;
-    }
-
-    g > path {
-        stroke: currentColor !important;
-    }
-}
-
-div:has(> svg) {
+div:has(> math[display="block"]) {
     overflow-x: auto;
     text-align: center;
 }

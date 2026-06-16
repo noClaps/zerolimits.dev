@@ -1,10 +1,7 @@
-#import "../pages/post.typ": *
-
 #metadata((
   title: [Simplicity in Software],
   date: datetime(year: 2024, month: 12, day: 5),
 ))
-#show: post
 
 There's been a lot of products coming out recently with all these fancy new features. You have #link("https://arc.net")[Arc] (which recently got #link("https://www.youtube.com/watch?v=E9yZ0JusME4")[put into maintenance mode]), #link("https://cursor.com")[Cursor], #link("https://zed.dev")[Zed] (which I use), #link("https://www.diabrowser.com")[Dia] (a new browser from the Arc team), etc. I'm sure you've seen at least some of these kinds of products around somewhere on the internets.
 

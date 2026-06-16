@@ -1,11 +1,9 @@
-#import "../pages/post.typ": *
+#import "../main.typ": note
 
 #metadata((
   title: [Don't break your promises],
   date: datetime(year: 2026, month: 5, day: 24),
 ))
-
-#show: post
 
 #note[
   I want to preface this by saying that I'm by no means an expert on this topic, I'm just writing my observations from the point of view of a consumer.

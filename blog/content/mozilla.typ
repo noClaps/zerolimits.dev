@@ -1,10 +1,7 @@
-#import "../pages/post.typ": *
-
 #metadata((
   title: [Mozilla],
   date: datetime(year: 2024, month: 1, day: 20),
 ))
-#show: post
 
 I have a problem with Mozilla, and there's enough here to warrant a whole post.
 

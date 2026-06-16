@@ -1,10 +1,7 @@
-#import "../pages/post.typ": *
-
 #metadata((
   title: [The Split-Brain Experiment],
   date: datetime(year: 2023, month: 7, day: 13),
 ))
-#show: post
 
 = Patient WJ
 

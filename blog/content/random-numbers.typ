@@ -1,10 +1,9 @@
-#import "../pages/post.typ": *
+#import "../main.typ": note
 
 #metadata((
   title: [Random Numbers],
   date: datetime(year: 2025, month: 7, day: 23),
 ))
-#show: post
 
 = Every day I'm shufflin'
 

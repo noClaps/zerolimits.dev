@@ -1,11 +1,8 @@
-#import "../pages/post.typ": *
-
 #metadata((
   title: [Be Social],
   date: datetime(year: 2022, month: 11, day: 27),
   lastmod: datetime(year: 2023, month: 1, day: 31),
 ))
-#show: post
 
 = Origins
 

@@ -1,10 +1,7 @@
-#import "../pages/post.typ": *
-
 #metadata((
   title: [Love and War],
   date: datetime(year: 2024, month: 2, day: 15),
 ))
-#show: post
 
 = A New Year's party
 

@@ -1,11 +1,10 @@
-#import "../pages/post.typ": *
+#import "../main.typ": note
 
 #metadata((
   title: [How to Make an OS],
   date: datetime(year: 2023, month: 2, day: 2),
   lastmod: datetime(year: 2023, month: 2, day: 5),
 ))
-#show: post
 
 #note(title: [DISCLAIMERS])[
   + This post is based on my own personal experience using Windows and various Linux distributions, and may not reflect your experience with it.

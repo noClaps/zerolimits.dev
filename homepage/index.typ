@@ -1,13 +1,18 @@
 #let project-link(title, description: [], source: "") = {
   html.div(class: "link", {
     html.h3(title)
-    [#description #link(source)[Source]]
+    html.p({
+      description
+      link(source)[Source]
+    })
   })
 }
 
-#{
+#asset("global.css", read("global.css"))
+#asset("favicon.png", read("favicon.png", encoding: none))
+#asset("data.json", read("data.json"))
+#document("index.html", context {
   let data = json("data.json")
-
   html.html(lang: "en", {
     html.head({
       html.meta(charset: "utf-8")
@@ -52,4 +57,4 @@
       ]
     })
   })
-}
+})
