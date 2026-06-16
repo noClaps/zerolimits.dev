@@ -10,8 +10,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v6.0.2
-      - run: brew install typst
+      - uses: actions/checkout@v6.0.3
+      - uses: typst-community/setup-typst@v5.1.0
       - run: sips --formats
       - run: make -j
       - uses: actions/upload-pages-artifact@v5.0.0
