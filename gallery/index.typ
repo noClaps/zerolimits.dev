@@ -1,12 +1,12 @@
-#{
-  show image: it => {
-    html.img(
-      src: str(it.source).replace("./", "gallery/"),
-      alt: it.alt,
-      title: it.alt,
-    )
-  }
+#show image: it => {
+  html.img(
+    src: str(it.source).replace("./assets", "/gallery").replace(".heic", ".avif"),
+    alt: it.alt,
+    title: it.alt,
+  )
+}
 
+#document("gallery/index.html", {
   html.html(lang: "en", {
     html.head({
       html.meta(charset: "utf-8")
@@ -271,4 +271,4 @@
       ]
     })
   })
-}
+})
