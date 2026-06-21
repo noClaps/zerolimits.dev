@@ -6,32 +6,6 @@
   ]
 }
 
-#let display-post(body) = {
-  show math.equation.where(block: true): html.div
-  // TODO: remove when typst mathml supports overline
-  show math.overline: it => html.elem("mover", attrs: (accent: "false"), {
-    it
-    html.elem("mo", "_")
-  })
-  show link: it => {
-    if type(it.dest) == str and it.dest.starts-with("https") {
-      html.a(target: "_blank", rel: ("noreferrer", "noopener"), href: it.dest, it.body)
-    } else {
-      it
-    }
-  }
-  show heading: it => {
-    html.elem(
-      "h" + repr(it.level + 1),
-      attrs: (id: lower(repr(it.body).slice(1, -1)).replace(regex("[^\w]"), "-")),
-      it.body,
-    )
-  }
-  set quote(block: true, quotes: false)
-
-  body
-}
-
 #let posts = (
   "be-social",
   "browsers",
@@ -64,6 +38,28 @@
 
 #for post in posts {
   context {
+    show math.equation.where(block: true): html.div
+    // TODO: remove when typst mathml supports overline
+    show math.overline: it => html.elem("mover", attrs: (accent: "false"), {
+      it
+      html.elem("mo", "_")
+    })
+    show link: it => {
+      if type(it.dest) == str and it.dest.starts-with("https") {
+        html.a(target: "_blank", rel: ("noreferrer", "noopener"), href: it.dest, it.body)
+      } else {
+        it
+      }
+    }
+    show heading: it => {
+      html.elem(
+        "h" + repr(it.level + 1),
+        attrs: (id: lower(repr(it.body).slice(1, -1)).replace(regex("[^\w]"), "-")),
+        it.body,
+      )
+    }
+    set quote(block: true, quotes: false)
+
     let c = include "content/" + post + ".typ"
     let meta = c.children.find(it => repr(it).starts-with("metadata")).value
     document(
@@ -95,7 +91,7 @@
                 html.time(datetime: document.date, document.date.display())
                 title()
               })
-              html.article(display-post(c))
+              html.article(c)
             })
           })
         })
@@ -145,52 +141,6 @@
             .join(),
         )
       ]
-    })
-  })
-})
-
-#document("blog/feed.atom", format: "html", context {
-  let entries = posts.map(it => {
-    let c = include "content/" + it + ".typ"
-    let meta = c.children.find(it => repr(it).starts-with("metadata")).value
-    let updated = if "lastmod" in meta { meta.lastmod } else { meta.date }
-    (
-      updated,
-      html.elem("entry", {
-        html.elem("id", "https://zerolimits.dev/blog/" + it)
-        html.elem("title", meta.title)
-        html.elem("updated", updated.display("[year]-[month]-[day]T00:00:00Z"))
-        html.elem("link", attrs: (rel: "alternate", href: "https://zerolimits.dev/blog/" + it))
-        html.elem("published", meta.date.display("[year]-[month]-[day]T00:00:00Z"))
-        html.elem("content", attrs: (type: "html"), display-post(c))
-      }),
-    )
-  })
-
-  let lastmod = datetime(year: 1970, month: 1, day: 1)
-  let entry-content = ()
-  for (date, content) in entries {
-    if date > lastmod {
-      lastmod = date
-    }
-    entry-content.push(content)
-  }
-  let entries = entry-content.join()
-
-  html.html({
-    html.head()
-    html.elem("feed", attrs: (xmlns: "http://www.w3.org/2005/Atom"), {
-      html.elem("id", "https://zerolimits.dev/blog/")
-      html.elem("title", "The Blog of Random")
-      html.elem("updated", lastmod.display("[year]-[month]-[day]T00:00:00Z"))
-      html.elem("link", attrs: (rel: "self", href: "https://zerolimits.dev/blog/feed.atom"))
-      html.elem("subtitle", "A blog about the most random things you can think of.")
-      html.elem("author", {
-        html.elem("name", "noClaps")
-        html.elem("uri", "https://zerolimits.dev")
-      })
-      html.elem("icon", "https://zerolimits.dev/favicon.png")
-      entries
     })
   })
 })
