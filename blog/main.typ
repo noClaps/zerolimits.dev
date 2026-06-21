@@ -6,6 +6,32 @@
   ]
 }
 
+#let display-post(body) = {
+  show math.equation.where(block: true): html.div
+  // TODO: remove when typst mathml supports overline
+  show math.overline: it => html.elem("mover", attrs: (accent: "false"), {
+    it
+    html.elem("mo", "_")
+  })
+  show link: it => {
+    if type(it.dest) == str and it.dest.starts-with("https") {
+      html.a(target: "_blank", rel: ("noreferrer", "noopener"), href: it.dest, it.body)
+    } else {
+      it
+    }
+  }
+  show heading: it => {
+    html.elem(
+      "h" + repr(it.level + 1),
+      attrs: (id: lower(repr(it.body).slice(1, -1)).replace(regex("[^\w]"), "-")),
+      it.body,
+    )
+  }
+  set quote(block: true, quotes: false)
+
+  body
+}
+
 #let posts = (
   "be-social",
   "browsers",
@@ -45,30 +71,6 @@
       title: meta.title,
       date: meta.date,
       context {
-        show math.equation.where(block: true): html.div
-        // TODO: remove when typst mathml supports overline
-        show math.overline: it => html.elem("mover", attrs: (accent: "false"), {
-          it
-          html.elem("mo", "_")
-        })
-
-        show link: it => {
-          if type(it.dest) == str and it.dest.starts-with("https") {
-            html.a(target: "_blank", rel: ("noreferrer", "noopener"), href: it.dest, it.body)
-          } else {
-            it
-          }
-        }
-        show heading: it => {
-          html.elem(
-            "h" + repr(it.level + 1),
-            attrs: (id: lower(repr(it.body).slice(1, -1)).replace(regex("[^\w]"), "-")),
-            it.body,
-          )
-        }
-
-        set quote(block: true, quotes: false)
-
         html.html(lang: "en", {
           html.head({
             html.meta(charset: "utf-8")
@@ -93,7 +95,7 @@
                 html.time(datetime: document.date, document.date.display())
                 title()
               })
-              html.article(c)
+              html.article(display-post(c))
             })
           })
         })
@@ -160,7 +162,7 @@
         html.elem("updated", updated.display("[year]-[month]-[day]T00:00:00Z"))
         html.elem("link", attrs: (rel: "alternate", href: "https://zerolimits.dev/blog/" + it))
         html.elem("published", meta.date.display("[year]-[month]-[day]T00:00:00Z"))
-        html.elem("content", attrs: (type: "html"), html.article(c))
+        html.elem("content", attrs: (type: "html"), display-post(c))
       }),
     )
   })
