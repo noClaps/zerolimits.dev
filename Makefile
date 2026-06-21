@@ -5,7 +5,7 @@ blog:
 	@typst compile blog/main.typ dist/ --features bundle,html --format bundle --root blog
 	@perl -0777 -i -ne 'printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>$$1" if m|(<feed xmlns="http://www.w3.org/2005/Atom">.*</feed>)|s' dist/blog/feed.atom
 	@perl -0777 -i -pe 's|><published|/><published|g; s|><subtitle|/><subtitle|g' dist/blog/feed.atom
-	@perl -MHTML::Entities=encode_entities -0777 -i -pe 's{(<content type="html">)(.*?)(</content>)}{$$1.encode_entities($$2).$$3}gse' dist/blog/feed.atom
+	@/usr/bin/perl -MHTML::Entities=encode_entities -0777 -i -pe 's{(<content type="html">)(.*?)(</content>)}{$$1.encode_entities($$2).$$3}gse' dist/blog/feed.atom
 
 gallery:
 	@typst compile gallery/index.typ dist/ --format bundle --features bundle,html --root gallery
