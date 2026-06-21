@@ -21,7 +21,7 @@ Basically, it makes both understanding and writing easier.
 
 This is the browser engine that powers the Chromium browser. Chromium, as you probably guessed from the name, is the browser that powers Chrome. Unlike what people online would have you believe, Chromium is actually #link("https://chromium.googlesource.com")[open source], and there's a lot of other browsers that are built on top of it, like Brave, Edge, Opera (including Opera GX), Vivaldi, Samsung Internet, and so many more.
 
-Blink was actually #link("https://groups.google.com/a/chromium.org/g/blink-dev/c/J41PSKuMan0/m/gD5xcqicqP8J")[forked] from #link("#webkit")[WebKit] in 2013. However, it is so far from WebKit now that it wouldn't be fair to compare the two engines. It's by far the most popular browser engine in the world, with #link("https://gs.statcounter.com/browser-market-share")[over 74%] of the international browser market share, the majority of which comes from Chrome.
+Blink was actually #link("https://groups.google.com/a/chromium.org/g/blink-dev/c/J41PSKuMan0/m/gD5xcqicqP8J")[forked] from #link(<browsers-webkit>)[WebKit] in 2013. However, it is so far from WebKit now that it wouldn't be fair to compare the two engines. It's by far the most popular browser engine in the world, with #link("https://gs.statcounter.com/browser-market-share")[over 74%] of the international browser market share, the majority of which comes from Chrome.
 
 == Chrome
 
@@ -75,7 +75,7 @@ It's generally marketed as a privacy-focused browser, although their Brave Ads b
   While a lot of their controversies don't really affect the browser itself, I know people who refuse to use Brave simply because of Brendan Eich and so I figured I'd mention it.
 ]
 
-= Gecko
+= Gecko <browsers-gecko>
 
 Gecko is a browser engine developed by Mozilla with the aim of being as compliant with the open web standards as possible, and is used in their products like Firefox and Thunderbird. It's also the oldest browser engine in this list, being first created at Netscape (essentially the predecessors to Mozilla) in 1997, as well as the only one to not be developed by a Big Tech company.
 
@@ -88,10 +88,10 @@ Firefox is really the main browser built on top of Gecko, with most others like 
 Today, it's a formidable browser that sits as the fourth-most used in the world.
 
 #note(title: [OPINION])[
-  I like Firefox as a browser. It's relatively clean, fast, and usually works, and takes me a lot less work to set up than Brave, Chrome or Edge do. However, it's not as great as Chromium to do web development in since a lot of the browser DevTools simply aren't as well-made as Chromium's or WebKit's. I also have a problem with Mozilla, which I've written about in a #link("/blog/mozilla")[separate post].
+  I like Firefox as a browser. It's relatively clean, fast, and usually works, and takes me a lot less work to set up than Brave, Chrome or Edge do. However, it's not as great as Chromium to do web development in since a lot of the browser DevTools simply aren't as well-made as Chromium's or WebKit's. I also have a problem with Mozilla, which I've written about in a #link(<mozilla>)[separate post].
 ]
 
-= WebKit
+= WebKit <browsers-webkit>
 
 WebKit is Apple's browser engine that's used primarily in Safari. Just like the other engines, WebKit is #link("https://github.com/WebKit/WebKit")[open source], and different versions of it have been used in other browsers, like WebKitGTK in GNOME Web, as well as many of Apple's own applications, including the #link("https://webkit.org")[Apple Mail client and the App Store]. WebKit was also used by Google Chrome and Opera, before they #link("https://www.chromium.org/blink/developer-faq/")[switched to the Blink engine].
 
@@ -147,7 +147,7 @@ Other than the 3 browser engines above, others also exist:
 
 - #link("https://servo.org")[Servo], a browser engine written in Rust with performance and web standards in mind. It was born out of Mozilla, but has since moved to Linux Foundation Europe.
 - #link("https://ladybird.dev")[Ladybird], a browser written from scratch for SerenityOS.
-- #link("https://www.palemoon.org/tech/goanna.shtml")[Goanna], a fork of an old version of #link("#gecko")[Gecko] that is used in the Pale Moon browser. Updates to the Gecko engine have added security updates, which may have not been added to Goanna. Goanna and Pale Moon therefore may be insecure, and are not recommended to be used.
+- #link("https://www.palemoon.org/tech/goanna.shtml")[Goanna], a fork of an old version of #link(<browsers-gecko>)[Gecko] that is used in the Pale Moon browser. Updates to the Gecko engine have added security updates, which may have not been added to Goanna. Goanna and Pale Moon therefore may be insecure, and are not recommended to be used.
 
 There are likely many others that I missed, as these are the only ones I've heard of. Making a browser engine is a lot of work, which is probably why it's mostly big companies that have been able to succeed so far.
 

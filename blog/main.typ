@@ -51,52 +51,48 @@
         it
       }
     }
-    show heading: it => {
-      html.elem(
-        "h" + repr(it.level + 1),
-        attrs: (id: lower(repr(it.body).slice(1, -1)).replace(regex("[^\w]"), "-")),
-        it.body,
-      )
-    }
     set quote(block: true, quotes: false)
 
     let c = include "content/" + post + ".typ"
     let meta = c.children.find(it => repr(it).starts-with("metadata")).value
-    document(
-      "blog/" + post + ".html",
-      title: meta.title,
-      date: meta.date,
-      context {
-        html.html(lang: "en", {
-          html.head({
-            html.meta(charset: "utf-8")
-            html.meta(name: "viewport", content: "width=device-width, initial-scale=1.0")
-            html.title(document.title)
-            html.meta(name: "description", content: "A blog about the most random things you can think of.")
-            html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
-            html.link(rel: "icon", href: "/favicon.png")
-            html.link(rel: "stylesheet", href: "/global.css")
-            html.style(read("styles/post.css"))
-          })
-          html.body({
-            html.header({
-              html.h1(link("/blog/")[The Blog of Random])
-              html.nav({
-                link("/")[Homepage]
-                link("/gallery/")[Gallery]
+    [
+      #document(
+        "blog/" + post + ".html",
+        title: meta.title,
+        date: meta.date,
+        context {
+          html.html(lang: "en", {
+            html.head({
+              html.meta(charset: "utf-8")
+              html.meta(name: "viewport", content: "width=device-width, initial-scale=1.0")
+              html.title(document.title)
+              html.meta(name: "description", content: "A blog about the most random things you can think of.")
+              html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
+              html.link(rel: "icon", href: "/favicon.png")
+              html.link(rel: "stylesheet", href: "/global.css")
+              html.style(read("styles/post.css"))
+            })
+            html.body({
+              html.header({
+                html.h1(link("/blog/")[The Blog of Random])
+                html.nav({
+                  link("/")[Homepage]
+                  link("/gallery/")[Gallery]
+                })
+              })
+              html.main({
+                html.div(class: "post-header", {
+                  html.time(datetime: document.date, document.date.display())
+                  title()
+                })
+                html.article(c)
               })
             })
-            html.main({
-              html.div(class: "post-header", {
-                html.time(datetime: document.date, document.date.display())
-                title()
-              })
-              html.article(c)
-            })
           })
-        })
-      },
-    )
+        },
+      )
+      #label(post)
+    ]
   }
 }
 
