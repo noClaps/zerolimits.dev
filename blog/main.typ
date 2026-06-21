@@ -175,7 +175,6 @@
   }
   let entries = entry-content.join()
 
-
   html.html({
     html.head()
     html.elem("feed", attrs: (xmlns: "http://www.w3.org/2005/Atom"), {
