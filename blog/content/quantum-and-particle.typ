@@ -3,6 +3,7 @@
 #metadata((
   title: [A beginner's guide to Quantum and Particle Physics],
   date: datetime(year: 2024, month: 2, day: 21),
+  lastmod: datetime(year: 2026, month: 7, day: 1),
 ))
 
 #note[
@@ -137,7 +138,7 @@ Turns out, at the quantum scale, particles don't exactly exist as points in spac
 This wave function can be converted into a probability function, which can give the probability of a particle being somewhere depending on a bunch of different factors. The wave function is defined using the Schrödinger equation:
 
 $
-  i planck (partial Psi(x, t))/(partial t) = -planck/(2m) (partial^2 Psi(x, t))/(partial x^2) + V(x)Psi(x, t)
+  i planck (partial Psi(x, t))/(partial t) = -planck^2/(2m) (partial^2 Psi(x, t))/(partial x^2) + V(x)Psi(x, t)
 $
 
 This looks very scary, and it's not nearly as bad as it might seem, but we're not gonna be using it either way so it doesn't matter (unless you're actually studying the field, in which case it matters a lot)! You might see different versions of this equation online, but all of them mean pretty much the same thing.
