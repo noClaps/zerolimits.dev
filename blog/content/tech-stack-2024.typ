@@ -3,7 +3,7 @@
   date: datetime(year: 2024, month: 12, day: 16),
 ))
 
-#link("./tech-stack-2023")[Last year's Textack]
+#link(<tech-stack-2023>)[Last year's Textack]
 
 Well, it's been a year since I last shared my tech stack, so let me show you what's changed over the last year, and some of my plans for 2025.
 

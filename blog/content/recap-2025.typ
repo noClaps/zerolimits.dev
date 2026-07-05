@@ -3,7 +3,7 @@
   date: datetime(year: 2025, month: 12, day: 26),
 ))
 
-#link("./tech-stack-2024")[Last year's Textack]
+#link(<tech-stack-2024>)[Last year's Textack]
 
 Merry Christmas! Or happy Christmas, as I've just found out some people say that instead.
 
