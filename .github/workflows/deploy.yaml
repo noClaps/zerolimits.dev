@@ -2,20 +2,12 @@ on: [push, workflow_dispatch]
 
 jobs:
   deploy:
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v6.0.3
+      - uses: actions/checkout@v7.0.1
       - uses: typst-community/setup-typst@v5.1.0
       - run: sips --formats
       - run: make -j
-      - uses: actions/upload-pages-artifact@v5.0.0
+      - uses: cloudflare/wrangler-action@v4.0.0
         with:
-          path: dist/
-      - uses: actions/deploy-pages@v5.0.0
-        id: deployment
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
