@@ -15,7 +15,7 @@
     "cite": {
       "name": "Cite",
       "description": "A tool to generate Hayagriva citations from DOI URLs.",
-      "source": "https://github.com/noClaps/cite"
+      "source": "https://codeberg.org/noClaps/cite"
     },
     "nc": {
       "name": "NC",
