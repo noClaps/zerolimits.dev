@@ -26,7 +26,7 @@
     "qcsim": {
       "name": "QCSim",
       "description": "A quantum computer simulation research project.",
-      "source": "https://github.com/noClaps/qcsim"
+      "source": "https://codeberg.org/noClaps/qcsim"
     },
     "zerolimits": {
       "name": "ZeroLimits.dev",
