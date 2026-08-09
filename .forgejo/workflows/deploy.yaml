@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v7
       - uses: https://github.com/typst-community/setup-typst@v5
+      - uses: https://github.com/dtolnay/rust-toolchain@stable
       - run: |
           cargo install --git https://codeberg.org/noClaps/imgoptim
           echo "$HOME/.cargo/bin" >> "$FORGEJO_PATH"
