@@ -10,9 +10,9 @@ gallery:
 	@make -j $$(perl -ne 'printf "dist$$1 " while m/img src="([^"]*)"/g' dist/gallery/index.html)
 dist/gallery/%.avif: gallery/assets/%.heic
 	@mkdir -p $$(dirname "$@")
-	@sips -s format avif --resampleWidth 800 "$<" --out "$@"
-	@width=$$(sips -g pixelWidth "$@" | perl -ne 'print m/pixelWidth: (\d+)/'); \
-    height=$$(sips -g pixelHeight "$@" | perl -ne 'print m/pixelHeight: (\d+)/'); \
+	@imgoptim optimise "$<" "$@" --width 800
+	@width=$$(imgoptim width "$@"); \
+    height=$$(imgoptim height "$@"); \
     path=$$(echo "$@" | cut -c 5-); \
 	sed -i "" -e "s|<img src=\"$$path\"|<img src=\"$$path\" width=\"$$width\" height=\"$$height\"|" dist/gallery/index.html
 
