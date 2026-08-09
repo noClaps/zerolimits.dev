@@ -5,6 +5,11 @@
       "link": "mailto:contact@zerolimits.dev",
       "link-name": "contact@zerolimits.dev"
     },
+    "codeberg": {
+      "name": "Codeberg",
+      "link": "https://codeberg.org/noClaps",
+      "link-name": "noClaps"
+    },
     "github": {
       "name": "GitHub",
       "link": "https://github.com/noClaps",
