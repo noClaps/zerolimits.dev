@@ -11,11 +11,11 @@ gallery:
 dist/gallery/%.avif: gallery/assets/%.heic
 	@mkdir -p $$(dirname "$@")
 	@imgoptim optimise "$<" "$@" --width 800
-	@echo "$< -> $@"
 	@width=$$(imgoptim width "$@"); \
-    height=$$(imgoptim height "$@"); \
-    path=$$(echo "$@" | cut -c 5-); \
-	sed -i "" -e "s|<img src=\"$$path\"|<img src=\"$$path\" width=\"$$width\" height=\"$$height\"|" dist/gallery/index.html
+	height=$$(imgoptim height "$@"); \
+	path=$$(echo "$@" | cut -c 5-); \
+	perl -pi -e "s|<img src=\"$$path\"|<img src=\"$$path\" width=\"$$width\" height=\"$$height\"|" dist/gallery/index.html
+	@echo "$< -> $@"
 
 homepage:
 	@typst compile homepage/index.typ dist/ --features bundle,html --format bundle --root homepage
