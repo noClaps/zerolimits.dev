@@ -11,6 +11,7 @@ gallery:
 dist/gallery/%.avif: gallery/assets/%.heic
 	@mkdir -p $$(dirname "$@")
 	@imgoptim optimise "$<" "$@" --width 800
+	@echo "$< -> $@"
 	@width=$$(imgoptim width "$@"); \
     height=$$(imgoptim height "$@"); \
     path=$$(echo "$@" | cut -c 5-); \
