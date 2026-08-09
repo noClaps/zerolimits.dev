@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./.github/ZeroLimits.png" height="192">
+    <img src="./.forgejo/ZeroLimits.png" height="192">
 </p>
 <h1 align="center">ZeroLimits.dev</h1>
 
@@ -14,7 +14,7 @@ You'll need [Typst](https://typst.app) and `sips` with support for writing AVIF 
 Clone the repository:
 
 ```sh
-git clone https://github.com/noClaps/zerolimits.dev
+git clone https://codeberg.org/noClaps/zerolimits.dev
 cd zerolimits.dev
 ```
 

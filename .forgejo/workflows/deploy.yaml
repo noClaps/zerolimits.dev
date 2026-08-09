@@ -2,15 +2,15 @@ on: [push, workflow_dispatch]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: codeberg-medium-lazy
     steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: typst-community/setup-typst@v5.1.0
+      - uses: https://code.forgejo.org/actions/checkout@v7
+      - uses: https://github.com/typst-community/setup-typst@v5
       - run: |
           cargo install --git https://codeberg.org/noClaps/imgoptim
-          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.cargo/bin" >> "$FORGEJO_PATH"
       - run: make -j
-      - uses: cloudflare/wrangler-action@v4.0.0
+      - uses: https://github.com/cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
