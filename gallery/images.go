@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"runtime"
 	"strings"
 	"sync"
 
@@ -18,6 +19,7 @@ import (
 
 const WIDTH int = 800
 
+var maxConcurrent int = runtime.GOMAXPROCS(0)
 var re *regexp.Regexp = regexp.MustCompile(`img src="([^"]*)"`)
 var wg sync.WaitGroup
 var mu sync.Mutex
@@ -27,8 +29,13 @@ func main() {
 	if err != nil {
 		log.Fatalln("error reading dist/gallery/index.html: ", err)
 	}
+	sem := make(chan struct{}, maxConcurrent)
+
 	for _, match := range re.FindAllSubmatch(file, -1) {
 		wg.Go(func() {
+			sem <- struct{}{}
+			defer func() { <-sem }()
+
 			imgSrc := string(match[1])
 			outPath := "dist" + imgSrc
 			srcPath := strings.ReplaceAll(imgSrc, "/gallery/", "gallery/assets/")
