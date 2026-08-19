@@ -23,7 +23,6 @@ var wg sync.WaitGroup
 var mu sync.Mutex
 
 func main() {
-
 	file, err := os.ReadFile("dist/gallery/index.html")
 	if err != nil {
 		log.Fatalln("error reading dist/gallery/index.html: ", err)
@@ -52,11 +51,14 @@ func main() {
 		})
 	}
 	wg.Wait()
-	os.WriteFile("dist/gallery/index.html", file, 0o660)
+	if err := os.WriteFile("dist/gallery/index.html", file, 0o660); err != nil {
+		log.Fatalln("error writing dist/gallery/index.html:", err)
+	}
 }
 
 func optimise(srcPath, outPath string, width int) (int, int, error) {
 	if f, err := os.Open(outPath); err == nil {
+		defer f.Close()
 		cfg, _, err := image.DecodeConfig(f)
 		if err != nil {
 			return 0, 0, fmt.Errorf("error decoding image %s: %v", outPath, err)
@@ -68,6 +70,7 @@ func optimise(srcPath, outPath string, width int) (int, int, error) {
 	if err != nil {
 		return 0, 0, fmt.Errorf("error opening file: %v", err)
 	}
+	defer file.Close()
 	img, _, err := image.Decode(file)
 	if err != nil {
 		return 0, 0, fmt.Errorf("error decoding HEIC image: %v", err)
@@ -83,6 +86,7 @@ func optimise(srcPath, outPath string, width int) (int, int, error) {
 	if err != nil {
 		return 0, 0, fmt.Errorf("error creating output file: %v", err)
 	}
+	defer outFile.Close()
 	if err := avif.Encode(outFile, dst, avif.EncodeOptions{Speed: 10, Quality: 80}); err != nil {
 		return 0, 0, fmt.Errorf("error encoding output to AVIF: %v", err)
 	}
