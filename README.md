@@ -9,7 +9,7 @@
 
 ## Build instructions
 
-You'll need [Typst](https://typst.app) and `sips` with support for writing AVIF files (macOS only, builtin).
+You'll need [Typst](https://typst.app) and [Go](https://go.dev).
 
 Clone the repository:
 
