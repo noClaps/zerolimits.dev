@@ -4,3 +4,5 @@ github.com/gen2brain/h265 v0.2.1 h1:9F/tQ1CWMU3zVSelBG7npDPVVkNoRm3DI1hkmBAcxeQ=
 github.com/gen2brain/h265 v0.2.1/go.mod h1:kefpLxLhGpNCUG/q/aabJcD6GqB9Nhet3fNi9xX9Wzw=
 golang.org/x/image v0.45.0 h1:FMb1nTbH5H9vF55SriQHgFw5GnNL9Jg6L25BwXKzhB0=
 golang.org/x/image v0.45.0/go.mod h1:n62x/7RqlwXDvGsSU4u6IUTUf6KghUZ9Bt7cG/T9Fx4=
+golang.org/x/sync v0.22.0 h1:SZjpbeLmrCk4xhRSZFNZW5gFUeCeFgjekvI/+gfScek=
+golang.org/x/sync v0.22.0/go.mod h1:9xrNwdLfx4jkKbNva9FpL6vEN7evnE43NNNJQ2LF3+0=

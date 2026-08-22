@@ -15,38 +15,36 @@ import (
 	"github.com/gen2brain/gav1d/avif"
 	_ "github.com/gen2brain/h265/heic"
 	"golang.org/x/image/draw"
+	"golang.org/x/sync/errgroup"
 )
 
 const WIDTH int = 800
-
-var maxConcurrent int = runtime.GOMAXPROCS(0)
-var re *regexp.Regexp = regexp.MustCompile(`img src="([^"]*)"`)
-var wg sync.WaitGroup
-var mu sync.Mutex
 
 func main() {
 	file, err := os.ReadFile("dist/gallery/index.html")
 	if err != nil {
 		log.Fatalln("error reading dist/gallery/index.html: ", err)
 	}
-	sem := make(chan struct{}, maxConcurrent)
+
+	mu := sync.Mutex{}
+	eg := errgroup.Group{}
+	eg.SetLimit(runtime.GOMAXPROCS(0))
+
+	re := regexp.MustCompile(`img src="([^"]*)"`)
 
 	for _, match := range re.FindAllSubmatch(file, -1) {
-		wg.Go(func() {
-			sem <- struct{}{}
-			defer func() { <-sem }()
-
+		eg.Go(func() error {
 			imgSrc := string(match[1])
 			outPath := "dist" + imgSrc
 			srcPath := strings.ReplaceAll(imgSrc, "/gallery/", "gallery/assets/")
 			srcPath = strings.ReplaceAll(srcPath, ".avif", ".heic")
 
 			if err := os.MkdirAll(filepath.Dir(outPath), 0o750); err != nil {
-				log.Fatalln("error creating output dir", filepath.Dir(outPath), ":", err)
+				return fmt.Errorf("error creating output dir %s: %v", filepath.Dir(outPath), err)
 			}
 			width, height, err := optimise(srcPath, outPath, WIDTH)
 			if err != nil {
-				log.Fatalln(err)
+				return err
 			}
 			mu.Lock()
 			file = bytes.ReplaceAll(
@@ -55,9 +53,10 @@ func main() {
 				fmt.Appendf([]byte{}, `<img src="%v" width="%d" height="%d"`, imgSrc, width, height),
 			)
 			mu.Unlock()
+			return nil
 		})
 	}
-	wg.Wait()
+	eg.Wait()
 	if err := os.WriteFile("dist/gallery/index.html", file, 0o660); err != nil {
 		log.Fatalln("error writing dist/gallery/index.html:", err)
 	}
