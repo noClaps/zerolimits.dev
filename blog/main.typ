@@ -52,6 +52,7 @@
       }
     }
     set quote(block: true, quotes: false)
+    counter(figure.where(kind: image)).update(0)
 
     let c = include "content/" + post + ".typ"
     let meta = c.children.find(it => repr(it).starts-with("metadata")).value
