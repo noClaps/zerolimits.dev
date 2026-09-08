@@ -187,13 +187,13 @@ What's needed is a level of standardisation to bring everything together, and or
 = Final results
 
 #table(
-  columns: (auto, auto, auto, auto, auto),
+  columns: 5,
   table.header([OS], [Simple], [Stable], [Secure], [Up to date]),
-  [Windows], [✓], [~], [✓], [✓],
+  [Windows], [✓], [\~], [✓], [✓],
   [macOS], [✓], [✓], [✓], [✓],
   [Android], [✓], [✓], [✓], [✓],
   [iOS], [✓], [✓], [✓], [✓],
-  [Linux#super[2]], [~], [✓], [✕], [~],
+  [Linux#super[2]], [\~], [✓], [✕], [\~],
   [ChromeOS#super[3]], [✓], [✓], [✓], [✓],
 )
 
