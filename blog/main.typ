@@ -40,10 +40,7 @@
   context {
     show math.equation.where(block: true): html.div
     // TODO: remove when typst mathml supports overline
-    show math.overline: it => html.elem("mover", attrs: (accent: "false"), {
-      it
-      html.elem("mo", "_")
-    })
+    show math.overline: it => math.attach(math.limits(it), t: math.op[\_])
     show link: it => {
       if type(it.dest) == str and it.dest.starts-with("https") {
         html.a(target: "_blank", rel: ("noreferrer", "noopener"), href: it.dest, it.body)
