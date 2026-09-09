@@ -56,7 +56,9 @@ func main() {
 			return nil
 		})
 	}
-	eg.Wait()
+	if err := eg.Wait(); err != nil {
+		log.Fatalln("error while optimising images:", err)
+	}
 	if err := os.WriteFile("dist/gallery/index.html", file, 0o660); err != nil {
 		log.Fatalln("error writing dist/gallery/index.html:", err)
 	}
