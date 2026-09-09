@@ -2,13 +2,10 @@ on: [push, workflow_dispatch]
 
 jobs:
   deploy:
-    runs-on: codeberg-medium-lazy
+    runs-on: codeberg-tiny-lazy
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v7
       - uses: https://github.com/typst-community/setup-typst@v5
-      - uses: https://code.forgejo.org/actions/setup-go@v7
-        with:
-          go-version: stable
       - run: make -j
       - uses: https://github.com/cloudflare/wrangler-action@v4
         with:

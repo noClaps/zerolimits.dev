@@ -9,7 +9,7 @@
 
 ## Build instructions
 
-You'll need [Typst](https://typst.app) and [Go](https://go.dev).
+You'll need [Typst](https://typst.app).
 
 Clone the repository:
 
