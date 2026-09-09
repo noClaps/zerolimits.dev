@@ -10,7 +10,7 @@
   html.html(lang: "en", {
     html.head({
       html.meta(charset: "utf-8")
-      html.meta(name: "viewport", content: "width=device-width, initial-scale=1.0")
+      html.meta(name: "viewport", content: "width=device-width")
       html.meta(name: "description", content: "A website to showcase some cool photos I've taken.")
       html.link(rel: "icon", href: "/favicon.png")
       html.link(rel: "stylesheet", href: "/global.css")

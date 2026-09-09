@@ -62,7 +62,7 @@
           html.html(lang: "en", {
             html.head({
               html.meta(charset: "utf-8")
-              html.meta(name: "viewport", content: "width=device-width, initial-scale=1.0")
+              html.meta(name: "viewport", content: "width=device-width")
               html.title(document.title)
               html.meta(name: "description", content: "A blog about the most random things you can think of.")
               html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
@@ -103,7 +103,7 @@
   html.html(lang: "en", {
     html.head({
       html.meta(charset: "utf-8")
-      html.meta(name: "viewport", content: "width=device-width, initial-scale=1.0")
+      html.meta(name: "viewport", content: "width=device-width")
       html.title[The Blog of Random]
       html.meta(name: "description", content: "A blog about the most random things you can think of.")
       html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
