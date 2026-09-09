@@ -1,4 +1,5 @@
 #let images = (
+  "2026/IMG_0276.avif": "Clouds from a flight, India, August 2026",
   "2025/PXL_20250805_135159467.RAW-01.COVER.avif": "University of Bristol Botanic Garden, Bristol, August 2025",
   "2025/PXL_20250805_132917260.RAW-01.COVER.avif": "University of Bristol Botanic Garden, Bristol, August 2025",
   "2025/PXL_20250805_132650363.RAW-01.COVER.avif": "University of Bristol Botanic Garden, Bristol, August 2025",
@@ -196,7 +197,7 @@
           A website to showcase some cool photos I've taken.
         ]
 
-        for year in ("2025", "2024", "2023", "2022", "2019") {
+        for year in ("2026", "2025", "2024", "2023", "2022", "2019") {
           [= #year]
           html.section({
             for (img, alt) in images.pairs().filter(((k, _)) => k.starts-with(year)) {
