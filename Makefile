@@ -10,9 +10,3 @@ gallery:
 
 homepage:
 	@typst compile homepage/index.typ dist/ --features bundle,html --format bundle --root homepage
-
-images:
-	@for file in $$(ls gallery/assets/**/*.heic); do \
-	    out=$$(echo $$file | sed s/.heic/.avif/); \
-	    sips -s format avif --resampleWidth 800 --out $$out $$file; \
-	done

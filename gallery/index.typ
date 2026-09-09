@@ -1,3 +1,5 @@
+// sips -s format avif --resampleWidth 800 -o $out $in
+
 #let images = (
   "2026/IMG_0276.avif": "Clouds from a flight, India, August 2026",
   "2025/PXL_20250805_135159467.RAW-01.COVER.avif": "University of Bristol Botanic Garden, Bristol, August 2025",
