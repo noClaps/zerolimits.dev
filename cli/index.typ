@@ -9,6 +9,13 @@
   })
   html.body({
     html.pre(id: "log", {
+      [ZeroLimits.dev – Made by #link("/")[noClaps]]
+      "
+Commands:
+  clear                    Clear the screen
+  ls [directory] [--keys]  List contents of directory
+  open <key> [--source]    Open link or source in a new tab
+"
       html.noscript[This site requires JavaScript to work!]
     })
     html.main({

@@ -10,201 +10,283 @@ if (!input) throw new Error("Input element not found");
 const log = document.getElementById("log");
 if (!log) throw new Error("Log element not found");
 
-log.innerHTML += `ZeroLimits.dev – Made by <a href="https://github.com/noClaps">noClaps</a>\n`;
-log.innerHTML += "Type `help` to see all available commands.\n";
-
 document.addEventListener("click", (ev) => {
   if (/** @type {HTMLElement} */ (ev.target).id === "log") return;
   input.focus();
 });
 
-const Commands = {
-  clear() {
+const output = {
+  /** @param {any[]} data  */
+  write(...data) {
+    log.innerHTML += data.join("");
+  },
+  /** @param {any[]} data  */
+  writeln(...data) {
+    log.innerHTML += data.join("");
+    log.innerHTML += "\n";
+  },
+  /**
+   * @param {string} flag
+   * @param {string} usage
+   */
+  unknownFlagError(flag, usage) {
+    const cmd = usage.split(" ", 2)[0];
+    this.writeln(`${cmd}: unknown flag: `, flag);
+    this.writeln("Usage: ", usage);
+    this.writeln(`See ${cmd} --help for more information.`);
+  },
+  /**
+   * @param {string[]} extraArgs
+   * @param {string} usage
+   */
+  extraArgsError(extraArgs, usage) {
+    const cmd = usage.split(" ", 2)[0];
+    this.writeln(cmd, ": extra arguments provided: ", extraArgs);
+    this.writeln("Usage: ", usage);
+    this.writeln("See ", cmd, " --help for more information.");
+  },
+  /**
+   * @param {string} arg
+   * @param {string} usage
+   */
+  missingRequiredArgError(arg, usage) {
+    const cmd = usage.split(" ", 2)[0];
+    this.writeln(cmd, ": missing required argument: ", arg);
+    this.writeln("Usage: ", usage);
+    this.writeln("See ", cmd, " --help for more information.");
+  },
+  /**
+   * @param {string} command
+   * @param {string} message
+   * @param {string | undefined} arg
+   */
+  commandError(command, message, arg = undefined) {
+    this.write(command, ": ");
+    if (arg) this.write(arg, ": ");
+    this.writeln(message);
+  },
+  /**
+   *
+   * @param {string} command
+   * @param {string} description
+   * @param {Record<string, string>} positionals
+   * @param {Record<string, string>} flags
+   */
+  printHelp(command, description, positionals = {}, flags = {}) {
+    this.write("Usage: ", command);
+    let pos = Object.keys(positionals).map((p) => p.replaceAll("<", "&lt;"));
+    if (pos.length > 0) this.write(" ", pos.join(" "));
+    let flag = Object.keys(flags).map((f) => `[${f}]`);
+    if (flag.length > 0) this.write(" ", flag.join(" "));
+    this.writeln();
+
+    this.writeln(description);
+    let maxLen = 10; // "-h, --help"
+    for (const flag in flags) maxLen = Math.max(maxLen, flag.length);
+    for (const pos in positionals) maxLen = Math.max(maxLen, pos.length);
+
+    /** @param {number} itemLen  */
+    function totalSpace(itemLen) {
+      return 2 + itemLen + Math.max(2, maxLen - itemLen + 2);
+    }
+    if (Object.keys(positionals).length > 0) this.writeln("Arguments:");
+    for (const pos in positionals) {
+      this.write("  ", pos.replaceAll("<", "&lt;"));
+      this.write(" ".repeat(Math.max(2, maxLen - pos.length + 2)));
+      const helpLines = [];
+      let currentLine = "";
+      for (const word of positionals[pos].split(" ")) {
+        if (
+          currentLine.length + word.length + 1 >
+          80 - totalSpace(pos.length)
+        ) {
+          helpLines.push(currentLine);
+          currentLine = "";
+        }
+        if (currentLine != "") currentLine += " ";
+        currentLine += word;
+      }
+      helpLines.push(currentLine);
+      for (let i = 0; i < helpLines.length; i++) {
+        if (i > 0) this.write(" ".repeat(totalSpace(pos.length)));
+        this.write(helpLines[i]);
+        if (i + 1 < helpLines.length) this.writeln();
+      }
+    }
+    this.writeln("Options:");
+    for (const flag in flags) {
+      this.write("  ", flag);
+      this.write(" ".repeat(maxLen - flag.length + 2));
+      const helpLines = [];
+      let currentLine = "";
+      for (const word of flags[flag].split(" ")) {
+        if (
+          currentLine.length + word.length + 1 >
+          80 - totalSpace(flag.length)
+        ) {
+          helpLines.push(currentLine);
+          currentLine = "";
+        }
+        if (currentLine != "") currentLine += " ";
+        currentLine += word;
+      }
+      helpLines.push(currentLine);
+      for (let i = 0; i < helpLines.length; i++) {
+        if (i > 0) this.write(" ".repeat(totalSpace(flag.length)));
+        this.write(helpLines[i]);
+        if (i + 1 < helpLines.length) this.writeln();
+      }
+    }
+    this.writeln(
+      "  -h, --help",
+      " ".repeat(Math.max(2, maxLen - 8)),
+      "Show this help and exit.",
+    );
+  },
+};
+
+/** @type {Record<"clear" | "ls" | "open", (args: string[], flags: string[], help: boolean) => void>} */
+const commands = {
+  clear(args, flags, help) {
+    if (help) return output.printHelp("clear", "Clear the screen");
+
+    if (args.length > 0) return output.extraArgsError(args, "clear");
+    if (flags.length > 0) return output.unknownFlagError(flags[0], "clear");
+
     log.innerHTML = "";
-    input.value = "";
   },
 
-  /** @param {string[]} args  */
-  help(args) {
-    if (args.length > 1) {
-      return "Incorrect usage of the `help` command. Use `help help` to see how to use this command.";
+  ls(args, flags, help) {
+    if (help) {
+      return output.printHelp(
+        "ls",
+        "List contents of directory",
+        {
+          "[directory]":
+            "The directory for which to list contents. If this argument is not provided, the contents of all directories are listed. Directory names end with a backslash (/).",
+        },
+        {
+          "--keys":
+            "Display the keys of the listed links, so that they can be used with the `open` command. The keys are displayed in (parentheses) at the end of the links.",
+        },
+      );
     }
 
-    switch (args[0]) {
-      case "clear":
-        return `\
-Usage: clear
-Clear the screen`;
-      case "help":
-        return `\
-Usage: help [command]
-Display help menu
-Arguments:
-  [command]  The command to list the help guide for. If this argument is not
-             provided, the list of commands and their descriptions is
-             displayed.`;
-      case "ls":
-        return `\
-Usage: ls [directory] [--keys]
-List contents of directory
-Arguments:
-  [directory]  The directory for which to list contents for. If this argument
-               is not provided, the contents of all directories are listed.
-               Directory names end with a backslash (/).
-Options:
-  --keys       Display the keys of the listed links, so that they can be used
-               with the \`open\` command. The keys are displayed in (parentheses)
-               at the end of the links.`;
-      case "open":
-        return `\
-Usage: open <key> [--source]
-Open link or source in a new tab
-Arguments:
-  <key>     The key of the link you'd like to open. This will open the link to
-            the website by default, unless the project or contact doesn't have
-            a website or if the --source flag is used, in which case the link
-            to the source will be opened. You can obtain this key from the
-            \`ls --keys\` command.
-Options:
-  --source  Open the link to the source code, even if there is a website link
-            available.`.replaceAll("<", "&lt;");
-      default:
-        return `\
-Commands:
-  clear                    Clear the screen
-  help [command]           Display help menu
-  ls [directory] [--keys]  List contents of directory
-  open <key> [--source]    Open link or source in a new tab`.replaceAll(
-          "<",
-          "&lt;",
+    let showKeys = flags.includes("--keys");
+    let bad = flags.find((f) => f != "--keys");
+    if (bad) return output.unknownFlagError(bad, "ls [directory] [--keys]");
+    let arg = args.shift();
+    if (args.length > 0)
+      return output.extraArgsError(args, "ls [directory] --keys");
+
+    let wrote = false;
+    let dir = arg?.replace(/^\/*|\/*$/g, "");
+    if (!dir || dir === "contact") {
+      wrote = true;
+      output.writeln("contact/");
+      // @ts-expect-error `directory` doesn't exist yet
+      const contacts = directory.contact;
+      Object.entries(contacts).forEach(([key, contact], i) => {
+        if (i > 0) output.writeln();
+        if (i === Object.keys(contacts).length - 1) output.write("└");
+        else output.write("├");
+        output.write(
+          `── ${contact.name} - <a href="${contact.link}">${contact["link-name"]}</a>`,
         );
+        if (showKeys) output.write(` (${key})`);
+      });
+      output.writeln();
     }
+    if (!dir || dir === "projects") {
+      wrote = true;
+      output.writeln("projects/");
+      // @ts-expect-error `directory` doesn't exist yet
+      const projects = directory.projects;
+      Object.entries(projects).forEach(([key, project], i) => {
+        if (i > 0) output.writeln();
+        if (i === Object.keys(projects).length - 1) output.write("└");
+        else output.write("├");
+        output.write(`── ${project.name} - `);
+        if (project.link) output.write(`<a href="${project.link}">Link</a> - `);
+        output.write(`<a href="${project.source}">Source</a>`);
+        if (showKeys) output.write(` (${key})`);
+        output.writeln();
+        if (i === Object.keys(projects).length - 1) output.write(" ");
+        else output.write("│");
+        output.write("   ", project.description);
+      });
+      output.writeln();
+    }
+
+    if (!wrote) output.commandError("ls", "directory not found", arg);
   },
 
-  /** @param {string[]} args */
-  ls(args) {
-    if (args.length > 2)
-      return "Incorrect usage of the `ls` command. Use `help ls` to see how to use this command.";
-
-    let showKeys = false;
-    let idx = -1;
-    if ((idx = args.findIndex((a) => a == "--keys")) != -1) {
-      showKeys = true;
-      args.splice(idx, 1);
+  open(args, flags, help) {
+    if (help) {
+      return output.printHelp(
+        "open",
+        "Open link or source in a new tab",
+        {
+          "<key>":
+            "The key of the link you'd like to open. This will open the link to the website in a new tab. If the project doesn't have a website, the source link will be opened instead. You can obtain this key from the `ls --keys` command.",
+        },
+        {
+          "--source":
+            "Open the link to the source code, even if there is a website available. This flag cannot be used with a contact key.",
+        },
+      );
     }
 
-    let arg = args[0];
+    let openSource = flags.includes("--source");
+    const bad = flags.find((f) => f != "--source");
+    if (bad) return output.unknownFlagError(bad, "open <key> [source]");
 
-    let contactList = "";
-    // @ts-expect-error `directory` doesn't exist yet
-    const contacts = directory.contact;
-    Object.keys(contacts).forEach((key, i) => {
-      const contact = contacts[key];
-      if (i > 0) contactList += "\n";
-      contactList += i == Object.keys(contacts).length - 1 ? "└" : "├";
-      contactList += `── ${contact.name} - <a href="${contact.link}">${contact["link-name"]}</a>`;
-      if (showKeys) contactList += ` (${key})`;
-    });
-
-    let projectsList = "";
-    // @ts-expect-error `directory` doesn't exist yet
-    const projects = directory.projects;
-    Object.keys(projects).forEach((key, i) => {
-      const project = projects[key];
-      if (i > 0) projectsList += "\n";
-      projectsList += i === Object.keys(projects).length - 1 ? "└" : "├";
-      projectsList += `── ${project.name} - `;
-      if (project.link) projectsList += `<a href="${project.link}">Link</a> - `;
-      projectsList += `<a href="${project.source}">Source</a>`;
-      if (showKeys) projectsList += ` (${key})`;
-      projectsList += `\n${i === Object.keys(projects).length - 1 ? " " : "│"}   ${project.description}`;
-    });
-
-    if (!arg)
-      return `\
-contact/
-${contactList}
-projects/
-${projectsList}`;
-
-    arg = arg.replace(/^\/*|\/*$/g, "");
-    if (arg == "contact") return `contact/\n${contactList}`;
-    if (arg == "projects") return `projects/\n${projectsList}`;
-
-    return `${arg}: Directory not found`;
-  },
-
-  /** @param {string[]} args  */
-  open(args) {
-    if (args.length < 1 || args.length > 2)
-      return "Incorrect usage of the `open` command. Use `help open` to see how to use this command.";
-
-    let openSource = false;
-    let idx = -1;
-    if ((idx = args.findIndex((a) => a == "--source")) != -1) {
-      openSource = true;
-      args.splice(idx, 1);
-    }
-
-    if (args.length != 1)
-      return "Incorrect usage of the open command. Use `help open` to see how to use this command.";
-    let key = args[0];
+    let key = args.shift();
+    if (!key)
+      return output.missingRequiredArgError("key", "open <key> [--source]");
+    if (args.length > 0)
+      return output.extraArgsError(args, "open <key> [--source]");
 
     // @ts-expect-error `directory` doesn't exist yet
     let projects = directory.projects;
     if (key in projects) {
       if (openSource || !projects[key].link) {
         window.open(projects[key].source, "_blank");
-        return "";
+        return;
       }
 
       window.open(projects[key].link, "_blank");
-      return "";
+      return;
     }
 
     // @ts-expect-error `directory` doesn't exist yet
     const contact = directory.contact;
     if (key in contact) {
       if (openSource)
-        return "`--source` flag cannot be used with a contact key.";
+        return output.commandError(
+          "open",
+          "`--source` flag cannot be used with a contact key.",
+        );
 
       window.open(contact[key].link, "_blank");
-      return "";
+      return;
     }
 
-    return `${key}: Unknown key. Use \`ls --keys\` to see available keys.`;
-  },
-
-  /** @param {string} command  */
-  fallback(command) {
-    let entry;
-    // @ts-expect-error `directory` doesn't exist yet
-    if ((entry = directory.projects[command])) {
-      return `\
-${entry.name} - ${entry.link ? `<a href="${entry.link}">Link</a> - ` : ""}<a href="${entry.source}">Source</a>
-${entry.description}`;
-    }
-
-    // @ts-expect-error `directory` doesn't exist yet
-    if ((entry = directory.contact[command])) {
-      return `${entry.name} - <a href="${entry.link}">${entry["link-name"]}</a>`;
-    }
-
-    if (command === "") return "";
-
-    return "Not a valid command. Type `help` to see all available commands.";
+    return output.commandError(
+      "open",
+      "unknown key. Use `ls --keys` to see available keys.",
+      key,
+    );
   },
 };
 
 input.addEventListener("keyup", (e) => {
   switch (e.key) {
     case "ArrowUp": {
-      if (e.key === "ArrowUp") {
-        e.preventDefault();
-        if (currentPos >= 0) {
-          input.value = cmdHistory[currentPos];
-          currentPos -= 1;
-        }
+      e.preventDefault();
+      if (currentPos >= 0) {
+        input.value = cmdHistory[currentPos];
+        currentPos -= 1;
       }
       break;
     }
@@ -226,32 +308,45 @@ input.addEventListener("keyup", (e) => {
       cmdHistory.push(cmd);
       currentPos = cmdHistory.length - 1;
 
-      let returnVal = "";
       const argv = cmd.split(" ");
-
-      switch (argv[0]) {
-        case "clear": {
-          Commands.clear();
-          return;
-        }
-        case "help": {
-          returnVal = Commands.help(argv.slice(1));
-          break;
-        }
-        case "ls": {
-          returnVal = Commands.ls(argv.slice(1));
-          break;
-        }
-        case "open": {
-          returnVal = Commands.open(argv.slice(1));
-          break;
-        }
-        default:
-          returnVal = Commands.fallback(cmd);
+      const flags = [];
+      const args = [];
+      let help = false;
+      let command = argv.shift();
+      for (const a of argv) {
+        if (a === "-h" || a === "--help") help = true;
+        else if (a.startsWith("-")) flags.push(a);
+        else args.push(a);
       }
 
       log.innerHTML += `user@zerolimits.dev / > ${input.value}\n`;
-      if (returnVal) log.innerHTML += `${returnVal}\n`;
+
+      if (command === "clear") commands.clear(args, flags, help);
+      else if (command === "ls") commands.ls(args, flags, help);
+      else if (command === "open") commands.open(args, flags, help);
+      else {
+        if (!command) {
+          output.writeln();
+          break;
+        }
+        // @ts-expect-error `directory` doesn't exist yet
+        let entry = directory.projects[command];
+        if (entry) {
+          output.writeln(
+            entry.name,
+            " - ",
+            entry.link ? `<a href="${entry.link}">Link</a> - ` : "",
+            `<a href="${entry.source}">Source</a>`,
+          );
+          output.writeln(entry.description);
+        }
+        // @ts-expect-error `directory` doesn't exist yet
+        else if ((entry = directory.contact[command]))
+          output.writeln(
+            `${entry.name} - <a href="${entry.link}">${entry["link-name"]}</a>`,
+          );
+        else output.commandError(command, "command not found");
+      }
 
       scrollTo({ top: document.body.scrollHeight });
       input.value = "";
