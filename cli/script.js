@@ -40,29 +40,21 @@ I also like cats and cookies. Especially cookies.`;
       return "Incorrect usage of the `help` command. Use `help help` to see how to use this command.";
     }
 
-    const arg = args[0];
-
-    const html = `\
-Commands:
-  clear                    Clear the screen
-  help [command]           Display help menu
-  ls [directory] [--keys]  List contents of directory
-  open <key> [--source]    Open link or source in a new tab
-  whoami                   Show details about me`;
-
-    /** @type {Record<string, string>} */
-    const commands = {
-      clear: `\
+    switch (args[0]) {
+      case "clear":
+        return `\
 Usage: clear
-Clear the screen`,
-      help: `\
+Clear the screen`;
+      case "help":
+        return `\
 Usage: help [command]
 Display help menu
 Arguments:
   [command]  The command to list the help guide for. If this argument is not
              provided, the list of commands and their descriptions is
-             displayed.`,
-      ls: `\
+             displayed.`;
+      case "ls":
+        return `\
 Usage: ls [directory] [--keys]
 List contents of directory
 Arguments:
@@ -72,8 +64,9 @@ Arguments:
 Options:
   --keys       Display the keys of the listed links, so that they can be used
                with the \`open\` command. The keys are displayed in (parentheses)
-               at the end of the links.`,
-      open: `\
+               at the end of the links.`;
+      case "open":
+        return `\
 Usage: open <key> [--source]
 Open link or source in a new tab
 Arguments:
@@ -84,17 +77,20 @@ Arguments:
             \`ls --keys\` command.
 Options:
   --source  Open the link to the source code, even if there is a website link
-            available.`,
-      whoami: `\
+            available.`.replaceAll("<", "&lt;");
+      case "whoami":
+        return `\
 Usage: whoami
-Show details about me`,
-    };
-
-    if (arg && commands[arg]) {
-      return commands[arg].replaceAll("<", "&lt;");
+Show details about me`;
+      default:
+        return `\
+Commands:
+  clear                    Clear the screen
+  help [command]           Display help menu
+  ls [directory] [--keys]  List contents of directory
+  open <key> [--source]    Open link or source in a new tab
+  whoami                   Show details about me`.replaceAll("<", "&lt;");
     }
-
-    return html.replaceAll("<", "&lt;");
   },
 
   /** @param {string[]} args */
