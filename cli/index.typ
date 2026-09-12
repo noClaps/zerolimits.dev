@@ -16,7 +16,7 @@
       html.input(type: "text", name: "prompt", autofocus: true, aria-label: "prompt")
     })
     html.script({
-      "const directory = " + read("../homepage/data.json") + ";" + read("script.js")
+      "const directory = " + json.encode(json("../homepage/data.json"), pretty: false) + ";" + read("script.js")
     })
   })
 }))
