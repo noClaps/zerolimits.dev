@@ -246,10 +246,9 @@ input.addEventListener("keyup", (e) => {
       currentPos = cmdHistory.length - 1;
 
       let returnVal = "";
-      const command = cmd.split(" ")[0];
-      const args = cmd.split(" ").slice(1);
+      const argv = cmd.split(" ");
 
-      switch (command) {
+      switch (argv[0]) {
         case "whoami": {
           returnVal = Commands.whoami();
           break;
@@ -259,15 +258,15 @@ input.addEventListener("keyup", (e) => {
           return;
         }
         case "help": {
-          returnVal = Commands.help(args);
+          returnVal = Commands.help(argv.slice(1));
           break;
         }
         case "ls": {
-          returnVal = Commands.ls(args);
+          returnVal = Commands.ls(argv.slice(1));
           break;
         }
         case "open": {
-          returnVal = Commands.open(args);
+          returnVal = Commands.open(argv.slice(1));
           break;
         }
         default:
@@ -277,7 +276,7 @@ input.addEventListener("keyup", (e) => {
       log.innerHTML += `user@zerolimits.dev / > ${input.value}\n`;
       if (returnVal) log.innerHTML += `${returnVal}\n`;
 
-      scrollTo(0, document.body.scrollHeight);
+      scrollTo({ top: document.body.scrollHeight });
       input.value = "";
     }
   }
