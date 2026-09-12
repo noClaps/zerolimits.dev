@@ -1,5 +1,5 @@
-.PHONY: blog gallery homepage
-all: blog gallery homepage
+.PHONY: blog gallery homepage cli
+all: blog gallery homepage cli
 
 blog:
 	@typst compile blog/main.typ dist/ --features bundle,html --format bundle
@@ -10,3 +10,6 @@ gallery:
 
 homepage:
 	@typst compile homepage/index.typ dist/ --features bundle,html --format bundle
+
+cli:
+	@typst compile cli/index.typ dist/ --features bundle,html --format bundle --root .
