@@ -108,6 +108,7 @@ Commands:
     let arg = args[0];
 
     let contactList = "";
+    // @ts-expect-error `directory` doesn't exist yet
     const contacts = directory.contact;
     Object.keys(contacts).forEach((key, i) => {
       const contact = contacts[key];
@@ -118,6 +119,7 @@ Commands:
     });
 
     let projectsList = "";
+    // @ts-expect-error `directory` doesn't exist yet
     const projects = directory.projects;
     Object.keys(projects).forEach((key, i) => {
       const project = projects[key];
@@ -197,16 +199,17 @@ ${projectsList}`;
 
   /** @param {string} command  */
   fallback(command) {
-    if (directory.projects[command]) {
-      const project = directory.projects[command];
+    let entry;
+    // @ts-expect-error `directory` doesn't exist yet
+    if ((entry = directory.projects[command])) {
       return `\
-${project.name} - ${project.link ? `<a href="${project.link}">Link</a> - ` : ""}<a href="${project.source}">Source</a>
-${project.description}`;
+${entry.name} - ${entry.link ? `<a href="${entry.link}">Link</a> - ` : ""}<a href="${entry.source}">Source</a>
+${entry.description}`;
     }
 
-    if (directory.contact[command]) {
-      const contact = directory.contact[command];
-      return `${contact.name} - <a href="${contact.link}">${contact["link-name"]}</a>`;
+    // @ts-expect-error `directory` doesn't exist yet
+    if ((entry = directory.contact[command])) {
+      return `${entry.name} - <a href="${entry.link}">${entry["link-name"]}</a>`;
     }
 
     if (command === "") return "";
