@@ -150,6 +150,7 @@ ${projectsList}`;
     return `${arg}: Directory not found`;
   },
 
+  /** @param {string[]} args  */
   open(args) {
     if (args.length < 1 || args.length > 2)
       return "Incorrect usage of the `open` command. Use `help open` to see how to use this command.";
@@ -200,6 +201,7 @@ ${projectsList}`;
     return `${key}: Unknown key. Use \`ls --keys\` to see available keys.`;
   },
 
+  /** @param {string} command  */
   fallback(command) {
     if (directory.projects[command]) {
       const project = directory.projects[command];
@@ -249,12 +251,6 @@ input.addEventListener("keyup", (e) => {
       cmdHistory.push(cmd);
       currentPos = cmdHistory.length - 1;
 
-      if (cmd === "clear") {
-        log.innerHTML = "";
-        input.value = "";
-        return;
-      }
-
       let returnVal = "";
       const command = cmd.split(" ")[0];
       const args = cmd.split(" ").slice(1);
@@ -285,7 +281,7 @@ input.addEventListener("keyup", (e) => {
       }
 
       log.innerHTML += `user@zerolimits.dev ~ > ${input.value}\n`;
-      log.innerHTML += !returnVal ? returnVal : `${returnVal}\n`;
+      if (returnVal) log.innerHTML += `${returnVal}\n`;
 
       scrollTo(0, document.body.scrollHeight);
       input.value = "";
