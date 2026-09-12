@@ -19,16 +19,6 @@ document.addEventListener("click", (ev) => {
 });
 
 const Commands = {
-  whoami() {
-    return `\
-noClaps – The most interesting boring person you've ever met.
-
-I'm a university graduate with a MSci in theoretical physics. I also enjoy
-programming, photography, drawing, music, math, writing and learning.
-
-I also like cats and cookies. Especially cookies.`;
-  },
-
   clear() {
     log.innerHTML = "";
     input.value = "";
@@ -78,18 +68,16 @@ Arguments:
 Options:
   --source  Open the link to the source code, even if there is a website link
             available.`.replaceAll("<", "&lt;");
-      case "whoami":
-        return `\
-Usage: whoami
-Show details about me`;
       default:
         return `\
 Commands:
   clear                    Clear the screen
   help [command]           Display help menu
   ls [directory] [--keys]  List contents of directory
-  open <key> [--source]    Open link or source in a new tab
-  whoami                   Show details about me`.replaceAll("<", "&lt;");
+  open <key> [--source]    Open link or source in a new tab`.replaceAll(
+          "<",
+          "&lt;",
+        );
     }
   },
 
@@ -242,10 +230,6 @@ input.addEventListener("keyup", (e) => {
       const argv = cmd.split(" ");
 
       switch (argv[0]) {
-        case "whoami": {
-          returnVal = Commands.whoami();
-          break;
-        }
         case "clear": {
           Commands.clear();
           return;
