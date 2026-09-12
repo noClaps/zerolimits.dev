@@ -12,7 +12,7 @@
       html.noscript[This site requires JavaScript to work!]
     })
     html.main({
-      "user@zerolimits.dev ~ >"
+      "user@zerolimits.dev / >"
       html.input(type: "text", name: "prompt", autofocus: true, aria-label: "prompt")
     })
     html.script({

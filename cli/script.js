@@ -99,53 +99,47 @@ Commands:
       return "Incorrect usage of the `ls` command. Use `help ls` to see how to use this command.";
 
     let showKeys = false;
-    let arg = "";
-
-    if (args.length === 2) {
-      if (args[0] === "--keys") {
-        showKeys = true;
-        if (["projects", "contact"].includes(args[1])) arg = args[1];
-      }
-
-      if (["contact", "projects"].includes(args[0])) {
-        arg = args[0];
-        if (args[1] === "--keys") showKeys = true;
-      }
-    } else {
-      if (args[0] === "--keys") showKeys = true;
-      if (["contact", "projects"].includes(args[0])) arg = args[0];
+    let idx = -1;
+    if ((idx = args.findIndex((a) => a == "--keys")) != -1) {
+      showKeys = true;
+      args.splice(idx, 1);
     }
 
+    let arg = args[0];
+
     let contactList = "";
-    Object.keys(directory.contact).forEach((key, i) => {
-      const contact = directory.contact[key];
-      contactList += `${i === Object.keys(directory.contact).length - 1 ? "└" : "├"}── ${contact.name} - <a href="${contact.link}">${contact["link-name"]}</a>${showKeys ? ` (${key})` : ""}\n`;
+    const contacts = directory.contact;
+    Object.keys(contacts).forEach((key, i) => {
+      const contact = contacts[key];
+      if (i > 0) contactList += "\n";
+      contactList += i == Object.keys(contacts).length - 1 ? "└" : "├";
+      contactList += `── ${contact.name} - <a href="${contact.link}">${contact["link-name"]}</a>`;
+      if (showKeys) contactList += ` (${key})`;
     });
-    contactList = contactList.trim();
 
     let projectsList = "";
-    Object.keys(directory.projects).forEach((key, i) => {
-      const project = directory.projects[key];
-      projectsList += `\
-${i === Object.keys(directory.projects).length - 1 ? "└" : "├"}── ${project.name} - ${project.link ? `<a href="${project.link}">Link</a> - ` : ""}<a href="${project.source}">Source</a>${showKeys ? ` (${key})` : ""}
-${i === Object.keys(directory.projects).length - 1 ? " " : "│"}   ${project.description}\n`;
+    const projects = directory.projects;
+    Object.keys(projects).forEach((key, i) => {
+      const project = projects[key];
+      if (i > 0) projectsList += "\n";
+      projectsList += i === Object.keys(projects).length - 1 ? "└" : "├";
+      projectsList += `── ${project.name} - `;
+      if (project.link) projectsList += `<a href="${project.link}">Link</a> - `;
+      projectsList += `<a href="${project.source}">Source</a>`;
+      if (showKeys) projectsList += ` (${key})`;
+      projectsList += `\n${i === Object.keys(projects).length - 1 ? " " : "│"}   ${project.description}`;
     });
-    projectsList = projectsList.trim();
 
-    if (!arg) {
+    if (!arg)
       return `\
 contact/
 ${contactList}
 projects/
 ${projectsList}`;
-    }
 
-    if (arg.match(/\/?contact\/?/)) {
-      return `contact/\n${contactList}`;
-    }
-    if (arg.match(/\/?projects\/?/)) {
-      return `projects/\n${projectsList}`;
-    }
+    arg = arg.replace(/^\/*|\/*$/g, "");
+    if (arg == "contact") return `contact/\n${contactList}`;
+    if (arg == "projects") return `projects/\n${projectsList}`;
 
     return `${arg}: Directory not found`;
   },
@@ -280,7 +274,7 @@ input.addEventListener("keyup", (e) => {
           returnVal = Commands.fallback(cmd);
       }
 
-      log.innerHTML += `user@zerolimits.dev ~ > ${input.value}\n`;
+      log.innerHTML += `user@zerolimits.dev / > ${input.value}\n`;
       if (returnVal) log.innerHTML += `${returnVal}\n`;
 
       scrollTo(0, document.body.scrollHeight);
