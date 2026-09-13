@@ -10,11 +10,6 @@
     color-scheme: light dark;
 }
 
-body {
-    padding: 1rem;
-    margin: 0;
-}
-
 /* Input */
 main {
     display: flex;
