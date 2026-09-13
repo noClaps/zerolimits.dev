@@ -10,7 +10,6 @@
 
 #asset("global.css", read("global.css"))
 #asset("favicon.png", read("favicon.png", encoding: none))
-#asset("data.json", read("data.json"))
 #document("index.html", context {
   let data = json("data.json")
   html.html(lang: "en", {
