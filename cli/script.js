@@ -10,21 +10,16 @@ if (!input) throw new Error("Input element not found");
 const log = document.getElementById("log");
 if (!log) throw new Error("Log element not found");
 
-document.addEventListener("click", (ev) => {
-  if (/** @type {HTMLElement} */ (ev.target).id === "log") return;
-  input.focus();
-});
+document.addEventListener(
+  "click",
+  (ev) => /** @type {HTMLElement} */ (ev.target).id !== "log" && input.focus(),
+);
 
 const output = {
   /** @param {any[]} data  */
-  write(...data) {
-    log.innerHTML += data.join("");
-  },
+  write: (...data) => (log.innerHTML += data.join("")),
   /** @param {any[]} data  */
-  writeln(...data) {
-    log.innerHTML += data.join("");
-    log.innerHTML += "\n";
-  },
+  writeln: (...data) => (log.innerHTML += data.join("") + "\n"),
   /**
    * @param {string} flag
    * @param {string} usage
@@ -89,54 +84,36 @@ const output = {
     function totalSpace(itemLen) {
       return 2 + itemLen + Math.max(2, maxLen - itemLen + 2);
     }
+    /** @param {Record<string, string>} items */
+    const itemHelp = (items) => {
+      for (const item in items) {
+        this.write("  ", item.replaceAll("<", "&lt"));
+        this.write(" ".repeat(Math.max(2, maxLen - item.length + 2)));
+        const helpLines = [];
+        let currentLine = "";
+        for (const word of items[item].split(" ")) {
+          if (
+            currentLine.length + word.length + 1 >
+            80 - totalSpace(item.length)
+          ) {
+            helpLines.push(currentLine);
+            currentLine = "";
+          }
+          if (currentLine != "") currentLine += " ";
+          currentLine += word;
+        }
+        helpLines.push(currentLine);
+        for (let i = 0; i < helpLines.length; i++) {
+          if (i > 0) this.write(" ".repeat(totalSpace(item.length)));
+          this.write(helpLines[i]);
+          if (i + 1 < helpLines.length) this.writeln();
+        }
+      }
+    };
     if (Object.keys(positionals).length > 0) this.writeln("Arguments:");
-    for (const pos in positionals) {
-      this.write("  ", pos.replaceAll("<", "&lt;"));
-      this.write(" ".repeat(Math.max(2, maxLen - pos.length + 2)));
-      const helpLines = [];
-      let currentLine = "";
-      for (const word of positionals[pos].split(" ")) {
-        if (
-          currentLine.length + word.length + 1 >
-          80 - totalSpace(pos.length)
-        ) {
-          helpLines.push(currentLine);
-          currentLine = "";
-        }
-        if (currentLine != "") currentLine += " ";
-        currentLine += word;
-      }
-      helpLines.push(currentLine);
-      for (let i = 0; i < helpLines.length; i++) {
-        if (i > 0) this.write(" ".repeat(totalSpace(pos.length)));
-        this.write(helpLines[i]);
-        if (i + 1 < helpLines.length) this.writeln();
-      }
-    }
+    itemHelp(positionals);
     this.writeln("Options:");
-    for (const flag in flags) {
-      this.write("  ", flag);
-      this.write(" ".repeat(maxLen - flag.length + 2));
-      const helpLines = [];
-      let currentLine = "";
-      for (const word of flags[flag].split(" ")) {
-        if (
-          currentLine.length + word.length + 1 >
-          80 - totalSpace(flag.length)
-        ) {
-          helpLines.push(currentLine);
-          currentLine = "";
-        }
-        if (currentLine != "") currentLine += " ";
-        currentLine += word;
-      }
-      helpLines.push(currentLine);
-      for (let i = 0; i < helpLines.length; i++) {
-        if (i > 0) this.write(" ".repeat(totalSpace(flag.length)));
-        this.write(helpLines[i]);
-        if (i + 1 < helpLines.length) this.writeln();
-      }
-    }
+    itemHelp(flags);
     this.writeln(
       "  -h, --help",
       " ".repeat(Math.max(2, maxLen - 8)),
@@ -145,7 +122,7 @@ const output = {
   },
 };
 
-/** @type {Record<"clear" | "ls" | "open", (args: string[], flags: string[], help: boolean) => void>} */
+/** @type {Record<string, (args: string[], flags: string[], help: boolean) => void>} */
 const commands = {
   clear(args, flags, help) {
     if (help) return output.printHelp("clear", "Clear the screen");
@@ -175,48 +152,53 @@ const commands = {
     let showKeys = flags.includes("--keys");
     let bad = flags.find((f) => f != "--keys");
     if (bad) return output.unknownFlagError(bad, "ls [directory] [--keys]");
-    let arg = args.shift();
-    if (args.length > 0)
-      return output.extraArgsError(args, "ls [directory] --keys");
+    let [arg, ...extra] = args;
+    if (extra.length)
+      return output.extraArgsError(extra, "ls [directory] --keys");
 
     let wrote = false;
     let dir = arg?.replace(/^\/*|\/*$/g, "");
-    if (!dir || dir === "contact") {
+    /**
+     * @param {string} name
+     * @param {Record<string, any>} items
+     * @param {((item: any, items: Record<string, any>, index: number) => string) | undefined} format
+     * @param {((item: any, items: Record<string, any>, index: number) => string) | undefined} postFormat
+     */
+    function tree(name, items, format = undefined, postFormat = undefined) {
+      if (dir && dir !== name) return;
       wrote = true;
-      output.writeln("contact/");
-      // @ts-expect-error `directory` doesn't exist yet
-      const contacts = directory.contact;
-      Object.entries(contacts).forEach(([key, contact], i) => {
+      output.writeln(name, "/");
+      Object.entries(items).forEach(([key, item], i) => {
+        console.log(item);
         if (i > 0) output.writeln();
-        if (i === Object.keys(contacts).length - 1) output.write("└");
+        if (i === Object.keys(items).length - 1) output.write("└");
         else output.write("├");
-        output.write(
-          `── ${contact.name} - <a href="${contact.link}">${contact["link-name"]}</a>`,
-        );
+        output.write(`── ${item.name} - `);
+        if (item.link)
+          output.write(
+            `<a href="${item.link}">${item["link-name"] ?? "Link"}</a>`,
+          );
+        if (format) output.write(format(item, items, i));
         if (showKeys) output.write(` (${key})`);
+        if (postFormat) output.write("\n" + postFormat(item, items, i));
       });
       output.writeln();
     }
-    if (!dir || dir === "projects") {
-      wrote = true;
-      output.writeln("projects/");
+    // @ts-expect-error `directory` doesn't exist yet
+    tree("contact", directory.contact);
+    tree(
+      "projects",
       // @ts-expect-error `directory` doesn't exist yet
-      const projects = directory.projects;
-      Object.entries(projects).forEach(([key, project], i) => {
-        if (i > 0) output.writeln();
-        if (i === Object.keys(projects).length - 1) output.write("└");
-        else output.write("├");
-        output.write(`── ${project.name} - `);
-        if (project.link) output.write(`<a href="${project.link}">Link</a> - `);
-        output.write(`<a href="${project.source}">Source</a>`);
-        if (showKeys) output.write(` (${key})`);
-        output.writeln();
-        if (i === Object.keys(projects).length - 1) output.write(" ");
-        else output.write("│");
-        output.write("   ", project.description);
-      });
-      output.writeln();
-    }
+      directory.projects,
+      (p) => ` - <a href="${p.source}">Source</a>`,
+      (p, projects, i) => {
+        let out = "";
+        if (i === Object.keys(projects).length - 1) out += " ";
+        else out += "│";
+        out += "   " + p.description;
+        return out;
+      },
+    );
 
     if (!wrote) output.commandError("ls", "directory not found", arg);
   },
@@ -241,11 +223,11 @@ const commands = {
     const bad = flags.find((f) => f != "--source");
     if (bad) return output.unknownFlagError(bad, "open <key> [source]");
 
-    let key = args.shift();
+    let [key, ...extra] = args;
     if (!key)
       return output.missingRequiredArgError("key", "open <key> [--source]");
-    if (args.length > 0)
-      return output.extraArgsError(args, "open <key> [--source]");
+    if (extra.length)
+      return output.extraArgsError(extra, "open <key> [--source]");
 
     // @ts-expect-error `directory` doesn't exist yet
     let projects = directory.projects;
@@ -284,22 +266,14 @@ input.addEventListener("keyup", (e) => {
   switch (e.key) {
     case "ArrowUp": {
       e.preventDefault();
-      if (currentPos >= 0) {
-        input.value = cmdHistory[currentPos];
-        currentPos -= 1;
-      }
+      if (currentPos >= 0) input.value = cmdHistory[currentPos--];
       break;
     }
 
     case "ArrowDown": {
       e.preventDefault();
-      if (currentPos < cmdHistory.length - 1) {
-        currentPos += 1;
-        input.value = cmdHistory[currentPos];
-      } else {
-        input.value = "";
-      }
-
+      input.value =
+        currentPos < cmdHistory.length - 1 ? cmdHistory[++currentPos] : "";
       break;
     }
 
@@ -308,27 +282,19 @@ input.addEventListener("keyup", (e) => {
       cmdHistory.push(cmd);
       currentPos = cmdHistory.length - 1;
 
-      const argv = cmd.split(" ");
-      const flags = [];
-      const args = [];
-      let help = false;
+      const argv = cmd.split(/\s+/).filter(Boolean);
       let command = argv.shift();
-      for (const a of argv) {
-        if (a === "-h" || a === "--help") help = true;
-        else if (a.startsWith("-")) flags.push(a);
-        else args.push(a);
-      }
+      let help = argv.some((a) => a === "-h" || a === "--help");
+      const flags = argv.filter(
+        (a) => a.startsWith("-") && a !== "-h" && a !== "--help",
+      );
+      const args = argv.filter((a) => !a.startsWith("-"));
 
-      log.innerHTML += `user@zerolimits.dev / > ${input.value}\n`;
+      output.writeln("user@zerolimits.dev / > ", input.value);
 
-      if (command === "clear") commands.clear(args, flags, help);
-      else if (command === "ls") commands.ls(args, flags, help);
-      else if (command === "open") commands.open(args, flags, help);
+      if (command && commands[command]) commands[command](args, flags, help);
+      else if (!command) output.write();
       else {
-        if (!command) {
-          output.writeln();
-          break;
-        }
         // @ts-expect-error `directory` doesn't exist yet
         let entry = directory.projects[command];
         if (entry) {
