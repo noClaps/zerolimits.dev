@@ -46,7 +46,7 @@
       })
     })
     html.footer({
-      link("https://codeberg.org/noClaps")[Source]
+      link("https://codeberg.org/noClaps/zerolimits.dev")[Source]
       link("/cli")
     })
   })
