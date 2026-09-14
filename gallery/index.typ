@@ -1,4 +1,5 @@
 // sips -s format avif --resampleWidth 800 -o $out $in
+#import "../utils.typ": minify-css
 
 #let images = (
   "2026/IMG_0276.avif": "Clouds from a flight, India, August 2026",
@@ -172,45 +173,37 @@
   )
 }
 
-#document("gallery/index.html", {
-  html.html(lang: "en", {
-    html.head({
-      html.meta(charset: "utf-8")
-      html.meta(name: "viewport", content: "width=device-width")
-      html.meta(name: "description", content: "A website to showcase some cool photos I've taken.")
-      html.link(rel: "icon", href: "/favicon.png")
-      html.link(rel: "stylesheet", href: "/global.css")
-      html.style(read("./style.css"))
-      html.title[Aperturic Focus]
-    })
+#document("gallery/index.html", html.html(lang: "en", {
+  html.meta(charset: "utf-8")
+  html.meta(name: "viewport", content: "width=device-width")
+  html.link(rel: "icon", href: "/favicon.png")
+  html.style(minify-css(read("../homepage/global.css")) + minify-css(read("./style.css")))
+  html.title[Aperturic Focus]
 
-    html.body({
-      html.header({
-        html.h1(sym.zws)
-        html.nav({
-          link("/")[Homepage]
-          link("/blog/")[Blog]
-        })
-      })
-      html.main({
-        html.div(class: "title")[
-          #html.h1[Aperturic Focus]
-
-          A website to showcase some cool photos I've taken.
-        ]
-
-        for year in ("2026", "2025", "2024", "2023", "2022", "2019") {
-          [= #year]
-          html.section({
-            for (img, alt) in images.pairs().filter(((k, _)) => k.starts-with(year)) {
-              image(img, alt: alt)
-            }
-          })
-        }
-      })
+  html.header({
+    html.h1(sym.zws)
+    html.nav({
+      link("/")[Homepage]
+      link("/blog/")[Blog]
     })
   })
-})
+  html.main({
+    html.div(class: "title")[
+      #html.h1[Aperturic Focus]
+
+      A website to showcase some cool photos I've taken.
+    ]
+
+    for year in ("2026", "2025", "2024", "2023", "2022", "2019") {
+      [= #year]
+      html.section({
+        for (img, alt) in images.pairs().filter(((k, _)) => k.starts-with(year)) {
+          image(img, alt: alt)
+        }
+      })
+    }
+  })
+}))
 
 #for (img, _) in images {
   asset("gallery/" + img, read("./assets/" + img, encoding: none))
