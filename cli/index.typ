@@ -1,4 +1,4 @@
-#document("cli/index.html", html.html({
+#document("cli/index.html", html.html(lang: "en", {
   // head
   html.meta(charset: "utf-8")
   html.meta(name: "viewport", content: "width=device-width")
