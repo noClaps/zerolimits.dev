@@ -10,3 +10,11 @@
     .replace(regex("/\*\s*[^\*]+\s*\*/"), "")
     .replace(regex("[^{}]+\{\}"), "")
 }
+
+#let note(title: [NOTE], body) = {
+  html.div(class: "note")[
+    *#title*
+
+    #body
+  ]
+}

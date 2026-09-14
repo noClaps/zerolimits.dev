@@ -1,4 +1,4 @@
-#import "../main.typ": note
+#import "../../utils.typ": note
 
 #metadata((
   title: [A beginner's guide to Quantum and Particle Physics],
