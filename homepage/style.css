@@ -67,3 +67,23 @@ section {
         }
     }
 }
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: currentColor;
+        transition: color 0.25s;
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}

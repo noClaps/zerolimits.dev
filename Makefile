@@ -9,7 +9,7 @@ gallery:
 	@typst compile gallery/index.typ dist/ --features bundle,html --format bundle --root .
 
 homepage:
-	@typst compile homepage/index.typ dist/ --features bundle,html --format bundle
+	@typst compile homepage/index.typ dist/ --features bundle,html --format bundle --root .
 
 cli:
 	@typst compile cli/index.typ dist/ --features bundle,html --format bundle --root .
