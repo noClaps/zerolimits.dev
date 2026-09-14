@@ -87,7 +87,7 @@ const output = {
     /** @param {Record<string, string>} items */
     const itemHelp = (items) => {
       for (const item in items) {
-        this.write("  ", item.replaceAll("<", "&lt"));
+        this.write("  ", item.replaceAll("<", "&lt;"));
         this.write(" ".repeat(Math.max(2, maxLen - item.length + 2)));
         const helpLines = [];
         let currentLine = "";
