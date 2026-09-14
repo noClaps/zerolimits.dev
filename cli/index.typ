@@ -1,8 +1,9 @@
+#import "../utils.typ": minify-css
 #document("cli/index.html", html.html(lang: "en", {
   // head
   html.meta(charset: "utf-8")
   html.meta(name: "viewport", content: "width=device-width")
-  html.style(read("./style.css"))
+  html.style(minify-css(read("./style.css")))
   html.link(rel: "icon", href: "/favicon.png")
   html.title("zerolimits --cli")
 

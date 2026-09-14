@@ -173,10 +173,10 @@ const commands = {
         if (i > 0) output.writeln();
         if (i === Object.keys(items).length - 1) output.write("└");
         else output.write("├");
-        output.write(`── ${item.name} - `);
+        output.write(`── ${item.name}`);
         if (item.link)
           output.write(
-            `<a href="${item.link}">${item["link-name"] ?? "Link"}</a>`,
+            ` - <a href="${item.link}">${item["link-name"] ?? "Link"}</a>`,
           );
         if (format) output.write(format(item, items, i));
         if (showKeys) output.write(` (${key})`);
