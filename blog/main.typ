@@ -95,10 +95,9 @@
   }
 }
 
-#let reserved = ("/blog/index.html", "/blog/feed.atom")
 #document("blog/index.html", context {
   let files = query(document)
-    .filter(it => not reserved.contains(it.path))
+    .filter(it => not ("/blog/index.html", "/blog/feed.atom").contains(it.path))
     .sorted(key: it => it.date, by: (l, r) => l >= r)
 
   html.html(lang: "en", {
