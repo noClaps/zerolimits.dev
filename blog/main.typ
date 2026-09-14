@@ -58,7 +58,7 @@
           html.title(item.title)
           html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
           html.link(rel: "icon", href: "/favicon.png")
-          html.style(minify-css(read("../homepage/global.css") + read("styles/index.css")))
+          html.style(minify-css(read("../homepage/global.css") + read("styles/post.css")))
         })
         // body
         html.header({
