@@ -2,7 +2,7 @@
 all: blog gallery homepage cli
 
 blog:
-	@typst compile blog/main.typ dist/ --features bundle,html --format bundle
+	@typst compile blog/main.typ dist/ --features bundle,html --format bundle --root .
 	@typst compile blog/feed.typ dist/ --features bundle,html --format bundle --root .
 
 gallery:
