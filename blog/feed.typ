@@ -1,4 +1,4 @@
-#import "main.typ": posts
+#let posts = sys.inputs.posts.split("\n").map(p => p.replace(".typ", "").replace("blog/content/", ""))
 
 #let escape(str) = {
   str.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&apos;")

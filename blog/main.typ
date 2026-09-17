@@ -1,34 +1,6 @@
 #import "../utils.typ": minify-css
 
-#let posts = (
-  "be-social",
-  "browsers",
-  "chaos-theory",
-  "collatz-conjecture",
-  "duty-of-care",
-  "floats",
-  "google",
-  "history-of-toilet-paper",
-  "intro-psa",
-  "messengers",
-  "minimalism",
-  "mozilla",
-  "my-takes-on-ai",
-  "operating-systems",
-  "po-shen-loh",
-  "promises",
-  "quantum-and-particle",
-  "random-numbers",
-  "recap-2025",
-  "sarajevo",
-  "secton",
-  "simplicity-in-software",
-  "split-brain",
-  "tech-stack-2023",
-  "tech-stack-2024",
-  "the-phalanx-formation",
-  "threat-modelling",
-)
+#let posts = sys.inputs.posts.split("\n").map(p => p.replace(".typ", "").replace("blog/content/", ""))
 
 #let content = posts.map(p => {
   let c = include "content/" + p + ".typ"
