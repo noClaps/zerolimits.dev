@@ -7,7 +7,7 @@ section {
     section {
         display: grid-lanes;
         grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-        columns: unset;
+        columns: revert;
     }
 }
 
