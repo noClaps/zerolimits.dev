@@ -1,5 +1,4 @@
 // sips -s format avif --resampleWidth 800 -o $out $in
-#import "../utils.typ": minify-css
 
 #let images = (
   "2026/IMG_0276.avif": "Clouds from a flight, India, August 2026",
@@ -177,7 +176,7 @@
   html.meta(charset: "utf-8")
   html.meta(name: "viewport", content: "width=device-width")
   html.link(rel: "icon", href: "/favicon.png")
-  html.style(minify-css(read("../homepage/global.css")) + minify-css(read("./style.css")))
+  html.style(read("../homepage/global.css") + read("./style.css"))
   html.title[Aperturic Focus]
 
   html.header({

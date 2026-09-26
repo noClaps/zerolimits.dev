@@ -1,5 +1,3 @@
-#import "../utils.typ": minify-css
-
 #let posts = sys.inputs.posts.split("\n").map(p => p.replace(".typ", "").replace("blog/content/", ""))
 
 #let content = posts.map(p => {
@@ -30,7 +28,7 @@
           html.title(item.title)
           html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
           html.link(rel: "icon", href: "/favicon.png")
-          html.style(minify-css(read("../homepage/global.css") + read("styles/post.css")))
+          html.style(read("../homepage/global.css") + read("styles/post.css"))
         })
         // body
         html.header({
@@ -63,7 +61,7 @@
       html.title[The Blog of Random]
       html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
       html.link(rel: "icon", href: "/favicon.png")
-      html.style(minify-css(read("../homepage/global.css") + read("styles/index.css")))
+      html.style(read("../homepage/global.css") + read("styles/index.css"))
     })
     // body
     html.header({

@@ -1,5 +1,3 @@
-#import "../utils.typ": minify-css
-
 #let project-link(project) = {
   html.div(class: "link")[
     == #if project.keys().contains("link") { link(project.link, project.name) } else { project.name }
@@ -16,7 +14,7 @@
     html.meta(name: "viewport", content: "width=device-width")
     html.link(rel: "alternate", href: "/blog/feed.atom", type: "application/atom+xml")
     html.link(rel: "icon", href: "/favicon.png")
-    html.style(minify-css(read("./global.css") + read("./style.css")))
+    html.style(read("./global.css") + read("./style.css"))
     html.title[ZeroLimits.dev]
     // body
     html.header({
