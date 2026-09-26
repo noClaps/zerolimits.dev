@@ -6,6 +6,7 @@
 }
 
 #asset("favicon.png", read("favicon.png", encoding: none))
+#asset("data.json", read("data.json"))
 #document("index.html", {
   let data = json("data.json")
   html.html(lang: "en", {
@@ -42,10 +43,6 @@
           project-link(project)
         }
       })
-    })
-    html.footer({
-      link("https://codeberg.org/noClaps/zerolimits.dev")[Source]
-      link("/cli")
     })
   })
 })
