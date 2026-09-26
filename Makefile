@@ -1,5 +1,5 @@
-.PHONY: blog gallery homepage cli
-all: blog gallery homepage cli
+.PHONY: blog gallery homepage
+all: blog gallery homepage
 
 blog:
 	@typst compile blog/main.typ dist/ --features bundle,html --format bundle --root . --input="posts=$$(command ls blog/content/*.typ)"
@@ -10,6 +10,3 @@ gallery:
 
 homepage:
 	@typst compile homepage/index.typ dist/ --features bundle,html --format bundle --root .
-
-cli:
-	@typst compile cli/index.typ dist/ --features bundle,html --format bundle --root .
