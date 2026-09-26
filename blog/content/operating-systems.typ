@@ -1,4 +1,4 @@
-#import "../../utils.typ": note
+#import "../utils.typ": note
 
 #metadata((
   title: [How to Make an OS],
