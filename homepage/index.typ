@@ -1,7 +1,7 @@
 #let project-link(project) = {
   html.div(class: "link")[
     == #if project.keys().contains("link") { link(project.link, project.name) } else { project.name }
-    #project.description  #link(project.source)[Source]
+    #project.description #link(project.source)[Source]
   ]
 }
 
