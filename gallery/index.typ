@@ -173,34 +173,37 @@
 }
 
 #document("gallery/index.html", html.html(lang: "en", {
-  html.meta(charset: "utf-8")
-  html.meta(name: "viewport", content: "width=device-width")
-  html.link(rel: "icon", href: "/favicon.png")
-  html.style(read("../homepage/global.css") + read("./style.css"))
-  html.title[Aperturic Focus]
-
-  html.header({
-    html.h1(sym.zws)
-    html.nav({
-      link("/")[Homepage]
-      link("/blog/")[Blog]
-    })
+  html.head({
+    html.meta(charset: "utf-8")
+    html.meta(name: "viewport", content: "width=device-width")
+    html.link(rel: "icon", href: "/favicon.png")
+    html.style(read("../homepage/global.css") + read("./style.css"))
+    html.title[Aperturic Focus]
   })
-  html.main({
-    html.div(class: "title")[
-      #html.h1[Aperturic Focus]
-
-      A website to showcase some cool photos I've taken.
-    ]
-
-    for year in ("2026", "2025", "2024", "2023", "2022", "2019") {
-      [= #year]
-      html.section({
-        for (img, alt) in images.pairs().filter(((k, _)) => k.starts-with(year)) {
-          image(img, alt: alt)
-        }
+  html.body({
+    html.header({
+      html.h1(sym.zws)
+      html.nav({
+        link("/")[Homepage]
+        link("/blog/")[Blog]
       })
-    }
+    })
+    html.main({
+      html.div(class: "title")[
+        #html.h1[Aperturic Focus]
+
+        A website to showcase some cool photos I've taken.
+      ]
+
+      for year in ("2026", "2025", "2024", "2023", "2022", "2019") {
+        [= #year]
+        html.section({
+          for (img, alt) in images.pairs().filter(((k, _)) => k.starts-with(year)) {
+            image(img, alt: alt)
+          }
+        })
+      }
+    })
   })
 }))
 

@@ -30,20 +30,21 @@
           html.link(rel: "icon", href: "/favicon.png")
           html.style(read("../homepage/global.css") + read("styles/post.css"))
         })
-        // body
-        html.header({
-          html.h1(link("/blog/")[The Blog of Random])
-          html.nav({
-            link("/")[Homepage]
-            link("/gallery/")[Gallery]
+        html.body({
+          html.header({
+            html.h1(link("/blog/")[The Blog of Random])
+            html.nav({
+              link("/")[Homepage]
+              link("/gallery/")[Gallery]
+            })
           })
-        })
-        html.main({
-          html.div(class: "post-header", {
-            html.time(datetime: item.date, item.date.display())
-            html.h1(item.title)
+          html.main({
+            html.div(class: "post-header", {
+              html.time(datetime: item.date, item.date.display())
+              html.h1(item.title)
+            })
+            html.article(item.body)
           })
-          html.article(item.body)
         })
       })
     })
@@ -63,28 +64,29 @@
       html.link(rel: "icon", href: "/favicon.png")
       html.style(read("../homepage/global.css") + read("styles/index.css"))
     })
-    // body
-    html.header({
-      html.h1(sym.zws)
-      html.nav({
-        link("/")[Homepage]
-        link("/gallery/")[Gallery]
+    html.body({
+      html.header({
+        html.h1(sym.zws)
+        html.nav({
+          link("/")[Homepage]
+          link("/gallery/")[Gallery]
+        })
       })
-    })
-    html.main[
-      #html.div(class: "title", {
-        html.h1[The Blog of Random]
-        html.p[A blog about the most random things you can think of.]
-      })
+      html.main[
+        #html.div(class: "title", {
+          html.h1[The Blog of Random]
+          html.p[A blog about the most random things you can think of.]
+        })
 
-      #html.section(
-        files
-          .map(post => html.a(href: "/blog/" + post.name + ".html", class: "link", {
-            html.time(datetime: post.date, post.date.display())
-            heading(level: 2, post.title)
-          }))
-          .join(),
-      )
-    ]
+        #html.section(
+          files
+            .map(post => html.a(href: "/blog/" + post.name + ".html", class: "link", {
+              html.time(datetime: post.date, post.date.display())
+              heading(level: 2, post.title)
+            }))
+            .join(),
+        )
+      ]
+    })
   })
 })

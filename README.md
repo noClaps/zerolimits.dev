@@ -21,7 +21,7 @@ cd zerolimits.dev
 Run the build script:
 
 ```sh
-make -j
+make
 ```
 
 This will build the site and place it in `dist/`.

@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v7
       - uses: https://github.com/typst-community/setup-typst@v5
-      - run: make -j
+      - run: make
       - uses: https://github.com/cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
