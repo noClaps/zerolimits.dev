@@ -11,17 +11,14 @@ article a {
 
 /* Tables */
 table {
-    margin: 1rem auto;
+    margin: auto;
     border: solid;
-}
-
-th {
-    text-decoration: underline;
 }
 
 td,
 th {
     padding: 0.375rem;
+    text-align: center;
 }
 
 /* Code */
@@ -46,6 +43,11 @@ pre:has(code) {
 div:has(> math[display="block"]) {
     overflow-x: auto;
     text-align: center;
+}
+
+mtable.multiline-equation mtable mtd {
+    /* TODO: remove once matrix/vector padding is fixed */
+    padding: 0.5ex !important;
 }
 
 /* Layout */
@@ -86,11 +88,17 @@ img {
     object-fit: contain;
 }
 
+figure svg {
+    margin: 0.5rem auto;
+    background-color: white;
+    padding: 0.5rem;
+}
+
 /* Containers */
 .note {
     padding: 1rem;
     margin: 0.5rem 0;
-    background-color: oklch(from var(--primary) l c h / 5%);
+    background-color: alpha(from var(--primary) / 5%);
     border-left: 0.25rem solid var(--primary);
 
     & > p:first-child {
