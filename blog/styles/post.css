@@ -10,6 +10,10 @@ article a {
 }
 
 /* Tables */
+div:has(> table) {
+    overflow-x: auto;
+}
+
 table {
     margin: auto;
     border: solid;
@@ -41,6 +45,7 @@ pre:has(code) {
 
 /* Math */
 div:has(> math[display="block"]) {
+    overflow-y: hidden;
     overflow-x: auto;
     text-align: center;
 }
@@ -92,6 +97,7 @@ figure svg {
     margin: 0.5rem auto;
     background-color: white;
     padding: 0.5rem;
+    max-width: calc(100% - 1rem);
 }
 
 /* Containers */

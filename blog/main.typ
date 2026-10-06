@@ -15,6 +15,7 @@
   } else {
     it
   }
+  show table: html.div
   set quote(block: true, quotes: false)
   counter(figure.where(kind: image)).update(0)
 

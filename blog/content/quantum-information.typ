@@ -11,7 +11,7 @@
 
 #let bra(..args) = $lr(#hide("|") chevron.l #args.pos().join($,$) |)$
 #let ket(..args) = $lr(| #args.pos().join($,$) chevron.r #hide("|"))$
-#let braket(..args) = $chevron.l #args.pos().join($mid(|)$) chevron.r$
+#let braket(..args) = $lr(chevron.l #args.pos().join($mid(|)$) chevron.r)$
 #let ketbra(l, r) = $ket(#l) bra(#r)$
 #simple-plot.set-plot-defaults(
   width: 10,
@@ -185,8 +185,8 @@ In classical computing, there are a number of operators, or *gates*, that can ac
 #table(
   columns: 2,
   table.header([$A$], [$not A$]),
-  $0$, $1$,
-  $1$, $0$,
+  `0`, `1`,
+  `1`, `0`,
 )
 
 Similarly, there are a number of quantum operators that can act on qubits. The quantum analogue to the classical `NOT` operator is the Pauli X operator:
@@ -395,14 +395,14 @@ The way this works is that, going from left to right, the first gate applies to 
   Dirac notation:
 
   $
-    X times.o I & = (ketbra(0, 1) + ketbra(1, 0)) times.o (ketbra(0, 0) + ketbra(1, 1)) \
-    & = ketbra(00, 10) + ketbra(01, 11) + ketbra(10, 00) + ketbra(11, 01) \
-    \
-    (X times.o I) ket(10)
-    & = (ketbra(00, 10) + ketbra(01, 11) + ketbra(10, 00) + ketbra(11, 01)) ket(10) \
-    & = ket(00) braket(10, 10) + ket(01) braket(11, 10) + ket(10) braket(00, 10) + ket(11) braket(01, 10) \
-    & = ket(00) times 1 + ket(01) times 0 + ket(10) times 0 + ket(11) times 0 \
-    & = ket(00)
+              X times.o I & = && (ketbra(0, 1) + ketbra(1, 0)) times.o (ketbra(0, 0) + ketbra(1, 1)) \
+                          & = && ketbra(00, 10) + ketbra(01, 11) + ketbra(10, 00) + ketbra(11, 01) \
+                          \
+    (X times.o I) ket(10) & = && (ketbra(00, 10) + ketbra(01, 11) + ketbra(10, 00) + ketbra(11, 01)) ket(10) \
+                          & = && ket(00) braket(10, 10) + ket(01) braket(11, 10) \
+                          &   && "" + ket(10) braket(00, 10) + ket(11) braket(01, 10) \
+                          & = && ket(00) times 1 + ket(01) times 0 + ket(10) times 0 + ket(11) times 0 \
+                          & = && ket(00)
   $
 
   When you're doing the tensor product $ketbra(a, b) times.o ketbra(p, q)$, you can pull the $ket(a)$ and $bra(b)$ through to their respective ket and bra on the other side:
@@ -529,16 +529,18 @@ $
 Let's try using $ket(v_+) = ket(+)$ and $ket(v_-) = ket(-)$:
 
 $
-  X & = lambda_+ ketbra(+, +) + lambda_- ketbra(-, -) \
-  & = lambda_+ (ketbra(0, 0) + ketbra(0, 1) + ketbra(1, 0) + ketbra(1, 1))/2 + lambda_- (ketbra(0, 0) - ketbra(0, 1) - ketbra(1, 0) + ketbra(1, 1))/2
+  X & = && lambda_+ ketbra(+, +) + lambda_- ketbra(-, -) \
+    & = && lambda_+ (ketbra(0, 0) + ketbra(0, 1) + ketbra(1, 0) + ketbra(1, 1))/2 \
+    &   && "" + lambda_- (ketbra(0, 0) - ketbra(0, 1) - ketbra(1, 0) + ketbra(1, 1))/2
 $
 
 Setting $lambda_+ = +1$ and $lambda_- = -1$, we get:
 
 $
-  X & = (ketbra(0, 0) + ketbra(0, 1) + ketbra(1, 0) + ketbra(1, 1))/2 - (ketbra(0, 0) - ketbra(0, 1) - ketbra(1, 0) + ketbra(1, 1))/2 \
-  & = (2 ketbra(0, 1) + 2 ketbra(1, 0))/2 \
-  & = ketbra(0, 1) + ketbra(1, 0)
+  X & = && (ketbra(0, 0) + ketbra(0, 1) + ketbra(1, 0) + ketbra(1, 1))/2 \
+    &   && "" - (ketbra(0, 0) - ketbra(0, 1) - ketbra(1, 0) + ketbra(1, 1))/2 \
+    & = && (2 ketbra(0, 1) + 2 ketbra(1, 0))/2 \
+    & = && ketbra(0, 1) + ketbra(1, 0)
 $
 
 which was our original definition for $X$.
@@ -617,9 +619,9 @@ which can be expanded out to
 
 $
   & 1/(2 sqrt(2)) [ket(0)_A ket(0)_(A_1) + ket(1)_A ket(1)_(A_1)] [a ket(0)_B + b ket(1)_B] \
-  & + 1/(2 sqrt(2)) [ket(0)_A ket(0)_(A_1) - ket(1)_A ket(1)_(A_1)] [a ket(0)_B - b ket(1)_B] \
-  & + 1/(2 sqrt(2)) [ket(0)_A ket(1)_(A_1) + ket(1)_A ket(0)_(A_1)] [b ket(0)_B + a ket(1)_B] \
-  & + 1/(2 sqrt(2)) [ket(0)_A ket(1)_(A_1) - ket(1)_A ket(0)_(A_1)] [-b ket(0)_B + a ket(1)_B]
+  & "" + 1/(2 sqrt(2)) [ket(0)_A ket(0)_(A_1) - ket(1)_A ket(1)_(A_1)] [a ket(0)_B - b ket(1)_B] \
+  & "" + 1/(2 sqrt(2)) [ket(0)_A ket(1)_(A_1) + ket(1)_A ket(0)_(A_1)] [b ket(0)_B + a ket(1)_B] \
+  & "" + 1/(2 sqrt(2)) [ket(0)_A ket(1)_(A_1) - ket(1)_A ket(0)_(A_1)] [-b ket(0)_B + a ket(1)_B]
 $
 
 Alice then measures her two-qubit state, the one with the $ket(u)_A ket(v)_(A_1)$, with an operator such that it has 4 different eigenvalues $lambda_1$, $lambda_2$, $lambda_3$ and $lambda_4$ corresponding to each of the states.
@@ -850,11 +852,12 @@ $
 The thing we're actually measuring is the outcome after both Alice and Bob apply their operators:
 
 $
-  braket(Phi, A times.o B, Phi) & = sum_(alpha, beta) alpha beta Pr(alpha, beta) \
-  & = Pr(alpha=+1, beta=+1) - Pr(alpha=+1, beta=-1) - Pr(alpha=-1, beta=+1) + Pr(alpha=-1, beta=-1) \
-  & = Pr(alpha = beta) - Pr(alpha != beta) \
-  & = Pr(alpha = beta) - (1 - Pr(alpha = beta)) \
-  & = 2 Pr(alpha = beta) - 1
+  braket(Phi, A times.o B, Phi) & = && sum_(alpha, beta) alpha beta Pr(alpha, beta) \
+                                & = && Pr(alpha=+1, beta=+1) - Pr(alpha=+1, beta=-1) \
+                                &   && "" - Pr(alpha=-1, beta=+1) + Pr(alpha=-1, beta=-1) \
+                                & = && Pr(alpha = beta) - Pr(alpha != beta) \
+                                & = && Pr(alpha = beta) - (1 - Pr(alpha = beta)) \
+                                & = && 2 Pr(alpha = beta) - 1
 $
 
 which we can rearrange to get:
@@ -895,9 +898,9 @@ We can use this more general formula to simplify our expression, and since we kn
 $
   braket(Phi, S(theta) times.o S(phi), Phi) & = && braket(Phi, (cos(theta) X + sin(theta) Z) times.o (cos(phi) X + sin(phi) Z), Phi) \
   & = && cos(theta) cos(phi) braket(Phi, X times.o X, Phi) \
-  & && + cos(theta) sin(phi) braket(Phi, X times.o Z, Phi) \
-  & && + sin(theta) cos(phi) braket(Phi, Z times.o X, Phi) \
-  & && + sin(theta) sin(phi) braket(Phi, Z times.o Z, Phi) \
+  & && "" + cos(theta) sin(phi) braket(Phi, X times.o Z, Phi) \
+  & && "" + sin(theta) cos(phi) braket(Phi, Z times.o X, Phi) \
+  & && "" + sin(theta) sin(phi) braket(Phi, Z times.o Z, Phi) \
 $
 
 We can simplify this a bit, knowing that $X times.o X ket(Phi) = Z times.o Z ket(Phi) = ket(Phi)$:
@@ -925,13 +928,13 @@ Simplifying:
 
 $
   braket(Phi, S(theta) times.o S(phi), Phi) & = && cos(theta) cos(phi) braket(Phi, X times.o X, Phi) \
-                                            &   && + cos(theta) sin(phi) braket(Phi, X times.o Z, Phi) \
-                                            &   && + sin(theta) cos(phi) braket(Phi, Z times.o X, Phi) \
-                                            &   && + sin(theta) sin(phi) braket(Phi, Z times.o Z, Phi) \
+                                            &   && "" + cos(theta) sin(phi) braket(Phi, X times.o Z, Phi) \
+                                            &   && "" + sin(theta) cos(phi) braket(Phi, Z times.o X, Phi) \
+                                            &   && "" + sin(theta) sin(phi) braket(Phi, Z times.o Z, Phi) \
                                             & = && cos(theta) cos(phi) braket(Phi, Phi) \
-                                            &   && + cos(theta) sin(phi) braket(Phi, Psi) \
-                                            &   && - sin(theta) cos(phi) braket(Phi, Psi) \
-                                            &   && + sin(theta) sin(phi) braket(Phi, Phi) \
+                                            &   && "" + cos(theta) sin(phi) braket(Phi, Psi) \
+                                            &   && "" - sin(theta) cos(phi) braket(Phi, Psi) \
+                                            &   && "" + sin(theta) sin(phi) braket(Phi, Phi) \
                                             & = && cos(theta) cos(phi) + sin(theta) sin(phi) \
                                             & = && cos(theta - phi)
 $
