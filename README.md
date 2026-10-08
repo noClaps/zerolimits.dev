@@ -9,7 +9,7 @@
 
 ## Build instructions
 
-You'll need [Typst](https://typst.app).
+You'll need [Typst](https://typst.app) and [Python](https://python.org).
 
 Clone the repository:
 

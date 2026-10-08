@@ -1,6 +1,10 @@
-all:
-	@typst compile main.typ dist/ --features bundle,html --format bundle --input "posts=$$(command ls blog/content/*.typ)"
-	@typst compile blog/feed.typ dist/ --features bundle,html --format bundle --root . --input="posts=$$(command ls blog/content/*.typ)"
+.PHONY: homepage gallery
 
-serve:
-	@typst watch main.typ dist/ --features bundle,html --format bundle --input "posts=$$(command ls blog/content/*.typ)"
+all: homepage gallery
+	@typst compile blog/main.typ dist/ --features bundle,html --format bundle --root . --input "posts=$$(command ls blog/content/*.typ)"
+	@typst compile blog/feed.typ dist/ --features bundle,html --format bundle --root . --input "posts=$$(command ls blog/content/*.typ)"
+
+homepage:
+	@python3 homepage/build.py
+gallery:
+	@python3 gallery/build.py
