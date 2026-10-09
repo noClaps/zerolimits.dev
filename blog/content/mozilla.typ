@@ -1,7 +1,9 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [Mozilla],
   date: datetime(year: 2024, month: 1, day: 20),
-))
+)
 
 I have a problem with Mozilla, and there's enough here to warrant a whole post.
 

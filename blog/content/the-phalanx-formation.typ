@@ -1,8 +1,10 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [The Phalanx Formation],
   date: datetime(year: 2021, month: 12, day: 30),
   lastmod: datetime(year: 2022, month: 07, day: 31),
-))
+)
 
 = The origin story
 

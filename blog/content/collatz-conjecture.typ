@@ -1,8 +1,10 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [Collatz Conjecture],
   date: datetime(year: 2022, month: 11, day: 8),
   lastmod: datetime(year: 2025, month: 4, day: 12),
-))
+)
 
 #quote(attribution: [Jeffery Lagarias, expert on the Collatz conjecture, mathematician at the University of Michigan])[
   This is a really dangerous problem. People become obsessed with it and it really is impossible.

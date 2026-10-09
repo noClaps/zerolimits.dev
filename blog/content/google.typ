@@ -1,10 +1,10 @@
-#import "../utils.typ": note
+#import "../utils.typ": note, post
 
-#metadata((
+#show: post.with(
   title: [Google: A Misrepresented Evil],
   date: datetime(year: 2022, month: 8, day: 12),
   lastmod: datetime(year: 2022, month: 11, day: 26),
-))
+)
 
 = Humble beginnings
 
@@ -112,7 +112,7 @@ Now, hearing all of that, you may be led to believe that Google isn't the best o
 
 Google has been very #link("https://opensource.google/projects")[involved] with the open source community, far more than any other companies of Big Tech. From #link("https://source.android.com/")[Android], #link("https://chromium.googlesource.com/chromium/src.git")[Chromium], #link("https://github.com/angular")[Angular], #link("https://github.com/dart-lang")[Dart], #link("https://github.com/flutter")[Flutter], #link("https://go.googlesource.com/go")[Golang], #link("https://github.com/kubernetes")[Kubernetes], and more, Google has always been very supportive of the open source philosophy. Even their upcoming OS, #link("https://fuchsia.dev/")[Fuchsia], is #link("https://fuchsia.dev/fuchsia-src/get-started/get_fuchsia_source")[open source].
 
-This shows that Google is inclusive of the developer community as a whole, not just their own employees. Google open sourcing their work is what has allowed us to get amazing projects such as #link("https://grapheneos.org/")[GrapheneOS], #link("https://brave.com/")[Brave Browser], #link("https://www.electronjs.org/")[Electron], #link("https://scully.io/")[Scully], #link("https://gohugo.io")[Hugo], and more. Open source has plenty of other benefits too, in terms of privacy and trust, as I've outlined in my #link(<intro-psa-open-source-everything>)[Intro to Privacy, Security and Anonymity post].
+This shows that Google is inclusive of the developer community as a whole, not just their own employees. Google open sourcing their work is what has allowed us to get amazing projects such as #link("https://grapheneos.org/")[GrapheneOS], #link("https://brave.com/")[Brave Browser], #link("https://www.electronjs.org/")[Electron], #link("https://scully.io/")[Scully], #link("https://gohugo.io")[Hugo], and more. Open source has plenty of other benefits too, in terms of privacy and trust, as I've outlined in my #link("/blog/intro-psa#open-source-everything")[Intro to Privacy, Security and Anonymity post].
 
 == Security
 
@@ -122,7 +122,7 @@ Google is one of the world leaders in software and hardware security, from #link
   Advanced Protection is recommended for anyone who is at an elevated risk of targeted online attacks. This includes journalists, activists, political campaign staffers, business leaders, IT admins, and anyone else whose Google Account contains valuable files or sensitive information.
 ]
 
-=== Chromium <google-chromium>
+=== Chromium
 
 Chromium (and by extension Chromium-based browsers like Chrome, Brave and Edge) is one of the most secure browsers in the world, better than most alternatives like Firefox. This is widely agreed-upon in the security community.
 
@@ -148,7 +148,7 @@ From what I've understood, one of Chromium's best security features is #link("ht
   Firefox fully rolled out their Fission project in #link("https://www.mozilla.org/en-US/firefox/95.0/releasenotes/")[Firefox 95]. However, Fission in its current state is not as mature as Chromium's site isolation, and it will take many more years for it to reach that point. Fission still suffers from all the security issues of the baseline content process sandbox, as documented below, and it is not a panacea for all sandboxing issues. However, more specific to Fission itself, there are #link("https://bugzilla.mozilla.org/show_bug.cgi?id=1505832")[numerous] #link("https://bugzilla.mozilla.org/show_bug.cgi?id=1484019")[cross-site] #link("https://bugzilla.mozilla.org/show_bug.cgi?id=1707955")[leaks], allowing a compromised content process to access the data of another and bypass site isolation.
 ]
 
-=== Android and ChromeOS <google-android-and-chromeos>
+=== Android and ChromeOS
 
 Android and ChromeOS are Google's operating systems for mobile and desktop, respectively. Similar to Google Chrome, they are leaders in operating system security, challenged only by Apple's iOS/iPadOS and macOS. They are both based on open source projects:
 

@@ -1,10 +1,13 @@
-.PHONY: homepage gallery
+.PHONY: homepage blog gallery
+all: homepage blog gallery
 
-all: homepage gallery
-	@typst compile blog/main.typ dist/ --features bundle,html --format bundle --root . --input "posts=$$(command ls blog/content/*.typ)"
-	@typst compile blog/feed.typ dist/ --features bundle,html --format bundle --root . --input "posts=$$(command ls blog/content/*.typ)"
-
+blog:
+	@python3 blog/build.py
+	@python3 blog/feed.py
 homepage:
 	@python3 homepage/build.py
 gallery:
 	@python3 gallery/build.py
+
+check:
+	@lychee dist --root-dir dist --fallback-extensions html --offline

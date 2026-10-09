@@ -1,9 +1,9 @@
-#import "../utils.typ": note
+#import "../utils.typ": note, post
 
-#metadata((
+#show: post.with(
   title: [Threat Modelling],
   date: datetime(year: 2023, month: 1, day: 18),
-))
+)
 
 Before you start on your privacy and security journey, one of the main things you should figure out is your threat model.
 

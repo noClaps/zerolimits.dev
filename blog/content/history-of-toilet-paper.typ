@@ -1,7 +1,9 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [History of Toilet Paper],
   date: datetime(year: 2021, month: 12, day: 26),
-))
+)
 
 Toilet paper, and the methods and tools used to clean your bum after going number 2, have been through a lot of changes, mostly for the better, until we finally reached the simple rolls that we take for granted today.
 

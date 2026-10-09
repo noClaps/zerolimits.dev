@@ -1,9 +1,9 @@
-#import "../utils.typ": note
+#import "../utils.typ": note, post
 
-#metadata((
+#show: post.with(
   title: [Random Numbers],
   date: datetime(year: 2025, month: 7, day: 23),
-))
+)
 
 = Every day I'm shufflin'
 

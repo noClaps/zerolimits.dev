@@ -1,9 +1,9 @@
-#import "../utils.typ": note
+#import "../utils.typ": note, post
 
-#metadata((
+#show: post.with(
   title: [Finding vulnerabilities in Secton],
   date: datetime(year: 2025, month: 06, day: 26),
-))
+)
 
 #note(title: [Acknowledgements])[
   I'd like to give credit to my friends, #link("https://codycody31.dev")[InsidiousFiddler] and #link("https://xnoid.studio")[RollViral], for helping out with this project. InsidiousFiddler has his own write-up of this, which you can find #link("https://codycody31.dev/when-security-is-not-a-factor-secton/")[here]. You can read that one or this one, they have basically the same content.

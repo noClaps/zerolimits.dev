@@ -1,8 +1,10 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [Be Social],
   date: datetime(year: 2022, month: 11, day: 27),
   lastmod: datetime(year: 2023, month: 1, day: 31),
-))
+)
 
 = Origins
 
@@ -241,7 +243,7 @@ The main privacy issue with social media isn't just that they collect huge amoun
 
 By user consent I mean that it is not made clear to the user what they're signing up for without reading the often long and complicated privacy policy and terms and conditions. It's far too tedious for most people to sit there and read a boring document about what a company does with their data, when all they want to do is watch cat videos, and so social media companies get away with a lot of things they wouldn't otherwise. These are known as #link("https://techcrunch.com/2018/07/01/wtf-is-dark-pattern-design/")[dark patterns], and they are also the reason you always click "Accept all cookies" on every website you visit.
 
-The collection and abuse of user data is a topic I covered in my #link(<intro-psa-why-should-i-care>)[Intro to Privacy, Security and Anonymity] post.
+The collection and abuse of user data is a topic I covered in my #link("/blog/intro-psa#why-should-i-care")[Intro to Privacy, Security and Anonymity] post.
 
 = What's in the \#future?
 

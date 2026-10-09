@@ -1,10 +1,10 @@
-#import "../utils.typ": note
+#import "../utils.typ": note, post
 #import "@preview/simple-plot:1.1.0"
 
-#metadata((
+#show: post.with(
   title: [A beginner's guide to Quantum Information],
   date: datetime(year: 2026, month: 10, day: 6),
-))
+)
 
 #set math.mat(align: right)
 #show hide: html.elem("mspace", attrs: (width: "0em"))
@@ -58,7 +58,7 @@ $
     braket(0, 1) = braket(1, 0) = 0
   $
 
-  Here, $braket(0, 0)$ is just a shorthand for $bra(0) ket(0)$, and you're effectively taking a dot product. We'll see this in closer detail when we look at #link(<quantum-computing-vector-notation>)[vector notation].
+  Here, $braket(0, 0)$ is just a shorthand for $bra(0) ket(0)$, and you're effectively taking a dot product. We'll see this in closer detail when we look at #link(<vector-notation>)[vector notation].
 ]
 
 Here, $ket(0)$ and $ket(1)$ are the qubit's _basis states_. The definition of an eigenbasis is a bit complicated, but an easy way to imagine this is that a qubit exists on a unit circle, and these are the graph's $x$ and $y$ axes. The coefficients of the basis states then represent the actual $x$ and $y$ coordinates on that graph:
@@ -109,7 +109,7 @@ However, this graphical representation shows that qubits can be written as vecto
 
 $
   a_0 ket(0) + a_1 ket(1) = vec(a_0, a_1)
-$ <quantum-computing-vector-notation>
+$ <vector-notation>
 
 #note(title: [Vector definition of $bra(psi)$])[
   Now that we have our vector definitions for $ket(psi)$, we can better define $bra(psi)$. If $ket(psi)$ is a vertical vector, then $bra(psi)$ is a horizontal vector, such that:
@@ -132,7 +132,7 @@ $ <quantum-computing-vector-notation>
   I'm going to use both Dirac notation and vector notation interchangeably throughout this post since it's sometimes easier to do calculations with one or the other, so it's worth getting familiar with translating between both.
 ]
 
-== Measuring a qubit <quantum-computation-measuring-a-qubit>
+== Measuring a qubit <measuring-a-qubit>
 
 When we measure a qubit, we're collapsing it down from its superposition state down to one of its basis states. To do that, we're going to use the coefficient of each basis state, also known as the *amplitude*. The square of the amplitude represents the probability that, when measured, the qubit will collapse into that state:
 
@@ -235,7 +235,7 @@ Below is a brief list of common single-qubit quantum operators:
   "Pauli Y", $Y$, $mat(0, -i; i, 0)$, $-i ketbra(0, 1) + i ketbra(1, 0)$,
   "Pauli Z", $Z$, $mat(1, 0; 0, -1)$, $ketbra(0, 0) - ketbra(1, 1)$,
   "Identity", $I$, $mat(1, 0; 0, 1)$, $ketbra(0, 0) + ketbra(1, 1)$,
-) <quantum-computing-common-operators>
+) <common-operators>
 
 = Multiple qubits
 
@@ -288,7 +288,7 @@ $
     ket(alpha) ket(beta) & = a_0 b_0 ket(00) + a_0 b_1 ket(01) + a_1 b_0 ket(10) + a_1 b_1 ket(11) \
                          & = vec(a_0 b_0, a_0 b_1, a_1 b_0, a_1 b_1)
   $
-] <quantum-computing-kronecker-product>
+] <kronecker-product>
 
 As before, any multiple-qubit state can be written in vector notation as well. For example, a two qubit state:
 
@@ -357,7 +357,7 @@ $
             & = ket(0) braket(1, 10) + ket(1) braket(0, 10)
 $
 
-Uh oh, we seem to have hit another roadblock! Since this is a single-qubit gate, it can only be applied to a single qubit. In order to apply an operator to a two-qubit state, we need to make it a two-qubit gate. We can do this by using the #link(<quantum-computing-kronecker-product>)[tensor product] again:
+Uh oh, we seem to have hit another roadblock! Since this is a single-qubit gate, it can only be applied to a single qubit. In order to apply an operator to a two-qubit state, we need to make it a two-qubit gate. We can do this by using the #link(<kronecker-product>)[tensor product] again:
 
 $
   (X times.o I) ket(10) = ket(00)
@@ -442,7 +442,7 @@ $
   ket(Phi) = (ket(00) + ket(11))/sqrt(2)
 $
 
-How would we go about making this state? Well let's start from a very simple state: the $ket(00)$. If we have a look at the #link(<quantum-computing-common-operators>)[single-qubit operators table] from earlier, we can see that the Hadamard looks like it'll get us about halfway there. So let's apply a $H times.o I$ to this state.
+How would we go about making this state? Well let's start from a very simple state: the $ket(00)$. If we have a look at the #link(<common-operators>)[single-qubit operators table] from earlier, we can see that the Hadamard looks like it'll get us about halfway there. So let's apply a $H times.o I$ to this state.
 
 $
   H times.o I ket(00) & = (ket(0) + ket(1))/sqrt(2) ket(0) \
@@ -473,7 +473,7 @@ And that's it! That's all of the basic math of quantum computation. Everything w
 
 = Measurement
 
-We talked briefly about #link(<quantum-computation-measuring-a-qubit>)[measuring a qubit earlier], but let's dive a little deeper into what that actually means.
+We talked briefly about #link(<measuring-a-qubit>)[measuring a qubit earlier], but let's dive a little deeper into what that actually means.
 
 == Spectral decomposition
 

@@ -1,7 +1,9 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [Simplicity in Software],
   date: datetime(year: 2024, month: 12, day: 5),
-))
+)
 
 There's been a lot of products coming out recently with all these fancy new features. You have #link("https://arc.net")[Arc] (which recently got #link("https://www.youtube.com/watch?v=E9yZ0JusME4")[put into maintenance mode]), #link("https://cursor.com")[Cursor], #link("https://zed.dev")[Zed] (which I use), #link("https://www.diabrowser.com")[Dia] (a new browser from the Arc team), etc. I'm sure you've seen at least some of these kinds of products around somewhere on the internets.
 
@@ -64,6 +66,6 @@ Or in other words, do one thing well.
 
 This post was kind of a rant, and I'd be amazed if you got all the way here. If you did, hi, here's a cookie 🍪. Don't worry, this one won't track you.
 
-I've talked about #link(<minimalism>)[minimalism] in another post, and this kinda extends that post into the tech world. I'm aware that other people probably find these features useful in their daily lives, but that's not really my workflow, and I'm sure that I'm not the only one that's been frustrated by the lack of simplicity in software nowadays. There's a lot of changes I'd like to see in the way that software is developed today, and honestly, if I can't find something that works how I want, I might just make it myself.
+I've talked about #link("/blog/minimalism")[minimalism] in another post, and this kinda extends that post into the tech world. I'm aware that other people probably find these features useful in their daily lives, but that's not really my workflow, and I'm sure that I'm not the only one that's been frustrated by the lack of simplicity in software nowadays. There's a lot of changes I'd like to see in the way that software is developed today, and honestly, if I can't find something that works how I want, I might just make it myself.
 
 That said, I'd like to highlight the #link("https://ladybird.org")[Ladybird browser] as a project that looks like it's gonna be just a browser and not much more, which I'm quite excited about. There's also #link("https://mitchellh.com/ghostty")[Ghostty] that's apparently due to release soon, and it looks like it's a really good terminal emulator and not much more. Both of these embody pretty much exactly my argument in this post, they both (seem to, I haven't tried either) _do one thing well_.

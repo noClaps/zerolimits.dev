@@ -1,7 +1,9 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [Love and War],
   date: datetime(year: 2024, month: 2, day: 15),
-))
+)
 
 = A New Year's party
 

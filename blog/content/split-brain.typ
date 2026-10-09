@@ -1,7 +1,9 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [The Split-Brain Experiment],
   date: datetime(year: 2023, month: 7, day: 13),
-))
+)
 
 = Patient WJ
 

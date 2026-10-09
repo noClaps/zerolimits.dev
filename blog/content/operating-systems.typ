@@ -1,10 +1,10 @@
-#import "../utils.typ": note
+#import "../utils.typ": note, post
 
-#metadata((
+#show: post.with(
   title: [How to Make an OS],
   date: datetime(year: 2023, month: 2, day: 2),
   lastmod: datetime(year: 2023, month: 2, day: 5),
-))
+)
 
 #note(title: [DISCLAIMERS])[
   + This post is based on my own personal experience using Windows and various Linux distributions, and may not reflect your experience with it.
@@ -62,7 +62,7 @@ As an example of that, here's a small list of distros available to you#super[1]:
 
 So you've chosen a distro that you're happy with. This will usually bring with it a distro-maintained #link("https://www.debian.org/doc/manuals/aptitude/pr01s02.en.html")[package manager], which means that the people running the distribution are responsible for keeping the packages in it up to date, while also making sure everything is stable.
 
-However, there are #link(<operating-systems-linux-2>)[many, many package managers] out there, and none are compatible with each other. In the Debian family, you have dpkg. The Red Hat distros use RPM, while Arch uses Pacman. Even Windows has their own package manager, called #link("https://learn.microsoft.com/en-us/windows/package-manager/")[winget]. And that's not even mentioning the third-party package managers, like Flatpak and Snap on Linux, Scoop and Chocolatey on Windows, and Homebrew on macOS. Within package managers, you also have both first-party repositories, which come from the OS itself, and #link("https://www.ubuntubuzz.com/2017/01/ubuntu-package-management-part-4-ppa-and-third-party-repository.html")[third-party repositories], like the Arch User Repository (AUR) and Personal Package Archives (PPA) on Ubuntu, which bring about their own benefits and drawbacks.
+However, there are #link(<linux-2>)[many, many package managers] out there, and none are compatible with each other. In the Debian family, you have dpkg. The Red Hat distros use RPM, while Arch uses Pacman. Even Windows has their own package manager, called #link("https://learn.microsoft.com/en-us/windows/package-manager/")[winget]. And that's not even mentioning the third-party package managers, like Flatpak and Snap on Linux, Scoop and Chocolatey on Windows, and Homebrew on macOS. Within package managers, you also have both first-party repositories, which come from the OS itself, and #link("https://www.ubuntubuzz.com/2017/01/ubuntu-package-management-part-4-ppa-and-third-party-repository.html")[third-party repositories], like the Arch User Repository (AUR) and Personal Package Archives (PPA) on Ubuntu, which bring about their own benefits and drawbacks.
 
 #quote(attribution: link(
   "https://discourse.gohugo.io/t/add-flatpak-support/13734/3",
@@ -98,11 +98,11 @@ Every single major release of Windows seems to be #link("https://www.tomsguide.c
 
 Most Linux distros have stability down, and the kernel itself, which is #link("https://www.ionos.co.uk/digitalguide/server/know-how/unix-vs-linux/")[Unix-like], is very stable. However, certain distributions are more prone to breaking than others, usually due to the way they handle packages and updates.
 
-Distributions that follow a #link(<operating-systems-up-to-date>)[rolling release cycle] tend to have more issues with stability than others with a slower, more stable release cycle. Rolling release means your packages are always up to date and on the bleeding edge, which has its advantanges, but also means that the software is often relatively untested and may have dependencies that you may not have installed or updated yet. Rolling release distros like Arch or OpenSUSE suffer from this, while others like Debian which follow a _much_ slower release cycle are much more stable. However, that comes at a cost of security.
+Distributions that follow a #link(<up-to-date>)[rolling release cycle] tend to have more issues with stability than others with a slower, more stable release cycle. Rolling release means your packages are always up to date and on the bleeding edge, which has its advantanges, but also means that the software is often relatively untested and may have dependencies that you may not have installed or updated yet. Rolling release distros like Arch or OpenSUSE suffer from this, while others like Debian which follow a _much_ slower release cycle are much more stable. However, that comes at a cost of security.
 
 = Secure
 
-If you're using an OS, I think it's safe to assume you wouldn't want to be hacked. Most mainstream OSes are pretty secure, and will prevent most threats from ever reaching or affecting you. #link("https://madaidans-insecurities.github.io/android.html")[Android] and #link("https://support.apple.com/en-gb/guide/security/welcome/web")[iOS] are especially good at this, provided you're not unlocking the bootloader, or rooting/jailbreaking the phone. On the desktop side, macOS uses a similar security model as its mobile counterpart, while ChromeOS uses that of Chrome and Android. I've talked about the #link(<google-android-and-chromeos>)[security of Android and ChromeOS] in my post about Google.
+If you're using an OS, I think it's safe to assume you wouldn't want to be hacked. Most mainstream OSes are pretty secure, and will prevent most threats from ever reaching or affecting you. #link("https://madaidans-insecurities.github.io/android.html")[Android] and #link("https://support.apple.com/en-gb/guide/security/welcome/web")[iOS] are especially good at this, provided you're not unlocking the bootloader, or rooting/jailbreaking the phone. On the desktop side, macOS uses a similar security model as its mobile counterpart, while ChromeOS uses that of Chrome and Android. I've talked about the #link("/blog/google#android-and-chromeos")[security of Android and ChromeOS] in my post about Google.
 
 == Sandboxing
 
@@ -112,9 +112,9 @@ Windows also has a decent security model and application sandbox, though it's no
 
 Linux, on the other hand, has #link("https://madaidans-insecurities.github.io/linux.html#sandboxing")[no sandboxing system by default]. Programs like Firejail and Bubblewrap attempt to sandbox applications installed as ```sh sudo``` (the equivalent of admin permissions on Windows), but they #link("https://madaidans-insecurities.github.io/linux.html#firejail")[aren't great] either. The other solution to this problem was Flatpaks, which are a step in the right direction, being sandboxed (provided you don't give them access to your entire home directory) and having a permission model (which gives many Flatpaks #link("https://github.com/search?q=org%3Aflathub+filesystem%3Dhome&type=code")[access to your home directory] by default), come with their own flaws, even in the very #link("https://madaidans-insecurities.github.io/linux.html#flatpak")[sandboxing] they claim to employ.
 
-Not only does Flatpak have weak sandboxing itself, it also weakens the sandboxing in other applications. Chromium, for instance, has #link(<google-chromium>)[world-class security], and one of the strongest sandboxing implementations in the browser market. Any Flatpak version of Chromium- or Electron-based apps replace this sandbox with a much weaker one called #link("https://github.com/refi64/zypak")[Zypak], which has about the same strength as Flatpak's own sandbox. This is one of the reasons why it's not recommended to use the Flatpak version of any Chromium-based browser.
+Not only does Flatpak have weak sandboxing itself, it also weakens the sandboxing in other applications. Chromium, for instance, has #link("/blog/google#chromium")[world-class security], and one of the strongest sandboxing implementations in the browser market. Any Flatpak version of Chromium- or Electron-based apps replace this sandbox with a much weaker one called #link("https://github.com/refi64/zypak")[Zypak], which has about the same strength as Flatpak's own sandbox. This is one of the reasons why it's not recommended to use the Flatpak version of any Chromium-based browser.
 
-= Up to date <operating-systems-up-to-date>
+= Up to date <up-to-date>
 
 This criterion ties in with security, since updates often bring security patches but could also have new vulnerabilities; stability, since newer packages can fix many bugs but also have new ones; and simplicity, since having to manage apps using different package managers can get confusing. This is also the criterion Linux distros seem to have the most trouble with.
 
@@ -142,7 +142,7 @@ Android also has third-party repositories in the form of app stores. Some of exa
 
 There are two main third-party repositories on the macOS side of things: #link("https://brew.sh/")[Homebrew] and #link("https://www.macports.org/")[MacPorts]. While it is recommended to stick to the GUI installation methods and the Mac App Store as much as possible, certain packages are only available on one of these package managers. In situations like those, using them can be acceptable. Both Homebrew and MacPorts have their own advantages and disadvantages, and I suggest you do your research on them before using either one.
 
-== Linux <operating-systems-linux-2>
+== Linux <linux-2>
 
 Linux distros and package management is such a huge and ridiculous topic that it deserves its own section. There are _so_ many packaging solutions for Linux, and none of them work as well as any of the other package managers I mentioned above. Here's a list of just the main ones:
 

@@ -1,8 +1,10 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [Po-Shen Loh Quadratic Method],
   date: datetime(year: 2025, month: 4, day: 12),
   lastmod: datetime(year: 2026, month: 1, day: 2),
-))
+)
 
 I found out about the Po-Shen Loh method of solving quadratic equations a few years ago, and I've been meaning to write a post about it since, and only just got around to it.
 

@@ -1,7 +1,9 @@
-#metadata((
+#import "../utils.typ": post
+
+#show: post.with(
   title: [Chaos Theory],
   date: datetime(year: 2021, month: 12, day: 2),
-))
+)
 
 = The main stuff
 

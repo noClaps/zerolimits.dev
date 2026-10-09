@@ -1,10 +1,10 @@
-#import "../utils.typ": note
+#import "../utils.typ": note, post
 
-#metadata((
+#show: post.with(
   title: [Messengers],
   date: datetime(year: 2022, month: 5, day: 6),
   lastmod: datetime(year: 2023, month: 1, day: 18),
-))
+)
 
 = Intro
 
@@ -12,7 +12,7 @@ This post of the Privacy and Security series will talk about different messenger
 
 For those of you that have been living under a rock, or have simply forgotten what a messenger is, it's a platform or way for people to send messages to one another and communicate. Technically, post and email are messengers, but what we're here to talk about are instant messengers. I will talk about email in a separate post, because its also a relatively broad topic.
 
-As I mentioned in the #link(<intro-psa>)[Intro post], privacy, security and anonymity are different things, and that's gonna be a little clearer in this post as we compare different messengers.
+As I mentioned in the #link("/blog/intro-psa")[Intro post], privacy, security and anonymity are different things, and that's gonna be a little clearer in this post as we compare different messengers.
 
 There's gonna be a lot of links in this post, because references are necessary. Otherwise, who's gonna believe the words of some random person on the internet? But if you put a link to an article or blog post written by some other random person on the internet, it's all trustworthy.
 
@@ -32,17 +32,17 @@ It gets worse. There's a global telecom network known as #link("https://en.wikip
 
 Until of course, #link("https://thehackernews.com/2017/05/ss7-vulnerability-bank-hacking.html")[someone did].
 
-And that's why you *don't use SMS for anything* even remotely important. Use encrypted platforms like #link(<messengers-signal>)[*Signal*], #link(<messengers-threema>)[*Threema*], #link(<messengers-session>)[*Session*], #link(<messengers-element-matrix>)[*Element*] or any other end-to-end encrypted messenger.
+And that's why you *don't use SMS for anything* even remotely important. Use encrypted platforms like #link(<signal>)[*Signal*], #link(<threema>)[*Threema*], #link(<session>)[*Session*], #link(<element-matrix>)[*Element*] or any other end-to-end encrypted messenger.
 
 == Twitter DMs and Reddit Chat
 
-These are encrypted with your standard #link(<intro-psa-the-green-lock>)[HTTPS encryption] that comes with most websites and web-based apps. However, they don't have any dedicated encryption protocols, which is why they're in this section. This has lead to #link("https://arstechnica.com/information-technology/2020/07/hackers-obtained-twitter-dms-for-36-high-profile-account-holders/")[data leaking] from these platforms in the past.
+These are encrypted with your standard #link("/blog/intro-psa#the-green-lock")[HTTPS encryption] that comes with most websites and web-based apps. However, they don't have any dedicated encryption protocols, which is why they're in this section. This has lead to #link("https://arstechnica.com/information-technology/2020/07/hackers-obtained-twitter-dms-for-36-high-profile-account-holders/")[data leaking] from these platforms in the past.
 
-I would recommend using other platforms like #link(<messengers-session>)[*Session*], #link(<messengers-element-matrix>)[*Element*] or #link(<messengers-threema>)[*Threema*] instead, if you want to remain "anonymous" like you can on Twitter or Reddit.
+I would recommend using other platforms like #link(<session>)[*Session*], #link(<element-matrix>)[*Element*] or #link(<threema>)[*Threema*] instead, if you want to remain "anonymous" like you can on Twitter or Reddit.
 
 = Encryption with trust
 
-This is the section with the most well-known messaging apps. A lot of the trust comes down to the apps and/or servers being closed-source. Closed-source essentially means that a service, like WhatsApp, could _say_ that your messages aren't being looked at, but there's no real way to verify that, since you can't see the source code. The importance of open source was highlighted in my #link(<intro-psa-open-source-everything>)[Intro post].
+This is the section with the most well-known messaging apps. A lot of the trust comes down to the apps and/or servers being closed-source. Closed-source essentially means that a service, like WhatsApp, could _say_ that your messages aren't being looked at, but there's no real way to verify that, since you can't see the source code. The importance of open source was highlighted in my #link("/blog/intro-psa#open-source-everything")[Intro post].
 
 == Discord
 
@@ -50,7 +50,7 @@ Discord is one of the most popular communication platforms, especially for large
 
 According to #link("https://discord.com/privacy")[Discord's privacy policy] (you know, that thing you agree to and never actually read?), #link("https://edit.tosdr.org/points/9070")[Discord can read all of your private messages]. While chats are encrypted in transit to Discord's servers and encrypted at rest on your devices (at least that's what they _say_), they're #link("https://www.techspot.com/article/2340-messaging-apps-encryption/#Discord")[stored unencrypted on Discord servers]. And the privacy toggles in the app settings mean basically nothing since they'll store the data anyway.
 
-On top of that, Discord has outright #link("https://www.reddit.com/r/discordapp/comments/8nzb5d/why_is_discord_so_antiencryption/e001lr1/")[refused to implement end-to-end encryption], giving the same #link(<intro-psa-nothing-to-hide>)["think of the children" argument] we discussed in the Intro post. #link("https://endsexualexploitation.org/articles/discord-is-a-haven-for-gamers-and-sexual-exploiters/")[And they can't even do that well!]
+On top of that, Discord has outright #link("https://www.reddit.com/r/discordapp/comments/8nzb5d/why_is_discord_so_antiencryption/e001lr1/")[refused to implement end-to-end encryption], giving the same #link("/blog/intro-psa#nothing-to-hide")["think of the children" argument] we discussed in the Intro post. #link("https://endsexualexploitation.org/articles/discord-is-a-haven-for-gamers-and-sexual-exploiters/")[And they can't even do that well!]
 
 In 2020, #link("https://medium.com/tenable-techblog/lets-reverse-engineer-discord-1976773f4626")[some researchers reverse-engineered Discord] and found that:
 
@@ -64,7 +64,7 @@ This means that Discord was able to listen to and watch everything that was goin
 
 I want to list some pros of Discord, just to balance the argument, but from a privacy and security perspective there don't seem to be many. Discord and its founder have had a #link("https://youtu.be/uvNkdAggUGU")[long history of shady practices], and I have no doubt that this is something that will continue for a long, long time.
 
-In conclusion, not a good service, do not recommend. Use #link(<messengers-element-matrix>)[*Element*] or #link("https://revolt.chat/")[*Revolt*] instead. If you _must_ use Discord, try #link("https://fosscord.com/")[*Fosscord*].
+In conclusion, not a good service, do not recommend. Use #link(<element-matrix>)[*Element*] or #link("https://revolt.chat/")[*Revolt*] instead. If you _must_ use Discord, try #link("https://fosscord.com/")[*Fosscord*].
 
 == WhatsApp
 
@@ -89,7 +89,7 @@ Along with that, WhatsApp backups to Google Drive are #link("https://www.eff.org
 In addition to that, WhatsApp is owned by Meta/Facebook, one of the world's most privacy-invasive companies (just look at the #link("https://en.wikipedia.org/wiki/Lawsuits_involving_Meta_Platforms")[lawsuits they're involved in]), which doesn't help its case.
 
 #link("https://medium.com/@m.muslimiblog/metadata-the-whatsapp-issue-affecting-you-2bf13e77d065")[WhatsApp also doesn't encrypt metadata], so Meta/Facebook can see all of that and use it to #link("https://en.wikipedia.org/wiki/Shadow_profile")[shadow-profile] you.
-However, since WhatsApp (probably) does use end-to-end encryption, it's one of the less bad options on this list. Security-wise, I think WhatsApp is fine, most of its issues come from the privacy-invasive practices of Meta/Facebook. If you have *absolutely no other option*, or you trust Meta/Facebook for whatever reason, WhatsApp is mostly fine to use. However, I would recommend that you try out other platforms like #link(<messengers-signal>)[*Signal*], #link(<messengers-threema>)[*Threema*] or #link(<messengers-session>)[*Session*] first, since they are much more private and secure than WhatsApp ever will be.
+However, since WhatsApp (probably) does use end-to-end encryption, it's one of the less bad options on this list. Security-wise, I think WhatsApp is fine, most of its issues come from the privacy-invasive practices of Meta/Facebook. If you have *absolutely no other option*, or you trust Meta/Facebook for whatever reason, WhatsApp is mostly fine to use. However, I would recommend that you try out other platforms like #link(<signal>)[*Signal*], #link(<threema>)[*Threema*] or #link(<session>)[*Session*] first, since they are much more private and secure than WhatsApp ever will be.
 
 #note[
   I keep saying "Meta/Facebook" because so many people think of them as separate companies, and not just the renaming that it was. One of the main reasons for the rebranding was so that people would forget about all the horrible things that Facebook had done over the years when it was renamed, and Meta could have a fresh start. Admittedly, I never thought it would work, because you don't just forget years and years of privacy violations and security vulnerabilities, but it turns out people either completely ignorant or oblivious, or both.
@@ -107,7 +107,7 @@ However, this is a relatively easily solved problem. You can use Telegram's secr
 
 One of the main reasons that people choose to trust Telegram is their #link("https://telegram.org/faq#q-do-you-process-data-requests")[refusal to process data requests] from law enforcement, governments, etc.
 
-In conclusion, I would not recommend this app unless you're willing to use *only secret chats*. Using normal or group chats in Telegram places a lot of trust in them, and trust can be dangerous. For most people, you're better off using #link(<messengers-signal>)[*Signal*], #link(<messengers-threema>)[*Threema*] or #link(<messengers-session>)[*Session*] for small groups and 1-on-1 chats, and #link(<messengers-element-matrix>)[*Element*] or #link("https://revolt.chat/")[*Revolt*] for the larger communities. Honestly, I believe even WhatsApp is better than using Telegram for most people, especially if you have group chats or aren't willing to set up secret chats for every contact you have.
+In conclusion, I would not recommend this app unless you're willing to use *only secret chats*. Using normal or group chats in Telegram places a lot of trust in them, and trust can be dangerous. For most people, you're better off using #link(<signal>)[*Signal*], #link(<threema>)[*Threema*] or #link(<session>)[*Session*] for small groups and 1-on-1 chats, and #link(<element-matrix>)[*Element*] or #link("https://revolt.chat/")[*Revolt*] for the larger communities. Honestly, I believe even WhatsApp is better than using Telegram for most people, especially if you have group chats or aren't willing to set up secret chats for every contact you have.
 
 == iMessage
 
@@ -121,13 +121,13 @@ Sure, Apple's security is probably strong enough that most hackers won't be able
 
 Facebook Messenger has an option to enable end-to-end encrypted #link("https://messengernews.fb.com/2021/08/13/messenger-updates-end-to-end-encrypted-chats-with-new-features/")[chats, voice and video calls] . Meta/Facebook are also testing #link("https://about.fb.com/news/2021/12/metas-approach-to-safer-private-messaging/")[end-to-end encryption in Instagram DMs]. However, since these aren't enabled by default, most people don't use them, because such is the power of defaults.
 
-Again, use other platforms like #link(<messengers-signal>)[*Signal*], #link(<messengers-threema>)[*Threema*] or #link(<messengers-session>)[*Session*], or at the very least enable end-to-end encryption where you can.
+Again, use other platforms like #link(<signal>)[*Signal*], #link(<threema>)[*Threema*] or #link(<session>)[*Session*], or at the very least enable end-to-end encryption where you can.
 
 = Trustless Encryption
 
 This section has end-to-end encrypted open-source apps with reproducible builds, so you can see for yourself what goes on in the app, and there is very little trust you have to place in the developers. I can recommend all of the apps in this section, and have personally used / am currently using them. The apps serve different purposes, though, so keep that in mind if you do want to switch.
 
-== Signal <messengers-signal>
+== Signal <signal>
 
 *Signal* is an open source messenger (and a #link("https://en.wikipedia.org/wiki/Signal_Foundation")[nonprofit foundation]) that uses their own #link("https://en.wikipedia.org/wiki/Signal_Protocol")[Signal Protocol] for end-to-end encryption. This protocol is used by a whole bunch of other messengers, like #link("https://signal.org/blog/whatsapp-complete/")[WhatsApp], #link("https://www.theverge.com/2020/11/19/21574451/android-rcs-encryption-message-end-to-end-beta")[Google's RCS Chat], #link("https://signal.org/blog/facebook-messenger/")[Facebook Messenger's Secret Conversations] and #link("https://signal.org/blog/skype-partnership/")[Skype's Private Conversations].
 
@@ -148,7 +148,7 @@ In conclusion, an excellent app for most use cases with world-class privacy and 
 - #link("https://signal.org/legal/")[Terms and Privacy Policy]
 - #link("https://signal.org/donate/")[Donate]
 
-== Session <messengers-session>
+== Session <session>
 
 *Session* is a fork of Signal that's meant to provide you with complete anonymity. Just like Signal, it's open source. That's about where the similarities end, though.
 
@@ -158,7 +158,7 @@ Session is also completely #link("https://en.wikipedia.org/wiki/Decentralization
 
 The Oxen network is based on the Oxen blockchain, which a lot of people aren't very fond of. However, the \$OXEN cryptocurrency has very little to do with the actual Session app itself, it's only related to the hosting of Oxen service nodes, which most people shouldn't have to worry about.
 
-In addition to all of that, messages in Session are #link("https://en.wikipedia.org/wiki/Onion_routing")[onion routed]. If you don't know what onion routing is, essentially the messages are covered in several layers of encryption. When you send a message, say from Estonia, the outermost layer of encryption only reveals the data of where it needs to go next. Say it goes to a node in Germany. There, a layer of encryption will be "peeled" away, like an onion's layer, revealing an inner layer of encryption, which reveals where the data needs to head next. From there, it could go to Canada, for instance. Again, another layer is "peeled" away, revealing the data's next destination. This is repeated a few times (usually 3-4) until the data reached the recipient's device, where it is decrypted so that they can read it. However, since each node only knows where the data is coming from and where it's going next, and nodes can handle a _lot_ of traffic, it's *really* hard to tell where the message came from. That's what makes Session (and other onion routed stuff, like #link("https://www.torproject.org/")[Tor]) anonymous. It's not perfect, but it's good enough to work for most high-risk #link(<threat-modelling>)[threat models].
+In addition to all of that, messages in Session are #link("https://en.wikipedia.org/wiki/Onion_routing")[onion routed]. If you don't know what onion routing is, essentially the messages are covered in several layers of encryption. When you send a message, say from Estonia, the outermost layer of encryption only reveals the data of where it needs to go next. Say it goes to a node in Germany. There, a layer of encryption will be "peeled" away, like an onion's layer, revealing an inner layer of encryption, which reveals where the data needs to head next. From there, it could go to Canada, for instance. Again, another layer is "peeled" away, revealing the data's next destination. This is repeated a few times (usually 3-4) until the data reached the recipient's device, where it is decrypted so that they can read it. However, since each node only knows where the data is coming from and where it's going next, and nodes can handle a _lot_ of traffic, it's *really* hard to tell where the message came from. That's what makes Session (and other onion routed stuff, like #link("https://www.torproject.org/")[Tor]) anonymous. It's not perfect, but it's good enough to work for most high-risk #link("/blog/threat-modelling")[threat models].
 
 Session also doesn't use any identifiers, like phone numbers or email addresses, and they collect almost zero data, so there's really #link("https://getsession.org/faq#identity-protection")[nothing to leak] or give away even if some government agency comes knocking on their door. All they have to identify you is an autogenerated Session ID so other people can contact you, and a #link("https://getsession.org/faq#recovery-phrase")[recovery phrase] so that you can carry your Session ID over to other devices. Your contacts and messages are #link("https://getsession.org/faq#restored-contacts-and-messages")[locally stored], so you won't be able to carry them over to new devices. There's currently no backup system either, though it is #link("https://getsession.org/faq#backups")[planned] to be added.
 
@@ -171,7 +171,7 @@ In conclusion, Session isn't for most people. It's not a very effective replacem
 - #link("https://getsession.org/privacy-policy")[Privacy Policy]
 - #link("https://getsession.org/terms-of-service")[Terms of Service]
 
-== Element/Matrix <messengers-element-matrix>
+== Element/Matrix <element-matrix>
 
 *Element* is an open source decentralised messenger that uses the *Matrix* protocol to work. You can use #link("https://matrix.org/clients/")[other Matrix clients] that may provide different UIs and features. I recommend Element since it provides the most complete Matrix experience, having been #link("https://element.io/#matrix-card")[founded by the team behind Matrix].
 
@@ -204,7 +204,7 @@ In conclusion, Matrix can work great for a whole variety of use cases. It's most
 - #link("https://matrix.org/legal/")[Legal]
 - #link("https://matrix.org/supporters/")[Supporters]
 
-== Threema <messengers-threema>
+== Threema <threema>
 
 *Threema* is probably one of the most feature-rich messengers that actually keeps your privacy and security in mind. They use #link("https://threema.ch/en/faq/why_secure")[end-to-end encryption] with the open source #link("https://nacl.cr.yp.to/")[NaCl] library. They have open source clients and have been #link("https://threema.ch/en/blog/posts/audit-2020-en")[audited], which makes them quite easy to recommend. Threema is also based in Switzerland, the country with some of the #link("https://en.wikipedia.org/wiki/Information_privacy_law#Switzerland")[strongest data] #link("https://datenrecht.ch/ndsg-en/")[protection laws] in the world, which, in my opinion, gives them an edge over the other messengers, most of which are #link("https://en.wikipedia.org/wiki/Information_privacy_law#United_States")[based in the US].
 
@@ -224,7 +224,7 @@ In conclusion, a great messenger from a country with great privacy laws. I reall
 
 I know I missed out on a lot of popular messengers like Snapchat, Slack, WeChat, Line, Viber, Skype, etc., but there's so many out there I couldn't possibly fit them all into one post. However, if you're wondering how good your messenger app is in terms of privacy and security, here's a simple checklist for you:
 
-- How is the app's security? Are they utilising end-to-end encryption, and if so, which protocol? Has it been audited? How often is it updated? These are all highly important for security. #link(<intro-psa-end-to-end-encryption-e2ee>)[I've already covered why e2ee is necessary]. Unaudited apps could have undiscovered security flaws and outdated apps may be behind on security patches.
+- How is the app's security? Are they utilising end-to-end encryption, and if so, which protocol? Has it been audited? How often is it updated? These are all highly important for security. #link("/blog/intro-psa#end-to-end-encryption-e2ee")[I've already covered why e2ee is necessary]. Unaudited apps could have undiscovered security flaws and outdated apps may be behind on security patches.
 - Is it open source?
 - How is the company's reputation? Are they transparent with their customers? Do they interact with their community often? This can have a bigger impact on the trustworthiness of a company than most people realise.
 - How's the company's privacy policy? You can look them up at #link("https://tosdr.org")[ToS;DR] to get a general rating as well as simplified details of the privacy policy and terms of service for most popular services. This doesn't necessarily mean much, since companies can change or break their terms of service and privacy policy any time they want, but a privacy-friendly privacy policy is still nice to have.
