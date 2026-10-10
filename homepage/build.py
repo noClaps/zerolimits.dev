@@ -15,10 +15,18 @@ html = html.replace("<!--contact-->", contact)
 def project_link(project):
     out = '<div class="link">'
     if "link" in project:
-        out += f'<h3><a href="{project["link"]}">{project["name"]}</a></h3>'
+        out += f'<h3><a href="{project["link"]}">{project["name"]}</a>'
     else:
-        out += f"<h3>{project['name']}</h3>"
-    out += f'<p>{project["description"]} <a href="{project["source"]}">Source</a></p>'
+        out += f"<h3>{project['name']}"
+
+    out += f'<a href="{project["source"]}" title="Source code" class="code">{Path("homepage/icons/code.svg").read_text()}</a>'
+    out += "</h3>"
+    out += f"<p>{project['description']}</p>"
+    if "languages" in project:
+        out += "<span>"
+        for lang in project["languages"]:
+            out += Path(f"homepage/icons/{lang}.svg").read_text()
+        out += "</span>"
     out += "</div>"
     return out
 

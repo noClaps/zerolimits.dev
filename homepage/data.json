@@ -12,10 +12,42 @@
     }
   },
   "projects": {
+    "applause": {
+      "name": "Applause",
+      "description": "A Go command line argument parser library",
+      "source": "https://codeberg.org/noClaps/applause",
+      "languages": ["go"]
+    },
+    "argparse": {
+      "name": "argparse",
+      "description": "A very simple Rust command line argument parsing library",
+      "source": "https://codeberg.org/noClaps/argparse",
+      "languages": ["rust"]
+    },
     "cite": {
       "name": "Cite",
       "description": "A tool to generate Hayagriva citations from DOI URLs.",
-      "source": "https://codeberg.org/noClaps/cite"
+      "source": "https://codeberg.org/noClaps/cite",
+      "languages": ["swift"]
+    },
+    "game-of-life": {
+      "name": "Game of Life",
+      "description": "A TUI implementation of Conway's Game of Life",
+      "source": "https://codeberg.org/noClaps/game-of-life",
+      "languages": ["go"]
+    },
+    "imgoptim": {
+      "name": "imgoptim",
+      "description": "A command line utility to optimise images",
+      "source": "https://codeberg.org/noClaps/imgoptim",
+      "languages": ["rust"]
+    },
+    "nbody": {
+      "name": "n-body",
+      "description": "An n-body simulation running in the browser",
+      "link": "https://nbody.zerolimits.dev/",
+      "source": "https://codeberg.org/noClaps/nbody",
+      "languages": ["html", "css", "javascript"]
     },
     "nc": {
       "name": "NC",
@@ -23,16 +55,52 @@
       "link": "https://nc.klado.dev",
       "source": "https://arbor.klado.dev/nclang"
     },
+    "news": {
+      "name": "News",
+      "description": "A minimal Hacker news client",
+      "link": "https://news.zerolimits.dev",
+      "source": "https://codeberg.org/noClaps/news",
+      "languages": ["html", "css", "javascript"]
+    },
     "qcsim": {
       "name": "QCSim",
       "description": "A quantum computer simulation research project.",
-      "source": "https://codeberg.org/noClaps/qcsim"
+      "source": "https://codeberg.org/noClaps/qcsim",
+      "languages": ["rust"]
+    },
+    "serve": {
+      "name": "serve",
+      "description": "A simple HTTP server for serving a directory",
+      "source": "https://codeberg.org/noClaps/serve",
+      "languages": ["rust"]
+    },
+    "typst2ansi": {
+      "name": "typst2ansi",
+      "description": "A website to convert Typst into syntax-highlighted ANSI",
+      "link": "https://typst2ansi.zerolimits.dev/",
+      "source": "https://codeberg.org/noClaps/typst2ansi",
+      "languages": ["rust", "html", "css", "javascript"]
+    },
+    "wordsearch": {
+      "name": "Word search",
+      "description": "A simple website to filter words",
+      "link": "https://wordsearch.zerolimits.dev/",
+      "source": "https://codeberg.org/noClaps/wordsearch",
+      "languages": ["html", "css", "javascript"]
     },
     "zerolimits": {
       "name": "ZeroLimits.dev",
-      "description": "A site about the most interesting boring person you've ever met.",
+      "description": "My personal homepage",
       "link": "https://zerolimits.dev",
-      "source": "https://codeberg.org/noClaps/zerolimits.dev"
+      "source": "https://codeberg.org/noClaps/zerolimits.dev",
+      "languages": ["typst", "html", "css", "python"]
+    },
+    "cli": {
+      "name": "zerolimits --cli",
+      "description": "A CLI version of ZeroLimits.dev",
+      "link": "https://cli.zerolimits.dev",
+      "source": "https://codeberg.org/noClaps/cli.zerolimits.dev",
+      "languages": ["html", "css", "javascript"]
     }
   }
 }
