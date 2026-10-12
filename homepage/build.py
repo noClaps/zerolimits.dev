@@ -1,9 +1,9 @@
-from json import JSONDecoder
+import json
 from os import makedirs
 from pathlib import Path
 from shutil import copy
 
-data = JSONDecoder().decode(Path("homepage/data.json").read_text())
+data = json.loads(Path("homepage/data.json").read_text())
 html = Path("homepage/index.html").read_text()
 
 contact = ""
