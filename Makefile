@@ -2,6 +2,7 @@
 all: homepage blog gallery
 
 blog:
+	@cd blog/helper/ && cargo build --release
 	@python3 blog/build.py
 	@python3 blog/feed.py
 homepage:

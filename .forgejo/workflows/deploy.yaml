@@ -2,10 +2,12 @@ on: [push, workflow_dispatch]
 
 jobs:
   deploy:
-    runs-on: codeberg-tiny-lazy
+    runs-on: codeberg-small-lazy
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v7
-      - uses: https://github.com/typst-community/setup-typst@v5
+      - uses: https://github.com/dtolnay/rust-toolchain@stable
+      - uses: https://github.com/pandoc/actions/setup@v1
+      - run: python3 --version
       - run: make
       - uses: https://github.com/cloudflare/wrangler-action@v4
         with:

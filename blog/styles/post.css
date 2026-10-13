@@ -28,14 +28,10 @@ th {
 /* Code */
 code {
     font-family: var(--mono);
+    line-height: 1.5;
 
     &:not(pre code) {
-        line-height: 0;
         overflow-wrap: break-word;
-    }
-
-    &:is(pre code) {
-        line-height: 1.5;
     }
 }
 
@@ -44,15 +40,15 @@ pre:has(code) {
 }
 
 /* Math */
-div:has(> math[display="block"]) {
+p:has(> math[display="block"]) {
     overflow-y: hidden;
     overflow-x: auto;
     text-align: center;
+    margin-block: 1em;
 }
 
-mtable.multiline-equation mtable mtd {
-    /* TODO: remove once matrix/vector padding is fixed */
-    padding: 0.5ex !important;
+math[display="block"] * {
+    math-style: normal;
 }
 
 /* Layout */
@@ -93,13 +89,6 @@ img {
     object-fit: contain;
 }
 
-figure svg {
-    margin: 0.5rem auto;
-    background-color: white;
-    padding: 0.5rem;
-    max-width: calc(100% - 1rem);
-}
-
 /* Containers */
 .note {
     padding: 1rem;
@@ -107,9 +96,10 @@ figure svg {
     background-color: alpha(from var(--primary) / 5%);
     border-left: 0.25rem solid var(--primary);
 
-    & > p:first-child {
+    & p:first-child {
         margin: 0;
         text-align: start;
+        font-weight: bold;
     }
 }
 
@@ -139,8 +129,7 @@ blockquote {
     line-height: 1.5;
     text-align: justify;
 
-    & + p {
+    & p:last-child {
         text-align: right;
-        margin-inline: 40px;
     }
 }

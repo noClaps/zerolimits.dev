@@ -93,7 +93,7 @@
       "description": "My personal homepage",
       "link": "https://zerolimits.dev",
       "source": "https://codeberg.org/noClaps/zerolimits.dev",
-      "languages": ["typst", "html", "css", "python"]
+      "languages": ["html", "css", "python"]
     },
     "cli": {
       "name": "zerolimits --cli",
