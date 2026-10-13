@@ -1,7 +1,5 @@
 import json
-from os import makedirs
 from pathlib import Path
-from shutil import copy
 
 data = json.loads(Path("homepage/data.json").read_text())
 html = Path("homepage/index.html").read_text()
@@ -36,9 +34,4 @@ for project in data["projects"].values():
     projects += project_link(project)
 html = html.replace("<!--projects-->", projects)
 
-makedirs("dist/", exist_ok=True)
 Path("dist/index.html").write_text(html)
-copy("homepage/data.json", "dist/data.json")
-copy("homepage/favicon.png", "dist/favicon.png")
-copy("homepage/global.css", "dist/global.css")
-copy("homepage/style.css", "dist/style.css")

@@ -1,6 +1,4 @@
-from os import makedirs
 from pathlib import Path
-from shutil import copy, copytree
 
 # sips -s format avif --resampleWidth 800 -o $out $in
 images = {
@@ -174,7 +172,4 @@ for year in ["2026", "2025", "2024", "2023", "2022", "2019"]:
     out += "</section>"
     html = html.replace("</main>", out + "</main>")
 
-makedirs("dist/gallery", exist_ok=True)
 Path("dist/gallery/index.html").write_text(html)
-copytree("gallery/assets/", "dist/gallery/", dirs_exist_ok=True)
-copy("gallery/style.css", "dist/gallery/style.css")

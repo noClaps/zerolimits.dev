@@ -6,8 +6,12 @@ blog:
 	@python3 blog/build.py
 	@python3 blog/feed.py
 homepage:
+	@mkdir -p dist/
+	@cp homepage/data.json homepage/favicon.png homepage/global.css homepage/style.css dist/
 	@python3 homepage/build.py
 gallery:
+	@mkdir -p dist/gallery/
+	@cp -R gallery/style.css gallery/assets/ dist/gallery/
 	@python3 gallery/build.py
 
 check:
