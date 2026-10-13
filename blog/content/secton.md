@@ -3,11 +3,9 @@ title: Finding vulnerabilities in Secton
 date: 2025-06-26
 ---
 
-::: note
-Acknowledgements
-
-I'd like to give credit to my friends, [InsidiousFiddler](https://codycody31.dev) and [RollViral](https://xnoid.studio), for helping out with this project. InsidiousFiddler has his own write-up of this, which you can find [here](https://codycody31.dev/when-security-is-not-a-factor-secton/). You can read that one or this one, they have basically the same content.
-:::
+> [!note] Acknowledgements
+>
+> I'd like to give credit to my friends, [InsidiousFiddler](https://codycody31.dev) and [RollViral](https://xnoid.studio), for helping out with this project. InsidiousFiddler has his own write-up of this, which you can find [here](https://codycody31.dev/when-security-is-not-a-factor-secton/). You can read that one or this one, they have basically the same content.
 
 I'd like to start off this post by stating that none of us are cybersecurity professionals. We just got bored and started messing around with stuff, and ended up finding some vulnerabilities along the way. Also, we did report everything we found to the developers and can confirm that it has all been fixed, at least at the time of writing this post. With that said, let's get started!
 

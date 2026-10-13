@@ -170,11 +170,9 @@ LavaRand is a wall of lava lamps at Cloudflare's San Francisco office, with a ca
 
 ![The flow of entropy in LavaRand. Source: [LavaRand in Production: The Nitty-Gritty Technical Details](https://blog.cloudflare.com/lavarand-in-production-the-nitty-gritty-technical-details/).](./random-numbers/Screen-Shot-2017-10-31-at-3.57.19-PM.png)
 
-::: note
-NOTE
-
-Cloudflare wasn't actually the first company to come up with this system. The [original Lavarand system](https://en.wikipedia.org/wiki/Lavarand) was designed and [patented](https://patents.google.com/patent/US5732138) by Silicon Graphics in 1996. The patent expired in 2016, and Cloudflare's LavaRand system was launched in 2017.
-:::
+> [!note]
+>
+> Cloudflare wasn't actually the first company to come up with this system. The [original Lavarand system](https://en.wikipedia.org/wiki/Lavarand) was designed and [patented](https://patents.google.com/patent/US5732138) by Silicon Graphics in 1996. The patent expired in 2016, and Cloudflare's LavaRand system was launched in 2017.
 
 ## Spotify's solution
 

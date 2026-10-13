@@ -4,16 +4,13 @@ date: 2023-02-02
 lastmod: 2023-02-05
 ---
 
-::: note
-DISCLAIMERS
-
-1. This post is based on my own personal experience using Windows and various Linux distributions, and may not reflect your experience with it.
-2. Many of the things I talk about here might be possible to change by messing around with different configurations and system files in the OSes, but that's not something I am willing to do, and neither are most people. Default settings matter a lot, and that is what I'm going to focus on.
-3. I may mention certain things that certain OSes do well, and that others don't. This doesn't mean I'm biased towards or against something. I'm not sponsored by any companies or organisations, and there is no reason for me to praise something unless I really believe it's good, or point out concerns I don't think are valid.
-4. This post may be a bit more technical than my other ones, so if you're feeling a bit lost with what I'm talking about, don't worry it's not your fault.
-5. I don't care if you think it's Linux or GNU/Linux, I'm saying Linux.
-
-:::
+> [!note] DISCLAIMERS
+>
+> 1. This post is based on my own personal experience using Windows and various Linux distributions, and may not reflect your experience with it.
+> 2. Many of the things I talk about here might be possible to change by messing around with different configurations and system files in the OSes, but that's not something I am willing to do, and neither are most people. Default settings matter a lot, and that is what I'm going to focus on.
+> 3. I may mention certain things that certain OSes do well, and that others don't. This doesn't mean I'm biased towards or against something. I'm not sponsored by any companies or organisations, and there is no reason for me to praise something unless I really believe it's good, or point out concerns I don't think are valid.
+> 4. This post may be a bit more technical than my other ones, so if you're feeling a bit lost with what I'm talking about, don't worry it's not your fault.
+> 5. I don't care if you think it's Linux or GNU/Linux, I'm saying Linux.
 
 When I'm looking for an OS to use for every day of my life for the next few years, there's certain criteria I want it to meet. It should be:
 

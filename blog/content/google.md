@@ -88,17 +88,15 @@ Today, Microsoft no longer holds that position in browsers. Chrome is now the le
 
 On top of that, Google Search has a [92% share](https://gs.statcounter.com/search-engine-market-share) in the search engine market, with no one to contest them. While there are privacy-friendly options, like [DuckDuckGo](https://duckduckgo.com/), [Brave Search](https://search.brave.com/), [Startpage](https://www.startpage.com/) and more, most people don't know they exist. And those that do, don't find the results good enough to use.
 
-::: note
-My Experience
-
-I've used all 3 of the search engines listed above, and the only one that has worked consistently well for me has been Brave Search. DuckDuckGo is basically Bing without the tracking, and Bing has never given me good results.
-
-While Startpage has decent results (they use Google Search for their results), it doesn't work well if you're using Tor or a VPN, and they show their own ads which, while privacy-friendly, are annoying. Other than that, for most people, Startpage is the closest to Google you can get, privately. However, keep in mind that Startpage was [bought by System1](https://www.startpage.com/privacy-please/startpage-articles/startpage-and-privacy-one-group), an [ad company](https://system1.com/what-we-do). While this [doesn't seem to have much impact](https://support.startpage.com/hc/en-us/articles/5194985436948-What-is-Startpage-s-relationship-with-Privacy-One-System1-and-what-does-this-mean-for-my-privacy-protections) on Startpage and its privacy, I think it's something to look out for in the future. After all, these kinds of deals have never ended well in the past, such as in the case of [DuckDuckGo and Microsoft](https://techcrunch.com/2022/05/24/ddg-microsoft-tracking-blocking-limit/). DuckDuckGo eventually did [block those trackers](https://www.theregister.com/2022/08/06/in_brief_security/), but it was enough that people stopped trusting them.
-
-I do recommend Brave Search, however. They use their own search index for results, and it's worked flawlessly for ~95% of my searches. If you like Brave Search, you can set it as the [default search engine](https://search.brave.com/default) in your browser.
-
-_I am not affiliated with any of these companies._ This recommendation is purely based on personal experience.
-:::
+> [!note] My Experience
+>
+> I've used all 3 of the search engines listed above, and the only one that has worked consistently well for me has been Brave Search. DuckDuckGo is basically Bing without the tracking, and Bing has never given me good results.
+>
+> While Startpage has decent results (they use Google Search for their results), it doesn't work well if you're using Tor or a VPN, and they show their own ads which, while privacy-friendly, are annoying. Other than that, for most people, Startpage is the closest to Google you can get, privately. However, keep in mind that Startpage was [bought by System1](https://www.startpage.com/privacy-please/startpage-articles/startpage-and-privacy-one-group), an [ad company](https://system1.com/what-we-do). While this [doesn't seem to have much impact](https://support.startpage.com/hc/en-us/articles/5194985436948-What-is-Startpage-s-relationship-with-Privacy-One-System1-and-what-does-this-mean-for-my-privacy-protections) on Startpage and its privacy, I think it's something to look out for in the future. After all, these kinds of deals have never ended well in the past, such as in the case of [DuckDuckGo and Microsoft](https://techcrunch.com/2022/05/24/ddg-microsoft-tracking-blocking-limit/). DuckDuckGo eventually did [block those trackers](https://www.theregister.com/2022/08/06/in_brief_security/), but it was enough that people stopped trusting them.
+>
+> I do recommend Brave Search, however. They use their own search index for results, and it's worked flawlessly for ~95% of my searches. If you like Brave Search, you can set it as the [default search engine](https://search.brave.com/default) in your browser.
+>
+> _I am not affiliated with any of these companies._ This recommendation is purely based on personal experience.
 
 Google also makes Android, which is used by [over 70% of all mobile devices](https://gs.statcounter.com/os-market-share/mobile), most of which are also using Google Play Services and Google's apps.
 

@@ -3,11 +3,9 @@ title: Don't break your promises
 date: 2026-05-24
 ---
 
-::: note
-NOTE
-
-I want to preface this by saying that I'm by no means an expert on this topic, I'm just writing my observations from the point of view of a consumer.
-:::
+> [!note]
+>
+> I want to preface this by saying that I'm by no means an expert on this topic, I'm just writing my observations from the point of view of a consumer.
 
 There's a trend I've noticed over the the years, having seen so many companies and products fall in and out of favor with the general public. It explains why there's such a negative view on so-called "updates" that are supposed to make the experience better, but often end up ruining it for the people using these products. There's probably a more formal name for this phenomenon, but I like to call it "core promises".
 

@@ -7,11 +7,9 @@ date: 2026-10-06
 \newcommand{\ket}[1]{|{#1}\rangle}
 \newcommand{\braket}[1]{\langle{#1}\rangle}
 
-::: note
-Prerequisites
-
-This post assumes that you have knowledge of linear algebra, such as matrix and vector multiplications, eigenvectors and eigenvalues, etc. More advanced concepts like the Kronecker product will be explained briefly, but I won't go into too much detail about them. Knowledge of complex numbers and operations is also assumed.
-:::
+> [!note] Prerequisites
+>
+> This post assumes that you have knowledge of linear algebra, such as matrix and vector multiplications, eigenvectors and eigenvalues, etc. More advanced concepts like the Kronecker product will be explained briefly, but I won't go into too much detail about them. Knowledge of complex numbers and operations is also assumed.
 
 Quantum computing is this hot new topic that's been around tech news in the last few years. There's claims flying around about how it's orders of magnitude faster than classical computers, and that it's going to break all of our encryption and cybersecurity. To be fair, a lot of that is true, to a certain extent. Quantum computers are much, much faster than classical computers **at certain tasks**, and there are in fact quantum algorithms that can break some **older** encryption schemes in a reasonable amount of time.
 
@@ -33,46 +31,42 @@ $$
 \frac{1}{\sqrt{ 2 }}\ket{0} +\frac{1}{\sqrt{ 2 }}\ket{1}
 $$
 
-::: note
-Notation
-
-$\ket{0}$ is read as "ket 0", and it represents the part of the qubit's vector pointing in the $0$ direction. The counterpart to a "ket" is a "bra", written as $\bra{0}$. Together they make "bra-ket" notation, also known as _Dirac notation_. It's important to remember, the "0" and "1" here are **just labels**, they aren't real values. We could have just as well named them $\ket{h}$ and $\ket{t}$ and all of the math would work out exactly the same.
-
-Defining a bra is a bit complicated, but you can imagine it as the counterpart to a ket. The mathematical application of it is that, when you apply a bra to a ket, if the labels inside both are the same, then they cancel out to 1, otherwise they cancel out to 0:
-
-$$
-\begin{aligned}
-\braket{ 0 | 0 } = \braket{ 1 | 1 } = 1 \\
-\braket{ 0 | 1 } = \braket{ 1 | 0 } = 0
-\end{aligned}
-$$
-
-Here, $\braket{ 0 | 0 }$ is just a shorthand for $\bra{0}\ket{0}$, and you're effectively taking a dot product. We'll see this in closer detail when we look at [vector notation](#vector-notation).
-:::
+> [!note] Notation
+>
+> $\ket{0}$ is read as "ket 0", and it represents the part of the qubit's vector pointing in the $0$ direction. The counterpart to a "ket" is a "bra", written as $\bra{0}$. Together they make "bra-ket" notation, also known as _Dirac notation_. It's important to remember, the "0" and "1" here are **just labels**, they aren't real values. We could have just as well named them $\ket{h}$ and $\ket{t}$ and all of the math would work out exactly the same.
+>
+> Defining a bra is a bit complicated, but you can imagine it as the counterpart to a ket. The mathematical application of it is that, when you apply a bra to a ket, if the labels inside both are the same, then they cancel out to 1, otherwise they cancel out to 0:
+>
+> $$
+> \begin{aligned}
+> \braket{ 0 | 0 } = \braket{ 1 | 1 } = 1 \\
+> \braket{ 0 | 1 } = \braket{ 1 | 0 } = 0
+> \end{aligned}
+> $$
+>
+> Here, $\braket{ 0 | 0 }$ is just a shorthand for $\bra{0}\ket{0}$, and you're effectively taking a dot product. We'll see this in closer detail when we look at [vector notation](#vector-notation).
 
 Here, $\ket{0}$ and $\ket{1}$ are the qubit's _basis states_. The definition of an eigenbasis is a bit complicated, but an easy way to imagine this is that a qubit exists on a unit circle, and these are the graph's $x$ and $y$ axes. The coefficients of the basis states then represent the actual $x$ and $y$ coordinates on that graph:
 
 ![The unit circle on the $\ket{0}$-$\ket{1}$ plane. Qubits lie somewhere on the blue line in this plane. The red line shows the vector for the $\frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$ qubit lying halfway between the $\ket{0}$ and $\ket{1}$ axes.](./quantum-information/unit-circle.svg)
 
-::: note
-Orthonormality
-
-The actual thing we're talking about here is called "orthonormality". This consists of two properties: orthogonality and normality. For an orthonormal eigenbasis:
-
-- **Orthogonality:** The basis vectors must be orthogonal, or at 90º to each other. This is what I meant when I said they were the $x$ and $y$ axes of a graph. The way this is actually defined is that their inner product $\braket{ a | b }=0$. This holds true for $\ket{0}$ and $\ket{1}$ since $\braket{ 0 | 1 }=\braket{ 1 | 0 }=0$.
-- **Normality:** The basis vectors must be normal. A vector is considered "normal" if its inner product with itself $\braket{ v | v }=1$. This must be true for any vector in the space, so any combination of the basis vectors. This is what I meant when I said that a qubit exists on the unit circle.
-
-So if two vectors $\ket{a}$ and $\ket{b}$ meet the condition:
-
-$$
-\braket{ a | b } = \begin{cases}
-1 &  \text{if } a = b \\
-0 &  \text{otherwise}
-\end{cases}
-$$
-
-then they are said to be orthonormal. While there are non-orthonormal eigenbases, we'll only be talking about orthonormal bases in this post.
-:::
+> [!note] Orthonormality
+>
+> The actual thing we're talking about here is called "orthonormality". This consists of two properties: orthogonality and normality. For an orthonormal eigenbasis:
+>
+> - **Orthogonality:** The basis vectors must be orthogonal, or at 90º to each other. This is what I meant when I said they were the $x$ and $y$ axes of a graph. The way this is actually defined is that their inner product $\braket{ a | b }=0$. This holds true for $\ket{0}$ and $\ket{1}$ since $\braket{ 0 | 1 }=\braket{ 1 | 0 }=0$.
+> - **Normality:** The basis vectors must be normal. A vector is considered "normal" if its inner product with itself $\braket{ v | v }=1$. This must be true for any vector in the space, so any combination of the basis vectors. This is what I meant when I said that a qubit exists on the unit circle.
+>
+> So if two vectors $\ket{a}$ and $\ket{b}$ meet the condition:
+>
+> $$
+> \braket{ a | b } = \begin{cases}
+> 1 &  \text{if } a = b \\
+> 0 &  \text{otherwise}
+> \end{cases}
+> $$
+>
+> then they are said to be orthonormal. While there are non-orthonormal eigenbases, we'll only be talking about orthonormal bases in this post.
 
 In reality, the coefficients of the $\ket{0}$ and $\ket{1}$ are complex numbers, so even drawing a single qubit would actually require a 4-dimensional graph. I don't know how to make 4D graphs, so I'm just going to stick with this simplified example for now. Besides, it's not very useful to work with qubits on graphs since, as you can see, you run out of dimensions pretty quickly.
 
@@ -87,42 +81,40 @@ a_{1}
 \end{pmatrix}
 $$
 
-::: note
-Vector definition of $\bra{\psi}$
-
-Now that we have our vector definitions for $\ket{\psi}$, we can better define $\bra{\psi}$. If $\ket{\psi}$ is a vertical vector, then $\bra{\psi}$ is a horizontal vector, such that:
-
-$$
-\begin{aligned}
-\bra{\psi}  & = a_{0}\bra{0} +a_{1}\bra{1} = \begin{pmatrix}
-a_{0} & a_{1}
-\end{pmatrix} \\
-\ket{\phi}  & =b_{0} \ket{0} +b_{1}\ket{1} = \begin{pmatrix}
-b_{0} \\
-b_{1}
-\end{pmatrix} \\
-\braket{ \psi | \phi }  & = \begin{pmatrix}
-a_{0} & a_{1}
-\end{pmatrix} \cdot \begin{pmatrix}
-b_{0} \\
-b_{1}
-\end{pmatrix} = a_{0}b_{0} + a_{1}b_{1}
-\end{aligned}
-$$
-
-We could derive the same result by doing the multiplication algebraically:
-
-$$
-\begin{aligned}
-\braket{ \psi | \phi }  & = (a_{0}\bra{0} +a_{1}\bra{1} )(b_{0}\ket{0} +b_{1}\ket{1} ) \\
- & = a_{0}b_{0}\braket{ 0 | 0 } +a_{0}b_{1}\braket{ 0 | 1 } +a_{1}b_{0}\braket{ 1 | 0 } +a_{1}b_{1}\braket{ 1 | 1 }  \\
- & = a_{0}b_{0}\times 1 + a_{0}b_{1}\times 0 +a_{1}b_{0}\times 0+a_{1}b_{1}\times 1 \\
- & = a_{0}b_{0}+a_{1}b_{1}
-\end{aligned}
-$$
-
-I'm going to use both Dirac notation and vector notation interchangeably throughout this post since it's sometimes easier to do calculations with one or the other, so it's worth getting familiar with translating between both.
-:::
+> [!note] Vector definition of $\bra{\psi}$
+>
+> Now that we have our vector definitions for $\ket{\psi}$, we can better define $\bra{\psi}$. If $\ket{\psi}$ is a vertical vector, then $\bra{\psi}$ is a horizontal vector, such that:
+>
+> $$
+> \begin{aligned}
+> \bra{\psi}  & = a_{0}\bra{0} +a_{1}\bra{1} = \begin{pmatrix}
+> a_{0} & a_{1}
+> \end{pmatrix} \\
+> \ket{\phi}  & =b_{0} \ket{0} +b_{1}\ket{1} = \begin{pmatrix}
+> b_{0} \\
+> b_{1}
+> \end{pmatrix} \\
+> \braket{ \psi | \phi }  & = \begin{pmatrix}
+> a_{0} & a_{1}
+> \end{pmatrix} \cdot \begin{pmatrix}
+> b_{0} \\
+> b_{1}
+> \end{pmatrix} = a_{0}b_{0} + a_{1}b_{1}
+> \end{aligned}
+> $$
+>
+> We could derive the same result by doing the multiplication algebraically:
+>
+> $$
+> \begin{aligned}
+> \braket{ \psi | \phi }  & = (a_{0}\bra{0} +a_{1}\bra{1} )(b_{0}\ket{0} +b_{1}\ket{1} ) \\
+>  & = a_{0}b_{0}\braket{ 0 | 0 } +a_{0}b_{1}\braket{ 0 | 1 } +a_{1}b_{0}\braket{ 1 | 0 } +a_{1}b_{1}\braket{ 1 | 1 }  \\
+>  & = a_{0}b_{0}\times 1 + a_{0}b_{1}\times 0 +a_{1}b_{0}\times 0+a_{1}b_{1}\times 1 \\
+>  & = a_{0}b_{0}+a_{1}b_{1}
+> \end{aligned}
+> $$
+>
+> I'm going to use both Dirac notation and vector notation interchangeably throughout this post since it's sometimes easier to do calculations with one or the other, so it's worth getting familiar with translating between both.
 
 ### Measuring a qubit
 
@@ -153,45 +145,42 @@ $$
 \Pr(0) + \Pr(1) + \dots = |a_{0}|^{2}+|a_{1}|^{2} + \dots = 1
 $$
 
-::: note
-Derivation of $\braket{ \psi | \psi }=1$
-
-Using our vector definitions as well as our new sum of squares rule, we can also show how $\braket{ \psi | \psi }=1$:
-
-$$
-\begin{aligned}
-\ket{\psi} &  = \begin{pmatrix}
-a_{0} \\
-a_{1}
-\end{pmatrix} \\
-\braket{ \psi | \psi } & = \begin{pmatrix}
-a_{0} & a_{1}
-\end{pmatrix} \begin{pmatrix}
-a_{0} \\
-a_{1}
-\end{pmatrix} \\
- & = a_{0}\times a_{0}+a_{1}\times a_{1} \\
- & = |a_{0}|^{2} + |a_{1}|^{2} \\
- & = 1
-\end{aligned}
-$$
-
-Note that we didn't specify any values of $a_0$ or $a_1$, so this applies to any quantum state, including basis states:
-
-$$
-\begin{aligned}
-\ket{0}  & = \begin{pmatrix}
-1 \\
-0
-\end{pmatrix} \implies \braket{ 0 | 0 } = 1^{2}+0^{2}=1 \\
-\ket{1}  & = \begin{pmatrix}
-0 \\
-1
-\end{pmatrix} \implies \braket{ 0 | 1 } = 0^{2}+1^{2}=1
-\end{aligned}
-$$
-
-:::
+> [!note] Derivation of $\braket{ \psi | \psi }=1$
+>
+> Using our vector definitions as well as our new sum of squares rule, we can also show how $\braket{ \psi | \psi }=1$:
+>
+> $$
+> \begin{aligned}
+> \ket{\psi} &  = \begin{pmatrix}
+> a_{0} \\
+> a_{1}
+> \end{pmatrix} \\
+> \braket{ \psi | \psi } & = \begin{pmatrix}
+> a_{0} & a_{1}
+> \end{pmatrix} \begin{pmatrix}
+> a_{0} \\
+> a_{1}
+> \end{pmatrix} \\
+>  & = a_{0}\times a_{0}+a_{1}\times a_{1} \\
+>  & = |a_{0}|^{2} + |a_{1}|^{2} \\
+>  & = 1
+> \end{aligned}
+> $$
+>
+> Note that we didn't specify any values of $a_0$ or $a_1$, so this applies to any quantum state, including basis states:
+>
+> $$
+> \begin{aligned}
+> \ket{0}  & = \begin{pmatrix}
+> 1 \\
+> 0
+> \end{pmatrix} \implies \braket{ 0 | 0 } = 1^{2}+0^{2}=1 \\
+> \ket{1}  & = \begin{pmatrix}
+> 0 \\
+> 1
+> \end{pmatrix} \implies \braket{ 0 | 1 } = 0^{2}+1^{2}=1
+> \end{aligned}
+> $$
 
 Now that we have our qubits, we want to be able to do something with them. To do that, we use operators.
 
@@ -213,40 +202,37 @@ X = \begin{pmatrix}
 \end{pmatrix} = \ket{0} \bra{1} + \ket{1} \bra{0}
 $$
 
-::: note
-Vector derivation
-
-We can derive the $X$ operator using the vector forms of $\ket{\psi}$ and $\bra{\psi}$:
-
-$$
-\begin{aligned}
-X & = \ket{0} \bra{1} + \ket{1} \bra{0}  \\
- & = \begin{pmatrix}
- 1 \\
- 0
- \end{pmatrix} \begin{pmatrix}
- 0 & 1
- \end{pmatrix} + \begin{pmatrix}
- 0 \\
- 1
- \end{pmatrix} \begin{pmatrix}
- 1 & 0
- \end{pmatrix} \\
-  & = \begin{pmatrix}
-  0 & 1 \\
-  0 & 0
-  \end{pmatrix} + \begin{pmatrix}
-  0 & 0 \\
-  1 & 0
-  \end{pmatrix} \\
-   & = \begin{pmatrix}
-   0 & 1 \\
-   1 & 0
-   \end{pmatrix}
-\end{aligned}
-$$
-
-:::
+> [!note] Vector derivation
+>
+> We can derive the $X$ operator using the vector forms of $\ket{\psi}$ and $\bra{\psi}$:
+>
+> $$
+> \begin{aligned}
+> X & = \ket{0} \bra{1} + \ket{1} \bra{0}  \\
+>  & = \begin{pmatrix}
+>  1 \\
+>  0
+>  \end{pmatrix} \begin{pmatrix}
+>  0 & 1
+>  \end{pmatrix} + \begin{pmatrix}
+>  0 \\
+>  1
+>  \end{pmatrix} \begin{pmatrix}
+>  1 & 0
+>  \end{pmatrix} \\
+>   & = \begin{pmatrix}
+>   0 & 1 \\
+>   0 & 0
+>   \end{pmatrix} + \begin{pmatrix}
+>   0 & 0 \\
+>   1 & 0
+>   \end{pmatrix} \\
+>    & = \begin{pmatrix}
+>    0 & 1 \\
+>    1 & 0
+>    \end{pmatrix}
+> \end{aligned}
+> $$
 
 The way to apply an operator is to take the dot product with the qubit you want to apply it to:
 
@@ -313,101 +299,100 @@ $$
 \ket{0} \otimes \ket{0} = \ket{0} \ket{0} = \ket{00}
 $$
 
-::: {.note #kronecker-product}
-Kronecker product
+<span id="kronecker-product"></span>
 
-The Kronecker product, also known as the tensor product, is denoted by $\otimes$ and is an operation on a vector or matrix that increases its size. The way it works is pretty simple, you just multiply the right hand side by each element of the left hand side:
-
-$$
-\begin{aligned}
-\ket{\phi} & = \begin{pmatrix}
-a_{0} \\
-a_{1}
-\end{pmatrix}  \\
-\ket{\psi}  & = \begin{pmatrix}
-b_{0} \\
-b_{1}
-\end{pmatrix} \\
-\ket{\phi} \otimes \ket{\psi}  & = \begin{pmatrix}
-a_{0} \cdot \ket{\psi}  \\
-a_{1} \cdot \ket{\psi}
-\end{pmatrix} \\
- & = \begin{pmatrix}
- a_{0} \cdot \begin{pmatrix}
- b_{0} \\
- b_{1}
- \end{pmatrix} \\
- a_{1} \cdot \begin{pmatrix}
- b_{0} \\
- b_{1}
- \end{pmatrix}
- \end{pmatrix} \\
-  & = \begin{pmatrix}
-  a_{0}\times b_{0} \\
-  a_{0}\times b_{1} \\
-  a_{1}\times b_{0} \\
-  a_{1}\times b_{1}
-  \end{pmatrix}
-\end{aligned}
-$$
-
-For instance, let's take the tensor product $\ket{0}\otimes \ket{0}$:
-
-$$
-\begin{aligned}
-\ket{0}  & = \begin{pmatrix}
-1 \\
-0
-\end{pmatrix} \\
-\ket{0} \otimes \ket{0}  & = \begin{pmatrix}
-1 \\
-0
-\end{pmatrix} \otimes \begin{pmatrix}
-1 \\
-0
-\end{pmatrix} \\
- & = \begin{pmatrix}
- 1 \cdot \begin{pmatrix}
- 1 \\
- 0
- \end{pmatrix} \\
- 0 \cdot \begin{pmatrix}
- 1 \\
- 0
- \end{pmatrix}
- \end{pmatrix} \\
-  & = \begin{pmatrix}
-  1\times 1 \\
-  1\times 0 \\
-  0\times 1 \\
-  0\times 0
-  \end{pmatrix} \\
-   & = \begin{pmatrix}
-   1 \\
-   0 \\
-   0 \\
-   0
-   \end{pmatrix}
-\end{aligned}
-$$
-
-If we have two qubits and we take their Kronecker product, we can write the output in a form known as **product form**:
-
-$$
-\begin{aligned}
-\ket{\alpha}  & = a_{0}\ket{0} +a_{1}\ket{1}  \\
-\ket{\beta}  & = b_{0}\ket{0} +b_{1}\ket{1}  \\
-\ket{\alpha} \ket{\beta}  & = a_{0}b_{0}\ket{00} +a_{0}b_{1}\ket{01} +a_{1}b_{0}\ket{10} +a_{1}b_{1}\ket{11}  \\
- & = \begin{pmatrix}
- a_{0}b_{0} \\
- a_{0}b_{1} \\
- a_{1}b_{0} \\
- a_{1}b_{1}
- \end{pmatrix}
-\end{aligned}
-$$
-
-:::
+> [!note] Kronecker product
+>
+> The Kronecker product, also known as the tensor product, is denoted by $\otimes$ and is an operation on a vector or matrix that increases its size. The way it works is pretty simple, you just multiply the right hand side by each element of the left hand side:
+>
+> $$
+> \begin{aligned}
+> \ket{\phi} & = \begin{pmatrix}
+> a_{0} \\
+> a_{1}
+> \end{pmatrix}  \\
+> \ket{\psi}  & = \begin{pmatrix}
+> b_{0} \\
+> b_{1}
+> \end{pmatrix} \\
+> \ket{\phi} \otimes \ket{\psi}  & = \begin{pmatrix}
+> a_{0} \cdot \ket{\psi}  \\
+> a_{1} \cdot \ket{\psi}
+> \end{pmatrix} \\
+>  & = \begin{pmatrix}
+>  a_{0} \cdot \begin{pmatrix}
+>  b_{0} \\
+>  b_{1}
+>  \end{pmatrix} \\
+>  a_{1} \cdot \begin{pmatrix}
+>  b_{0} \\
+>  b_{1}
+>  \end{pmatrix}
+>  \end{pmatrix} \\
+>   & = \begin{pmatrix}
+>   a_{0}\times b_{0} \\
+>   a_{0}\times b_{1} \\
+>   a_{1}\times b_{0} \\
+>   a_{1}\times b_{1}
+>   \end{pmatrix}
+> \end{aligned}
+> $$
+>
+> For instance, let's take the tensor product $\ket{0}\otimes \ket{0}$:
+>
+> $$
+> \begin{aligned}
+> \ket{0}  & = \begin{pmatrix}
+> 1 \\
+> 0
+> \end{pmatrix} \\
+> \ket{0} \otimes \ket{0}  & = \begin{pmatrix}
+> 1 \\
+> 0
+> \end{pmatrix} \otimes \begin{pmatrix}
+> 1 \\
+> 0
+> \end{pmatrix} \\
+>  & = \begin{pmatrix}
+>  1 \cdot \begin{pmatrix}
+>  1 \\
+>  0
+>  \end{pmatrix} \\
+>  0 \cdot \begin{pmatrix}
+>  1 \\
+>  0
+>  \end{pmatrix}
+>  \end{pmatrix} \\
+>   & = \begin{pmatrix}
+>   1\times 1 \\
+>   1\times 0 \\
+>   0\times 1 \\
+>   0\times 0
+>   \end{pmatrix} \\
+>    & = \begin{pmatrix}
+>    1 \\
+>    0 \\
+>    0 \\
+>    0
+>    \end{pmatrix}
+> \end{aligned}
+> $$
+>
+> If we have two qubits and we take their Kronecker product, we can write the output in a form known as **product form**:
+>
+> $$
+> \begin{aligned}
+> \ket{\alpha}  & = a_{0}\ket{0} +a_{1}\ket{1}  \\
+> \ket{\beta}  & = b_{0}\ket{0} +b_{1}\ket{1}  \\
+> \ket{\alpha} \ket{\beta}  & = a_{0}b_{0}\ket{00} +a_{0}b_{1}\ket{01} +a_{1}b_{0}\ket{10} +a_{1}b_{1}\ket{11}  \\
+>  & = \begin{pmatrix}
+>  a_{0}b_{0} \\
+>  a_{0}b_{1} \\
+>  a_{1}b_{0} \\
+>  a_{1}b_{1}
+>  \end{pmatrix}
+> \end{aligned}
+> $$
 
 As before, any multiple-qubit state can be written in vector notation as well. For example, a two qubit state:
 
@@ -509,86 +494,83 @@ $$
 
 The way this works is that, going from left to right, the first gate applies to the first qubit, the second gate applies to the second qubit, and so on.
 
-::: note
-Derivation
-
-We can again derive this using both vector and Dirac notations.
-
-Vector notation:
-
-$$
-\begin{aligned}
-X & = \begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix} \\
-I & = \begin{pmatrix}
-1 & 0 \\
-0 & 1
-\end{pmatrix} \\
-X \otimes I  & = \begin{pmatrix}
-0 \cdot I & 1 \cdot I \\
-1 \cdot I & 0 \cdot I
-\end{pmatrix} \\
- & = \begin{pmatrix}
- 0 & 0 & 1 & 0 \\
- 0 & 0 & 0 & 1 \\
- 1 & 0 & 0 & 0 \\
- 0 & 1 & 0 & 0
- \end{pmatrix} \\
- \ket{10}  & = \begin{pmatrix}
- 0 \\
- 0 \\
- 1 \\
- 0
- \end{pmatrix} \\
-  \\
- (X \otimes I)\ket{10} & = \begin{pmatrix}
- 0 & 0 & 1 & 0 \\
- 0 & 0 & 0 & 1 \\
- 1 & 0 & 0 & 0 \\
- 0 & 1 & 0 & 0
- \end{pmatrix} \begin{pmatrix}
- 0 \\
- 0 \\
- 1 \\
- 0
- \end{pmatrix}  \\
-  & = \begin{pmatrix}
-  1 \\
-  0 \\
-  0 \\
-  0
-  \end{pmatrix} \\
-   & = \ket{00}
-\end{aligned}
-$$
-
-Dirac notation:
-
-$$
-\begin{aligned}
-X \otimes I  & = &  & (\ket{0} \bra{1} +\ket{1} \bra{0} )\otimes (\ket{0} \bra{0} +\ket{1} \bra{1} ) \\
- & =  &  & \ket{00} \bra{10} +\ket{01} \bra{11} +\ket{10} \bra{00} +\ket{11} \bra{01}  \\
- \\
-(X \otimes I)\ket{10}  & = &  & (\ket{00} \bra{10} +\ket{01} \bra{11} +\ket{10} \bra{00} +\ket{11} \bra{01} )\ket{10}  \\
- & = &  & \ket{00} \braket{ 10 | 10 } +\ket{01} \braket{ 11 | 10 }  \\
- &  &  & +\ket{10} \braket{ 00 | 10 } +\ket{11} \braket{ 01 | 10 }  \\
- & = &  & \ket{00} \times 1 + \ket{01} \times 0+\ket{10} \times 0 +\ket{11} \times 0  \\
- & = &  & \ket{00}
-\end{aligned}
-$$
-
-When you're doing the tensor product $\ket{a}\bra{b} \otimes \ket{p}\bra{q}$, you can pull the $\ket{a}$ and $\bra{b}$ through to their respective ket and bra on the other side:
-
-$$
-\begin{aligned}
-\ket{a} \bra{b} \otimes \ket{p} \bra{q}  & = (\ket{a} \otimes \ket{p} )(\bra{b} \otimes \bra{q} ) \\
- & = \ket{ap} \bra{bq}
-\end{aligned}
-$$
-
-:::
+> [!note] Derivation
+>
+> We can again derive this using both vector and Dirac notations.
+>
+> Vector notation:
+>
+> $$
+> \begin{aligned}
+> X & = \begin{pmatrix}
+> 0 & 1 \\
+> 1 & 0
+> \end{pmatrix} \\
+> I & = \begin{pmatrix}
+> 1 & 0 \\
+> 0 & 1
+> \end{pmatrix} \\
+> X \otimes I  & = \begin{pmatrix}
+> 0 \cdot I & 1 \cdot I \\
+> 1 \cdot I & 0 \cdot I
+> \end{pmatrix} \\
+>  & = \begin{pmatrix}
+>  0 & 0 & 1 & 0 \\
+>  0 & 0 & 0 & 1 \\
+>  1 & 0 & 0 & 0 \\
+>  0 & 1 & 0 & 0
+>  \end{pmatrix} \\
+>  \ket{10}  & = \begin{pmatrix}
+>  0 \\
+>  0 \\
+>  1 \\
+>  0
+>  \end{pmatrix} \\
+>   \\
+>  (X \otimes I)\ket{10} & = \begin{pmatrix}
+>  0 & 0 & 1 & 0 \\
+>  0 & 0 & 0 & 1 \\
+>  1 & 0 & 0 & 0 \\
+>  0 & 1 & 0 & 0
+>  \end{pmatrix} \begin{pmatrix}
+>  0 \\
+>  0 \\
+>  1 \\
+>  0
+>  \end{pmatrix}  \\
+>   & = \begin{pmatrix}
+>   1 \\
+>   0 \\
+>   0 \\
+>   0
+>   \end{pmatrix} \\
+>    & = \ket{00}
+> \end{aligned}
+> $$
+>
+> Dirac notation:
+>
+> $$
+> \begin{aligned}
+> X \otimes I  & = &  & (\ket{0} \bra{1} +\ket{1} \bra{0} )\otimes (\ket{0} \bra{0} +\ket{1} \bra{1} ) \\
+>  & =  &  & \ket{00} \bra{10} +\ket{01} \bra{11} +\ket{10} \bra{00} +\ket{11} \bra{01}  \\
+>  \\
+> (X \otimes I)\ket{10}  & = &  & (\ket{00} \bra{10} +\ket{01} \bra{11} +\ket{10} \bra{00} +\ket{11} \bra{01} )\ket{10}  \\
+>  & = &  & \ket{00} \braket{ 10 | 10 } +\ket{01} \braket{ 11 | 10 }  \\
+>  &  &  & +\ket{10} \braket{ 00 | 10 } +\ket{11} \braket{ 01 | 10 }  \\
+>  & = &  & \ket{00} \times 1 + \ket{01} \times 0+\ket{10} \times 0 +\ket{11} \times 0  \\
+>  & = &  & \ket{00}
+> \end{aligned}
+> $$
+>
+> When you're doing the tensor product $\ket{a}\bra{b} \otimes \ket{p}\bra{q}$, you can pull the $\ket{a}$ and $\bra{b}$ through to their respective ket and bra on the other side:
+>
+> $$
+> \begin{aligned}
+> \ket{a} \bra{b} \otimes \ket{p} \bra{q}  & = (\ket{a} \otimes \ket{p} )(\bra{b} \otimes \bra{q} ) \\
+>  & = \ket{ap} \bra{bq}
+> \end{aligned}
+> $$
 
 We can apply individual operators on individual qubits, but that doesn't get us very far. For the true power of quantum computing, we need to be able to entangle qubits. For that, we need a truly multi-qubit operator. One common example is the controlled `NOT`, or the $\text{CNOT}$ operator. Since we know that the $X$ gate is the quantum analogue to the `NOT` gate, this is also sometimes called the $\text{CX}$ operator.
 
@@ -648,13 +630,11 @@ We got it! As you can see, there's no single qubit gate that could've done that,
 
 And that's it! That's all of the basic math of quantum computation. Everything we do from now on will be based on various applications of these basic rules. Pretty much all of quantum computation is based on these fairly simple (though not always easy) matrix multiplications.
 
-::: note
-Universal gate set
-
-A fairly well-known fact about classical computing is that [all bit operations can be implemented with just the `NAND` gate](https://en.wikipedia.org/wiki/NAND_logic). This is pretty easy to prove, you could probably do it yourself if you know your logic gates, [there's even a whole game about it](https://nandgame.com)!
-
-Similarly, there exists a minimal set of quantum gates, known as the [universal gate set](https://en.wikipedia.org/wiki/Quantum_logic_gate#Universal_quantum_gates), that can be used to make every other operator. The smallest one found so far is the [Toffoli gate](https://en.wikipedia.org/wiki/Toffoli_gate) and the Hadamard gate. However, the [proof for this](https://arxiv.org/abs/quant-ph/0301040) isn't as straightforward as that for the `NAND` gate.
-:::
+> [!note] Universal gate set
+>
+> A fairly well-known fact about classical computing is that [all bit operations can be implemented with just the `NAND` gate](https://en.wikipedia.org/wiki/NAND_logic). This is pretty easy to prove, you could probably do it yourself if you know your logic gates, [there's even a whole game about it](https://nandgame.com)!
+>
+> Similarly, there exists a minimal set of quantum gates, known as the [universal gate set](https://en.wikipedia.org/wiki/Quantum_logic_gate#Universal_quantum_gates), that can be used to make every other operator. The smallest one found so far is the [Toffoli gate](https://en.wikipedia.org/wiki/Toffoli_gate) and the Hadamard gate. However, the [proof for this](https://arxiv.org/abs/quant-ph/0301040) isn't as straightforward as that for the `NAND` gate.
 
 ## Measurement
 
@@ -692,26 +672,24 @@ $$
 \end{aligned}
 $$
 
-::: note
-Orthonormality
-
-We can prove that this eigenbasis is orthonormal.
-
-$$
-\begin{aligned}
-\braket{ + | - }  & = \frac{\bra{0} +\bra{1} }{\sqrt{ 2 }} \frac{\ket{0} -\ket{1} }{\sqrt{ 2 }} \\
- & = \frac{\braket{ 0 | 0 } -\braket{ 0 | 1 } +\braket{ 1 | 0 } -\braket{ 1 | 1 } }{2} \\
- & = \frac{1-0+0-1}{2} \\
- & = 0 \\
-\braket{ + | + }  & = \frac{\bra{0} +\bra{1} }{\sqrt{ 2 }} \frac{\ket{0} +\ket{1} }{\sqrt{ 2 }} \\
- & = \frac{\braket{ 0 | 0 } +\braket{ 0 | 1 } +\braket{ 1 | 0 } + \braket{ 1 | 1 } }{2} \\
- & = \frac{1+0+0+1}{2} \\
- & = 1
-\end{aligned}
-$$
-
-Proving this for $\braket{ - | + }$ and $\braket{ - | - }$ is left as an exercise to the reader ;)
-:::
+> [!note] Orthonormality
+>
+> We can prove that this eigenbasis is orthonormal.
+>
+> $$
+> \begin{aligned}
+> \braket{ + | - }  & = \frac{\bra{0} +\bra{1} }{\sqrt{ 2 }} \frac{\ket{0} -\ket{1} }{\sqrt{ 2 }} \\
+>  & = \frac{\braket{ 0 | 0 } -\braket{ 0 | 1 } +\braket{ 1 | 0 } -\braket{ 1 | 1 } }{2} \\
+>  & = \frac{1-0+0-1}{2} \\
+>  & = 0 \\
+> \braket{ + | + }  & = \frac{\bra{0} +\bra{1} }{\sqrt{ 2 }} \frac{\ket{0} +\ket{1} }{\sqrt{ 2 }} \\
+>  & = \frac{\braket{ 0 | 0 } +\braket{ 0 | 1 } +\braket{ 1 | 0 } + \braket{ 1 | 1 } }{2} \\
+>  & = \frac{1+0+0+1}{2} \\
+>  & = 1
+> \end{aligned}
+> $$
+>
+> Proving this for $\braket{ - | + }$ and $\braket{ - | - }$ is left as an exercise to the reader ;)
 
 Relabelling $0$ to $+$ and $1$ to $-$, we can write $X$ as:
 
@@ -747,7 +725,7 @@ We now have our two eigenvalues $\lambda_{+} = +1$ and $\lambda_{-}=-1$ that we 
 $$
 \begin{aligned}
 \lambda_{+} \mapsto P_{+} = \ket{+} \bra{+}  \\
-\lambda_{-} \mapsto P_{-} = \ket{-} \bra{-}  
+\lambda_{-} \mapsto P_{-} = \ket{-} \bra{-}
 \end{aligned}
 $$
 
@@ -762,7 +740,7 @@ X & = \lambda_{+}P_{+} + \lambda_{-}P_{-} \\
 \lambda_{+} & = +1 \\
 P_{+} & = \ket{+} \bra{+}  \\
 \lambda_{-} & = -1 \\
-P_{-} & = \ket{-} \bra{-} 
+P_{-} & = \ket{-} \bra{-}
 \end{aligned}
 $$
 
@@ -781,7 +759,7 @@ $$
  & = \bra{0} \frac{\ket{0} + \ket{1} }{\sqrt{ 2 }} \frac{\bra{0} + \bra{1} }{\sqrt{ 2 }} \ket{0}  \\
  & = \frac{\braket{ 0 | 0 } +\braket{ 0 | 1 } }{\sqrt{ 2 }} \frac{\braket{ 0 | 0 } +\braket{ 1 | 0 } }{\sqrt{ 2 }} \\
  & = \frac{1}{\sqrt{ 2 }} \times \frac{1}{\sqrt{ 2 }} \\
- & = \frac{1}{2} 
+ & = \frac{1}{2}
 \end{aligned}
 $$
 
@@ -838,7 +816,7 @@ $$
 \frac{1}{\sqrt{ 2 }} [\ket{0} _{A}\ket{0} _{A_{1}}+\ket{1} _{A}\ket{1} _{A_{1}}] = & \ket{\Phi_{I}}  \\
 \frac{1}{\sqrt{ 2 }} [\ket{0} _{A}\ket{0} _{A_{1}}-\ket{1} _{A}\ket{1} _{A_{1}}] = & \ket{\Phi_{Z}}  \\
 \frac{1}{\sqrt{ 2 }} [\ket{0} _{A}\ket{1} _{A_{1}}+\ket{1} _{A}\ket{0} _{A_{1}}] = & \ket{\Phi_{X}}  \\
-\frac{1}{\sqrt{ 2 }} [\ket{0} _{A}\ket{1} _{A_{1}}-\ket{1}_{A} \ket{0} _{A_{1}}] = & -\ket{\Phi_{Y}} 
+\frac{1}{\sqrt{ 2 }} [\ket{0} _{A}\ket{1} _{A_{1}}-\ket{1}_{A} \ket{0} _{A_{1}}] = & -\ket{\Phi_{Y}}
 \end{aligned}
 $$
 
@@ -918,7 +896,7 @@ $$
 Z\ket{0}  & = \ket{0}  \\
 Z\ket{1}  & = -\ket{1}  \\
 Z\ket{+}  & = Z \frac{\ket{0} +\ket{1} }{\sqrt{ 2 }} = \frac{1}{\sqrt{ 2 }} \ket{0} -\frac{1}{\sqrt{ 2 }}\ket{1}  \\
-Z\ket{-}  & = Z \frac{\ket{0} -\ket{1} }{\sqrt{ 2 }} = \frac{1}{\sqrt{ 2 }} \ket{0} +\frac{1}{\sqrt{ 2 }}\ket{1} 
+Z\ket{-}  & = Z \frac{\ket{0} -\ket{1} }{\sqrt{ 2 }} = \frac{1}{\sqrt{ 2 }} \ket{0} +\frac{1}{\sqrt{ 2 }}\ket{1}
 \end{aligned}
 $$
 
@@ -937,7 +915,7 @@ $$
 00 & \mapsto \text{act with } I \text{ (do nothing)} & \to \frac{1}{\sqrt{ 2 }}[\ket{0} _{A}\ket{0} _{B}+\ket{1} _{A}\ket{1} _{B}] = \ket{\Phi_{I}} \\
 01 & \mapsto \text{act with } X  & \to \frac{1}{\sqrt{ 2 }} [\ket{1} _{A}\ket{0} _{B}+\ket{0} _{A}\ket{1} _{B}] = \ket{\Phi_{X}}  \\
 10 & \mapsto \text{act with } Y  & \to \frac{1}{\sqrt{ 2 }} [\ket{1} _{A}\ket{0} _{B}-\ket{0} _{A}\ket{1} _{B}] = \ket{\Phi_{Y}}  \\
-11 & \mapsto \text{act with } Z  & \to \frac{1}{\sqrt{ 2 }} [\ket{0} _{A}\ket{0} _{B}-\ket{1} _{A}\ket{1} _{B}] = \ket{\Phi_{Z}} 
+11 & \mapsto \text{act with } Z  & \to \frac{1}{\sqrt{ 2 }} [\ket{0} _{A}\ket{0} _{B}-\ket{1} _{A}\ket{1} _{B}] = \ket{\Phi_{Z}}
 \end{aligned}
 $$
 
@@ -952,32 +930,30 @@ All this talk of teleportation and quantum computation is making me think of sci
 We can prove this by pretending that we have a quantum operator $C$ that does cloning. That means that if we apply $C$ to a pair of qubits, it should copy the first qubit into the second:
 
 $$
-X \ket{\phi} \ket{\Omega} = \ket{\phi} \ket{\phi} 
+X \ket{\phi} \ket{\Omega} = \ket{\phi} \ket{\phi}
 $$
 
 We want this operator to be universal, so $\ket{\psi}$ should be allowed to be any state. Now let's say we have a superposition state $(\ket{\psi}+\ket{\phi})$. This should be no problem for our cloning operator:
 
 $$
-C (\ket{\psi}+\ket{\phi}  )\ket{\Omega} = (\ket{\psi} +\ket{\phi} )(\ket{\psi} +\ket{\phi} ) 
+C (\ket{\psi}+\ket{\phi}  )\ket{\Omega} = (\ket{\psi} +\ket{\phi} )(\ket{\psi} +\ket{\phi} )
 $$
 
 But wait a minute, since quantum operators are linear, we can expand those brackets out on the left hand side:
 
 $$
-C \ket{\psi} \ket{\Omega} + C \ket{\phi} \ket{\Omega} = \ket{\psi} \ket{\psi} +\ket{\phi} \ket{\phi}  
+C \ket{\psi} \ket{\Omega} + C \ket{\phi} \ket{\Omega} = \ket{\psi} \ket{\psi} +\ket{\phi} \ket{\phi}
 $$
 
 That's a contradiction! That's not what we wanted, our perfect little cloning operator doesn't work!
 
 Reality is often disappointing. So cloning is not allowed, as specified by the aptly-named **no-cloning theorem**. I guess we won't have to answer that second question after all.
 
-::: note
-Dolly the sheep
-
-You're probably thinking: what about Dolly the sheep? I read in the news that she was the first cloned animal, and yet you're here telling me that cloning isn't even real?
-
-Both things are true, they just have different versions of "cloning". There's nothing stopping you from cloning a cell, so long as the particles that make up that cell are different. The no-cloning theorem doesn't really apply for anything except quantum states. You can make a copy of every cell in your body, but it won't be a 100% atom-for-atom clone of you, which who knows what kinds of consequences that could end up having.
-:::
+> [!note] Dolly the sheep
+>
+> You're probably thinking: what about Dolly the sheep? I read in the news that she was the first cloned animal, and yet you're here telling me that cloning isn't even real?
+>
+> Both things are true, they just have different versions of "cloning". There's nothing stopping you from cloning a cell, so long as the particles that make up that cell are different. The no-cloning theorem doesn't really apply for anything except quantum states. You can make a copy of every cell in your body, but it won't be a 100% atom-for-atom clone of you, which who knows what kinds of consequences that could end up having.
 
 ### CHSH game
 
@@ -1101,11 +1077,9 @@ $$
 \Pr(\alpha=\beta)=\frac{1+\braket{ \Phi | A \otimes B | \Phi } }{2}
 $$
 
-::: note
-Expectation value
-
-The statement $\braket{ \Phi | A \otimes B | \Phi } = \sum_{\alpha,\beta} \alpha\beta\Pr(\alpha,\beta)$ comes from the fact that measurement of a quantum system is equivalent to finding the expectation value. It holds true for any state and pair of operators $A$ and $B$ with eigenvalues $\pm 1$, not just the particular ones we've chosen here.
-:::
+> [!note] Expectation value
+>
+> The statement $\braket{ \Phi | A \otimes B | \Phi } = \sum_{\alpha,\beta} \alpha\beta\Pr(\alpha,\beta)$ comes from the fact that measurement of a quantum system is equivalent to finding the expectation value. It holds true for any state and pair of operators $A$ and $B$ with eigenvalues $\pm 1$, not just the particular ones we've chosen here.
 
 Since both Alice and Bob decide to give the answer $0$ when their respective measurement outcome is $+1$, and $1$ when their respective measurement outcome is $-1$, we know that when $\alpha=\beta$, $a = b$. This means that we can rewrite that expression as
 
@@ -1142,7 +1116,7 @@ $$
  & = &  & \cos(\theta)\cos(\phi)\braket{ \Phi | X \otimes X | \Phi }  \\
  &  &  & + \cos(\theta)\sin(\phi)\braket{ \Phi | X \otimes Z | \Phi }  \\
  &  &  & + \sin(\theta)\cos(\phi)\braket{ \Phi | Z \otimes X | \Phi }  \\
- &  &  & + \sin(\theta)\sin(\phi)\braket{ \Phi | Z \otimes Z | \Phi } 
+ &  &  & + \sin(\theta)\sin(\phi)\braket{ \Phi | Z \otimes Z | \Phi }
 \end{aligned}
 $$
 
@@ -1154,7 +1128,7 @@ $$
  & = \ket{\Phi} \\
 (Z \otimes Z) \frac{\ket{0} \ket{0} +\ket{1} \ket{1} }{\sqrt{ 2 }} & = \frac{\ket{0} \ket{0} + (-1)(-1)\ket{1} \ket{1}}{\sqrt{ 2 }} \\
  & = \frac{\ket{0} \ket{0} +\ket{1} \ket{1} }{\sqrt{ 2 }} \\
- & = \ket{\Phi}  
+ & = \ket{\Phi}
 \end{aligned}
 $$
 
@@ -1165,7 +1139,7 @@ $$
 (X \otimes Z) \frac{\ket{0} \ket{0} +\ket{1} \ket{1} }{\sqrt{ 2 }} & = \frac{\ket{1} \ket{0} -\ket{0} \ket{1} }{\sqrt{ 2 }} \\
  & = \ket{\Psi}  \\
 (Z \otimes X) \frac{\ket{0} \ket{0} +\ket{1} \ket{1} }{\sqrt{ 2 }} & = \frac{\ket{0} \ket{1} -\ket{1} \ket{0} }{\sqrt{ 2 }} \\
- & = -\ket{\Psi} 
+ & = -\ket{\Psi}
 \end{aligned}
 $$
 
@@ -1240,11 +1214,9 @@ So we see that using this quantum strategy, Alice and Bob can **succeed approxim
 
 Whew, that's a lot of math! If you made it through all that, congratulations! If you just scrolled past it all and skipped to this point, I don't blame you.
 
-::: note
-CHSH
-
-"CHSH" stands for Clauser, Horne, Shimony and Holt. They presented a simpler and more powerful version of [Bell's theorem](https://en.wikipedia.org/wiki/Bell's_theorem) about quantum nonlocality. The version presented here is the more modern framing in the form of a game. That's how it was first taught to me, though with a lot more math (if you can believe it) and a lot of details that I decided to skip here.
-:::
+> [!note] CHSH
+>
+> "CHSH" stands for Clauser, Horne, Shimony and Holt. They presented a simpler and more powerful version of [Bell's theorem](https://en.wikipedia.org/wiki/Bell's_theorem) about quantum nonlocality. The version presented here is the more modern framing in the form of a game. That's how it was first taught to me, though with a lot more math (if you can believe it) and a lot of details that I decided to skip here.
 
 ## Conclusion
 

@@ -15,11 +15,9 @@ I do also code sometimes, and this also happened when I was making [Highlight](h
 
 I'm not quite sure whether my use cases are out of the ordinary, and so the AI hasn't seen enough of those in the training data to be useful, or if I'm just asking the questions incorrectly.
 
-::: note
-Natural language
-
-I also don't understand why that last point is even a thing, considering how these AIs were supposed to be really good at understanding natural language, and yet we have to carefully formulate our "natural language" to get it to work correctly?
-:::
+> [!note] Natural language
+>
+> I also don't understand why that last point is even a thing, considering how these AIs were supposed to be really good at understanding natural language, and yet we have to carefully formulate our "natural language" to get it to work correctly?
 
 ## Public opinions
 
@@ -37,15 +35,13 @@ For things I don't want to do, and I don't really care much if they're right or 
 
 I don't use inline completions. I tried out Supermaven at some point last year, but it ended up just getting in my way as I was trying to type things out and use LSP completions. I'm not a fast typer by any means, nor am I a very quick thinker, but it seems like I'm ever so slightly faster than the completions are. I'd wait a little bit for them to come in, and when they didn't I'd start typing, and _that's_ when they'd come in, and completely throw off my flow. After a while of it annoying me, I turned it off.
 
-::: note
-Newer models
-
-I'm sure you're probably thinking, "Well no wonder you're having a bad time, you're using an old model like Claude, why don't you use \[hot new model that just came out] instead?"
-
-Well, like I said above, my internet is slow enough that it's a bit difficult to download gigabytes of data per model to get it running on my laptop, not to mention that I'd be running it on a _laptop_, not a desktop that's always plugged in and running.
-
-Aside from that, I don't really feel like making a new account every time a new company comes up with a solution that's 5% better than the previous solutions. I'm trying to get rid of accounts, not make more of them. I'm also not paying money to get more incorrect answers and make zero progress.
-:::
+> [!note] Newer models
+>
+> I'm sure you're probably thinking, "Well no wonder you're having a bad time, you're using an old model like Claude, why don't you use \[hot new model that just came out] instead?"
+>
+> Well, like I said above, my internet is slow enough that it's a bit difficult to download gigabytes of data per model to get it running on my laptop, not to mention that I'd be running it on a _laptop_, not a desktop that's always plugged in and running.
+>
+> Aside from that, I don't really feel like making a new account every time a new company comes up with a solution that's 5% better than the previous solutions. I'm trying to get rid of accounts, not make more of them. I'm also not paying money to get more incorrect answers and make zero progress.
 
 ## Conclusion
 

@@ -4,15 +4,13 @@ date: 2024-02-21
 lastmod: 2026-07-01
 ---
 
-::: note
-NOTE
-
-I should probably say that being a physics student, I do have some idea of what I'm talking about. However, this post covers a lot of the topics in a very high-level way and doesn't really dive into a lot of the _really_ confusing details of those topics. If you find quantum and particle physics interesting, you should look up how a lot of these things actually work, and read textbooks and research papers about it.
-
-Also, this post might require some basic ideas of how different things work in math and physics. A high school level _should_ be sufficient, though if you don't understand something you can ask your teacher, look it up, or contact me! I can't guarantee I'll be able to answer your question, but I can guarantee that I'll try!
-
-There's a lot of discoveries that happen all the time in this field because it's so new, and many times these discoveries will make us rethink a lot of the concepts we thought we knew. It's a new field, and it's very fun!
-:::
+> [!note]
+>
+> I should probably say that being a physics student, I do have some idea of what I'm talking about. However, this post covers a lot of the topics in a very high-level way and doesn't really dive into a lot of the _really_ confusing details of those topics. If you find quantum and particle physics interesting, you should look up how a lot of these things actually work, and read textbooks and research papers about it.
+>
+> Also, this post might require some basic ideas of how different things work in math and physics. A high school level _should_ be sufficient, though if you don't understand something you can ask your teacher, look it up, or contact me! I can't guarantee I'll be able to answer your question, but I can guarantee that I'll try!
+>
+> There's a lot of discoveries that happen all the time in this field because it's so new, and many times these discoveries will make us rethink a lot of the concepts we thought we knew. It's a new field, and it's very fun!
 
 Quantum and particle physics are some of the newer, cooler and arguably more difficult parts of physics. The stuff that happens down in the quantum realm is so different to how we perceive things in our day-to-day lives, that it can be difficult to wrap your head around. Because of this, people often misunderstand many of the ideas in quantum and particle physics, or dismiss them, but many of these ideas and phenomenon have had major impacts on our lives, from advances in computing to literally existing.
 
@@ -100,15 +98,13 @@ Different wavelengths make up different types of light, from radio waves and mic
 
 This is why x-ray machines have big warning symbols on them, and why areas like Chernobyl are so dangerous to go to, because there's all these high energy particles flying around.
 
-::: note
-NOTE
-
-Keep in mind that x-rays in hospitals are pretty safe, since the amount of x-ray exposure that you get is really small, and the chance of something bad happening is really, really low. The reason doctors will step out of the room when they do the x-ray is because they have to do x-rays of people all day, and if they're not careful, over time, they can accumulate a dose of high-energy photons far higher than is recommended for the human body.
-
-Chernobyl and other irradiated areas are dangerous for this exact reason, because you get a much higher dose than your body can handle. When these high-energy photons interact with the atoms in your body, interesting things can happen which can lead to cancer or radiation poisoning. These things are not a joke and should be taken seriously.
-
-Also, for anyone claiming that your phones give off radiation, or that 5G towers cause \[insert claim here], they're technically right in that both of those give off radio waves. However, radio waves are far too weak to actually cause you much harm, and you'd need a _lot_ of exposure to actually see effects of it. Also, the levels of radio wave radiation that these devices give off are generally checked extremely thoroughly and tested fairly regularly. Don't tell those people how radioactive bananas are, I guess.
-:::
+> [!note]
+>
+> Keep in mind that x-rays in hospitals are pretty safe, since the amount of x-ray exposure that you get is really small, and the chance of something bad happening is really, really low. The reason doctors will step out of the room when they do the x-ray is because they have to do x-rays of people all day, and if they're not careful, over time, they can accumulate a dose of high-energy photons far higher than is recommended for the human body.
+>
+> Chernobyl and other irradiated areas are dangerous for this exact reason, because you get a much higher dose than your body can handle. When these high-energy photons interact with the atoms in your body, interesting things can happen which can lead to cancer or radiation poisoning. These things are not a joke and should be taken seriously.
+>
+> Also, for anyone claiming that your phones give off radiation, or that 5G towers cause \[insert claim here], they're technically right in that both of those give off radio waves. However, radio waves are far too weak to actually cause you much harm, and you'd need a _lot_ of exposure to actually see effects of it. Also, the levels of radio wave radiation that these devices give off are generally checked extremely thoroughly and tested fairly regularly. Don't tell those people how radioactive bananas are, I guess.
 
 Anyway, coming back to why this is important, we now have a way to get energy from the Sun to the Earth, but it's all just glorified light! This is where energy conversion comes in. Plants, for example, can use that light energy to activate chemical processes that turn carbon dioxide and water into carbohydrates, which are plant food. The energy is now stored in that food, and we can eat those plants, or animals that eat the plants, and transfer that energy to us. And so, life!
 
@@ -168,11 +164,9 @@ I keep talking about how important these things are to the universe and our exis
 
 Let's think about what tunnelling is. Fundamentally, it's a way of getting through a barrier of some sort. If we dig a tunnel through a mountain, it's because we need to get somewhere and the mountain is a barrier to that path. Quantum tunnelling works the same way, but for particles, where the particle encounters a barrier it shouldn't be able to get through, yet it does.
 
-::: note
-NOTE
-
-The following explanation has been adapted from [LibreTexts Physics](<https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/University_Physics_III_-_Optics_and_Modern_Physics_(OpenStax)/07%3A_Quantum_Mechanics/7.07%3A_Quantum_Tunneling_of_Particles_through_Potential_Barriers>).
-:::
+> [!note]
+>
+> The following explanation has been adapted from [LibreTexts Physics](<https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/University_Physics_III_-_Optics_and_Modern_Physics_(OpenStax)/07%3A_Quantum_Mechanics/7.07%3A_Quantum_Tunneling_of_Particles_through_Potential_Barriers>).
 
 Let's say we have a ball with some amount of energy, which means it's moving with some speed. If it encounters a small hill, it can roll over it, and down the other side, and continue on its journey. Now, let's say it encounters a really big hill. It can roll partway up the hill, but it won't be able to go over to the other side.
 

@@ -31,11 +31,9 @@ Let's look at an example. Let's say you're someone who needs a lot of security, 
 - Unless you're on iOS, where all [browsers are just Safari](https://developer.apple.com/app-store/review/guidelines/#software-requirements), the most secure browser is [Chromium/Chrome](https://www.chromium.org/Home/chromium-security/), not [Firefox](https://madaidans-insecurities.github.io/firefox-chromium.html), contrary to what many in the privacy community may have you believe.
 - Apart from that, the best advice would be to have as few trusted parties as possible. Meaning if you're using Google stuff (Android and Chrome) then don't go and use Dropbox and unnecessarily trust a third party, since that's an additional point that you could get hacked from. In general, you'd want to minimise the number of services you use, to have as few points of attack as possible.
 
-::: note
-NOTE
-
-This is not actual security advice, it is just an example. Please do not listen to this if you are in a situation as described above. I do not take responsibility for any trouble you may get in because of my example explaining threat modelling. I am just a person on the internet and do not give out actual security advice.
-:::
+> [!note]
+>
+> This is not actual security advice, it is just an example. Please do not listen to this if you are in a situation as described above. I do not take responsibility for any trouble you may get in because of my example explaining threat modelling. I am just a person on the internet and do not give out actual security advice.
 
 Now compare that to someone who maybe wants to protect their data from being used by Big Tech companies to sell ads and track them across the internet. They'd have a threat model that calls for higher privacy at the cost of some minimal security. For someone like that:
 
@@ -85,13 +83,11 @@ However, there are situations where failure to identify your threats or use prop
 
 This is usually the part where most people give up and go back to their original setup, while continuing to complain about a lack of privacy on said setup. This is also the part that _really_ specifies the tools that you'd end up using, usually narrowing it down to one or two options.
 
-::: note
-NOTE
-
-Keep in mind that most of the extreme situations mentioned above, such as the ones where high security or anonymity are required, probably don't apply to you. The people that those apply to probably aren't reading this blog, since they have many other things to be worrying about.
-
-One of the common mistakes I've seen people do is not properly identify their threat model, try to go all in on privacy, security or anonymity, find it too complicated, and go back to their original setup, and continue to complain about how privacy-invasive or insecure their setup is. That's mainly why a threat model is helpful and necessary, so you can identify exactly what you're trying to achieve.
-:::
+> [!note]
+>
+> Keep in mind that most of the extreme situations mentioned above, such as the ones where high security or anonymity are required, probably don't apply to you. The people that those apply to probably aren't reading this blog, since they have many other things to be worrying about.
+>
+> One of the common mistakes I've seen people do is not properly identify their threat model, try to go all in on privacy, security or anonymity, find it too complicated, and go back to their original setup, and continue to complain about how privacy-invasive or insecure their setup is. That's mainly why a threat model is helpful and necessary, so you can identify exactly what you're trying to achieve.
 
 ## What comes next?
 

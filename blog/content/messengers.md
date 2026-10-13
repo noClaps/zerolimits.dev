@@ -85,11 +85,9 @@ In addition to that, WhatsApp is owned by Meta/Facebook, one of the world's most
 [WhatsApp also doesn't encrypt metadata](https://medium.com/@m.muslimiblog/metadata-the-whatsapp-issue-affecting-you-2bf13e77d065), so Meta/Facebook can see all of that and use it to [shadow-profile](https://en.wikipedia.org/wiki/Shadow_profile) you.
 However, since WhatsApp (probably) does use end-to-end encryption, it's one of the less bad options on this list. Security-wise, I think WhatsApp is fine, most of its issues come from the privacy-invasive practices of Meta/Facebook. If you have **absolutely no other option**, or you trust Meta/Facebook for whatever reason, WhatsApp is mostly fine to use. However, I would recommend that you try out other platforms like [**Signal**](#signal), [**Threema**](#threema) or [**Session**](#session) first, since they are much more private and secure than WhatsApp ever will be.
 
-::: note
-NOTE
-
-I keep saying "Meta/Facebook" because so many people think of them as separate companies, and not just the renaming that it was. One of the main reasons for the rebranding was so that people would forget about all the horrible things that Facebook had done over the years when it was renamed, and Meta could have a fresh start. Admittedly, I never thought it would work, because you don't just forget years and years of privacy violations and security vulnerabilities, but it turns out people either completely ignorant or oblivious, or both.
-:::
+> [!note]
+>
+> I keep saying "Meta/Facebook" because so many people think of them as separate companies, and not just the renaming that it was. One of the main reasons for the rebranding was so that people would forget about all the horrible things that Facebook had done over the years when it was renamed, and Meta could have a fresh start. Admittedly, I never thought it would work, because you don't just forget years and years of privacy violations and security vulnerabilities, but it turns out people either completely ignorant or oblivious, or both.
 
 ### Telegram
 
@@ -183,11 +181,9 @@ Matrix isn't fully trustless since you have to trust the owner of your homeserve
 
 In conclusion, Matrix can work great for a whole variety of use cases. It's mostly used for Slack- or Discord-style communities/groups, and it's a great alternative for those. There's some features that you might miss from Discord or other platforms, but it's there for the most part. Plus, you can always bridge to Discord or Slack so you don't have to interrupt your workflow. Element even has a UI option to make chats look similar to Discord, rather than the chat bubbles you have in most messenger apps. You can use Matrix for your day-to-day conversations with end-to-end encryption, and ignore rooms and spaces entirely. The only con of Matrix that I can think of is that it's slightly more difficult to set up than other messengers, and the amount of settings in Element can be overwhelming for some.
 
-::: note
-NOTE
-
-I've used Element for a while on Android, and I haven't had the best experience on it. There wasn't anything too severe that would prevent me from using the app, but there were small bugs that kept annoying me until I eventually deleted it. Your experience may be different, and this isn't meant to discourage you from using Matrix. I'm just talking about my experience with the app. Keep in mind that this is only about Element on Android. I haven't used it on other platforms enough to be able to provide a proper review. If you'd like to try them, there are [other clients](https://matrix.org/clients/) that you can use instead.
-:::
+> [!note]
+>
+> I've used Element for a while on Android, and I haven't had the best experience on it. There wasn't anything too severe that would prevent me from using the app, but there were small bugs that kept annoying me until I eventually deleted it. Your experience may be different, and this isn't meant to discourage you from using Matrix. I'm just talking about my experience with the app. Keep in mind that this is only about Element on Android. I haven't used it on other platforms enough to be able to provide a proper review. If you'd like to try them, there are [other clients](https://matrix.org/clients/) that you can use instead.
 
 #### Element
 
