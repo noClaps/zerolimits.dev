@@ -16,12 +16,13 @@ fn main() {
         ]),
         html: HtmlOptions {
             default_color: DefaultColor::LightDark,
+            tabindex: None,
             ..Default::default()
         },
     };
     let html = hl.code_to_html(&code, &opts).unwrap();
     print!(
         "{}",
-        html.replace(r#" class="iro iro-themes dark light" style="background-color:light-dark(#ffffff, #0d1117);color:light-dark(#1f2328, #e6edf3)" tabindex="0""#, "")
+        html.replace(r#" class="iro iro-themes dark light" style="background-color:light-dark(#ffffff, #0d1117);color:light-dark(#1f2328, #e6edf3)""#, "")
     );
 }
