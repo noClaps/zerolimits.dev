@@ -1,4 +1,4 @@
-local stringify = (require "pandoc.utils").stringify
+local pandoc = pandoc
 
 function CodeBlock(el)
     local lang = el.classes[1] or ""
@@ -6,11 +6,10 @@ function CodeBlock(el)
     return pandoc.RawBlock("html", out)
 end
 
-function BlockQuote (el)
-    start = el.content[1]
-    if (start.t == "Para" and start.content[1].t == "Str" and
-        start.content[1].text:match("^%[!%w+%][-+]?$")) then
-        _, _, ctype = start.content[1].text:find("%[!(%w+)%]")
+function BlockQuote(el)
+    local start = el.content[1]
+    if (start.t == "Para" and start.content[1].t == "Str" and start.content[1].text:match("^%[!%w+%][-+]?$")) then
+        local _, _, ctype = start.content[1].text:find("%[!(%w+)%]")
         start.content:remove(1)
         if start.content[1] and start.content[1].t == "Space" then
             start.content:remove(1)
@@ -18,7 +17,7 @@ function BlockQuote (el)
         if #start.content == 0 then
             start.content:insert(pandoc.Str(ctype:upper()))
         end
-        div = pandoc.Div(el.content, {class = ctype:lower()})
+        local div = pandoc.Div(el.content, { class = ctype:lower() })
         return div
     else
         return el
