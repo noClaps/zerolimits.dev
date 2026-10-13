@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <title><!--title--></title>
+        <title>$title$</title>
         <link
             rel="alternate"
             href="/blog/feed.atom"
             type="application/atom+xml"
+            data-external="1"
         />
-        <link rel="icon" href="/favicon.png" />
-        <link rel="stylesheet" href="/global.css" />
-        <link rel="stylesheet" href="/blog/post.css" />
+        <link rel="icon" href="homepage/favicon.png" />
+        <link rel="stylesheet" href="homepage/global.css" />
+        <link rel="stylesheet" href="blog/styles/post.css" />
     </head>
     <body>
         <header>
@@ -23,12 +24,10 @@
         </header>
         <main>
             <div class="post-header">
-                <time datetime="<!--date-->"><!--date--></time>
-                <h1><!--title--></h1>
+                <time datetime="$date$">$date$</time>
+                <h1>$title$</h1>
             </div>
-            <article>
-                <!--body-->
-            </article>
+            <article>$body$</article>
         </main>
     </body>
 </html>

@@ -23,3 +23,7 @@ function BlockQuote(el)
         return el
     end
 end
+
+function Table(el)
+    return pandoc.Div(el)
+end
