@@ -6,6 +6,7 @@ HTML := $(patsubst blog/content/%.md,dist/blog/%.html,$(MD))
 
 dist/blog/%.html: blog/content/%.md blog/post.html blog/styles/post.css blog/post.lua
 	@pandoc $< \
+	    --wrap none \
 	    --embed-resources \
 	    --resource-path blog/content:. \
 		--lua-filter blog/post.lua \
@@ -14,14 +15,18 @@ dist/blog/%.html: blog/content/%.md blog/post.html blog/styles/post.css blog/pos
 
 dist/blog/index.html: blog/index.html blog/styles/index.css blog/index.lua
 	@pandoc blog/content/*.md \
-		--standalone \
+		--wrap none \
 	    --template blog/index.html \
 		--lua-filter blog/index.lua \
 		--embed-resources \
 		--output dist/blog/index.html
 
-dist/blog/feed.atom: $(HTML) blog/feed.atom blog/feed.py
-	@python3 blog/feed.py
+dist/blog/feed.atom: $(HTML) blog/feed.atom blog/feed.lua
+	@pandoc blog/content/*.md \
+		--wrap none \
+		--template blog/feed.atom \
+		--lua-filter blog/feed.lua \
+		--output dist/blog/feed.atom
 
 blog:
 	@cd blog/helper/ && cargo build --release

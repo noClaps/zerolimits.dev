@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zerolimits.dev/blog</id>
     <title>The Blog of Random</title>
-    <updated><!--updated--></updated>
+    <updated>$updated$T00:00:00Z</updated>
     <link rel="self" href="https://zerolimits.dev/blog/feed.atom" />
     <subtitle>A blog about the most random things you can think of.</subtitle>
     <author>
@@ -10,5 +10,14 @@
         <uri>https://zerolimits.dev</uri>
     </author>
     <icon>https://zerolimits.dev/favicon.png</icon>
-    <!--entries-->
+    $for(entries)$
+    <entry>
+        <id>https://zerolimits.dev/blog/$it.slug$</id>
+        <title>$it.title$</title>
+        <updated>$it.updated$T00:00:00Z</updated>
+        <link rel="alternate" href="https://zerolimits.dev/blog/$it.slug$" />
+        <published>$it.date$T00:00:00Z</published>
+        <content type="html">$it.article$</content>
+    </entry>
+    $endfor$
 </feed>
