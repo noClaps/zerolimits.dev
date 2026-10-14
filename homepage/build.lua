@@ -16,21 +16,21 @@ function Meta(m)
 
     local contact = {}
     for k, v in pairs(data.contact) do
-        contact[#contact + 1] = {
+        table.insert(contact, {
             key = k,
             name = v.name,
             link = v.link,
             link_name = v["link-name"]
-        }
+        })
     end
     table.sort(contact, function(a, b) return a.key < b.key end)
 
     local projects = {}
     for k, v in pairs(data.projects) do
-        local langs = {}
+        local langs = pandoc.MetaList({})
         if v.languages ~= nil then
             for _, lang in ipairs(v.languages) do
-                table.insert(langs, pandoc.RawInline("html", get_icon(lang)))
+                langs[#langs + 1] = pandoc.RawInline("html", get_icon(lang))
             end
         end
 
