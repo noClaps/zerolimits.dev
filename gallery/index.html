@@ -27,11 +27,12 @@
             <section>
                 $for(it.images)$
                 <img
-                    src="gallery/assets/$it.src$"
+                    src="/gallery/$it.src$"
                     alt="$it.alt$"
                     title="$it.alt$"
                     width="$it.width$"
                     height="$it.height$"
+                    data-external="1"
                 />
                 $endfor$
             </section>

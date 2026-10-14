@@ -46,6 +46,7 @@ gallery:
 	    --template gallery/index.html \
 		--lua-filter gallery/build.lua \
 		--output dist/gallery/index.html
+	@cp -R gallery/assets/ dist/gallery/
 
 check:
 	@lychee dist --root-dir dist --fallback-extensions html --offline
