@@ -1,8 +1,5 @@
-local pandoc = pandoc
-local stringify = pandoc.utils.stringify
-
 function Meta(m)
-    local entries = pandoc.MetaList({})
+    local entries = {}
     for _, file in ipairs(PANDOC_STATE.input_files) do
         local slug = file:match("([^/\\]+)%.md$"):gsub("%.md$", "")
 
@@ -28,18 +25,18 @@ function Meta(m)
             updated = meta.lastmod
         end
 
-        entries[#entries + 1] = pandoc.MetaMap({
-            title = pandoc.MetaString(stringify(meta.title)),
-            date = pandoc.MetaString(stringify(meta.date)),
-            updated = pandoc.MetaString(stringify(updated)),
-            slug = pandoc.MetaString(slug),
-            article = pandoc.MetaString(article)
+        table.insert(entries, {
+            title = meta.title,
+            date = meta.date,
+            updated = updated,
+            slug = slug,
+            article = article
         })
 
         ::continue::
     end
 
-    m.updated = pandoc.MetaString(os.date("!%Y-%m-%d"))
+    m.updated = os.date("!%Y-%m-%d")
     m.entries = entries
     return m
 end

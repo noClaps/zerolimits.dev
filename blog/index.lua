@@ -1,5 +1,3 @@
-local stringify = pandoc.utils.stringify
-
 function Meta(m)
     local posts = {}
     for _, file in ipairs(PANDOC_STATE.input_files) do
@@ -13,8 +11,8 @@ function Meta(m)
         local slug = file:match("([^/\\]+)%.md$"):gsub("%.md$", "")
 
         table.insert(posts, {
-            title = stringify(meta.title),
-            date = stringify(meta.date),
+            title = meta.title,
+            date = pandoc.utils.stringify(meta.date),
             url = "/blog/" .. slug,
         })
 
@@ -23,12 +21,12 @@ function Meta(m)
 
     table.sort(posts, function(a, b) return a.date > b.date end)
 
-    local list = pandoc.MetaList({})
+    local list = {}
     for _, p in ipairs(posts) do
-        list[#list + 1] = pandoc.MetaMap({
-            title = pandoc.MetaString(p.title),
-            date = pandoc.MetaString(p.date),
-            url = pandoc.MetaString(p.url)
+        table.insert(list, {
+            title = p.title,
+            date = p.date,
+            url = p.url
         })
     end
 
