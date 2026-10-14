@@ -13,13 +13,13 @@ function Meta(m)
         table.insert(posts, {
             title = meta.title,
             date = pandoc.utils.stringify(meta.date),
-            url = "/blog/" .. slug,
+            url = "/blog/" .. slug
         })
 
         ::continue::
     end
 
-    table.sort(posts, function(a, b) return a.date > b.date end)
+    table.sort(posts, function (a, b) return a.date > b.date end)
 
     local list = {}
     for _, p in ipairs(posts) do

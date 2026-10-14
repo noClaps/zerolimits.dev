@@ -23,7 +23,7 @@ function Meta(m)
             link_name = v["link-name"]
         })
     end
-    table.sort(contact, function(a, b) return a.key < b.key end)
+    table.sort(contact, function (a, b) return a.key < b.key end)
 
     local projects = {}
     for k, v in pairs(data.projects) do
@@ -43,7 +43,7 @@ function Meta(m)
             languages = langs
         })
     end
-    table.sort(projects, function(a, b) return a.key < b.key end)
+    table.sort(projects, function (a, b) return a.key < b.key end)
 
     m.contact = contact
     m.projects = projects
