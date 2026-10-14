@@ -4,11 +4,11 @@ all: homepage blog gallery
 MD := $(wildcard blog/content/*.md)
 HTML := $(patsubst blog/content/%.md,dist/blog/%.html,$(MD))
 
-dist/blog/%.html: blog/content/%.md blog/post.html blog/styles/post.css blog/filter.lua
+dist/blog/%.html: blog/content/%.md blog/post.html blog/styles/post.css blog/post.lua
 	@pandoc $< \
 	    --embed-resources \
 	    --resource-path blog/content:. \
-		--lua-filter blog/filter.lua \
+		--lua-filter blog/post.lua \
 		--template blog/post.html \
 		--output $@
 
