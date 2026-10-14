@@ -7,10 +7,11 @@
             rel="alternate"
             href="/blog/feed.atom"
             type="application/atom+xml"
+            data-external="1"
         />
-        <link rel="icon" href="/favicon.png" />
-        <link rel="stylesheet" href="/global.css" />
-        <link rel="stylesheet" href="/blog/index.css" />
+        <link rel="icon" href="homepage/favicon.png" />
+        <link rel="stylesheet" href="homepage/global.css" />
+        <link rel="stylesheet" href="blog/styles/index.css" />
         <title>The Blog of Random</title>
     </head>
     <body>
@@ -27,7 +28,12 @@
                 <p>A blog about the most random things you can think of.</p>
             </div>
             <section>
-                <!--posts-->
+                $for(posts)$
+                <a href="$it.url$" class="link">
+                    <time datetime="$it.date$">$it.date$</time>
+                    <h3>$it.title$</h3>
+                </a>
+                $endfor$
             </section>
         </main>
     </body>
