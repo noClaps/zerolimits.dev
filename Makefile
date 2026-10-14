@@ -34,8 +34,12 @@ blog:
 
 homepage:
 	@mkdir -p dist/
-	@cp homepage/data.json homepage/favicon.png homepage/global.css homepage/style.css dist/
-	@python3 homepage/build.py
+	@pandoc homepage/index.html \
+		--embed-resources \
+	    --template homepage/index.html \
+		--lua-filter homepage/build.lua \
+		--output dist/index.html
+	@cp homepage/data.json homepage/favicon.png homepage/global.css dist/
 
 gallery:
 	@mkdir -p dist/gallery/
