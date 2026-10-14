@@ -38,6 +38,7 @@ function Meta(m)
             key = k,
             name = v.name,
             link = v.link or "",
+            source = v.source,
             description = v.description,
             languages = langs
         })
