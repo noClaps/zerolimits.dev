@@ -38,15 +38,11 @@ homepage:
 	    --template homepage/index.html \
 		--lua-filter homepage/build.lua \
 		--output dist/index.html
-	@cp homepage/data.json homepage/favicon.png dist/
+	@cp homepage/data.json homepage/global.css homepage/favicon.png dist/
 
 gallery:
-	@pandoc gallery/index.html \
-		--embed-resources \
-	    --template gallery/index.html \
-		--lua-filter gallery/build.lua \
-		--output dist/gallery/index.html
-	@cp -R gallery/assets/ dist/gallery/
+	@python3 gallery/build.py
+	@cp -R gallery/assets/ gallery/style.css dist/gallery/
 
 check:
 	@lychee dist --root-dir dist --fallback-extensions html --offline
