@@ -9,7 +9,7 @@
 
 ## Build instructions
 
-You'll need [Pandoc](https://pandoc.org), [Rust](https://rust-lang.org) and [Python](https://python.org).
+You'll need [Pandoc](https://pandoc.org) and [Rust](https://rust-lang.org).
 
 Clone the repository:
 

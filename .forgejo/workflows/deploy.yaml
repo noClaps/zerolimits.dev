@@ -11,9 +11,7 @@ jobs:
           curl -LO "https://github.com/jgm/pandoc/releases/download/${VERSION}/pandoc-${VERSION}-linux-amd64.tar.gz"
           tar -xf "pandoc-${VERSION}-linux-amd64.tar.gz"
           install "pandoc-${VERSION}/bin/pandoc" /usr/local/bin/pandoc
-      - run: |
-          pandoc --version
-          python3 --version
+      - run: pandoc --version
       - run: make
       - uses: https://github.com/cloudflare/wrangler-action@v4
         with:
