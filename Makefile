@@ -33,18 +33,19 @@ blog:
 	@make -j $(HTML) dist/blog/index.html dist/blog/feed.atom
 
 homepage:
-	@mkdir -p dist/
 	@pandoc homepage/index.html \
 		--embed-resources \
 	    --template homepage/index.html \
 		--lua-filter homepage/build.lua \
 		--output dist/index.html
-	@cp homepage/data.json homepage/favicon.png homepage/global.css dist/
+	@cp homepage/data.json homepage/favicon.png dist/
 
 gallery:
-	@mkdir -p dist/gallery/
-	@cp -R gallery/style.css gallery/assets/ dist/gallery/
-	@python3 gallery/build.py
+	@pandoc gallery/index.html \
+		--embed-resources \
+	    --template gallery/index.html \
+		--lua-filter gallery/build.lua \
+		--output dist/gallery/index.html
 
 check:
 	@lychee dist --root-dir dist --fallback-extensions html --offline

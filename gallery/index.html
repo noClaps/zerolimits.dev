@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" href="/favicon.png" />
-        <link rel="stylesheet" href="/global.css" />
-        <link rel="stylesheet" href="/gallery/style.css" />
+        <link rel="icon" href="homepage/favicon.png" />
+        <link rel="stylesheet" href="homepage/global.css" />
+        <link rel="stylesheet" href="gallery/style.css" />
         <style></style>
         <title>Aperturic Focus</title>
     </head>
@@ -22,6 +22,20 @@
                 <h1>Aperturic Focus</h1>
                 <p>A website to showcase some cool photos I've taken.</p>
             </div>
+            $for(years)$
+            <h2 id="$it.year$">$it.year$</h2>
+            <section>
+                $for(it.images)$
+                <img
+                    src="gallery/assets/$it.src$"
+                    alt="$it.alt$"
+                    title="$it.alt$"
+                    width="$it.width$"
+                    height="$it.height$"
+                />
+                $endfor$
+            </section>
+            $endfor$
         </main>
     </body>
 </html>
