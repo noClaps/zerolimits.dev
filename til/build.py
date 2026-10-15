@@ -31,5 +31,7 @@ for file in files:
     entry += "</article>"
     entries.append(entry)
 
+html = html.replace("<!--blog.svg-->", Path("icons/blog.svg").read_text())
+html = html.replace("<!--gallery.svg-->", Path("icons/gallery.svg").read_text())
 html = html.replace("<!--entries-->", "".join(entries))
 Path("dist/til/index.html").write_text(html)

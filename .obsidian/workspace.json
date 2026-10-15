@@ -4,22 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "76c103b787d0e2f8",
+        "id": "375081bca881e54e",
         "type": "tabs",
         "children": [
           {
-            "id": "e108106342b9e080",
+            "id": "d5b5706b43bee8b8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "New tab"
             }
           }
         ]
@@ -107,11 +102,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e108106342b9e080",
+  "active": "bc89905711a8af9d",
   "lastOpenFiles": [
+    "icons/typst.svg",
+    "icons/til.svg",
+    "icons/swift.svg",
+    "icons/rust.svg",
+    "icons/lua.svg",
+    "icons/javascript.svg",
+    "icons/html.svg",
+    "icons/homepage.svg",
+    "icons/go.svg",
+    "icons/gallery.svg",
+    "icons/code.svg",
+    "README.md",
+    "icons",
     "til/style.css",
     "til/content/2026-10-16.md",
-    "README.md",
     "blog/content/A beginner's guide to Quantum Information.md",
     "blog/content/A beginner's guide to Quantum and Particle Physics.md",
     "til/content/2026-10-15.md",
@@ -122,7 +129,6 @@
     "til/build.py",
     "til/index.html",
     "til",
-    "blog/content/assets/A beginner's guide to Quantum Information/unit-circle.svg",
     "Finding vulnerabilities in Secton.md",
     "Recap - 2025.md",
     "Random Numbers.md",

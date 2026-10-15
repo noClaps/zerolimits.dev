@@ -13,4 +13,6 @@ for match in re.finditer(r'<img\s+(src="([^"]+)")', html):
     html = html.replace(match[1], f'width="{width}" height="{height}" {match[1]}')
     html = html.replace(match[2], "/gallery/" + match[2])
 
+html = html.replace("<!--blog.svg-->", Path("icons/blog.svg").read_text())
+html = html.replace("<!--til.svg-->", Path("icons/til.svg").read_text())
 Path("dist/gallery/index.html").write_text(html)

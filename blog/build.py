@@ -61,6 +61,8 @@ for m in metadata:
     post += "</a>"
     posts.append(post)
 index = index.replace("<!--posts-->", "".join(posts))
+index = index.replace("<!--gallery.svg-->", Path("icons/gallery.svg").read_text())
+index = index.replace("<!--til.svg-->", Path("icons/til.svg").read_text())
 Path("dist/blog/index.html").write_text(index)
 
 # posts
@@ -71,6 +73,9 @@ for i, m in enumerate(metadata):
     content = build_post(m["path"])
     metadata[i]["content"] = content
     post = post.replace("<!--content-->", content)
+    post = post.replace("<!--homepage.svg-->", Path("icons/homepage.svg").read_text())
+    post = post.replace("<!--gallery.svg-->", Path("icons/gallery.svg").read_text())
+    post = post.replace("<!--til.svg-->", Path("icons/til.svg").read_text())
     Path(f"dist/blog/{m['slug']}.html").write_text(post)
 
 # feed
