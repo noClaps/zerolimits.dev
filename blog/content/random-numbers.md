@@ -32,7 +32,7 @@ Spotify launched in 2010 with a feature to let you shuffle your songs, allowing 
 > }
 > ```
 >
-> --- [Cynthia Teeters, `cynthiateeters/fisher-yates`](https://github.com/cynthiateeters/fisher-yates)
+> — [Cynthia Teeters, `cynthiateeters/fisher-yates`](https://github.com/cynthiateeters/fisher-yates)
 
 However, they had a problem: people were complaining that [their](https://www.reddit.com/r/spotify/comments/1o0j86/whats_with_shuffle_seems_kinda_terrible/) [random](https://www.reddit.com/r/AskReddit/comments/m9b90/is_it_just_me_or_is_the_shuffle_option_in_most/) [shuffle](https://www.reddit.com/r/spotify/comments/1vrwen/been_an_issue_for_years_when_will_shuffle_be_fixed/) [wasn't](https://www.reddit.com/r/spotify/comments/qseo9/how_does_spotify_shuffle/) [very](https://community.spotify.com/t5/iOS-iPhone-iPad/Shuffle-play-is-not-random/td-p/632802) [random](https://community.spotify.com/t5/Android/Shuffle-feature-seems-to-favor-certain-songs/td-p/414046). Of course, the problem wasn't that Shuffle wasn't random, it's that human brains are incredibly good at catching and coming up with patterns, and so very bad at randomness.
 
@@ -98,7 +98,7 @@ to far more complex ones like the [PCG family of random number generators](https
 > - Persistent world that's generated on the fly. If you have a world that's generated on the fly as the player moves around in it, you may want locations to remain the same the first and subsequent times the player visit those locations (like in Minecraft, the upcoming game No Man's Sky, and others), rather than being different each time as if driven by dream logic.
 > - Same world for everyone. Maybe you want your game world to be the same for everyone who play it, exactly as if it wasn't procedurally generated. This is for example the case in No Man's Sky. This is essentially the same as the ability to revisit the same level/world mentioned above, except that the same seed is always used.
 >
-> --- [Rune Skovbo Johansen, Unity](https://unity.com/blog/engine-platform/primer-on-repeatable-random-numbers)
+> — [Rune Skovbo Johansen, Unity](https://unity.com/blog/engine-platform/primer-on-repeatable-random-numbers)
 
 This seed can be anything — a number, a bit of text, some binary data, etc., it's just some input to the function. By setting the known initial state you can generate a known sequence of numbers simply by calling the function over and over again.
 
@@ -150,11 +150,11 @@ This is where [cryptographically secure pseudo-random number generators (CSPRNG)
 >
 > But “random” is a pretty tricky term; it’s used in many different fields to mean slightly different things. And like all of those fields, its use in cryptography is very precise. In some fields, a process is random simply if it has the right statistical properties. For example, the digits of pi are said to be random because all sequences of numbers appear with equal frequency (“15” appears as frequently as “38”, “426” appears as frequently as “297”, etc). But for cryptography, this isn’t enough - random numbers must be _unpredictable_.
 >
-> [...]
+> \[...]
 >
 > CSPRNGs are algorithms which, provided an input which is itself unpredictable, produce a much larger stream of output which is also unpredictable. This stream can be extended indefinitely, producing as much output as required at any time in the future. In other words, if you were to flip a coin a number of times (a process which is known to be unpredictable) and then use the output of those coin flips as the input to a CSPRNG, an adversary who wasn’t able to predict the output of those coin flips would also be unable to predict the output of the CSPRNG - no matter how much output was consumed from the CSPRNG.
 >
-> --- [Joshua Liebow-Feeser, Cloudflare](https://blog.cloudflare.com/randomness-101-lavarand-in-production/)
+> — [Joshua Liebow-Feeser, Cloudflare](https://blog.cloudflare.com/randomness-101-lavarand-in-production/)
 
 Of course, computers are still deterministic machines, but a CSPRNG needs to be unpredictable, so where do we get that unpredictability from? The real world, of course! Techniques like timing keystrokes with very high precision, reading temperature from the CPU, and measuring data from other sensors like accelerometers and gyroscopes can yield incredibly unpredictable values, because those conditions are really difficult to recreate reliably.
 
@@ -184,7 +184,7 @@ The way it works is that they take all of the songs in your playlist and separat
 
 > We can take inspiration from the dithering algorithms to solve our problem with clusters of songs by the same artist; we will try to spread them throughout the whole playlist. Suppose we have a playlist containing some songs by **The White Stripes**, **The xx**, **Bonobo**, **Britney Spears** ([Toxic](https://open.spotify.com/track/26nr9XnFCYWxBTIP7HyWXg)!) and **Jaga Jazzist**. For each artist we take their songs and try to stretch them as evenly as possible along the whole playlist. Then we collect all songs and order them by their position.
 >
-> -- [How to shuffle songs? — Lukáš Poláček, Spotify](https://web.archive.org/web/20240813071829/https://engineering.atspotify.com/2014/02/how-to-shuffle-songs/)
+> — [How to shuffle songs? — Lukáš Poláček, Spotify](https://web.archive.org/web/20240813071829/https://engineering.atspotify.com/2014/02/how-to-shuffle-songs/)
 
 ![Spotify's merge algorithm for shuffle. The circles are songs, and the colors represent the different artists. As you can see at the bottom, the final output looks fairly random. Source: [How to shuffle songs?](https://web.archive.org/web/20240813071829/https://engineering.atspotify.com/2014/02/how-to-shuffle-songs/) (Internet Archive link).](./random-numbers/spotify-merge-algorithm.png)
 

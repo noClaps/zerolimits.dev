@@ -13,7 +13,7 @@ Your threat model is pretty much a plan for what you're protecting and who you'r
 >
 > A threat model is a structured representation of all the information that affects the security of an application. In essence, it is a view of the application and its environment through the lens of security.
 >
-> --- [Threat Modelling, Victoria Drake, OWASP Foundation](https://owasp.org/www-community/Threat_Modeling)
+> — [Threat Modelling, Victoria Drake, OWASP Foundation](https://owasp.org/www-community/Threat_Modeling)
 
 That's all fancy talk for "identify who you don't want to get your stuff, so that you can work toward not letting them get your stuff". Everyone's threat model is different, so when you say "I don't care about privacy", that doesn't mean you don't care about your privacy. It just means you have a different threat model than someone else, and you don't want to change that. And that's fine, everyone has their own level of comfort with the data they share.
 
@@ -55,7 +55,7 @@ There's many guides and tools out there to help you create a threat model, but i
 > 4. How bad are the consequences if I fail?
 > 5. How much trouble am I willing to go through to try to prevent potential consequences?
 >
-> --- [Threat Modelling, Privacy Guides](https://www.privacyguides.org/basics/threat-modeling/)
+> — [Threat Modelling, Privacy Guides](https://www.privacyguides.org/basics/threat-modeling/)
 
 I encourage you to read the whole threat modelling guide from Privacy Guides, it's very well written and clearly explains each step.
 

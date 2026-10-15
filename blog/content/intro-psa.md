@@ -42,7 +42,7 @@ One of the most common misconceptions in the privacy community is that open sour
 
 > given enough eyeballs, all bugs are shallow.
 >
-> --- [Understanding Linus's Law for open source security, Seth Kenlon, opensource.com](https://opensource.com/article/21/2/open-source-security)
+> — [Understanding Linus's Law for open source security, Seth Kenlon, opensource.com](https://opensource.com/article/21/2/open-source-security)
 
 This stems from the belief that being able to see and audit the source code makes it more secure, and that the more eyes there are on the code, the more bugs and vulnerabilities can be caught and the more secure and private the software will be. In an ideal world, this would work. If all source code had many eyes on it, and was constantly being tested and audited by the public, and abandoned projects were being revived in forks, then something being open source would be a much more compelling argument for it. Companies would likely open source more software as they are effectively getting free labor out of it, as well as keeping their users happy by allowing them to develop the software how they wish.
 
@@ -101,13 +101,13 @@ In the context of messaging, the message you send, whether that's text, images, 
 
 > if the data is a letter, the metadata is the envelope and its associated information (address, time, date, size…)
 >
-> --- [Berty](https://berty.tech/blog/metadata-mobile-messaging/)
+> — [Berty](https://berty.tech/blog/metadata-mobile-messaging/)
 
 ### Why should I care?
 
 > Metadata is extraordinarily intrusive. As an analyst, I would prefer to be looking at metadata than looking at content, because it's quicker and easier, and it doesn't lie.
 >
-> --- [Edward Snowden](https://www.zdnet.com/article/can-snowden-finally-kill-the-harmless-metadata-myth/)
+> — [Edward Snowden](https://www.zdnet.com/article/can-snowden-finally-kill-the-harmless-metadata-myth/)
 
 Think of it like this: if you see someone having a conversation with a known drug dealer, even if the actual conversation wasn't heard, there can be some fairly accurate assumptions about what's going on. Similarly, even if the actual messages are encrypted, metadata about the messages can be incredibly revealing.
 
@@ -116,13 +116,13 @@ Think of it like this: if you see someone having a conversation with a known dru
 > - They know you spoke with an HIV testing service, then your doctor, then your health insurance company in the same hour. But they don't know what was discussed.
 > - They know you called the suicide prevention hotline from the Golden Gate Bridge. But the topic of the call remains a secret.
 >
-> --- [Examples from the EFF](https://www.eff.org/fr/deeplinks/2013/06/why-metadata-matters)
+> — [Examples from the EFF](https://www.eff.org/fr/deeplinks/2013/06/why-metadata-matters)
 
 As you can see, it's pretty easy to figure out what's going on in someone's life, even if you don't know the exact words used in each phone call or conversation.
 
 > We kill people based on metadata.
 >
-> --- [ex-NSA Chief Gen. Michael Hayden](https://abcnews.go.com/blogs/headlines/2014/05/ex-nsa-chief-we-kill-people-based-on-metadata)
+> — [ex-NSA Chief Gen. Michael Hayden](https://abcnews.go.com/blogs/headlines/2014/05/ex-nsa-chief-we-kill-people-based-on-metadata)
 
 The best thing you can do to protect against this is use privacy-friendly services that either have little to no metadata or encrypt your metadata. There are also [metadata removal tools](https://www.privacyguides.org/data-redaction/) you can use before you share them with someone or post them online.
 

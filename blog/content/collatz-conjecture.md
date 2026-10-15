@@ -6,19 +6,19 @@ lastmod: 2025-04-12
 
 > This is a really dangerous problem. People become obsessed with it and it really is impossible.
 >
-> --- Jeffery Lagarias, expert on the Collatz conjecture, mathematician at the University of Michigan
+> — Jeffery Lagarias, expert on the Collatz conjecture, mathematician at the University of Michigan
 
 > Mathematics is not ready for such problems yet.
 >
-> --- Paul Erdös, the man who only loved numbers
+> — Paul Erdös, the man who only loved numbers
 
 > Many, many mathematicians over the months of meaningless moil have made minimal progress toward the solution of this stupidly simple yet stubbornly unsolvable problem.
 >
-> --- Master of alliteration, me
+> — Master of alliteration, me
 
 > Don't waste your time on this.
 >
-> --- Pretty much every mathematician ever
+> — Pretty much every mathematician ever
 
 So, I wasted my time on this.
 
@@ -132,7 +132,7 @@ So far, there's been no solutions. That's not really a conclusion since it can't
 
 > It’s actually an occupational hazard when you’re a mathematician. You could get obsessed with these big famous problems that are way beyond anyone’s ability to touch, and you can waste a lot of time.
 >
-> --- Terence Tao, genius, mathematician
+> — Terence Tao, genius, mathematician
 
 I found a thesis by Jose William Porras that claims to be the "Solution to Collatz's Conjecture". [have a read here](https://www.researchgate.net/publication/325389892_Solution_to_Collatz's_Conjecture). Again, I didn't understand it, but maybe you will.
 

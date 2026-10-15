@@ -118,7 +118,7 @@ Google is one of the world leaders in software and hardware security, from [Proj
 
 > Advanced Protection is recommended for anyone who is at an elevated risk of targeted online attacks. This includes journalists, activists, political campaign staffers, business leaders, IT admins, and anyone else whose Google Account contains valuable files or sensitive information.
 >
-> --- [Google Advanced Protection Program](https://support.google.com/accounts/answer/7519408)
+> — [Google Advanced Protection Program](https://support.google.com/accounts/answer/7519408)
 
 #### Chromium
 
@@ -130,11 +130,11 @@ Chromium (and by extension Chromium-based browsers like Chrome, Brave and Edge) 
 >
 > Chromium is using Network Isolation Keys to divide up connection pools, caches and other state based on site and this will be the foundation for privacy. Chromium itself aims to prevent tracking through mechanisms other than cookies
 >
-> --- [Daniel Micay, lead developer of GrapheneOS](https://grapheneos.org/usage#web-browsing)
+> — [Daniel Micay, lead developer of GrapheneOS](https://grapheneos.org/usage#web-browsing)
 
 > For security, use Chromium. Avoid Firefox or browsers based on it, as they are currently very lacking in security. Microsoft Edge is a better choice for Windows users, as it can utilise Microsoft Defender Application Guard (MDAG) and has an enhanced security mode in which JIT is disabled and mitigations such as ACG, CIG, CFG and CET are all enabled in the renderer process.
 >
-> --- [Madaidan, Whonix security researcher](https://madaidans-insecurities.github.io/security-privacy-advice.html#browser)
+> — [Madaidan, Whonix security researcher](https://madaidans-insecurities.github.io/security-privacy-advice.html#browser)
 
 If a lot of that made no sense to you, don't worry, you're not alone. I tried to pick out the easiest-to-understand parts, but it takes years and years of research and experience to get to the level of understanding these people have reached. However, their main point is clear: Chromium is _really_ secure. The Chromium team has a [whole page about their security](https://www.chromium.org/Home/chromium-security/) in their documentation, if you want to read more. It's a little easier to read than the technical stuff the researchers above were talking about.
 
@@ -142,7 +142,7 @@ From what I've understood, one of Chromium's best security features is [sandboxi
 
 > Firefox fully rolled out their Fission project in [Firefox 95](https://www.mozilla.org/en-US/firefox/95.0/releasenotes/). However, Fission in its current state is not as mature as Chromium's site isolation, and it will take many more years for it to reach that point. Fission still suffers from all the security issues of the baseline content process sandbox, as documented below, and it is not a panacea for all sandboxing issues. However, more specific to Fission itself, there are [numerous](https://bugzilla.mozilla.org/show_bug.cgi?id=1505832) [cross-site](https://bugzilla.mozilla.org/show_bug.cgi?id=1484019) [leaks](https://bugzilla.mozilla.org/show_bug.cgi?id=1707955), allowing a compromised content process to access the data of another and bypass site isolation.
 >
-> --- [Madaidan](https://madaidans-insecurities.github.io/firefox-chromium.html#site-isolation)
+> — [Madaidan](https://madaidans-insecurities.github.io/firefox-chromium.html#site-isolation)
 
 #### Android and ChromeOS
 
@@ -155,11 +155,11 @@ Both Android and ChromeOS are based on Linux, and while most consumer Linux dist
 
 > Android is not Linux
 >
-> --- [Patrick Brady, Google engineer](<https://en.wikipedia.org/wiki/Android_(operating_system)#Linux_kernel>)
+> — [Patrick Brady, Google engineer](<https://en.wikipedia.org/wiki/Android_(operating_system)#Linux_kernel>)
 
 > Although Android is built on top of the Linux kernel, the platform has very little in common with the conventional desktop Linux stack.
 >
-> --- [Ars Technica](https://arstechnica.com/gadgets/2009/02/an-introduction-to-google-android-for-developers/)
+> — [Ars Technica](https://arstechnica.com/gadgets/2009/02/an-introduction-to-google-android-for-developers/)
 
 [Android's security model](https://source.android.com/security) is often praised as [one of the strongest](https://madaidans-insecurities.github.io/android.html), and that can be further [improved by GrapheneOS](https://grapheneos.org/features) on a Google Pixel device.
 
@@ -179,7 +179,7 @@ Google's Pixel devices, especially their phones, are an excellent example of har
 
 > Google Pixel phones are the only devices I would recommend for purchase. Pixel phones have stronger hardware security than any other Android devices currently on the market, due to proper AVB support for third-party operating systems and Google’s custom [Titan](https://security.googleblog.com/2021/10/pixel-6-setting-new-standard-for-mobile.html) security chips acting as the Secure Element.
 >
-> --- [Tommy, PrivSec.dev](https://privsec.dev/os/android-tips/#recommended-phones)
+> — [Tommy, PrivSec.dev](https://privsec.dev/os/android-tips/#recommended-phones)
 
 This starts with the [Titan M](https://security.googleblog.com/2018/10/building-titan-better-security-through.html) series of security chips that they've used in their devices starting from the Pixel 3. The chip is custom-built by Google, and gives the Pixel line a lot of security advantages over the competition, at least on the Android side.
 
@@ -191,7 +191,7 @@ This starts with the [Titan M](https://security.googleblog.com/2018/10/building-
 > - Enforcing factory-reset policies, so that lost or stolen phones can only be restored to operation by the authorized owner.
 > - Ensuring that even Google can't unlock a phone or install firmware updates without the owner's cooperation with [Insider Attack Resistance](https://android-developers.googleblog.com/2018/05/insider-attack-resistance.html).
 >
-> --- [Google Security Blog](https://security.googleblog.com/2018/10/building-titan-better-security-through.html)
+> — [Google Security Blog](https://security.googleblog.com/2018/10/building-titan-better-security-through.html)
 
 This only got better when Google introduced their [custom Tensor processor](https://security.googleblog.com/2021/10/pixel-6-setting-new-standard-for-mobile.html) in the Pixel 6, since they were then able to secure not only the security chip, but also the processor. This was a significant step forward for Pixel security, and has since made the Pixel 6 line one of, if not _the_ most, secure phones to use in the world. Additionally, Google is now able to provide software updates for a longer amount of time: [5 years](https://support.google.com/nexus/answer/4457705?hl=en#zippy=%2Cpixel-later-pixel-phones) instead of 3, which means your phone can be even more secure, for longer. This is one of the main reasons that privacy- and security-focused projects like GrapheneOS [only recommend](https://grapheneos.org/faq#recommended-devices) and support the Pixel line, at least for now.
 

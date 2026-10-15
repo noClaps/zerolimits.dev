@@ -14,13 +14,13 @@ PLATO, short for Programmed Logic for Automatic Teaching Operations, was a compu
 
 > Email, notes, interactive networked computer games, Instant Messaging, and more
 >
-> --- [John Daleske, worked on PLATO system from 1976 to 1980](http://www.daleske.com/plato/)
+> — [John Daleske, worked on PLATO system from 1976 to 1980](http://www.daleske.com/plato/)
 
 Since then, much more complex and popular software and services have been made, but many owe their existence to the work done on the PLATO system.
 
 > Some of the most popular pieces of software ever made, including Lotus Notes and _Microsoft Flight Simulator_, share a direct lineage with the applications produced by students at the University of Illinois Urbana-Champaign (UIUC) and other nearby universities more than 40 years ago. Many more, such as Reddit, Twitter, and AOL, carry clear inspiration, whether their creators know it or not. And this platform generated some of the earliest examples of digital culture, including emoticons and interactive storytelling.
 >
-> --- [Ernie Smith, VICE](https://www.vice.com/en/article/pa3vvg/the-greatest-computer-network-youve-never-heard-of)
+> — [Ernie Smith, VICE](https://www.vice.com/en/article/pa3vvg/the-greatest-computer-network-youve-never-heard-of)
 
 Clearly, this was an important first step for social media, but it was, quite literally, just the beginning.
 
@@ -32,7 +32,7 @@ Clearly, this was an important first step for social media, but it was, quite li
 
 > IRC's abandonment by the community is a crying shame. People have exchanged an open standard for the ability to share cat GIFs and emoji reactions. People have, once again, disappointed me.
 >
-> --- [David Wickes, commented on DEV Community](https://dev.to/gypsydave5/comment/k5k3)
+> — [David Wickes, commented on DEV Community](https://dev.to/gypsydave5/comment/k5k3)
 
 #### AIM, Yahoo! Messenger and MSN Messenger
 
@@ -64,7 +64,7 @@ Social networking is exactly what it sounds like, a type of social media meant f
 
 > Definition of _microblogging_ : blogging done with severe space or size constraints typically by posting frequent brief messages about personal activities
 >
-> --- [Merriam-Webster dictionary](https://www.merriam-webster.com/dictionary/microblogging)
+> — [Merriam-Webster dictionary](https://www.merriam-webster.com/dictionary/microblogging)
 
 As is the name, microblogging is similar to blogging, where one may write about any number of topics, such as their personal life, a specific subject (like I'm doing right now), sharing news, etc. Companies can also use microblogs to write a short announcement post, or market their products. Some popular microblogging platforms are [Twitter](https://twitter.com/) and [Tumblr](https://www.tumblr.com/).
 
@@ -86,7 +86,7 @@ Social media definitely has its benefits, it connects people and forms communiti
 
 > So today, as Facebook approaches 2 billion monthly users, its CEO Mark Zuckerberg revealed a new mission statement, to “Give people the power to build community and bring the world closer together.”
 >
-> --- [Josh Constine, TechCrunch](https://techcrunch.com/2017/06/22/bring-the-world-closer-together/)
+> — [Josh Constine, TechCrunch](https://techcrunch.com/2017/06/22/bring-the-world-closer-together/)
 
 ### Goverments
 
@@ -94,7 +94,7 @@ Social media is an [invaluable tool](https://read.oecd-ilibrary.org/governance/s
 
 > The Department of Justice believes its use of social media improves goverment transparency, increases the availability of services and information, and allows it to share news more easily
 >
-> --- [Infographic by Ohio University’s Master of Public Administration program](https://onlinemasters.ohio.edu/blog/social-media-in-government/)
+> — [Infographic by Ohio University’s Master of Public Administration program](https://onlinemasters.ohio.edu/blog/social-media-in-government/)
 
 Social media also allows the people to [hold their leaders accountable](https://about.fb.com/news/2018/01/effect-social-media-democracy/). This was best demonstrated in Tunisia in the Arab Spring, where [protestors used platforms](https://www.theatlantic.com/technology/archive/2011/09/so-was-facebook-responsible-for-the-arab-spring-after-all/244314/) like Facebook and YouTube to spread awareness of what was going on in the country.
 
@@ -108,7 +108,7 @@ Social media plays a big role in science. [Research](https://www.nature.com/arti
 
 > ResearchGate, LinkedIn, Facebook, Twitter and Academia.edu were the top five sites visited by scientists and engineers participating in a separate 2014 survey (https://go.nature.com/2Dk1L6v). Among these, Twitter has emerged as a key outlet.
 >
-> --- [Social media for scientists. Nat Cell Biol 20, 1329 (2018).](https://doi.org/10.1038/s41556-018-0253-6)
+> — [Social media for scientists. Nat Cell Biol 20, 1329 (2018).](https://doi.org/10.1038/s41556-018-0253-6)
 
 Sure enough, famous scientists like theoretical physicist [Brian Greene](https://twitter.com/bgreene), or computer security professional [Bruce Schneier](https://twitter.com/schneierblog) both have Twitter and [Facebook](https://www.facebook.com/BrianGreenePhysicist) [accounts](https://www.facebook.com/bruce.schneier).
 
@@ -124,17 +124,17 @@ One of the main problems with social media is that when people are given a platf
 
 > These companies often face critical human rights dilemmas: aggressively combating what is viewed as harmful content risks silencing ‘protected speech’: speech that, under international law, should be permitted. Intervening with or removing content affects the rights to freedom of expression and privacy, and can easily lead to censorship.
 >
-> --- [Moderating online content: fighting harm or silencing dissent?, United Nations Human Rights Office of the High Commissioner](https://www.ohchr.org/en/stories/2021/07/moderating-online-content-fighting-harm-or-silencing-dissent)
+> — [Moderating online content: fighting harm or silencing dissent?, United Nations Human Rights Office of the High Commissioner](https://www.ohchr.org/en/stories/2021/07/moderating-online-content-fighting-harm-or-silencing-dissent)
 
 You could go online and try to find definitions for censorship and moderation, and try to differentiate them that way, but that only complicates things further.
 
 > the action of preventing part or the whole of a book, film, work of art, document, or other kind of communication from being seen or made available to the public, because it is considered to be offensive or harmful, or because it contains information that someone wishes to keep secret
 >
-> --- [Definition of censorship, Cambridge dictionary](https://dictionary.cambridge.org/dictionary/english/censorship)
+> — [Definition of censorship, Cambridge dictionary](https://dictionary.cambridge.org/dictionary/english/censorship)
 
 > the quality of doing something within reasonable limits
 >
-> --- [Definition of moderation, Cambridge dictionary](https://dictionary.cambridge.org/dictionary/english/moderation)
+> — [Definition of moderation, Cambridge dictionary](https://dictionary.cambridge.org/dictionary/english/moderation)
 
 Using those definitions, a few problems are immediately visible:
 
@@ -155,7 +155,7 @@ Cancel culture has been around for a few years, and people have had different re
 >
 > That is not bringing about change. If all you're doing is casting stones, you are probably not going to get that far.
 >
-> --- [Speech at Obama Foundation Summit, Barack Obama](https://www.businessinsider.com/barack-obama-slams-call-out-culture-young-not-activism-2019-10?r=US&IR=T)
+> — [Speech at Obama Foundation Summit, Barack Obama](https://www.businessinsider.com/barack-obama-slams-call-out-culture-young-not-activism-2019-10?r=US&IR=T)
 
 Others supported it:
 
@@ -163,7 +163,7 @@ Others supported it:
 > - Cancel culture gives a voice to disenfranchised or less powerful people.
 > - Cancel culture is simply a new form of boycott, a cherished tactic in the civil rights movement, to bring about social change.
 >
-> --- [Cancel culture, adapted from ProCon.org](https://www.procon.org/headlines/is-cancel-culture-or-callout-culture-good-for-society/)
+> — [Cancel culture, adapted from ProCon.org](https://www.procon.org/headlines/is-cancel-culture-or-callout-culture-good-for-society/)
 
 Cancel culture has been seen as censorship by those being cancelled, and as moderation by those cancelling. Which you see it as is up for you to decide, but I hope it's clear how much of an issue this can be.
 
@@ -175,7 +175,7 @@ Companies like [Facebook have research](https://www.theguardian.com/technology/2
 
 > So-called ‘social media addiction’ has been referred to by a wide variety of studies and experiments. It is thought that addiction to social media affects around 5% of young people, and was recently described as potentially more addictive than alcohol and cigarettes. Its ‘addictive’ nature owes to the degree of compulsivity with which it is used. The ‘urge’ to check one’s social media may be linked to both instant gratification (the need to experience fast, short term pleasure) and dopamine production (the chemical in the brain associated with reward and pleasure). The desire for a ‘hit’ of dopamine, coupled with a failure to gain instant gratification, may prompt users to perpetually refresh their social media feeds.
 >
-> --- [Anxiety, loneliness and Fear of Missing Out: The impact of social media on young people’s mental health, Rhys Edmonds, Centre for Mental Health](https://www.centreformentalhealth.org.uk/blogs/anxiety-loneliness-and-fear-missing-out-impact-social-media-young-peoples-mental-health)
+> — [Anxiety, loneliness and Fear of Missing Out: The impact of social media on young people’s mental health, Rhys Edmonds, Centre for Mental Health](https://www.centreformentalhealth.org.uk/blogs/anxiety-loneliness-and-fear-missing-out-impact-social-media-young-peoples-mental-health)
 
 > There could be many reasons why social media has been linked with increased anxiety and depressive symptoms, negative body image, sleep problems and cyberbullying (Royal Society for Public Health, 2017), but increased social comparison is one of the most powerful.
 >
@@ -195,7 +195,7 @@ Companies like [Facebook have research](https://www.theguardian.com/technology/2
 >
 > Steer et al (2014) found some people became depressed after spending time on Facebook, because comparing themselves with others made them feel bad. Instagram is reported to be the most harmful social media platform for young people’s mental health (Royal Society for Public Health, 2017) and has recently started hiding ‘like’ counts to try to reduce the pressure on users (BBC News, 2019)
 >
-> --- [Warrender D, Milne R (2020) How use of social media and social comparison affect mental health. Nursing Times \[online\]; 116: 3, 56-59.](https://www.nursingtimes.net/news/mental-health/how-use-of-social-media-and-social-comparison-affect-mental-health-24-02-2020/)
+> — [Warrender D, Milne R (2020) How use of social media and social comparison affect mental health. Nursing Times [online]; 116: 3, 56-59.](https://www.nursingtimes.net/news/mental-health/how-use-of-social-media-and-social-comparison-affect-mental-health-24-02-2020/)
 
 There's not much I want to say about this topic, since I'm no expert, but the Nursing Times article I've quoted above is a great read for the effects of social media on mental health. It's been peer-reviewed and is written by professionals of the field. Mental health is a serious issue and I don't want my inexperience to cause me to get something wrong.
 
@@ -211,7 +211,7 @@ The way that these platforms are able to keep you online is because [they know y
 
 > Everyone leaves a data trail behind on the internet. Every time someone creates a new social media account, they provide personal information that can include their name, birthdate, geographic location, and personal interests. In addition, companies collect data on user behaviors: when, where, and how users interact with their platform. All of this data is stored and leveraged by companies to better target advertising to their users. Sometimes, companies share users’ data with third-party entities, often without users’ knowledge or consent.
 >
-> --- [Key Social Media Privacy Issues for 2020, Tulane University School of Professional Advancement](https://sopa.tulane.edu/blog/key-social-media-privacy-issues-2020)
+> — [Key Social Media Privacy Issues for 2020, Tulane University School of Professional Advancement](https://sopa.tulane.edu/blog/key-social-media-privacy-issues-2020)
 
 The main privacy issue with social media isn't just that they collect huge amounts of data, it's also that they do it without user consent. Well, technically they got your consent when you clicked "I have read and accept the terms and conditions", because they are fully aware that most people don't bother actually reading them. However, if you do read them, they [clearly state](https://en-gb.facebook.com/privacy/policy/) what information they collect, from where, and what they do with it.
 
@@ -219,7 +219,7 @@ By user consent I mean that it is not made clear to the user what they're signin
 
 The collection and abuse of user data is a topic I covered in my [Intro to Privacy, Security and Anonymity](/blog/intro-psa#why-should-i-care) post.
 
-## What's in the #future?
+## What's in the \#future?
 
 As with anything in the tech world, the future of social media is uncertain. From [Twitter rapidly losing users](https://www.theguardian.com/news/datablog/2023/jan/08/elon-musk-drove-more-than-a-million-people-to-mastodon-but-many-arent-sticking-around) (at least temporarily), new social media platforms like [BeReal](https://www.npr.org/2022/04/16/1092814566/bereal-app-gen-z-download), which tries to remove the ["fakeness"](https://www.sciencedaily.com/releases/2014/08/140814123925.htm) that social media often brings with it, to the rise of Web3, decentralisation and federation, such as with the [Fediverse](https://www.eff.org/deeplinks/2022/11/fediverse-could-be-awesome-if-we-dont-screw-it).
 

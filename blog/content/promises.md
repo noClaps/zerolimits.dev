@@ -45,7 +45,7 @@ One of Reddit's greatest strengths was its openness. Though there are pros and c
 
 > Our whole philosphy has been to give our users choice. We’ve got the reddit AMA app, and alienblue coming out… but we really want users to use whatever they want.
 >
-> --- [Ellen Pao, Reddit’s head of Strategic Partnerships](https://techcrunch.com/2014/10/15/reddit-acquires-alien-blue-the-most-popular-unofficial-reddit-app/)
+> — [Ellen Pao, Reddit’s head of Strategic Partnerships](https://techcrunch.com/2014/10/15/reddit-acquires-alien-blue-the-most-popular-unofficial-reddit-app/)
 
 This **openness** was one of Reddit's core promises. It allowed other developers to compete with one another and Reddit themselves to provide the best experience for their users. However, in April 2023, Reddit decided to [start charging for API access](https://www.reddit.com/r/reddit/comments/12qwagm/an_update_regarding_reddits_api/), following Twitter's decision to do the same, because it was being used by companies like Google and OpenAI to train their LLMs. This also had the consequence of pricing out third-party apps, including popular ones like [Apollo](https://apolloapp.io).
 

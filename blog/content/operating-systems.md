@@ -66,7 +66,7 @@ However, there are [many, many package managers](#linux-2) out there, and none a
 
 > It would be cool if the Linux world would agree on 1 app manager.
 >
-> --- [Bjørn Erik Pedersen, Hugo developer](https://discourse.gohugo.io/t/add-flatpak-support/13734/3)
+> — [Bjørn Erik Pedersen, Hugo developer](https://discourse.gohugo.io/t/add-flatpak-support/13734/3)
 
 This is one of the main reasons Linux can be so complicated. Furthermore, the GUI software stores, like GNOME Software or KDE Discover are often [clunky](https://bugzilla.redhat.com/show_bug.cgi?id=2022755) and [difficult to use](https://www.reddit.com/r/kde/comments/qoo7gv/why_is_discover_so_unresponsive_and_buggy/), and sometimes don't have all of the packages available in the repositories.
 

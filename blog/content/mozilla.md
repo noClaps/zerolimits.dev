@@ -25,17 +25,17 @@ which are:
 
 > Mozilla provides the Firefox web browser, which is a free and open-source web browser initially developed by Mozilla Foundation and the Corporation. Mozilla incorporates search engines of its customers as a default status or an optional status available in the Firefox web browser. Mozilla generally receives royalties at a certain percentage of revenues earned by its customers through their search engines incorporated in the Firefox web browser.
 >
-> --- [Mozilla Foundation and subsidiaries, Independent Auditor's Report](https://assets.mozilla.net/annualreport/2022/mozilla-fdn-2022-fs-final-0908.pdf)
+> — [Mozilla Foundation and subsidiaries, Independent Auditor's Report](https://assets.mozilla.net/annualreport/2022/mozilla-fdn-2022-fs-final-0908.pdf)
 
 So basically, search engine deals. Other than that, we have the "Subscription and advertising revenue" clocking in at \$75 million dollars. These are described as:
 
 > Mozilla's subscription revenues primarily consist of revenue from subscriptions to a service known as Pocket Premium and VPN.
 >
-> [...]
+> \[...]
 >
 > Mozilla also offers advertising services in three formats. The first is the New Tab / Tiles advertising service, which places links to sponsored content when a new tab is opened in the Firefox web browser. The second format is through Pocket's email product, Pocket Hits. Pocket Hits may include paid advertisements, which are places in email newsletters that get delivered to global Pocket users. Lastly, Mozilla also sells web advertisement spots on content that Mozilla licenses and syndicates from publisher partners across the web.
 >
-> --- [Mozilla Foundation and subsidiaries, Independent Auditor's Report](https://assets.mozilla.net/annualreport/2022/mozilla-fdn-2022-fs-final-0908.pdf)
+> — [Mozilla Foundation and subsidiaries, Independent Auditor's Report](https://assets.mozilla.net/annualreport/2022/mozilla-fdn-2022-fs-final-0908.pdf)
 
 ### Services
 
@@ -47,7 +47,7 @@ As for Pocket, here's a little snippet from their privacy policy:
 
 > We also share aggregated, non-personal data and related usage information, which does not contain any personal information which can identify you or any other individual user, with third parties, including content providers, website operators, advertisers and publishers. For example, we may share with a content provider a list of the most saved articles to Pocket based on an analysis of aggregated, anonymous user data, but we would not share with such content provider any personal information regarding such users.
 >
-> --- [Pocket Privacy Policy](https://getpocket.com/en/privacy/#sharing)
+> — [Pocket Privacy Policy](https://getpocket.com/en/privacy/#sharing)
 
 It's a better privacy policy than most services, I will admit, but it's still not something I'd expect from a privacy-first non-profit organisation.
 
@@ -88,7 +88,7 @@ Now, I'm not against people fighting for what they believe in (even if I don't n
 
 > Main casualties of today's layoffs were the developers working on the company's experimental Servo browser engine and Mozilla's threat management security team.
 >
-> --- [Mozilla lays off 250 employees while it refocuses on commercial products, Catalin Cimpanu, ZDNet, 2020](https://www.zdnet.com/article/mozilla-lays-off-250-employees-while-it-refocuses-on-commercial-products/)
+> — [Mozilla lays off 250 employees while it refocuses on commercial products, Catalin Cimpanu, ZDNet, 2020](https://www.zdnet.com/article/mozilla-lays-off-250-employees-while-it-refocuses-on-commercial-products/)
 
 ## Conclusion
 

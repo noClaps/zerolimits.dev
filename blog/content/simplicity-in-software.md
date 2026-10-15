@@ -16,7 +16,7 @@ I think software can be, and should be, simpler than that. There's an idea in so
 > 3. Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them.
 > 4. Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you've finished using them.
 >
-> --- [UNIX Time-Sharing System: Foreword by McIlroy, Pinson and Tague](https://archive.org/details/bstj57-6-1899/mode/2up)
+> — [UNIX Time-Sharing System: Foreword by McIlroy, Pinson and Tague](https://archive.org/details/bstj57-6-1899/mode/2up)
 
 The UNIX philosophy was made in the 1970s, specifically for the UNIX system, where most programs were CLI tools that could "pipe" into each other to create these extremely complex workflows. You could do fun stuff like this:
 

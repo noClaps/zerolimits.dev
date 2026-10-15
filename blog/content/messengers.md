@@ -54,7 +54,7 @@ In 2020, [some researchers reverse-engineered Discord](https://medium.com/tenabl
 
 > Discord servers decrypt and inspect all user’s audio/video data server-side in real-time.
 >
-> --- [David Wells, Joseph Wingham](https://medium.com/tenable-techblog/lets-reverse-engineer-discord-1976773f4626)
+> — [David Wells, Joseph Wingham](https://medium.com/tenable-techblog/lets-reverse-engineer-discord-1976773f4626)
 
 This means that Discord was able to listen to and watch everything that was going on in video and audio calls. Does this mean they were doing it? Probably not, but it's scary to think that they could.
 
@@ -70,13 +70,13 @@ The main thing is, WhatsApp is closed-source. The reason this is an issue is tha
 
 > messages, photos, videos, voice messages, documents, status updates and calls
 >
-> --- [WhatsApp FAQ](https://faq.whatsapp.com/general/security-and-privacy/end-to-end-encryption)
+> — [WhatsApp FAQ](https://faq.whatsapp.com/general/security-and-privacy/end-to-end-encryption)
 
 Note that WhatsApp doesn't encrypt payments, metadata or,
 
 > Communications with a recipient who elects to use a vendor to manage their API endpoint are not considered end-to-end encrypted.
 >
-> --- [WhatsApp encryption whitepaper](https://www.whatsapp.com/security/WhatsApp-Security-Whitepaper.pdf)
+> — [WhatsApp encryption whitepaper](https://www.whatsapp.com/security/WhatsApp-Security-Whitepaper.pdf)
 
 Along with that, WhatsApp backups to Google Drive are [not encrypted by default](https://www.eff.org/deeplinks/2021/09/whats-whatsapp-encrypted-backups), and weren't encrypted at all for the longest time. This means your chats, images, videos, etc., were and might still be sitting unencrypted on Google's servers if you do happen to use Google Drive backup. If you happen to use WhatsApp with a Google account, be sure to go into the app's settings and check that you have encrypted backups enabled.
 

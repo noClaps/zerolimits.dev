@@ -47,7 +47,7 @@ Admira's and Boško's bodies were left on the bridge for the next 7 days. Admira
 
 > Love took them to their deaths. That’s proof this is not a war between Serbs and Moslems. It’s a war between crazy people, between monsters. That’s why their bodies are still out there.
 >
-> --- [Zijah Ismić, father of Admira Ismić](http://www.ksmemorial.com/romeo.htm)
+> — [Zijah Ismić, father of Admira Ismić](http://www.ksmemorial.com/romeo.htm)
 
 ## Sources
 
@@ -55,7 +55,7 @@ Admira's and Boško's bodies were left on the bridge for the next 7 days. Admira
 
   > Half of Kurt's ashes were buried next to his mother, Margaret, on May 31, 2000 near Washington, D.C.. Kurt's remaining ashes were buried in Sarajevo on August 2, 2000. The grave lies next to those of two lovers, whose deaths Kurt [wrote poignantly about](https://www.ksmemorial.com/romeo.htm) in 1993.
   >
-  > --- [Kurt's Death, Kurt Schork Memorial](http://www.ksmemorial.com)
+  > — [Kurt's Death, Kurt Schork Memorial](http://www.ksmemorial.com)
 
 - [Bosnian War Anniversary: Sarajevo's 'Romeo and Juliet' Still Resonate, NBC News](https://www.nbcnews.com/news/world/bosnian-war-anniversary-sarajevo-s-romeo-juliet-still-resonate-n723681)
 - [The story of Sarajevo’s Romeo and Juliet, 1993, Rare Historical Photos](https://rarehistoricalphotos.com/sarajevo-romeo-juliet-bosko-brkic-admira-ismic-1993/)

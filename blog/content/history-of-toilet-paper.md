@@ -43,11 +43,11 @@ What can be confirmed, however, is written records from back in the day:
 
 > Paper on which there are quotations or commentaries from the Five Classics or the names of sages, I dare not use for toilet purposes
 >
-> --- Yen Chih-Tui (531-591), scholar-official, circa 589
+> — Yen Chih-Tui (531-591), scholar-official, circa 589
 
 > \[The Chinese] do not wash themselves with water when they have done their necessities; but they wipe themselves with paper
 >
-> --- Arab traveller to China, 851 AD
+> — Arab traveller to China, 851 AD
 
 This is the earliest written proof of paper being used for toilet purposes, showing that even the first toilet paper was made in China.
 
@@ -70,7 +70,7 @@ Originally, Americans used some creative methods to clean up after doing their b
 
 > The 'legend' goes that people were using Sears catalogs in outhouses, but when the catalog began to be printed in glossy paper, people needed to find a replacement
 >
-> --- Barry Kudrowitz, associate professor and director of product design at the University of Minnesota
+> — Barry Kudrowitz, associate professor and director of product design at the University of Minnesota
 
 Americans also used the _Farmer's Almanac_ so often, they would nail them to the outhouse walls for easy access to both reading material and toilet paper once they were done reading. That's why, in 1919, the company started pre-drilling holes into the corner of the books, which they continue to do to this day.
 
@@ -117,7 +117,7 @@ I'm not sure I should put this in here, seeing as these religions have long and 
   >
   > Kanshiketsu - A shiketsu, or “poop-stick” (kan, dry; shi, poop; ketsu, stick), was used in old times instead of toilet paper. It is at once both private and polluted. But in samadhi there is no private or public, no pure or polluted.
   >
-  > --- An excerpt from a Buddhist koan
+  > — An excerpt from a Buddhist koan
 
 - _Vinaya Pitaka_ is a Buddhist scripture that lays out the rules of behavior for monks and nuns. It also mentions pooping and cleaning up, because apparently those also need discipline.
 - People thought the feces of the Dalai Lama had magical healing properties.

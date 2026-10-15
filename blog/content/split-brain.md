@@ -13,17 +13,17 @@ In 1962, a patient was part of an experiment that had never been done before. Th
 >
 > Epilepsy is a disorder of the brain characterized by an enduring predisposition to generate epileptic seizures, and by the neurobiologic, cognitive, psychological, and social consequences of this condition. The definition of epilepsy requires the occurrence of at least one epileptic seizure.
 >
-> --- [Conceptual definition of seizure and epilepsy, ILAE Official Report: A practical clinical definition of epilepsy](https://onlinelibrary.wiley.com/doi/10.1111/epi.12550)
+> — [Conceptual definition of seizure and epilepsy, ILAE Official Report: A practical clinical definition of epilepsy](https://onlinelibrary.wiley.com/doi/10.1111/epi.12550)
 
 Seizures like this occur because of abnormally high activity in the brain.
 
 > A seizure occurs when many neurons in the brain fire simultaneously, often recruiting other cells into this synchrony of firing. In normal brain wave functioning, neurons fire separately, triggering the adjacent neuron to fire.
 >
-> [...]
+> \[...]
 >
 > When the synchrony spreads to both sides of the brain, a generalized seizure occurs.
 >
-> --- [Discovering the Unique Individuals Behind Split-Brain Patient Anonymity, Ashley D. Eldridge, University of North Carolina at Wilmington](https://web.archive.org/web/20160304102136/http://people.uncw.edu/puente/405/PDFpapers/Split-brain%20Patients.pdf)
+> — [Discovering the Unique Individuals Behind Split-Brain Patient Anonymity, Ashley D. Eldridge, University of North Carolina at Wilmington](https://web.archive.org/web/20160304102136/http://people.uncw.edu/puente/405/PDFpapers/Split-brain%20Patients.pdf)
 
 ### Cutting ties
 
@@ -33,7 +33,7 @@ Previous attempts at corpus callosotomy to treat epilepsy in the 1940s by [Dr Wi
 
 > Researchers who studied the first split-brain patients in the 1940s had concluded that the separation didn't noticeably affect thought or behaviour. (Gazzaniga and others suspect that these early sections were incomplete, which might also explain why they didn’t help the seizures.) Conversely, studies conducted by Sperry and colleagues in the 1950s revealed greatly altered brain function in animals that had undergone callosal sections.
 >
-> --- [A Tale of Two Halves, David Wolman, Nature Vol.283 (260-263)](https://www.shimadzu.com/about/magazine/i7rr0a00000099rg-att/nature-c10.pdf)
+> — [A Tale of Two Halves, David Wolman, Nature Vol.283 (260-263)](https://www.shimadzu.com/about/magazine/i7rr0a00000099rg-att/nature-c10.pdf)
 
 So WJ underwent the surgery, hoping to get rid of his medical problems. Little did he know that he would end up being the subject of one of the most interesting experiments in psychology to have ever been conducted.
 
@@ -47,7 +47,7 @@ A good example of this would be holding something in your left hand and only see
 
 > The patient was shown two pictures, one exclusively to the left hemisphere and one exclusively to the right, and was asked to choose from an array of pictures placed in full view in front of him those that were associated with the pictures lateralized to the left and right brain. In one example of this kind of test, a picture of a chicken claw was flashed to the left hemisphere and a picture of a snow scene to the right hemisphere. Of the array of pictures placed in front of the subject, the obviously correct association is a chicken for the chicken claw and a shovel for the snow scene. Patient P.S. responded by choosing the shovel with the left hand and the chicken with the right. When asked why he chose these items, his left hemisphere replied 'Oh, that's simple. The chicken claw goes with the chicken, and you need a shovel to clean out the chicken shed'.
 >
-> --- [Cerebral specialization and interhemispheric communication: Does the corpus callosum enable the human condition?, Michael S. Gazzaniga](https://academic.oup.com/brain/article/123/7/1293/380106)
+> — [Cerebral specialization and interhemispheric communication: Does the corpus callosum enable the human condition?, Michael S. Gazzaniga](https://academic.oup.com/brain/article/123/7/1293/380106)
 
 ### ACC
 
@@ -55,7 +55,7 @@ Some people are born without most or all of their corpus callosum, in a phenomen
 
 > Agenesis of the corpus callosum (ACC) is a brain disorder in which the tissue that connects the left and right sides of the brain (its hemispheres) is partially or completely missing. It is caused by a disruption of brain cell migration during fetal development.
 >
-> --- [Agenesis of the Corpus Callosum, National Institute of Neurological Disorders and Stroke](https://www.ninds.nih.gov/health-information/disorders/agenesis-corpus-callosum)
+> — [Agenesis of the Corpus Callosum, National Institute of Neurological Disorders and Stroke](https://www.ninds.nih.gov/health-information/disorders/agenesis-corpus-callosum)
 
 ### Dr Strangelove
 
@@ -71,7 +71,7 @@ Although it was determined that the left hemisphere was significantly better at 
 
 > It would not be surprising to discover that the patients are capable of a few simple exclamatory remarks, particularly when under emotional stress. The possibility also remains, of course, that speech of some type could be trained into the right hemisphere. Tests aimed at this question, however, would have to be closely scrutinized and controlled.
 >
-> --- [The Split Brain in Man, Michael S. Gazzaniga, Scientific American , Vol. 217, No. 2 (August 1967), pp. 24-29](https://www.jstor.org/stable/10.2307/24926082)
+> — [The Split Brain in Man, Michael S. Gazzaniga, Scientific American , Vol. 217, No. 2 (August 1967), pp. 24-29](https://www.jstor.org/stable/10.2307/24926082)
 
 The reason for this scrutinisation and control is the workaround that many split-brain patients, or rather their "brains", found to the problems caused by split-brain syndrome. This workaround was "cross-cuing", in which the right hemisphere would create cues for the left hemisphere to pick up and correct its response.
 
@@ -79,7 +79,7 @@ The reason for this scrutinisation and control is the workaround that many split
 >
 > We soon caught on to the strategy the patient used. If a red light was flashed and the patient by chance guessed red, he would stick with that answer. If the flashed light was red and the patient by chance guessed green, he would frown, shake his head and then say, "Oh no, I meant red." What was happening was that the right hemisphere saw the red light and heard the left hemisphere make the guess "green." Knowing that the answer was wrong, the right hemisphere precipitated a frown and a shake of the head, which in turn cued in the left hemisphere to the fact that the answer was wrong and that it had better correct itself! We have learned that this crosscuing mechanism can become extremely refined. The realization that the neurological patient has various strategies at his command emphasizes how difficult it is to obtain a clear neurological description of a human being with brain damage.
 >
-> --- [The Split Brain in Man, Michael S. Gazzaniga, Scientific American , Vol. 217, No. 2 (August 1967), pp. 24-29](https://www.jstor.org/stable/10.2307/24926082)
+> — [The Split Brain in Man, Michael S. Gazzaniga, Scientific American , Vol. 217, No. 2 (August 1967), pp. 24-29](https://www.jstor.org/stable/10.2307/24926082)
 
 ## Conclusion
 
