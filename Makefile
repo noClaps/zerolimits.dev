@@ -1,8 +1,10 @@
 .PHONY: homepage blog gallery til
 all: homepage blog gallery til
 
-blog:
+helper:
 	@cd blog/helper/ && cargo build --release
+
+blog: helper
 	@mkdir -p dist/blog/
 	@cp -R blog/styles/. dist/blog/
 	@python3 blog/build.py
@@ -17,8 +19,7 @@ gallery:
 	@python3 gallery/build.py
 	@cp -R gallery/assets/. gallery/style.css dist/gallery/
 
-til:
-	@cd blog/helper/ && cargo build --release
+til: helper
 	@mkdir -p dist/til/
 	@python3 til/build.py
 	@cp til/style.css dist/til/
