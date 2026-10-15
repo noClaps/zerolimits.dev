@@ -33,12 +33,9 @@ blog:
 	@make -j $(HTML) dist/blog/index.html dist/blog/feed.atom
 
 homepage:
-	@pandoc homepage/index.html \
-		--embed-resources \
-	    --template homepage/index.html \
-		--lua-filter homepage/build.lua \
-		--output dist/index.html
-	@cp homepage/data.json homepage/global.css homepage/favicon.png dist/
+	@mkdir -p dist/
+	@python3 homepage/build.py
+	@cp homepage/data.json homepage/global.css homepage/style.css homepage/favicon.png dist/
 
 gallery:
 	@mkdir -p dist/gallery/

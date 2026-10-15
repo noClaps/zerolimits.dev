@@ -7,11 +7,10 @@
             rel="alternate"
             href="/blog/feed.atom"
             type="application/atom+xml"
-            data-external="1"
         />
-        <link rel="icon" href="homepage/favicon.png" />
-        <link rel="stylesheet" href="homepage/global.css" />
-        <link rel="stylesheet" href="homepage/style.css" />
+        <link rel="icon" href="/favicon.png" />
+        <link rel="stylesheet" href="/global.css" />
+        <link rel="stylesheet" href="/style.css" />
         <title>ZeroLimits.dev</title>
     </head>
     <body>
@@ -27,39 +26,12 @@
                 <h1>ZeroLimits.dev</h1>
                 <p>The most interesting boring person you've ever met.</p>
                 <ul>
-                    $for(contact)$
-                    <li>
-                        <strong>$it.name$:</strong>
-                        <a href="$it.link$">$it.link_name$</a>
-                    </li>
-                    $endfor$
+                    <!--contact-->
                 </ul>
             </div>
             <h2>Projects</h2>
             <section>
-                $for(projects)$
-                <div class="link">
-                    $if(it.link)$
-                    <h3>
-                        <a href="$it.link$">$it.name$</a>
-                        <a href="$it.source$" title="Source code" class="code">
-                            $icons/code.svg()$
-                        </a>
-                    </h3>
-                    $else$
-                    <h3>
-                        $it.name$
-                        <a href="$it.source$" title="Source code" class="code">
-                            $icons/code.svg()$
-                        </a>
-                    </h3>
-                    $endif$
-                    <p>$it.description$</p>
-                    $if(it.languages)$
-                    <span>$for(it.languages)$ $it$ $endfor$</span>
-                    $endif$
-                </div>
-                $endfor$
+                <!--projects-->
             </section>
         </main>
     </body>
