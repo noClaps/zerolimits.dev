@@ -1,0 +1,3 @@
+pre:has(code) {
+    overflow-x: auto;
+}

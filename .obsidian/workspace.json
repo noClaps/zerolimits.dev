@@ -11,10 +11,15 @@
             "id": "e108106342b9e080",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -102,10 +107,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bc89905711a8af9d",
+  "active": "e108106342b9e080",
   "lastOpenFiles": [
-    "blog/content/assets/A beginner's guide to Quantum Information/unit-circle.svg",
+    "til/style.css",
+    "til/content/2026-10-16.md",
+    "README.md",
+    "blog/content/A beginner's guide to Quantum Information.md",
     "blog/content/A beginner's guide to Quantum and Particle Physics.md",
+    "til/content/2026-10-15.md",
+    "til/filter.lua",
+    "til/Untitled.md",
+    "til/content",
+    "til/Today I Learned.md",
+    "til/build.py",
+    "til/index.html",
+    "til",
+    "blog/content/assets/A beginner's guide to Quantum Information/unit-circle.svg",
     "Finding vulnerabilities in Secton.md",
     "Recap - 2025.md",
     "Random Numbers.md",
