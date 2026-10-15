@@ -1,3 +1,7 @@
+header h1 {
+    view-transition-name: site-title;
+}
+
 section {
     columns: 16rem auto;
     gap: 0.5rem;

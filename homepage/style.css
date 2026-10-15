@@ -1,3 +1,7 @@
+.title h1 {
+    view-transition-name: site-title;
+}
+
 section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
