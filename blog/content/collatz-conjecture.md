@@ -48,9 +48,8 @@ Collatz studied at a total of 4 universities before he got his doctorate. Yes, f
 2. Ludwig Maximilian University of Munich
 3. University of Göttingen
 4. Humboldt University of Berlin
-
-- This is where he studied for his doctorate under [Alfred Klose](<https://de.wikipedia.org/wiki/Alfred_Klose_(Mathematiker)>), a German mathematician who's Wikipedia page is only available in German.
-- Collatz was awarded his doctorate in 1935 for his dissertation _Das Differenzenverfahren mit höherer Approximation für lineare Differentialgleichungen_ (The finite difference method with higher approximation for linear differential equations).
+   - This is where he studied for his doctorate under [Alfred Klose](<https://de.wikipedia.org/wiki/Alfred_Klose_(Mathematiker)>), a German mathematician who's Wikipedia page is only available in German.
+   - Collatz was awarded his doctorate in 1935 for his dissertation _Das Differenzenverfahren mit höherer Approximation für lineare Differentialgleichungen_ (The finite difference method with higher approximation for linear differential equations).
 
 After becoming a non-medical doctor, he worked as an assistant at the University of Berlin, and moved to the Technical University of Karlsruhe later that year.
 
