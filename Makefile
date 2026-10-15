@@ -40,7 +40,7 @@ homepage:
 gallery:
 	@mkdir -p dist/gallery/
 	@python3 gallery/build.py
-	@cp -R gallery/assets/ gallery/style.css dist/gallery/
+	@cp -R gallery/assets/. gallery/style.css dist/gallery/
 
 check:
 	@lychee dist --root-dir dist --fallback-extensions html --offline
