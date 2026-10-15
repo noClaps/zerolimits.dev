@@ -1,7 +1,0 @@
-{
-  "excludeMode": "Full",
-  "obsidianIgnoreContent": "branding/\ngallery/\nhomepage/\nblog/helper/\nblog/styles/",
-  "shouldHideEmptyFolders": true,
-  "shouldIgnoreExcludedFiles": false,
-  "shouldIncludeGitIgnorePatterns": true
-}
