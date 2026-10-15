@@ -1,0 +1,116 @@
+{
+  "main": {
+    "id": "a24a332daee0e64e",
+    "type": "split",
+    "children": [
+      {
+        "id": "76c103b787d0e2f8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e108106342b9e080",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "23fb43f45b81535f",
+    "type": "split",
+    "children": [
+      {
+        "id": "da55e720078a4aeb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bc89905711a8af9d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "544163ba640ef10e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3363919b712f1761",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e85076ad5a6d46c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f327f476245f476f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "bc89905711a8af9d",
+  "lastOpenFiles": [
+    "blog/content/assets/A beginner's guide to Quantum Information/unit-circle.svg",
+    "blog/content/A beginner's guide to Quantum and Particle Physics.md",
+    "Finding vulnerabilities in Secton.md",
+    "Recap - 2025.md",
+    "Random Numbers.md",
+    "Mozilla.md",
+    "A beginner's guide to Quantum and Particle Physics.md",
+    "A beginner's guide to Quantum Information.md"
+  ]
+}
