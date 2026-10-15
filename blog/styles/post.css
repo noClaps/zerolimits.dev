@@ -115,9 +115,8 @@ ul {
 }
 
 /* Text */
-article p,
-article li {
-    text-align: justify;
+article {
+    text-wrap: pretty;
 }
 
 em {
@@ -127,7 +126,6 @@ em {
 /* Blockquotes */
 blockquote {
     line-height: 1.5;
-    text-align: justify;
 
     & p:last-child {
         text-align: right;
