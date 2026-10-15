@@ -41,6 +41,7 @@ homepage:
 	@cp homepage/data.json homepage/global.css homepage/favicon.png dist/
 
 gallery:
+	@mkdir -p dist/gallery/
 	@python3 gallery/build.py
 	@cp -R gallery/assets/ gallery/style.css dist/gallery/
 
