@@ -124,7 +124,7 @@ $$
 
 However, computers don't have the luxury of infinitely repeating values, since they need to store their values in a finite number of bits, so they round off after a certain point. While this is fine for most use cases, it's not perfectly precise, and you end up with things like:
 
-```py
+```python
 >>> 0.1 + 0.2
 0.30000000000000004
 ```

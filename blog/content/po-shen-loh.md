@@ -108,7 +108,7 @@ Why do it using this method then? I think the logical steps that lead to the roo
 
 The algorithm above shouldn't be too difficult to implement yourself if you have even a little bit of coding knowledge, since it's mainly just additions, multiplications and square roots. I've written a short implementation of the algorithm in Python, but you can translate the code into whatever other language you'd like.
 
-```py
+```python
 import math
 
 # Enter your values for the coefficients a, b and c in ax²+bx+c=0

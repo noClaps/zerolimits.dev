@@ -98,7 +98,7 @@ Follow these few easy steps and you'll be on your way to solving this problem in
 2. Download and install a code editor. I used [Atom](https://atom.io/) and later IDLE (included with Python, would not recommend using) for this, but you can use any code editor you like. If you use an online one, you may not have to install Python at all.
 3. Make a new Python program and type in the following code:
 
-   ```py
+   ```python
    def collatz(n:int): # make collatz function
        while n != 1: # tell code to keep running until it reaches 1
            if n % 2: # if number is odd, multiply by 3 and add 1
