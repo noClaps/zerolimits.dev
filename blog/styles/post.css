@@ -115,10 +115,6 @@ ul {
 }
 
 /* Text */
-article {
-    text-wrap: pretty;
-}
-
 em {
     font-family: var(--serif);
 }
