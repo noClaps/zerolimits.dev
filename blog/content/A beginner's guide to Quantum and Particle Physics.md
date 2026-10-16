@@ -42,7 +42,7 @@ Okay, there's a lot to take in there. Let's break it down part by part
 
   On the other side of the slits, we see the 2 circular waves intersecting. This is known as interference, and there's 2 types: constructive and destructive.
 
-  ![A diagram showing constructive and destructive interference. It shows the basic idea, but real interference is a bit more complex than this, because the waves don't always cancel out. Source: [Constructive and destructive interference - Britannica Kids](62907-004-A3A6351E.jpg)
+  ![A diagram showing constructive and destructive interference. It shows the basic idea, but real interference is a bit more complex than this, because the waves don't always cancel out. Source: [Constructive and destructive interference - Britannica Kids](https://kids.britannica.com/students/assembly/view/53869).](62907-004-A3A6351E.jpg)
 
   Constructive interference occurs when 2 waves add up to make an even bigger wave, and destructive interference happens when 2 waves cancel each other out, either fully or partially, to make a smaller wave than either starting wave. You can see this happening if you drop 2 rocks into still water and see their waves collide with each other. Anyway, the waves colliding create an interference pattern of light and dark, which correspond to high and low waves.
 
@@ -120,9 +120,9 @@ So they tried it, and discovered that only shooting one photon randomly through 
 
 The equivalent to this would be seeing an ocean and a droplet behave the same way. Makes no sense, right?
 
-Turns out, at the quantum scale, particles don't exactly exist as points in space, but more like a region in space where they _could_ be. They have clouds of probability, with each point within that cloud having a probability of the particle being at that position. So instead of a particle being exactly at x=50, it has a really high _probability_ of being at x=50, and a smaller probability of it being at x=51 or x=49, and so on. This probability is defined by something known as the **wave function**, denoted by the $Psi$ symbol.
+Turns out, at the quantum scale, particles don't exactly exist as points in space, but more like a region in space where they _could_ be. They have clouds of probability, with each point within that cloud having a probability of the particle being at that position. So instead of a particle being exactly at x=50, it has a really high _probability_ of being at x=50, and a smaller probability of it being at x=51 or x=49, and so on. This probability is defined by something known as the **wave function**, denoted by the $\Psi$ symbol.
 
-![Graph of wave function against position along a single axis. Source: [Wave functions - University of Tennesse Knoxville](The_Sh1a.gif)
+![Graph of wave function against position along a single axis. Source: [Wave functions - University of Tennesse Knoxville](https://labs.phys.utk.edu/mbreinig/phys222core/modules/m10/wave_functions.html).](The_Sh1a.gif)
 
 This wave function can be converted into a probability function, which can give the probability of a particle being somewhere depending on a bunch of different factors. The wave function is defined using the Schrödinger equation:
 
@@ -174,7 +174,7 @@ In the quantum realm, we can imagine the ball to be particles. The hills are now
 
 However, do you remember how particles aren't particles, but waves of probability? If you look at the wave function graph above, you can see how that wave spreads over an area. That means, if the hill is thin enough and that graph is wide enough, there's a small chance that the particle can appear on the other side.
 
-![A graph showing the probability of a particle being on the other side of a barrier. This isn't exactly how the graph looks since the probability decreases exponentially inside the barrier, but it's good enough for a basic explanation. Source: [Physics I for Dummies](316773.image0.jpg)
+![A graph showing the probability of a particle being on the other side of a barrier. This isn't exactly how the graph looks since the probability decreases exponentially inside the barrier, but it's good enough for a basic explanation. Source: [Physics I for Dummies](https://www.dummies.com/article/academics-the-arts/science/physics/string-theory-access-parallel-universes-with-quantum-tunneling-177689/).](316773.image0.jpg)
 
 From Schrödinger's cat, we know that if there's a probability of something happen, it will happen given enough attempts. So sometimes, the particle will get through the barrier, which is known as **quantum tunnelling**.
 
@@ -226,7 +226,7 @@ We can now combine these quarks simply by adding their charges. So 2/3 + 2/3 - 1
 
 The Standard Model of Particle Physics (the Standard Model for short) defines these fundamental particles. It technically exists as an equation, but most sources will lay it out in a table so that it's easier to unde1rstand. The Standard Model can generally be separated into 2 categories: fermions and bosons.
 
-![The Standard Model of Particle Physics. Source: [Standard Model, Physik-Institut, Universität Zürich](SM1.png)
+![The Standard Model of Particle Physics. Source: [Standard Model, Physik-Institut, Universität Zürich](https://www.physik.uzh.ch/groups/serra/StandardModel.html).](SM1.png)
 
 ### Fermions
 

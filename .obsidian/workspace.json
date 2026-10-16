@@ -11,10 +11,15 @@
             "id": "d5b5706b43bee8b8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "blog/content/A beginner's guide to Quantum and Particle Physics.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "A beginner's guide to Quantum and Particle Physics"
             }
           }
         ]
@@ -102,19 +107,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bc89905711a8af9d",
+  "active": "d5b5706b43bee8b8",
   "lastOpenFiles": [
-    "highlighter/src/main.rs",
-    "highlighter/src",
-    "highlighter/Cargo.toml",
-    "highlighter/Cargo.lock",
-    "highlighter",
-    "helper/target/release/build/serde-180986b072f8c565/out/private.rs",
-    "helper/target/release/build/serde_core-a130a07b29736e5d/out/private.rs",
-    "helper/target/release/build/thiserror-a4aa932ee0765264/out/private.rs",
-    "helper/target/debug/incremental/helper-24mcqelzkdfeh/s-hn82np9vkz-1vmwvp7-0692rr6rnxnyt9ky3q7lc1yo1/6mzq9l5kxfavolkspfwwhxa56.o",
-    "helper/target/debug/incremental/helper-24mcqelzkdfeh/s-hn82np9vkz-1vmwvp7-0692rr6rnxnyt9ky3q7lc1yo1/ekoqb6d3v55z265ygn5xo4c89.o",
-    "helper/target/debug/incremental/helper-24mcqelzkdfeh/s-hn82np9vkz-1vmwvp7-0692rr6rnxnyt9ky3q7lc1yo1/esh0uhe37ritig12ofedg1sa3.o",
+    "blog/content/A beginner's guide to Quantum Information.md",
+    "highlighter/target/release/deps/highlighter-93d129fb89a0efab",
+    "highlighter/target/release/deps/rustc7e7jYy/symbols.o",
+    "highlighter/target/release/deps/rustc7e7jYy",
+    "highlighter/target/release/deps/highlighter-93d129fb89a0efab.4yynn3u5hk9b4euuegavqmpko.rcgu.o",
+    "highlighter/target/release/deps/highlighter-93d129fb89a0efab.highlighter.f5fcb5e0f468eb99-cgu.0.rcgu.o",
+    "highlighter/target/release/deps/highlighter-93d129fb89a0efab.highlighter.f5fcb5e0f468eb99-cgu.1.rcgu.o",
+    "highlighter/target/release/deps/highlighter-93d129fb89a0efab.highlighter.f5fcb5e0f468eb99-cgu.2.rcgu.o",
+    "highlighter/target/release/deps/highlighter-93d129fb89a0efab.d",
+    "highlighter/target/release/deps/libirosashi-91a564acb3084dbd.rlib",
+    "highlighter/target/release/deps/rustcT3wUfe/lib.rmeta-link",
     "icons/typst.svg",
     "icons/til.svg",
     "icons/swift.svg",
@@ -127,7 +132,6 @@
     "icons/gallery.svg",
     "README.md",
     "til/content/2026-10-16.md",
-    "blog/content/A beginner's guide to Quantum Information.md",
     "blog/content/A beginner's guide to Quantum and Particle Physics.md",
     "til/content/2026-10-15.md",
     "til/Untitled.md",
