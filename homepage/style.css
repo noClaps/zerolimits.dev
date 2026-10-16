@@ -41,8 +41,8 @@ section {
             font-family: var(--mono);
 
             svg {
-                width: 1.5rem;
-                height: 1.5rem;
+                width: 1.125rem;
+                height: 1.125rem;
             }
         }
     }
