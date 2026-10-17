@@ -1,6 +1,5 @@
 import json
 import subprocess
-import sys
 from datetime import date
 from glob import glob
 from pathlib import Path
@@ -10,37 +9,29 @@ from tempfile import mkstemp
 def get_meta(file):
     _, tmp = mkstemp(".template")
     Path(tmp).write_text("$meta-json$")
-    try:
-        meta = subprocess.run(
-            ["pandoc", "--wrap=none", "--template", tmp, file],
-            check=True,
-            capture_output=True,
-            text=True,
-        ).stdout
-        return json.loads(meta)
-    except subprocess.CalledProcessError as err:
-        print(err)
-        sys.exit(1)
+    meta = subprocess.run(
+        ["pandoc", "--wrap=none", "--template", tmp, file],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout
+    return json.loads(meta)
 
 
 def build_post(path):
-    try:
-        return subprocess.run(
-            [
-                "pandoc",
-                "--lua-filter=blog/post.lua",
-                "--embed-resources",
-                f"--resource-path={':'.join(glob('blog/content/assets/*'))}",
-                "--wrap=none",
-                path,
-            ],
-            check=True,
-            capture_output=True,
-            text=True,
-        ).stdout
-    except subprocess.CalledProcessError as err:
-        print(err)
-        sys.exit(1)
+    return subprocess.run(
+        [
+            "pandoc",
+            "--lua-filter=blog/post.lua",
+            "--embed-resources",
+            f"--resource-path={':'.join(glob('blog/content/assets/*'))}",
+            "--wrap=none",
+            path,
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout
 
 
 metadata = []
