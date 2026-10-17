@@ -18,7 +18,7 @@ for p in data["projects"].values():
         project += f'<a href="{p["link"]}">{p["name"]}</a>'
     else:
         project += p["name"]
-    project += f'<a href="{p["source"]} title="Source code" class="code">{Path("homepage/icons/code.svg").read_text()}</a>'
+    project += f'<a href="{p["source"]}" title="Source code" class="code">{Path("homepage/icons/code.svg").read_text()}</a>'
     project += "</h3>"
     project += f"<p>{p['description']}</p>"
     if "languages" in p:
