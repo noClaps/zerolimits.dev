@@ -89,7 +89,7 @@
       "languages": ["html", "css", "javascript"]
     },
     "zerolimits": {
-      "name": "ZeroLimits.dev",
+      "name": "ZeroLimits",
       "description": "My personal homepage",
       "link": "https://zerolimits.dev",
       "source": "https://codeberg.org/noClaps/zerolimits.dev",
@@ -97,7 +97,7 @@
     },
     "cli": {
       "name": "zerolimits --cli",
-      "description": "A CLI version of ZeroLimits.dev",
+      "description": "A CLI version of ZeroLimits",
       "link": "https://cli.zerolimits.dev",
       "source": "https://codeberg.org/noClaps/cli.zerolimits.dev",
       "languages": ["html", "css", "javascript"]

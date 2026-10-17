@@ -1,7 +1,7 @@
 <p align="center">
     <img src="./.forgejo/ZeroLimits.png" height="192">
 </p>
-<h1 align="center">ZeroLimits.dev</h1>
+<h1 align="center">ZeroLimits</h1>
 
 ## Build instructions
 
