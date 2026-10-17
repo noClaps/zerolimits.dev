@@ -18,20 +18,17 @@ for p in data["projects"].values():
         project += f'<a href="{p["link"]}">{p["name"]}</a>'
     else:
         project += p["name"]
-    project += f'<a href="{p["source"]} title="Source code" class="code">{Path("icons/code.svg").read_text()}</a>'
+    project += f'<a href="{p["source"]} title="Source code" class="code">{Path("homepage/icons/code.svg").read_text()}</a>'
     project += "</h3>"
     project += f"<p>{p['description']}</p>"
     if "languages" in p:
         project += "<span>"
         for lang in p["languages"]:
-            project += Path("icons/" + lang + ".svg").read_text()
+            project += Path("homepage/icons/" + lang + ".svg").read_text()
         project += "</span>"
     project += "</div>"
     projects.append(project)
 
-html = html.replace("<!--blog.svg-->", Path("icons/blog.svg").read_text())
-html = html.replace("<!--gallery.svg-->", Path("icons/gallery.svg").read_text())
-html = html.replace("<!--til.svg-->", Path("icons/til.svg").read_text())
 html = html.replace("<!--projects-->", "".join(projects))
 
 Path("dist/index.html").write_text(html)

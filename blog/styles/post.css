@@ -83,7 +83,7 @@ figcaption {
     margin: auto;
 }
 
-img {
+article img {
     width: 100%;
     height: auto;
     object-fit: contain;
