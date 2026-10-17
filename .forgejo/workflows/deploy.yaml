@@ -5,7 +5,9 @@ jobs:
     runs-on: codeberg-small-lazy
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v7
-      - uses: https://github.com/dtolnay/rust-toolchain@stable
+      - uses: https://code.forgejo.org/actions/setup-go@v7
+        with:
+          go-version: stable
       - run: |
           VERSION="$(curl -L https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.tag_name')"
           curl -LO "https://github.com/jgm/pandoc/releases/download/${VERSION}/pandoc-${VERSION}-linux-amd64.tar.gz"

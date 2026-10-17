@@ -2,7 +2,7 @@
 all: homepage blog gallery til
 
 highlighter:
-	@cd highlighter/ && cargo build --release
+	@cd highlighter/ && go build -o highlighter
 
 blog: highlighter
 	@mkdir -p dist/blog/
