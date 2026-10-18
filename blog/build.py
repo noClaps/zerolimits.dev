@@ -2,6 +2,7 @@ import json
 import subprocess
 from datetime import date
 from glob import glob
+from os import makedirs
 from pathlib import Path
 from tempfile import mkstemp
 
@@ -62,7 +63,8 @@ for i, m in enumerate(metadata):
     content = build_post(m["path"])
     metadata[i]["content"] = content
     post = post.replace("<!--content-->", content)
-    Path(f"dist/blog/{m['slug']}.html").write_text(post)
+    makedirs(f"dist/blog/{m['slug']}/", exist_ok=True)
+    Path(f"dist/blog/{m['slug']}/index.html").write_text(post)
 
 # feed
 feed = Path("blog/feed.atom").read_text()
