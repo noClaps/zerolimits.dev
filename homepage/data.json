@@ -72,7 +72,7 @@
       "name": "serve",
       "description": "A simple HTTP server for serving a directory",
       "source": "https://codeberg.org/noClaps/serve",
-      "languages": ["rust"]
+      "languages": ["go"]
     },
     "typst2ansi": {
       "name": "typst2ansi",
