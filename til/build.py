@@ -12,7 +12,7 @@ def pandoc(file):
     ).stdout
 
 
-html = Path("til/index.html").read_text()
+main = Path("til/index.html").read_text()
 files = glob("til/content/*.md")
 files.sort(reverse=True)
 
@@ -26,5 +26,10 @@ for file in files:
     entry += "</article>"
     entries.append(entry)
 
-html = html.replace("<!--entries-->", "".join(entries))
+main = main.replace("<!--entries-->", "".join(entries))
+
+html = Path("base.html").read_text()
+html = html.replace("<!--title-->", "Today I Learned")
+html = html.replace("<!--head-->", '<link rel="stylesheet" href="/til/style.css" />')
+html = html.replace("<!--main-->", main)
 Path("dist/til/index.html").write_text(html)

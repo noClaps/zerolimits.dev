@@ -1,14 +1,14 @@
 import json
 from pathlib import Path
 
-html = Path("homepage/index.html").read_text()
+main = Path("homepage/index.html").read_text()
 data = json.loads(Path("homepage/data.json").read_text())
 
 contacts = [
     f'<li><strong>{c["name"]}:</strong> <a href="{c["link"]}">{c["link-name"]}</a>'
     for c in data["contact"].values()
 ]
-html = html.replace("<!--contact-->", "".join(contacts))
+main = main.replace("<!--contact-->", "".join(contacts))
 
 projects = []
 for p in data["projects"].values():
@@ -29,6 +29,16 @@ for p in data["projects"].values():
     project += "</div>"
     projects.append(project)
 
-html = html.replace("<!--projects-->", "".join(projects))
+main = main.replace("<!--projects-->", "".join(projects))
 
+html = Path("base.html").read_text()
+html = html.replace("<!--title-->", "ZeroLimits")
+html = html.replace(
+    "<!--head-->",
+    """
+<link rel="alternate" href="/blog/feed.atom" type="application/atom+xml" />
+<link rel="stylesheet" href="/style.css" />
+""",
+)
+html = html.replace("<!--main-->", main)
 Path("dist/index.html").write_text(html)

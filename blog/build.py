@@ -53,7 +53,16 @@ for m in metadata:
     post += "</a>"
     posts.append(post)
 index = index.replace("<!--posts-->", "".join(posts))
-Path("dist/blog/index.html").write_text(index)
+
+html = Path("base.html").read_text()
+html = html.replace("<!--title-->", "The Blog of Random")
+html = html.replace(
+    "<!--head-->",
+    """<link rel="alternate" href="/blog/feed.atom" type="application/atom+xml" />
+<link rel="stylesheet" href="/blog/index.css" />""",
+)
+html = html.replace("<!--main-->", index)
+Path("dist/blog/index.html").write_text(html)
 
 # posts
 post_templ = Path("blog/post.html").read_text()
@@ -64,7 +73,18 @@ for i, m in enumerate(metadata):
     metadata[i]["content"] = content
     post = post.replace("<!--content-->", content)
     makedirs(f"dist/blog/{m['slug']}/", exist_ok=True)
-    Path(f"dist/blog/{m['slug']}/index.html").write_text(post)
+
+    html = Path("base.html").read_text()
+    html = html.replace("<!--title-->", m["title"])
+    html = html.replace(
+        "<!--head-->",
+        """
+        <link rel="alternate" href="/blog/feed.atom" type="application/atom+xml" />
+        <link rel="stylesheet" href="/blog/post.css" />
+        """,
+    )
+    html = html.replace("<!--main-->", post)
+    Path(f"dist/blog/{m['slug']}/index.html").write_text(html)
 
 # feed
 feed = Path("blog/feed.atom").read_text()
