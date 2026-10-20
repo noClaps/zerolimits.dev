@@ -111,8 +111,8 @@ footer {
 }
 
 .previnder {
-    color: #f1f1f1;
-    background-color: #000;
+    color: light-dark(rgb(29, 29, 31), #f1f1f1);
+    background-color: light-dark(#e6e2d6, #000);
     letter-spacing: -0.065em;
     font-family:
         "Inter", Helvetica, Roboto, Noto, "Segoe UI", Arial, var(--sans);
