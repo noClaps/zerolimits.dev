@@ -22,3 +22,4 @@ jobs:
           server: codeberg.page
           token: ${{ forge.token }}
           source: dist/
+          pretty-urls: true
