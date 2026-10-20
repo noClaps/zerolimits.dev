@@ -1,4 +1,4 @@
-.PHONY: base homepage blog gallery til highlighter
+.PHONY: base homepage blog gallery til friends highlighter
 all: homepage blog gallery til friends
 
 base:
@@ -27,7 +27,7 @@ til: base highlighter
 	@python3 til/build.py
 	@cp til/style.css dist/til/
 
-friends: base highlighter
+friends: base
 	@mkdir -p dist/friends/
 	@python3 friends/build.py
 	@cp friends/88x31.png friends/style.css dist/friends/
