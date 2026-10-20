@@ -26,6 +26,10 @@ footer {
     grid-template-columns: repeat(auto-fit, 88px);
     justify-content: center;
     gap: 0.25rem;
+
+    img {
+        image-rendering: pixelated;
+    }
 }
 
 /* site themes */
