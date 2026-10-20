@@ -1,5 +1,5 @@
 .PHONY: base homepage blog gallery til highlighter
-all: homepage blog gallery til
+all: homepage blog gallery til friends
 
 base:
 	@mkdir -p dist/
@@ -26,6 +26,11 @@ til: base highlighter
 	@mkdir -p dist/til/
 	@python3 til/build.py
 	@cp til/style.css dist/til/
+
+friends: base highlighter
+	@mkdir -p dist/friends/
+	@python3 friends/build.py
+	@cp friends/88x31.png friends/style.css dist/friends/
 
 check:
 	@lychee dist --root-dir dist --fallback-extensions html --offline
