@@ -28,7 +28,7 @@
       "name": "Cite",
       "description": "A tool to generate Hayagriva citations from DOI URLs.",
       "source": "https://codeberg.org/noClaps/cite",
-      "languages": ["swift"]
+      "languages": ["python"]
     },
     "game-of-life": {
       "name": "Game of Life",
