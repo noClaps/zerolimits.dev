@@ -33,8 +33,9 @@
     "game-of-life": {
       "name": "Game of Life",
       "description": "A TUI implementation of Conway's Game of Life",
+      "link": "https://life.zerolimits.dev",
       "source": "https://codeberg.org/noClaps/game-of-life",
-      "languages": ["go"]
+      "languages": ["html", "css", "javascript"]
     },
     "imgoptim": {
       "name": "imgoptim",
