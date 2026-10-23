@@ -1,7 +1,6 @@
 from pathlib import Path
 
 main = Path("friends/index.html").read_text()
-main = main.replace("<a", '<a target="_blank"')
 
 html = Path("base.html").read_text()
 html = html.replace("<!--title-->", "Friends")
