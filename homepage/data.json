@@ -63,6 +63,12 @@
       "source": "https://codeberg.org/noClaps/news",
       "languages": ["html", "css", "javascript"]
     },
+    "psc": {
+      "name": "psc",
+      "description": "A command line tool to check the strength of a password",
+      "source": "https://codeberg.org/noClaps/psc",
+      "languages": ["c"]
+    },
     "qcsim": {
       "name": "QCSim",
       "description": "A quantum computer simulation research project.",
