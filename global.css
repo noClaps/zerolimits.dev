@@ -56,11 +56,6 @@ header {
             opacity: var(--light);
         }
     }
-
-    h1 {
-        font-size: 1.25rem;
-        margin: 0;
-    }
 }
 
 h2 {
