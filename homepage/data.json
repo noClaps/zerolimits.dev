@@ -63,6 +63,12 @@
       "source": "https://codeberg.org/noClaps/news",
       "languages": ["html", "css", "javascript"]
     },
+    "passgen": {
+      "name": "passgen",
+      "description": "A command line tool to generate passwords of a given length",
+      "source": "https://codeberg.org/noClaps/passgen",
+      "languages": ["c"]
+    },
     "psc": {
       "name": "psc",
       "description": "A command line tool to check the strength of a password",
