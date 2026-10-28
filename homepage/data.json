@@ -75,6 +75,12 @@
       "source": "https://codeberg.org/noClaps/qcsim",
       "languages": ["rust"]
     },
+    "random": {
+      "name": "random",
+      "description": "A command line tool to generate random numbers",
+      "source": "https://codeberg.org/noClaps/random",
+      "languages": ["c"]
+    },
     "serve": {
       "name": "serve",
       "description": "A simple HTTP server for serving a directory",
