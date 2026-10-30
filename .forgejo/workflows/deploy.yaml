@@ -5,15 +5,8 @@ jobs:
     runs-on: codeberg-small
     steps:
       - uses: https://code.forgejo.org/actions/checkout@v7
-      - uses: https://code.forgejo.org/actions/setup-go@v7
-        with:
-          go-version: stable
-      - run: |
-          VERSION="$(curl -L https://api.github.com/repos/jgm/pandoc/releases/latest | jq -r '.tag_name')"
-          curl -LO "https://github.com/jgm/pandoc/releases/download/${VERSION}/pandoc-${VERSION}-linux-amd64.tar.gz"
-          tar -xf "pandoc-${VERSION}-linux-amd64.tar.gz"
-          install "pandoc-${VERSION}/bin/pandoc" /usr/local/bin/pandoc
-      - run: pandoc --version
+      - uses: https://github.com/noClaps/blackrock@master
+      - run: blackrock --version
       - run: make -j
       - run: ls -R dist/
       - uses: https://codeberg.org/git-pages/action@v2

@@ -1,37 +1,33 @@
 import json
+import re
 import subprocess
 from datetime import date
 from glob import glob
 from pathlib import Path
-from tempfile import mkstemp
 
 
 def get_meta(file):
-    _, tmp = mkstemp(".template")
-    Path(tmp).write_text("$meta-json$")
     meta = subprocess.run(
-        ["pandoc", "--wrap=none", "--template", tmp, file],
-        check=True,
-        capture_output=True,
-        text=True,
+        ["blackrock", "--metadata", file], check=True, capture_output=True, text=True
     ).stdout
     return json.loads(meta)
 
 
 def build_post(path):
-    return subprocess.run(
-        [
-            "pandoc",
-            "--lua-filter=blog/post.lua",
-            "--embed-resources",
-            f"--resource-path={':'.join(glob('blog/content/assets/*'))}",
-            "--wrap=none",
-            path,
-        ],
-        check=True,
-        capture_output=True,
-        text=True,
+    html = subprocess.run(
+        ["blackrock", path], check=True, capture_output=True, text=True
     ).stdout
+
+    html = html.replace("<table", "<div><table")
+    html = html.replace("</table>", "</table></div>")
+    html = re.sub(
+        r'(<math display="block".*?</math>)',
+        r"<div>\1</div>",
+        html,
+        flags=re.DOTALL,
+    )
+
+    return html
 
 
 metadata = []

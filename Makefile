@@ -1,14 +1,11 @@
-.PHONY: base homepage blog gallery til friends highlighter
+.PHONY: base homepage blog gallery til friends
 all: homepage blog gallery til friends
 
 base:
 	@mkdir -p dist/
 	@cp global.css favicon.png dist/
 
-highlighter:
-	@cd highlighter/ && go build -o highlighter
-
-blog: base highlighter
+blog: base
 	@mkdir -p dist/blog/
 	@cp -R blog/styles/. dist/blog/
 	@python3 blog/build.py
@@ -22,7 +19,7 @@ gallery: base
 	@python3 gallery/build.py
 	@cp -R gallery/assets/. gallery/style.css dist/gallery/
 
-til: base highlighter
+til: base
 	@mkdir -p dist/til/
 	@python3 til/build.py
 	@cp til/style.css dist/til/

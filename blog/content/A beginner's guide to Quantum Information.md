@@ -3,10 +3,6 @@ date: 2026-10-06
 slug: quantum-information
 ---
 
-\newcommand{\bra}[1]{\langle{#1}|}
-\newcommand{\ket}[1]{|{#1}\rangle}
-\newcommand{\braket}[1]{\langle{#1}\rangle}
-
 > [!note] Prerequisites
 >
 > This post assumes that you have knowledge of linear algebra, such as matrix and vector multiplications, eigenvectors and eigenvalues, etc. More advanced concepts like the Kronecker product will be explained briefly, but I won't go into too much detail about them. Knowledge of complex numbers and operations is also assumed.
@@ -44,7 +40,7 @@ $$
 > \end{aligned}
 > $$
 >
-> Here, $\braket{ 0 | 0 }$ is just a shorthand for $\bra{0}\ket{0}$, and you're effectively taking a dot product. We'll see this in closer detail when we look at [vector notation](#vector-notation).
+> Here, $\braket{ 0 | 0 }$ is just a shorthand for $\bra{0}\ket{0}$, and you're effectively taking a dot product. We'll see this in closer detail when we look at [vector notation](#^vector-notation).
 
 Here, $\ket{0}$ and $\ket{1}$ are the qubit's _basis states_. The definition of an eigenbasis is a bit complicated, but an easy way to imagine this is that a qubit exists on a unit circle, and these are the graph's $x$ and $y$ axes. The coefficients of the basis states then represent the actual $x$ and $y$ coordinates on that graph:
 
@@ -72,14 +68,14 @@ In reality, the coefficients of the $\ket{0}$ and $\ket{1}$ are complex numbers,
 
 However, this graphical representation shows that qubits can be written as vectors using their coefficients:
 
-<span id="vector-notation"></span>
-
 $$
 a_{0}\ket{0} +a_{1}\ket{1} = \begin{pmatrix}
 a_{0} \\
 a_{1}
 \end{pmatrix}
 $$
+
+^vector-notation
 
 > [!note] Vector definition of $\bra{\psi}$
 >
@@ -267,8 +263,6 @@ $$
 
 Below is a brief list of common single-qubit quantum operators:
 
-<span id="common-operators"></span>
-
 | Name     | Symbol | Matrix                                                            | Dirac                                                                               |
 | -------- | ------ | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | Hadamard | $H$    | $\frac{1}{\sqrt{ 2 }}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}$ | $\frac{1}{\sqrt{ 2 }}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}-\ket{1}\bra{1})$ |
@@ -276,6 +270,8 @@ Below is a brief list of common single-qubit quantum operators:
 | Pauli Y  | $Y$    | $\begin{pmatrix}0 & -i \\ i & 0\end{pmatrix}$                     | $-i\ket{0}\bra{1}+i\ket{1}\bra{0}$                                                  |
 | Pauli Z  | $Z$    | $\begin{pmatrix}1 & 0 \\ 0 & -1\end{pmatrix}$                     | $\ket{0}\bra{0}-\ket{1}\bra{1}$                                                     |
 | Identity | $I$    | $\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}$                      | $\ket{0}\bra{0}+\ket{1}\bra{1}$                                                     |
+
+^common-operators
 
 ## Multiple qubits
 
@@ -298,8 +294,6 @@ For example, a 2-qubit state can be written as:
 $$
 \ket{0} \otimes \ket{0} = \ket{0} \ket{0} = \ket{00}
 $$
-
-<span id="kronecker-product"></span>
 
 > [!note] Kronecker product
 >
@@ -394,6 +388,8 @@ $$
 > \end{aligned}
 > $$
 
+^kronecker-product
+
 As before, any multiple-qubit state can be written in vector notation as well. For example, a two qubit state:
 
 $$
@@ -486,7 +482,7 @@ X\ket{10}  & = \begin{pmatrix}
 \end{aligned}
 $$
 
-Uh oh, we seem to have hit another roadblock! Since this is a single-qubit gate, it can only be applied to a single qubit. In order to apply an operator to a two-qubit state, we need to make it a two-qubit gate. We can do this by using the [tensor product](#kronecker-product) again:
+Uh oh, we seem to have hit another roadblock! Since this is a single-qubit gate, it can only be applied to a single qubit. In order to apply an operator to a two-qubit state, we need to make it a two-qubit gate. We can do this by using the [tensor product](#^kronecker-product) again:
 
 $$
 (X \otimes I)\ket{10} =\ket{00}
@@ -605,7 +601,7 @@ $$
 \ket{\Phi} = \frac{\ket{00} +\ket{11} }{\sqrt{ 2 }}
 $$
 
-How would we go about making this state? Well let's start from a very simple state: the $\ket{00}$. If we have a look at the [single-qubit operators table](#common-operators) from earlier, we can see that the Hadamard looks like it'll get us about halfway there. So let's apply a $H \otimes I$ to this state.
+How would we go about making this state? Well let's start from a very simple state: the $\ket{00}$. If we have a look at the [single-qubit operators table](#^common-operators) from earlier, we can see that the Hadamard looks like it'll get us about halfway there. So let's apply a $H \otimes I$ to this state.
 
 $$
 \begin{aligned}

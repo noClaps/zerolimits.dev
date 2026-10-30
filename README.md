@@ -5,7 +5,7 @@
 
 ## Build instructions
 
-You'll need [Pandoc](https://pandoc.org), [Python](https://python.org) and [Go](https://go.dev).
+You'll need [Blackrock](https://github.com/noClaps/blackrock) and [Python](https://python.org).
 
 Clone the repository:
 

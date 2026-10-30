@@ -3,12 +3,9 @@ from glob import glob
 from pathlib import Path
 
 
-def pandoc(file):
+def build_entry(file):
     return subprocess.run(
-        ["pandoc", "--lua-filter=til/filter.lua", file],
-        check=True,
-        capture_output=True,
-        text=True,
+        ["blackrock", file], check=True, capture_output=True, text=True
     ).stdout
 
 
@@ -19,7 +16,7 @@ files.sort(reverse=True)
 entries = []
 for file in files:
     date = file.replace("til/content/", "").replace(".md", "")
-    content = pandoc(file)
+    content = build_entry(file)
     entry = "<article>"
     entry += f"<h2>{date}</h2>"
     entry += content
