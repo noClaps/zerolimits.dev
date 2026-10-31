@@ -1,3 +1,4 @@
+import html
 import json
 import re
 import subprocess
@@ -49,15 +50,15 @@ for m in metadata:
     posts.append(post)
 index = index.replace("<!--posts-->", "".join(posts))
 
-html = Path("base.html").read_text()
-html = html.replace("<!--title-->", "The Blog of Random")
-html = html.replace(
+base_html = Path("base.html").read_text()
+base_html = base_html.replace("<!--title-->", "The Blog of Random")
+base_html = base_html.replace(
     "<!--head-->",
     """<link rel="alternate" href="/blog/feed.atom" type="application/atom+xml" />
 <link rel="stylesheet" href="/blog/index.css" />""",
 )
-html = html.replace("<!--main-->", index)
-Path("dist/blog/index.html").write_text(html)
+base_html = base_html.replace("<!--main-->", index)
+Path("dist/blog/index.html").write_text(base_html)
 
 # posts
 post_templ = Path("blog/post.html").read_text()
@@ -68,17 +69,17 @@ for i, m in enumerate(metadata):
     metadata[i]["content"] = content
     post = post.replace("<!--content-->", content)
 
-    html = Path("base.html").read_text()
-    html = html.replace("<!--title-->", m["title"])
-    html = html.replace(
+    base_html = Path("base.html").read_text()
+    base_html = base_html.replace("<!--title-->", m["title"])
+    base_html = base_html.replace(
         "<!--head-->",
         """
         <link rel="alternate" href="/blog/feed.atom" type="application/atom+xml" />
         <link rel="stylesheet" href="/blog/post.css" />
         """,
     )
-    html = html.replace("<!--main-->", post)
-    Path(f"dist/blog/{m['slug']}.html").write_text(html)
+    base_html = base_html.replace("<!--main-->", post)
+    Path(f"dist/blog/{m['slug']}.html").write_text(base_html)
 
 # feed
 feed = Path("blog/feed.atom").read_text()
@@ -94,7 +95,7 @@ for m in metadata:
         entry += f"<updated>{m['date']}T00:00:00Z</updated>"
     entry += f'<link rel="alternate" href="https://zerolimits.dev/blog/{m["slug"]}" />'
     entry += f"<published>{m['date']}T00:00:00Z</published>"
-    entry += f'<content type="html">{m["content"]}</content>'
+    entry += f'<content type="html">{html.escape(m["content"])}</content>'
     entry += "</entry>"
     entries.append(entry)
 feed = feed.replace("<!--entries-->", "".join(entries))
