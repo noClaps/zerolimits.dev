@@ -2,6 +2,7 @@ import html
 import json
 import re
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from glob import glob
 from pathlib import Path
@@ -31,12 +32,16 @@ def build_post(path):
     return html
 
 
-metadata = []
-for file in glob("blog/content/*.md"):
+def process(file):
     meta = get_meta(file)
     meta["title"] = file.replace("blog/content/", "").replace(".md", "")
     meta["path"] = file
-    metadata.append(meta)
+    meta["content"] = build_post(file)
+    return meta
+
+
+with ThreadPoolExecutor() as pool:
+    metadata = list(pool.map(process, glob("blog/content/*.md")))
 metadata.sort(key=lambda x: x["date"], reverse=True)
 
 # index
@@ -61,15 +66,13 @@ base_html = base_html.replace("<!--main-->", index)
 Path("dist/blog/index.html").write_text(base_html)
 
 # posts
+base_html = Path("base.html").read_text()
 post_templ = Path("blog/post.html").read_text()
 for i, m in enumerate(metadata):
     post = post_templ.replace("<!--title-->", m["title"])
     post = post.replace("<!--date-->", m["date"])
-    content = build_post(m["path"])
-    metadata[i]["content"] = content
-    post = post.replace("<!--content-->", content)
+    post = post.replace("<!--content-->", m["content"])
 
-    base_html = Path("base.html").read_text()
     base_html = base_html.replace("<!--title-->", m["title"])
     base_html = base_html.replace(
         "<!--head-->",
