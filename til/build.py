@@ -18,7 +18,7 @@ for file in files:
     date = file.replace("til/content/", "").replace(".md", "")
     content = build_entry(file)
     entry = "<article>"
-    entry += f"<h2>{date}</h2>"
+    entry += f'<h2 id="til-{date}">{date}</h2>'
     entry += content
     entry += "</article>"
     entries.append(entry)
