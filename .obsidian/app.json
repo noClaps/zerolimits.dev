@@ -3,5 +3,12 @@
   "showLineNumber": false,
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true,
-  "userIgnoreFilters": null
+  "userIgnoreFilters": null,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
