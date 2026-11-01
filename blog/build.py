@@ -15,20 +15,9 @@ def get_meta(file):
 
 
 def build_post(path):
-    html = subprocess.run(
+    return subprocess.run(
         ["blackrock", path], check=True, capture_output=True, text=True
     ).stdout
-
-    html = html.replace("<table", "<div><table")
-    html = html.replace("</table>", "</table></div>")
-    html = re.sub(
-        r'(<math display="block".*?</math>)',
-        r"<div>\1</div>",
-        html,
-        flags=re.DOTALL,
-    )
-
-    return html
 
 
 metadata = []
