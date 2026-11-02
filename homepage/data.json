@@ -37,12 +37,6 @@
       "source": "https://codeberg.org/noClaps/game-of-life",
       "languages": ["html", "css", "javascript"]
     },
-    "imgoptim": {
-      "name": "imgoptim",
-      "description": "A command line utility to optimise images",
-      "source": "https://codeberg.org/noClaps/imgoptim",
-      "languages": ["rust"]
-    },
     "nbody": {
       "name": "n-body",
       "description": "An n-body simulation running in the browser",
