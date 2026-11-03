@@ -1,6 +1,5 @@
 ---
 date: 2024-01-20
-slug: mozilla
 ---
 
 I have a problem with Mozilla, and there's enough here to warrant a whole post.

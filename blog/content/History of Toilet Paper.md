@@ -1,6 +1,5 @@
 ---
 date: 2021-12-26
-slug: history-of-toilet-paper
 ---
 
 Toilet paper, and the methods and tools used to clean your bum after going number 2, have been through a lot of changes, mostly for the better, until we finally reached the simple rolls that we take for granted today.

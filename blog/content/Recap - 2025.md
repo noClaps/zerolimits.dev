@@ -1,6 +1,5 @@
 ---
 date: 2025-12-26
-slug: recap-2025
 ---
 
 [Last year's Textack](/blog/tech-stack-2024)

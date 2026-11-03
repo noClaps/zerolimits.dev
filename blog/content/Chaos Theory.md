@@ -1,6 +1,5 @@
 ---
 date: 2021-12-02
-slug: chaos-theory
 ---
 
 ## The main stuff

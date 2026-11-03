@@ -1,6 +1,5 @@
 ---
 date: 2024-12-05
-slug: simplicity-in-software
 ---
 
 There's been a lot of products coming out recently with all these fancy new features. You have [Arc](https://arc.net) (which recently got [put into maintenance mode](https://www.youtube.com/watch?v=E9yZ0JusME4)), [Cursor](https://cursor.com), [Zed](https://zed.dev) (which I use), [Dia](https://www.diabrowser.com) (a new browser from the Arc team), etc. I'm sure you've seen at least some of these kinds of products around somewhere on the internets.

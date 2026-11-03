@@ -1,6 +1,5 @@
 ---
 date: 2025-07-23
-slug: random-numbers
 ---
 
 ## Every day I'm shufflin'

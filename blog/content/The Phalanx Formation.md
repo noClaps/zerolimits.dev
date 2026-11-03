@@ -1,7 +1,6 @@
 ---
 date: 2021-12-30
 lastmod: 2022-07-31
-slug: the-phalanx-formation
 ---
 
 ## The origin story

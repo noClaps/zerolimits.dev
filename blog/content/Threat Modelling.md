@@ -1,6 +1,5 @@
 ---
 date: 2023-01-18
-slug: threat-modelling
 ---
 
 Before you start on your privacy and security journey, one of the main things you should figure out is your threat model.

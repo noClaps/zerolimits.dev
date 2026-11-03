@@ -1,7 +1,6 @@
 ---
 date: 2022-11-08
 lastmod: 2025-04-12
-slug: collatz-conjecture
 ---
 
 > This is a really dangerous problem. People become obsessed with it and it really is impossible.

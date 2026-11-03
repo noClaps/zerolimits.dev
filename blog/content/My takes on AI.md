@@ -1,6 +1,5 @@
 ---
 date: 2025-02-01
-slug: my-takes-on-ai
 ---
 
 There's been a lot happening in the AI world recently. There's a new model, DeepSeek R1, that's just come out that everyone's going crazy over, because it performs better than GPT o1 and Claude 3.5 while being significantly cheaper and, more importantly, open source. Of course, before this, all the hype was about GPT o1, and Claude before that.

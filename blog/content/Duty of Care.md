@@ -1,6 +1,5 @@
 ---
 date: 2023-09-15
-slug: duty-of-care
 ---
 
 > [!note]
