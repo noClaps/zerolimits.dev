@@ -31,3 +31,6 @@ friends: base
 
 check:
 	@lychee dist --root-dir dist --fallback-extensions html --offline
+
+imgoptim:
+	@imgoptim -r blog/content/assets/
