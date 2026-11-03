@@ -1,130 +1,129 @@
 ul {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: 0.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.5rem;
 }
 
 p,
 a {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 ul a {
-    list-style: none;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
+  list-style: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 footer {
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 88px);
-    justify-content: center;
-    gap: 0.25rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 88px);
+  justify-content: center;
+  gap: 0.25rem;
 
-    img {
-        image-rendering: pixelated;
-    }
+  img {
+    image-rendering: pixelated;
+  }
 }
 
 /* site themes */
 @keyframes anotherluce-ColorChange {
-    0% {
-        color: white;
-    }
-    25% {
-        color: rgb(245, 169, 184);
-    }
-    50% {
-        color: rgb(91, 206, 250);
-    }
-    75% {
-        color: rgb(245, 169, 184);
-    }
-    100% {
-        color: white;
-    }
+  0% {
+    color: white;
+  }
+  25% {
+    color: rgb(245, 169, 184);
+  }
+  50% {
+    color: rgb(91, 206, 250);
+  }
+  75% {
+    color: rgb(245, 169, 184);
+  }
+  100% {
+    color: white;
+  }
 }
 .anotherluce {
-    background: linear-gradient(black, rgb(14, 0, 32));
-    color: white;
-    text-shadow: 3px 3px 10px rgb(216, 97, 216);
-    animation: 10s ease 0s infinite running anotherluce-ColorChange;
-    font-family: "Asap Sharp", var(--sans);
+  background: linear-gradient(black, rgb(14, 0, 32));
+  color: white;
+  text-shadow: 3px 3px 10px rgb(216, 97, 216);
+  animation: 10s ease 0s infinite running anotherluce-ColorChange;
+  font-family: "Asap Sharp", var(--sans);
 }
 
 @keyframes insidiousfiddler-blink {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
 .insidiousfiddler {
-    color: #e8e8ed;
-    background-color: #0a0a0c;
-    font-size: 0.9rem;
-    font-weight: 500;
-    font-family: "JetBrains Mono", "Fira Code", var(--mono);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
+  color: #e8e8ed;
+  background-color: #0a0a0c;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "JetBrains Mono", "Fira Code", var(--mono);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 
-    img {
-        object-fit: contain;
-    }
-    .logo-tail {
-        letter-spacing: -0.05em;
-    }
-    .logo-blink {
-        color: #6e8efb;
-        animation: insidiousfiddler-blink 1.1s step-end infinite;
-        margin: 0 -0.1em;
-    }
-    .logo-hint {
-        color: #5c5c66;
-        opacity: 0.3;
-        margin-left: -0.05em;
-    }
+  img {
+    object-fit: contain;
+  }
+  .logo-tail {
+    letter-spacing: -0.05em;
+  }
+  .logo-blink {
+    color: #6e8efb;
+    animation: insidiousfiddler-blink 1.1s step-end infinite;
+    margin: 0 -0.1em;
+  }
+  .logo-hint {
+    color: #5c5c66;
+    opacity: 0.3;
+    margin-left: -0.05em;
+  }
 }
 
 .crimin {
-    background-color: #060612;
-    color: #d8d8d8;
-    text-shadow: 1px 1px #afa323;
-    font-weight: bold;
-    font-size: 1.125rem;
-    font-family: "Courier Prime", "Courier", var(--mono);
+  background-color: #060612;
+  color: #d8d8d8;
+  text-shadow: 1px 1px #afa323;
+  font-weight: bold;
+  font-size: 1.125rem;
+  font-family: "Courier Prime", "Courier", var(--mono);
 }
 
 .mester {
-    background-color: color-mix(in srgb, #101413, #0b100e 87.8431%);
-    color: #f2f7f4;
-    letter-spacing: -0.04em;
-    font:
-        1.15rem Roboto,
-        var(--sans);
+  background-color: color-mix(in srgb, #101413, #0b100e 87.8431%);
+  color: #f2f7f4;
+  letter-spacing: -0.04em;
+  font:
+    1.15rem Roboto,
+    var(--sans);
 
-    span {
-        color: #69e4b1;
-    }
+  span {
+    color: #69e4b1;
+  }
 }
 
 .previnder {
-    color: light-dark(rgb(29, 29, 31), #f1f1f1);
-    background-color: light-dark(#e6e2d6, #000);
-    letter-spacing: -0.065em;
-    font-family:
-        "Inter", Helvetica, Roboto, Noto, "Segoe UI", Arial, var(--sans);
-    font-size: 1.125rem;
+  color: light-dark(rgb(29, 29, 31), #f1f1f1);
+  background-color: light-dark(#e6e2d6, #000);
+  letter-spacing: -0.065em;
+  font-family: "Inter", Helvetica, Roboto, Noto, "Segoe UI", Arial, var(--sans);
+  font-size: 1.125rem;
 }
 
 .rollviral {
-    background-color: #000;
-    color: #fff;
-    font-family: MonaspaceNeon, var(--mono);
+  background-color: #000;
+  color: #fff;
+  font-family: MonaspaceNeon, var(--mono);
 }

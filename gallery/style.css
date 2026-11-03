@@ -1,19 +1,19 @@
 section {
-    columns: 16rem auto;
-    gap: 0.5rem;
-    @supports (display: grid-lanes) {
-        display: grid-lanes;
-        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-        columns: revert;
-    }
+  columns: 16rem auto;
+  gap: 0.5rem;
+  @supports (display: grid-lanes) {
+    display: grid-lanes;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    columns: revert;
+  }
 
-    img {
-        width: 100%;
-        border-radius: 0.5rem;
-        height: auto;
+  img {
+    width: 100%;
+    border-radius: 0.5rem;
+    height: auto;
 
-        @supports not (display: grid-lanes) {
-            margin: 0.25rem 0;
-        }
+    @supports not (display: grid-lanes) {
+      margin: 0.25rem 0;
     }
+  }
 }

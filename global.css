@@ -1,76 +1,76 @@
 /* Vars */
 :root {
-    --sans: ui-sans-serif, sans-serif;
-    --serif: ui-serif, serif;
-    --mono: ui-monospace, monospace;
+  --sans: ui-sans-serif, sans-serif;
+  --serif: ui-serif, serif;
+  --mono: ui-monospace, monospace;
 
-    --light: 70%;
-    --primary: light-dark(oklch(60% 0.225 256), oklch(70% 0.225 256));
-    --bg: light-dark(#fff, #1e1e1e);
-    --fg: light-dark(#000, #fff);
+  --light: 70%;
+  --primary: light-dark(oklch(60% 0.225 256), oklch(70% 0.225 256));
+  --bg: light-dark(#fff, #1e1e1e);
+  --fg: light-dark(#000, #fff);
 }
 
 /* Root */
 :root {
-    color-scheme: light dark;
-    scroll-behavior: smooth;
-    font-family: var(--sans);
-    background-color: var(--bg);
-    color: var(--fg);
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+  font-family: var(--sans);
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 body {
-    width: 88dvw;
-    max-width: 48rem;
-    margin: auto;
-    margin-bottom: 2rem;
+  width: 88dvw;
+  max-width: 48rem;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 p {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 /* Header */
 header {
+  display: flex;
+  padding-block: 2dvh;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
     display: flex;
-    padding-block: 2dvh;
-    justify-content: space-between;
-    align-items: center;
+    gap: 1rem;
+  }
 
-    nav {
-        display: flex;
-        gap: 1rem;
+  a {
+    color: currentColor;
+    text-decoration: none;
+    transition: opacity 0.25s;
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
     }
 
-    a {
-        color: currentColor;
-        text-decoration: none;
-        transition: opacity 0.25s;
-
-        svg {
-            width: 1.125rem;
-            height: 1.125rem;
-        }
-
-        &:hover {
-            opacity: var(--light);
-        }
+    &:hover {
+      opacity: var(--light);
     }
+  }
 }
 
 h2 {
-    margin-top: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 /* Title */
 .title {
-    h1 {
-        font-size: 2.25rem;
-        margin: 0;
-    }
+  h1 {
+    font-size: 2.25rem;
+    margin: 0;
+  }
 
-    p {
-        font-size: 1.25rem;
-        opacity: var(--light);
-    }
+  p {
+    font-size: 1.25rem;
+    opacity: var(--light);
+  }
 }

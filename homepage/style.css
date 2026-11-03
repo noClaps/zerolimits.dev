@@ -1,78 +1,78 @@
 section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
 }
 
 /* Link */
 .link {
-    width: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.5rem;
+  background-color: alpha(from var(--fg) / 5%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+
+  h3 {
+    margin: 0.25rem 0;
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 0.5rem;
-    background-color: alpha(from var(--fg) / 5%);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
+    grid-template-columns: 1fr auto;
+    align-items: center;
 
-    h3 {
-        margin: 0.25rem 0;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
+    a {
+      color: currentColor;
+      transition: color 0.25s;
 
-        a {
-            color: currentColor;
-            transition: color 0.25s;
-
-            &:hover {
-                color: var(--primary);
-            }
-        }
-
-        .code {
-            align-self: flex-end;
-            text-decoration: none;
-            opacity: var(--light);
-            font-family: var(--mono);
-
-            svg {
-                width: 1.125rem;
-                height: 1.125rem;
-            }
-        }
+      &:hover {
+        color: var(--primary);
+      }
     }
 
-    p {
-        opacity: var(--light);
-        margin: 0;
-        line-height: unset;
-    }
+    .code {
+      align-self: flex-end;
+      text-decoration: none;
+      opacity: var(--light);
+      font-family: var(--mono);
 
-    span {
-        display: flex;
-        align-items: center;
-
-        svg {
-            height: 1.5rem;
-            width: 1.5rem;
-        }
+      svg {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
     }
+  }
+
+  p {
+    opacity: var(--light);
+    margin: 0;
+    line-height: unset;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
 }
 
 /* Title */
 .title ul {
-    list-style: none;
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
-    a {
-        color: currentColor;
-        transition: color 0.25s;
-        &:hover {
-            color: var(--primary);
-        }
+  a {
+    color: currentColor;
+    transition: color 0.25s;
+    &:hover {
+      color: var(--primary);
     }
+  }
 }
