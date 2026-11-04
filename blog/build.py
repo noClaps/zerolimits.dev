@@ -2,6 +2,7 @@ import html
 import json
 import re
 import subprocess
+import sys
 from datetime import date
 from glob import glob
 from pathlib import Path
@@ -15,9 +16,13 @@ def get_meta(file):
 
 
 def build_post(path):
-    return subprocess.run(
-        ["blackrock", path], check=True, capture_output=True, text=True
-    ).stdout
+    proc = subprocess.run(
+        ["blackrock", path], check=False, capture_output=True, text=True
+    )
+    if proc.returncode != 0:
+        print(proc.stderr, file=sys.stderr)
+        sys.exit(1)
+    return proc.stdout
 
 
 metadata = []
