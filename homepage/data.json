@@ -12,18 +12,6 @@
     }
   },
   "projects": {
-    "applause": {
-      "name": "Applause",
-      "description": "A Go command line argument parser library",
-      "source": "https://codeberg.org/noClaps/applause",
-      "languages": ["go"]
-    },
-    "argparse": {
-      "name": "argparse",
-      "description": "A very simple Rust command line argument parsing library",
-      "source": "https://codeberg.org/noClaps/argparse",
-      "languages": ["rust"]
-    },
     "cite": {
       "name": "Cite",
       "description": "A tool to generate Hayagriva citations from DOI URLs.",
