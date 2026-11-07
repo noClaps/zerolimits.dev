@@ -102,12 +102,6 @@
       "link": "https://cli.zerolimits.dev",
       "source": "https://github.com/noClaps/cli.zerolimits.dev",
       "languages": ["html", "css", "javascript"]
-    },
-    "znak": {
-      "name": "Znak",
-      "description": "A new markup language I'm working on",
-      "source": "https://github.com/noClaps/znak",
-      "languages": ["rust"]
     }
   }
 }
