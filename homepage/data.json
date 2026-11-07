@@ -5,9 +5,9 @@
       "link": "mailto:contact@zerolimits.dev",
       "link-name": "contact@zerolimits.dev"
     },
-    "codeberg": {
-      "name": "Codeberg",
-      "link": "https://codeberg.org/noClaps",
+    "github": {
+      "name": "GitHub",
+      "link": "https://github.com/noClaps",
       "link-name": "noClaps"
     }
   },
@@ -15,21 +15,21 @@
     "cite": {
       "name": "Cite",
       "description": "A tool to generate Hayagriva citations from DOI URLs.",
-      "source": "https://codeberg.org/noClaps/cite",
+      "source": "https://github.com/noClaps/cite",
       "languages": ["python"]
     },
     "game-of-life": {
       "name": "Game of Life",
       "description": "A TUI implementation of Conway's Game of Life",
       "link": "https://life.zerolimits.dev",
-      "source": "https://codeberg.org/noClaps/game-of-life",
+      "source": "https://github.com/noClaps/game-of-life",
       "languages": ["html", "css", "javascript"]
     },
     "nbody": {
       "name": "n-body",
       "description": "An n-body simulation running in the browser",
       "link": "https://nbody.zerolimits.dev/",
-      "source": "https://codeberg.org/noClaps/nbody",
+      "source": "https://github.com/noClaps/nbody",
       "languages": ["html", "css", "javascript"]
     },
     "nc": {
@@ -42,71 +42,71 @@
       "name": "News",
       "description": "A minimal Hacker news client",
       "link": "https://news.zerolimits.dev",
-      "source": "https://codeberg.org/noClaps/news",
+      "source": "https://github.com/noClaps/news",
       "languages": ["html", "css", "javascript"]
     },
     "passgen": {
       "name": "passgen",
       "description": "A command line tool to generate passwords of a given length",
-      "source": "https://codeberg.org/noClaps/passgen",
+      "source": "https://github.com/noClaps/passgen",
       "languages": ["c"]
     },
     "psc": {
       "name": "psc",
       "description": "A command line tool to check the strength of a password",
-      "source": "https://codeberg.org/noClaps/psc",
+      "source": "https://github.com/noClaps/psc",
       "languages": ["c"]
     },
     "qcsim": {
       "name": "QCSim",
       "description": "A quantum computer simulation research project.",
-      "source": "https://codeberg.org/noClaps/qcsim",
+      "source": "https://github.com/noClaps/qcsim",
       "languages": ["rust"]
     },
     "random": {
       "name": "random",
       "description": "A command line tool to generate random numbers",
-      "source": "https://codeberg.org/noClaps/random",
+      "source": "https://github.com/noClaps/random",
       "languages": ["c"]
     },
     "serve": {
       "name": "serve",
       "description": "A simple HTTP server for serving a directory",
-      "source": "https://codeberg.org/noClaps/serve",
+      "source": "https://github.com/noClaps/serve",
       "languages": ["python"]
     },
     "typst2ansi": {
       "name": "typst2ansi",
       "description": "A website to convert Typst into syntax-highlighted ANSI",
       "link": "https://typst2ansi.zerolimits.dev/",
-      "source": "https://codeberg.org/noClaps/typst2ansi",
+      "source": "https://github.com/noClaps/typst2ansi",
       "languages": ["rust", "html", "css", "javascript"]
     },
     "wordsearch": {
       "name": "Word search",
       "description": "A simple website to filter words",
       "link": "https://wordsearch.zerolimits.dev/",
-      "source": "https://codeberg.org/noClaps/wordsearch",
+      "source": "https://github.com/noClaps/wordsearch",
       "languages": ["html", "css", "javascript"]
     },
     "zerolimits": {
       "name": "ZeroLimits",
       "description": "My personal homepage",
       "link": "https://zerolimits.dev",
-      "source": "https://codeberg.org/noClaps/zerolimits.dev",
+      "source": "https://github.com/noClaps/zerolimits.dev",
       "languages": ["html", "css", "python"]
     },
     "cli": {
       "name": "zerolimits --cli",
       "description": "A CLI version of ZeroLimits",
       "link": "https://cli.zerolimits.dev",
-      "source": "https://codeberg.org/noClaps/cli.zerolimits.dev",
+      "source": "https://github.com/noClaps/cli.zerolimits.dev",
       "languages": ["html", "css", "javascript"]
     },
     "znak": {
       "name": "Znak",
       "description": "A new markup language I'm working on",
-      "source": "https://codeberg.org/noClaps/znak",
+      "source": "https://github.com/noClaps/znak",
       "languages": ["rust"]
     }
   }

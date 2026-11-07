@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./.forgejo/ZeroLimits.png" height="192">
+    <img src="./.github/ZeroLimits.png" height="192">
 </p>
 <h1 align="center">ZeroLimits</h1>
 
@@ -10,7 +10,7 @@ You'll need [Blackrock](https://github.com/noClaps/blackrock) and [Python](https
 Clone the repository:
 
 ```sh
-git clone https://codeberg.org/noClaps/zerolimits.dev
+git clone https://github.com/noClaps/zerolimits.dev
 cd zerolimits.dev
 ```
 
