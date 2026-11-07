@@ -1220,6 +1220,6 @@ I think I'll wrap it up there for now. There are a _lot_ of other things left th
 
 I'm not sure if you can tell, but this kind of stuff really excites me. We have _mathematical proof_ that quantum computers are capable of doing things that classical computers aren't, and all of it is based entirely upon _linear algebra and complex numbers_! And that's just scratching the surface of what's possible!
 
-I'd also like to mention [QCSim](https://codeberg.org/noClaps/qcsim), a quantum computer simulator I built. Most of the stuff I've talked about in this post were what inspired me to build this, and in turn inspired me to look into quantum information and quantum computation as a career path in the first place.
+I'd also like to mention [QCSim](https://github.com/noClaps/qcsim), a quantum computer simulator I built. Most of the stuff I've talked about in this post were what inspired me to build this, and in turn inspired me to look into quantum information and quantum computation as a career path in the first place.
 
 Anyway, that's all I've got for now, seeya next time (hopefully sooner than 5 months lol)!

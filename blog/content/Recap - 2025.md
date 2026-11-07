@@ -34,11 +34,11 @@ There's multiple reasons for my moving away, but the main ones are just that Git
 
 ### Languages
 
-I barely used Python outside of assignments this year, but towards the end I started using it as a scripting language rather than a programming language, and it's worked well for that. For instance, the [build script for Aperturic Focus](https://codeberg.org/noClaps/gallery/src/commit/0873ca3285975b9ce96ce3b18a4def7a926c5792/main.py) is a very simple Python script that uses BeautifulSoup and PyVips, and it seems to build everything faster than any of the solutions I've used before, including the Go one.
+I barely used Python outside of assignments this year, but towards the end I started using it as a scripting language rather than a programming language, and it's worked well for that. For instance, the [build script for Aperturic Focus](https://github.com/noClaps/gallery/blob/0873ca3285975b9ce96ce3b18a4def7a926c5792/main.py) is a very simple Python script that uses BeautifulSoup and PyVips, and it seems to build everything faster than any of the solutions I've used before, including the Go one.
 
 Speaking of fast, I finally properly learned Rust! There's probably quite a few things that I still don't know about it, but I've learned enough to be able to use it in real projects (like this blog, I'll talk more about it later), so I'm pretty satisfied with that. I found that the recommendations that everyone gave about reading the Rust Book didn't really help me, but just building things and figuring stuff out as I go helped me understand what's going on a lot more. Sure, maybe I'm doing some things wrong, but the programs run just fine and behave how I expect them to, and that's what matters and the end of the day.
 
-I have still used Go for other projects, especially ones that required an HTTP server (like [`serve`](https://codeberg.org/noClaps/serve)) or making HTTP requests (like [`pkg`](https://git.macco.dev/pkg-mngr/pkg)). There's also projects like [Monopack](https://codeberg.org/noClaps/monopack) which would really only work in Go because that's what [esbuild](https://esbuild.github.io/) uses, and I couldn't find a similar Rust crate.
+I have still used Go for other projects, especially ones that required an HTTP server (like [`serve`](https://github.com/noClaps/serve)) or making HTTP requests (like [`pkg`](https://git.macco.dev/pkg-mngr/pkg)). There's also projects like [Monopack](https://github.com/noClaps/monopack) which would really only work in Go because that's what [esbuild](https://esbuild.github.io/) uses, and I couldn't find a similar Rust crate.
 
 The last language I mainly used this year was TypeScript, and when [Bun got acquired by Anthropic](https://bun.com/blog/bun-joins-anthropic), I decided that was probably a good time to switch away. I tried both Node (with PNPM) and Deno, but I didn't particularly like working with either one, and honestly with all the recent [NPM supply](https://about.gitlab.com/blog/gitlab-discovers-widespread-npm-supply-chain-attack/) [chain attacks](https://www.paloaltonetworks.com/blog/cloud-security/npm-supply-chain-attack/), I figured it was probably best if I moved away from the JavaScript ecosystem entirely. That's why I built Monopack as a wrapper around esbuild, and I now no longer have any JavaScript runtimes installed on my computer.
 
@@ -46,13 +46,13 @@ One of my goals last year was to stop using TypeScript, and in a way I can say I
 
 ### CLI development tools
 
-I mostly switched to Go and Rust for making CLI tools, mainly because they were easier to work in. I also made [Applause](https://codeberg.org/noClaps/applause), a command line argument parser for Go. I used it for a while, but I've switched back to using `flag` for my Go-based CLI programs, and archived Applause. I didn't really make that many CLI tools in Rust, but the few that I did, I used [clap](https://github.com/clap-rs/clap), which is the "standard".
+I mostly switched to Go and Rust for making CLI tools, mainly because they were easier to work in. I also made [Applause](https://github.com/noClaps/applause), a command line argument parser for Go. I used it for a while, but I've switched back to using `flag` for my Go-based CLI programs, and archived Applause. I didn't really make that many CLI tools in Rust, but the few that I did, I used [clap](https://github.com/clap-rs/clap), which is the "standard".
 
 ### Blog development
 
 I've removed the web development section because I actually didn't do much web dev this year. Instead, I'll talk about the development of this blog.
 
-At the beginning of the year, the markup language I used for this blog was [Znak](https://codeberg.org/noClaps/znak), which was written in TypeScript. I rewrote it in Go, and then in Rust, and added other libraries alongside it, including a syntax highlighting library that wraps [Tree-sitter](https://tree-sitter.github.io/tree-sitter), and a basic HTML parser.
+At the beginning of the year, the markup language I used for this blog was [Znak](https://github.com/noClaps/znak), which was written in TypeScript. I rewrote it in Go, and then in Rust, and added other libraries alongside it, including a syntax highlighting library that wraps [Tree-sitter](https://tree-sitter.github.io/tree-sitter), and a basic HTML parser.
 
 When Typst released their [initial HTML export](https://typst.app/docs/changelog/0.13.0/#html-export), I was interested in using Typst for my blog, and when it reached a relatively stable point, I moved everything over. The posts on this blog (including this one) are all now written in Typst! Maybe I was a bit too premature in switching over, because it's definitely not perfect, and there's be some quirks here and there, but it works relatively well for something that's still behind a feature flag, and it'll only get better from here.
 
