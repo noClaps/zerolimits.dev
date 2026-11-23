@@ -112,13 +112,13 @@ However, despite its ubiquity, there's one big drawback to the format: precision
 Scientific notation, and by extension floating point, has a big problem: you can really only express numbers that are some power of your base. For example, in base 10 scientific notation, you can't really express $\frac{1}{3}$ accurately, at least without some fancy syntax like:
 
 $$
-\frac{1}{3} = 3\overline{3} \times 10^{-1}
+\frac{1}{3} = 3.\overline{3} \times 10^{-1}
 $$
 
 This equals 0 point 3 repeating, so $0.333333...$. You can represent numbers this way in base 2 as well:
 
 $$
-\frac{1}{3} = 1\overline{01} \times 2^{-2}
+\frac{1}{3} = 1.\overline{01} \times 2^{-2}
 $$
 
 However, computers don't have the luxury of infinitely repeating values, since they need to store their values in a finite number of bits, so they round off after a certain point. While this is fine for most use cases, it's not perfectly precise, and you end up with things like:

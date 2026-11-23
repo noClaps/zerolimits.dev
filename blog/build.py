@@ -22,7 +22,10 @@ def build_post(path):
     if proc.returncode != 0:
         print(proc.stderr, file=sys.stderr)
         sys.exit(1)
-    return proc.stdout
+    out = proc.stdout
+    out = out.replace('<mover accent="true">', "<mover>")
+    out = out.replace('<mo stretchy="true">\u0332</mo>', "<mo>_</mo>")
+    return out
 
 
 metadata = []

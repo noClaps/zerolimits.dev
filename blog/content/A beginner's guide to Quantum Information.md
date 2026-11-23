@@ -885,7 +885,7 @@ $$
 
 Pretty simple stuff.
 
-Now let's say Alice wants to send 2 bits like in the previous example, but she only has one qubit. She could try sending one of $00\mapsto \ket{0}$, $01\mapsto \ket{1}$, $10\mapsto \ket{+}$ or $11\mapsto \ket{-}$, but that'll always be unclear to Bob what he received. If he tries measuring that with the $Z$ operator:
+Now let's say Alice wants to send 2 bits like in the previous example, but she only has one qubit. She could try sending one of ${}00\mapsto \ket{0}{}$, ${}01\mapsto \ket{1}{}$, ${}10\mapsto \ket{+}{}$ or ${}11\mapsto \ket{-}{}$, but that'll always be unclear to Bob what he received. If he tries measuring that with the $Z$ operator:
 
 $$
 \begin{aligned}
