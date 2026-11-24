@@ -19,8 +19,9 @@ def build_post(path):
     proc = subprocess.run(
         ["blackrock", path], check=False, capture_output=True, text=True
     )
+    if proc.stderr != "":
+        print(proc.stderr, file=sys.stderr, end="")
     if proc.returncode != 0:
-        print(proc.stderr, file=sys.stderr)
         sys.exit(1)
     out = proc.stdout
     out = out.replace('<mover accent="true">', "<mover>")
