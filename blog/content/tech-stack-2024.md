@@ -1,6 +1,6 @@
 ---
+title: Textack - 2024
 date: 2024-12-16
-slug: tech-stack-2024
 ---
 
 [Last year's Textack](/blog/tech-stack-2023)

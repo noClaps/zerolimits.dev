@@ -1,4 +1,5 @@
 ---
+title: Simplicity in Software
 date: 2024-12-05
 ---
 

@@ -32,9 +32,8 @@ def build_post(path):
 metadata = []
 for file in glob("blog/content/*.md"):
     meta = get_meta(file)
-    meta["title"] = file.replace("blog/content/", "").replace(".md", "")
+    meta["slug"] = file.replace("blog/content/", "").replace(".md", "")
     meta["path"] = file
-    meta["slug"] = meta.get("slug", re.sub("[^a-zA-Z0-9]+", "-", meta["title"].lower()))
     metadata.append(meta)
 metadata.sort(key=lambda x: x["date"], reverse=True)
 

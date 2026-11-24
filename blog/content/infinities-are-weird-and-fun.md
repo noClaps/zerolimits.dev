@@ -1,4 +1,5 @@
 ---
+title: Infinities are weird and fun
 date: 2026-11-23
 ---
 Given the name of my site is ZeroLimits, I figured it was about time we talk about infinities.

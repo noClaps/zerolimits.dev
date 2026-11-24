@@ -1,4 +1,5 @@
 ---
+title: LLMs are different now
 date: 2026-11-03
 ---
 

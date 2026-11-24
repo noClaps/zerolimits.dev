@@ -1,7 +1,7 @@
 ---
+title: "Google: A Misrepresented Evil"
 date: 2022-08-12
 lastmod: 2022-11-26
-slug: google
 ---
 
 ## Humble beginnings

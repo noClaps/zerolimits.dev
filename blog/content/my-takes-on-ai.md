@@ -1,4 +1,5 @@
 ---
+title: My takes on AI
 date: 2025-02-01
 ---
 

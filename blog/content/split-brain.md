@@ -1,6 +1,6 @@
 ---
+title: The Split-Brain Experiment
 date: 2023-07-13
-slug: split-brain
 ---
 
 ## Patient WJ

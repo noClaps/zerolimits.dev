@@ -1,6 +1,6 @@
 ---
+title: Don't break your promises
 date: 2026-05-24
-slug: promises
 ---
 
 > [!note]

@@ -1,7 +1,7 @@
 ---
+title: A beginner's guide to Quantum and Particle Physics
 date: 2024-02-21
 lastmod: 2026-07-01
-slug: quantum-and-particle
 ---
 
 > [!note]

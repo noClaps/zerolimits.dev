@@ -1,6 +1,6 @@
 ---
+title: A beginner's guide to Quantum Information
 date: 2026-10-06
-slug: quantum-information
 ---
 
 > [!note] Prerequisites

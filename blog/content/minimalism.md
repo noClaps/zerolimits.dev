@@ -1,4 +1,5 @@
 ---
+title: Minimalism
 date: 2024-06-03
 ---
 

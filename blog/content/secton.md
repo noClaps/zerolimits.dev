@@ -1,6 +1,6 @@
 ---
+title: Finding vulnerabilities in Secton
 date: 2025-06-26
-slug: secton
 ---
 
 > [!note] Acknowledgements

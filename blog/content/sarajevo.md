@@ -1,6 +1,6 @@
 ---
+title: Love and War
 date: 2024-02-15
-slug: sarajevo
 ---
 
 ## A New Year's party

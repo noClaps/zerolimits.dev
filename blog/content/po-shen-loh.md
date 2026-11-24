@@ -1,7 +1,7 @@
 ---
+title: Po-Shen Loh Quadratic Method
 date: 2025-04-12
 lastmod: 2026-01-02
-slug: po-shen-loh
 ---
 
 I found out about the Po-Shen Loh method of solving quadratic equations a few years ago, and I've been meaning to write a post about it since, and only just got around to it.

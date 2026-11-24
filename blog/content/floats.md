@@ -1,5 +1,6 @@
 ---
 date: 2025-11-27
+title: Floats
 ---
 
 Long story short, I got really bored over the summer and made a new floating point format.

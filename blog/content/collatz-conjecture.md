@@ -1,4 +1,5 @@
 ---
+title: Collatz Conjecture
 date: 2022-11-08
 lastmod: 2025-04-12
 ---

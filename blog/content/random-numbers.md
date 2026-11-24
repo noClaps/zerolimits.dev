@@ -1,4 +1,5 @@
 ---
+title: Random Numbers
 date: 2025-07-23
 ---
 

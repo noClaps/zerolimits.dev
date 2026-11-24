@@ -1,7 +1,7 @@
 ---
+title: Intro to Privacy, Security and Anonymity
 date: 2022-04-06
 lastmod: 2023-03-09
-slug: intro-psa
 ---
 
 I've really gotten into this stuff over the last 2 years or so. I probably shouldn't have, since I had a lot of (arguably) more important stuff going on during that time, and focusing on that might have been better for me and my future. But I digress.
