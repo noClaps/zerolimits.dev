@@ -31,7 +31,7 @@ This initial benefit, in addition to the popularity of Google search and other G
 
 > [!note] OPINION
 >
-> I've used Chrome for a lot of my life, and I like Google's projects in general. The Chrome browser, and Chromium in general, has a lot of benefits, even technically speaking. I've written about some of these in my [Google: A Misrepresented Evil](/blog/google#chromium) post, but more than that, they've given the world a lot of very helpful and important tools, like Node.js.
+> I've used Chrome for a lot of my life, and I like Google's projects in general. The Chrome browser, and Chromium in general, has a lot of benefits, even technically speaking. I've written about some of these in my [Google: A Misrepresented Evil](google.md#Chromium) post, but more than that, they've given the world a lot of very helpful and important tools, like Node.js.
 >
 > However, I don't really like using Chrome on my computer anymore. It feels somehow slower and clunkier than other browsers, and installs a bunch of other things I don't want. I wish all they had was a `Chrome.app` that I could click on and run, without registering a couple background processes along the way. I also wish that signing into one Google service wouldn't sign me in to the whole browser, and also every other Google service. In fact, I don't really like signing into browsers at all (with an exception).
 >

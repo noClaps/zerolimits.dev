@@ -10,7 +10,7 @@ This post of the Privacy and Security series will talk about different messenger
 
 For those of you that have been living under a rock, or have simply forgotten what a messenger is, it's a platform or way for people to send messages to one another and communicate. Technically, post and email are messengers, but what we're here to talk about are instant messengers. I will talk about email in a separate post, because its also a relatively broad topic.
 
-As I mentioned in the [Intro post](/blog/intro-psa), privacy, security and anonymity are different things, and that's gonna be a little clearer in this post as we compare different messengers.
+As I mentioned in the [Intro post](intro-psa.md), privacy, security and anonymity are different things, and that's gonna be a little clearer in this post as we compare different messengers.
 
 There's gonna be a lot of links in this post, because references are necessary. Otherwise, who's gonna believe the words of some random person on the internet? But if you put a link to an article or blog post written by some other random person on the internet, it's all trustworthy.
 
@@ -34,13 +34,13 @@ And that's why you **don't use SMS for anything** even remotely important. Use e
 
 ### Twitter DMs and Reddit Chat
 
-These are encrypted with your standard [HTTPS encryption](/blog/intro-psa#the-green-lock) that comes with most websites and web-based apps. However, they don't have any dedicated encryption protocols, which is why they're in this section. This has lead to [data leaking](https://arstechnica.com/information-technology/2020/07/hackers-obtained-twitter-dms-for-36-high-profile-account-holders/) from these platforms in the past.
+These are encrypted with your standard [HTTPS encryption](intro-psa.md#The%20green%20lock) that comes with most websites and web-based apps. However, they don't have any dedicated encryption protocols, which is why they're in this section. This has lead to [data leaking](https://arstechnica.com/information-technology/2020/07/hackers-obtained-twitter-dms-for-36-high-profile-account-holders/) from these platforms in the past.
 
 I would recommend using other platforms like [**Session**](#session), [**Element**](#element-matrix) or [**Threema**](#threema) instead, if you want to remain "anonymous" like you can on Twitter or Reddit.
 
 ## Encryption with trust
 
-This is the section with the most well-known messaging apps. A lot of the trust comes down to the apps and/or servers being closed-source. Closed-source essentially means that a service, like WhatsApp, could _say_ that your messages aren't being looked at, but there's no real way to verify that, since you can't see the source code. The importance of open source was highlighted in my [Intro post](/blog/intro-psa#open-source-everything).
+This is the section with the most well-known messaging apps. A lot of the trust comes down to the apps and/or servers being closed-source. Closed-source essentially means that a service, like WhatsApp, could _say_ that your messages aren't being looked at, but there's no real way to verify that, since you can't see the source code. The importance of open source was highlighted in my [Intro post](intro-psa.md#Open%20source%20everything).
 
 ### Discord
 
@@ -48,7 +48,7 @@ Discord is one of the most popular communication platforms, especially for large
 
 According to [Discord's privacy policy](https://discord.com/privacy) (you know, that thing you agree to and never actually read?), [Discord can read all of your private messages](https://edit.tosdr.org/points/9070). While chats are encrypted in transit to Discord's servers and encrypted at rest on your devices (at least that's what they _say_), they're [stored unencrypted on Discord servers](https://www.techspot.com/article/2340-messaging-apps-encryption/#Discord). And the privacy toggles in the app settings mean basically nothing since they'll store the data anyway.
 
-On top of that, Discord has outright [refused to implement end-to-end encryption](https://www.reddit.com/r/discordapp/comments/8nzb5d/why_is_discord_so_antiencryption/e001lr1/), giving the same ["think of the children" argument](/blog/intro-psa#nothing-to-hide) we discussed in the Intro post. [And they can't even do that well!](https://endsexualexploitation.org/articles/discord-is-a-haven-for-gamers-and-sexual-exploiters/)
+On top of that, Discord has outright [refused to implement end-to-end encryption](https://www.reddit.com/r/discordapp/comments/8nzb5d/why_is_discord_so_antiencryption/e001lr1/), giving the same ["think of the children" argument](intro-psa.md#Nothing%20to%20hide) we discussed in the Intro post. [And they can't even do that well!](https://endsexualexploitation.org/articles/discord-is-a-haven-for-gamers-and-sexual-exploiters/)
 
 In 2020, [some researchers reverse-engineered Discord](https://medium.com/tenable-techblog/lets-reverse-engineer-discord-1976773f4626) and found that:
 
@@ -218,7 +218,7 @@ In conclusion, a great messenger from a country with great privacy laws. I reall
 
 I know I missed out on a lot of popular messengers like Snapchat, Slack, WeChat, Line, Viber, Skype, etc., but there's so many out there I couldn't possibly fit them all into one post. However, if you're wondering how good your messenger app is in terms of privacy and security, here's a simple checklist for you:
 
-- How is the app's security? Are they utilising end-to-end encryption, and if so, which protocol? Has it been audited? How often is it updated? These are all highly important for security. [I've already covered why e2ee is necessary](/blog/intro-psa#end-to-end-encryption-e2ee). Unaudited apps could have undiscovered security flaws and outdated apps may be behind on security patches.
+- How is the app's security? Are they utilising end-to-end encryption, and if so, which protocol? Has it been audited? How often is it updated? These are all highly important for security. [I've already covered why e2ee is necessary](intro-psa.md#End-to-end%20encryption%20(e2ee)). Unaudited apps could have undiscovered security flaws and outdated apps may be behind on security patches.
 - Is it open source?
 - How is the company's reputation? Are they transparent with their customers? Do they interact with their community often? This can have a bigger impact on the trustworthiness of a company than most people realise.
 - How's the company's privacy policy? You can look them up at [ToS;DR](https://tosdr.org) to get a general rating as well as simplified details of the privacy policy and terms of service for most popular services. This doesn't necessarily mean much, since companies can change or break their terms of service and privacy policy any time they want, but a privacy-friendly privacy policy is still nice to have.

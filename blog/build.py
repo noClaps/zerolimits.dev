@@ -1,6 +1,5 @@
 import html
 import json
-import re
 import subprocess
 import sys
 from datetime import date
@@ -26,6 +25,7 @@ def build_post(path):
     out = proc.stdout
     out = out.replace('<mover accent="true">', "<mover>")
     out = out.replace('<mo stretchy="true">\u0332</mo>', "<mo>_</mo>")
+    out = out.replace('<a href="/blog/content/', '<a href="/blog/')
     return out
 
 

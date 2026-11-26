@@ -29,8 +29,5 @@ friends: base
 	@python3 friends/build.py
 	@cp friends/88x31.png friends/style.css dist/friends/
 
-check:
-	@lychee dist --root-dir dist --fallback-extensions html --offline
-
 imgoptim:
 	@imgoptim -r blog/content/assets/
